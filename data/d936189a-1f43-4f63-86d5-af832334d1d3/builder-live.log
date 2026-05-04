@@ -1,0 +1,184 @@
+Warning: Permanently added '18.205.150.225' (ED25519) to the list of known hosts.
+
+You can reproduce this build on your computer by running:
+
+  sudo dnf install copr-rpmbuild
+  /usr/bin/copr-rpmbuild --verbose --drop-resultdir --task-url https://copr.fedorainfracloud.org/backend/get-build-task/6972777-fedora-38-aarch64 --chroot fedora-38-aarch64
+
+
+Version: 0.70
+PID: 6091
+Logging PID: 6092
+Task:
+{'appstream': False,
+ 'background': True,
+ 'bootstrap': 'on',
+ 'build_id': 6972777,
+ 'buildroot_pkgs': [],
+ 'chroot': 'fedora-38-aarch64',
+ 'enable_net': True,
+ 'fedora_review': False,
+ 'git_hash': 'e64c181f4c045428b03b080802429436b7eb1e4c',
+ 'git_repo': 'https://copr-dist-git.fedorainfracloud.org/git/@freeipa/freeipa-master-nightly/freeipa',
+ 'isolation': 'default',
+ 'memory_reqs': 2048,
+ 'package_name': 'freeipa',
+ 'package_version': '4.12.0.dev202401300652+git-0',
+ 'project_dirname': 'freeipa-master-nightly',
+ 'project_name': 'freeipa-master-nightly',
+ 'project_owner': '@freeipa',
+ 'repo_priority': None,
+ 'repos': [{'baseurl': 'https://download.copr.fedorainfracloud.org/results/@freeipa/freeipa-master-nightly/fedora-38-aarch64/',
+            'id': 'copr_base',
+            'name': 'Copr repository',
+            'priority': None},
+           {'baseurl': 'https://download.copr.fedorainfracloud.org/results/@freeipa/freeipa-master/fedora-38-aarch64/',
+            'id': 'copr_freeipa_freeipa_master_fedora_releasever_basearch',
+            'name': 'Additional repo copr_freeipa_freeipa_master_fedora_releasever_basearch'}],
+ 'sandbox': '@freeipa/freeipa-master-nightly--https://api.github.com/users/abbra',
+ 'source_json': {},
+ 'source_type': None,
+ 'submitter': 'https://api.github.com/users/abbra',
+ 'tags': [],
+ 'task_id': '6972777-fedora-38-aarch64',
+ 'timeout': 18000,
+ 'uses_devel_repo': False,
+ 'with_opts': [],
+ 'without_opts': []}
+
+Running: git clone https://copr-dist-git.fedorainfracloud.org/git/@freeipa/freeipa-master-nightly/freeipa /var/lib/copr-rpmbuild/workspace/workdir-yvclrbgi/freeipa --depth 500 --no-single-branch --recursive
+
+cmd: ['git', 'clone', 'https://copr-dist-git.fedorainfracloud.org/git/@freeipa/freeipa-master-nightly/freeipa', '/var/lib/copr-rpmbuild/workspace/workdir-yvclrbgi/freeipa', '--depth', '500', '--no-single-branch', '--recursive']
+cwd: .
+rc: 0
+stdout: 
+stderr: Cloning into '/var/lib/copr-rpmbuild/workspace/workdir-yvclrbgi/freeipa'...
+
+Running: git checkout e64c181f4c045428b03b080802429436b7eb1e4c --
+
+cmd: ['git', 'checkout', 'e64c181f4c045428b03b080802429436b7eb1e4c', '--']
+cwd: /var/lib/copr-rpmbuild/workspace/workdir-yvclrbgi/freeipa
+rc: 0
+stdout: 
+stderr: Note: switching to 'e64c181f4c045428b03b080802429436b7eb1e4c'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at e64c181 automatic import of freeipa
+
+Running: copr-distgit-client sources
+
+cmd: ['copr-distgit-client', 'sources']
+cwd: /var/lib/copr-rpmbuild/workspace/workdir-yvclrbgi/freeipa
+rc: 0
+stdout: 
+stderr: INFO: Reading stdout from command: git rev-parse --abbrev-ref HEAD
+INFO: Reading stdout from command: git rev-parse HEAD
+INFO: Reading sources specification file: sources
+INFO: Downloading freeipa-4.12.0.dev202401300652+git.tar.gz
+INFO: Reading stdout from command: curl --help all
+INFO: Calling: curl -H Pragma: -o freeipa-4.12.0.dev202401300652+git.tar.gz --location --connect-timeout 60 --retry 3 --retry-delay 10 --remote-time --show-error --fail --retry-all-errors https://copr-dist-git.fedorainfracloud.org/repo/pkgs/@freeipa/freeipa-master-nightly/freeipa/freeipa-4.12.0.dev202401300652+git.tar.gz/md5/76065f94842406112dbe851c3ba6968d/freeipa-4.12.0.dev202401300652+git.tar.gz
+/usr/bin/tail: /var/lib/copr-rpmbuild/main.log: file truncated
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 14.3M  100 14.3M    0     0   220M      0 --:--:-- --:--:-- --:--:--  223M
+INFO: Reading stdout from command: md5sum freeipa-4.12.0.dev202401300652+git.tar.gz
+
+Running (timeout=18000): unbuffer mock --spec /var/lib/copr-rpmbuild/workspace/workdir-yvclrbgi/freeipa/freeipa.spec --sources /var/lib/copr-rpmbuild/workspace/workdir-yvclrbgi/freeipa --resultdir /var/lib/copr-rpmbuild/results --uniqueext 1706597629.078289 -r /var/lib/copr-rpmbuild/results/configs/child.cfg
+INFO: mock.py version 5.4 starting (python version = 3.11.3, NVR = mock-5.4-1.fc38), args: /usr/libexec/mock/mock --spec /var/lib/copr-rpmbuild/workspace/workdir-yvclrbgi/freeipa/freeipa.spec --sources /var/lib/copr-rpmbuild/workspace/workdir-yvclrbgi/freeipa --resultdir /var/lib/copr-rpmbuild/results --uniqueext 1706597629.078289 -r /var/lib/copr-rpmbuild/results/configs/child.cfg
+Start(bootstrap): init plugins
+INFO: tmpfs initialized
+INFO: selinux enabled
+INFO: chroot_scan: initialized
+INFO: compress_logs: initialized
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: tmpfs initialized
+INFO: selinux enabled
+INFO: chroot_scan: initialized
+INFO: compress_logs: initialized
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+INFO: Start(/var/lib/copr-rpmbuild/workspace/workdir-yvclrbgi/freeipa/freeipa.spec)  Config(fedora-38-aarch64)
+Start: clean chroot
+Finish: clean chroot
+Mock Version: 5.4
+INFO: Mock Version: 5.4
+Start(bootstrap): chroot init
+INFO: mounting tmpfs at /var/lib/mock/fedora-38-aarch64-bootstrap-1706597629.078289/root.
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: Package manager dnf detected and used (fallback)
+Start(bootstrap): installing dnf tooling
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Updating Subscription Management repositories.
+Unable to read consumer identity
+
+This system is not registered with an entitlement server. You can use subscription-manager to register.
+
+Copr repository                                 3.4 kB/s | 257  B     00:00    
+Additional repo copr_freeipa_freeipa_master_fed 5.3 kB/s | 341  B     00:00    
+Errors during downloading metadata for repository 'copr_freeipa_freeipa_master_fedora_releasever_basearch':
+  - Status code: 404 for https://download.copr.fedorainfracloud.org/results/@freeipa/freeipa-master/fedora-38-aarch64/repodata/repomd.xml (IP: 108.138.85.53)
+Error: Failed to download metadata for repo 'copr_freeipa_freeipa_master_fedora_releasever_basearch': Cannot download repomd.xml: Cannot download repodata/repomd.xml: All mirrors were tried
+WARNING: DNF command failed, retrying, attempt #2, sleeping 10s
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Updating Subscription Management repositories.
+Unable to read consumer identity
+
+This system is not registered with an entitlement server. You can use subscription-manager to register.
+
+Copr repository                                  51 kB/s | 1.8 kB     00:00    
+Additional repo copr_freeipa_freeipa_master_fed 4.6 kB/s | 341  B     00:00    
+Errors during downloading metadata for repository 'copr_freeipa_freeipa_master_fedora_releasever_basearch':
+  - Status code: 404 for https://download.copr.fedorainfracloud.org/results/@freeipa/freeipa-master/fedora-38-aarch64/repodata/repomd.xml (IP: 108.138.85.27)
+Error: Failed to download metadata for repo 'copr_freeipa_freeipa_master_fedora_releasever_basearch': Cannot download repomd.xml: Cannot download repodata/repomd.xml: All mirrors were tried
+WARNING: DNF command failed, retrying, attempt #3, sleeping 10s
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Updating Subscription Management repositories.
+Unable to read consumer identity
+
+This system is not registered with an entitlement server. You can use subscription-manager to register.
+
+Copr repository                                  26 kB/s | 1.8 kB     00:00    
+Additional repo copr_freeipa_freeipa_master_fed 4.7 kB/s | 341  B     00:00    
+Errors during downloading metadata for repository 'copr_freeipa_freeipa_master_fedora_releasever_basearch':
+  - Status code: 404 for https://download.copr.fedorainfracloud.org/results/@freeipa/freeipa-master/fedora-38-aarch64/repodata/repomd.xml (IP: 108.138.85.53)
+Error: Failed to download metadata for repo 'copr_freeipa_freeipa_master_fedora_releasever_basearch': Cannot download repomd.xml: Cannot download repodata/repomd.xml: All mirrors were tried
+ERROR: Exception(/var/lib/copr-rpmbuild/workspace/workdir-yvclrbgi/freeipa/freeipa.spec) Config(fedora-38-aarch64) 0 minutes 22 seconds
+INFO: Results and/or logs in: /var/lib/copr-rpmbuild/results
+INFO: Cleaning up build root ('cleanup_on_failure=True')
+Start: clean chroot
+Finish: clean chroot
+ERROR: Command failed: 
+ # /usr/bin/dnf-3 --installroot /var/lib/mock/fedora-38-aarch64-bootstrap-1706597629.078289/root/ --releasever 38 --setopt=deltarpm=False --setopt=allow_vendor_change=yes --allowerasing --disableplugin=local --disableplugin=spacewalk --disableplugin=versionlock install python3-dnf python3-dnf-plugins-core --setopt=tsflags=nocontexts --setopt=tsflags=nocontexts --setopt=tsflags=nocontexts
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Updating Subscription Management repositories.
+Unable to read consumer identity
+
+This system is not registered with an entitlement server. You can use subscription-manager to register.
+
+Copr repository                                  26 kB/s | 1.8 kB     00:00    
+Additional repo copr_freeipa_freeipa_master_fed 4.7 kB/s | 341  B     00:00    
+Errors during downloading metadata for repository 'copr_freeipa_freeipa_master_fedora_releasever_basearch':
+  - Status code: 404 for https://download.copr.fedorainfracloud.org/results/@freeipa/freeipa-master/fedora-38-aarch64/repodata/repomd.xml (IP: 108.138.85.53)
+Error: Failed to download metadata for repo 'copr_freeipa_freeipa_master_fedora_releasever_basearch': Cannot download repomd.xml: Cannot download repodata/repomd.xml: All mirrors were tried
+
+Copr build error: Build failed

@@ -1,0 +1,38 @@
+source_project_name: dnf
+source_project_version: ''
+issue: |
+    Both the dnf package from the Fedora base image and the dnf5 package from the dnf5-testing Copr repo provide the /etc/dnf/dnf.conf file.
+    This occurs because when using the dnf5-testing Copr repository, all dnf related packages are intended to come from this repository, set up with the obsoletion macro to manage the transition from dnf to dnf5.
+    In this case, the dnf stack packages originate from two sources: the Fedora base image and the dnf5-testing Copr repo. As a result, a conflict arises as both the dnf package from the base image and the dnf5 package from the Copr repo attempt to provide the /etc/dnf/dnf.conf file.
+log_detective_version: 3.10.0
+log_detective_analysis: |
+    The build failed because installing `libdnf5` created a file conflict with `dnf-data` over `/etc/dnf/dnf.conf`. The solution is to add `--allowerasing` to the dnf command to allow dnf to remove conflicting packages.
+log_files:
+    - builder-live.log
+    - backend.log
+    - build.log
+notes: |
+    Sample comes from packager-annotated notes submitted to logdetective.com.
+    Additional text contains more context.
+
+    Resolution: There are essentially two solutions to resolve this issue.
+    The first solution involves avoiding the use of packages from the dnf5-testing repository during the bootstrap process. Instead, packages from the Fedora repository can be utilized. From the perspective of Copr users, this can be achieved by assigning a high priority to the dnf5-testing Copr repository, ensuring that the regular Fedora repositories take precedence during installation.
+    The second solution entails using the same version of the dnf package in both the base image and during the bootstrap. This would require either instructing the Copr tooling to employ the dnf package for the bootstrap process, aligning it with the Fedora base image, or creating a custom base image containing the dnf5 package to match the package used during the bootstrap.
+
+    Snippets:
+
+    In builder-live.log:
+    ```
+    Installing:
+     dnf5                x86_64        5.1.12-1.fc40         copr_base        581 k
+         replacing  dnf.noarch 4.19.0-1.fc40
+         replacing  yum.noarch 4.19.0-1.fc40
+    ```
+    => During the bootstrap, dnf5 package from the dnf5-testing Copr repository is being installed. This package contains an obsoletion of the dnf package.
+
+    In builder-live.log:
+    ```
+    Error: Transaction test error:
+      file /etc/dnf/dnf.conf from install of libdnf5-5.1.12-1.fc40.x86_64 conflicts with file from package dnf-data-4.19.0-1.fc40.noarch
+    ```
+    => Transaction test fails, because the dnf5 package from the dnf5-testing repository provides /etc/dnf/dnf.conf which is also provided by the dnf package that is already installed.

@@ -1,0 +1,166 @@
+[2024-12-05 13:13:03,054][  INFO][PID:1954339] Marking build as starting
+[2024-12-05 13:13:03,087][  INFO][PID:1954339] Trying to allocate VM
+[2024-12-05 13:13:06,124][  INFO][PID:1954339] Allocated host ResallocHost, ticket_id=15698, hostname=2620:52:3:1:dead:beef:cafe:c1cb
+[2024-12-05 13:13:06,125][  INFO][PID:1954339] Allocating ssh connection to builder
+[2024-12-05 13:13:06,125][  INFO][PID:1954339] Checking that builder machine is OK
+[2024-12-05 13:13:06,821][  INFO][PID:1954339] Popen command started: ssh -F /home/copr/.ssh/config mockbuilder@2620:52:3:1:dead:beef:cafe:c1cb '/usr/bin/test -f /etc/mock/fedora-rawhide-x86_64.cfg'
+[2024-12-05 13:13:07,441][  INFO][PID:1954339] Filling build.info file with builder info
+[2024-12-05 13:13:07,444][  INFO][PID:1954339] Sending build state back to frontend: {
+    "builds": [
+        {
+            "timeout": 18000,
+            "frontend_base_url": "https://copr.fedorainfracloud.org",
+            "memory_reqs": 2048,
+            "enable_net": false,
+            "project_owner": "@copr",
+            "project_name": "PyPI",
+            "project_dirname": "PyPI",
+            "submitter": "ksurma",
+            "ended_on": null,
+            "started_on": 1733404387.44341,
+            "submitted_on": null,
+            "status": 3,
+            "chroot": "fedora-rawhide-x86_64",
+            "arch": "x86_64",
+            "buildroot_pkgs": [],
+            "task_id": "8344105-fedora-rawhide-x86_64",
+            "build_id": 8344105,
+            "package_name": "python-castor-extractor",
+            "package_version": "0.22.0-1",
+            "git_repo": "https://copr-dist-git.fedorainfracloud.org/git/@copr/PyPI/python-castor-extractor",
+            "git_hash": "17113dabd002845293231d7333bbc66e9288cdf0",
+            "git_branch": null,
+            "source_type": null,
+            "source_json": null,
+            "pkg_name": null,
+            "pkg_main_version": null,
+            "pkg_epoch": null,
+            "pkg_release": null,
+            "srpm_url": null,
+            "uses_devel_repo": false,
+            "sandbox": "@copr/PyPI--ksurma",
+            "results": null,
+            "appstream": false,
+            "allow_user_ssh": false,
+            "ssh_public_keys": null,
+            "storage": null,
+            "background": true,
+            "fedora_review": false,
+            "isolation": "default",
+            "repo_priority": null,
+            "repos": [
+                {
+                    "baseurl": "https://download.copr.fedorainfracloud.org/results/@copr/PyPI/fedora-rawhide-x86_64/",
+                    "id": "copr_base",
+                    "name": "Copr repository",
+                    "priority": null
+                }
+            ],
+            "tags": [
+                "arch_x86_64"
+            ],
+            "with_opts": [],
+            "without_opts": [],
+            "destdir": "/var/lib/copr/public_html/results/@copr/PyPI",
+            "results_repo_url": "https://download.copr.fedorainfracloud.org/results/@copr/PyPI",
+            "result_dir": "08344105-python-castor-extractor",
+            "built_packages": "",
+            "id": 8344105,
+            "mockchain_macros": {
+                "copr_username": "@copr",
+                "copr_projectname": "PyPI",
+                "vendor": "Fedora Project COPR (@copr/PyPI)"
+            }
+        }
+    ]
+}
+[2024-12-05 13:13:07,527][  INFO][PID:1954339] Sending fedora-messaging bus message in build.start
+[2024-12-05 13:13:08,304][  INFO][PID:1954339] Sending fedora-messaging bus message in chroot.start
+[2024-12-05 13:13:08,332][  INFO][PID:1954339] Starting remote build: copr-rpmbuild --verbose --drop-resultdir --task-url https://copr.fedorainfracloud.org/backend/get-build-task/8344105-fedora-rawhide-x86_64 --chroot fedora-rawhide-x86_64 --detached
+[2024-12-05 13:13:08,921][  INFO][PID:1954339] Downloading the builder-live.log file, attempt 1
+[2024-12-05 13:13:08,925][  INFO][PID:1954339] Popen command started: ssh -F /home/copr/.ssh/config mockbuilder@2620:52:3:1:dead:beef:cafe:c1cb copr-rpmbuild-log
+[2024-12-05 13:13:13,957][  INFO][PID:1954339] Periodic builder liveness probe: alive
+[2024-12-05 13:13:54,608][  INFO][PID:1954339] Downloading results from builder
+[2024-12-05 13:13:54,609][  INFO][PID:1954339] rsyncing of mockbuilder@[2620:52:3:1:dead:beef:cafe:c1cb]:/var/lib/copr-rpmbuild/results/ to /var/lib/copr/public_html/results/@copr/PyPI/fedora-rawhide-x86_64/08344105-python-castor-extractor started
+[2024-12-05 13:13:54,615][  INFO][PID:1954339] Popen command started: /usr/bin/rsync -rltDvH --chmod=D755,F644 -e 'ssh -F /home/copr/.ssh/config' mockbuilder@[2620:52:3:1:dead:beef:cafe:c1cb]:/var/lib/copr-rpmbuild/results/ /var/lib/copr/public_html/results/@copr/PyPI/fedora-rawhide-x86_64/08344105-python-castor-extractor/ &> /var/lib/copr/public_html/results/@copr/PyPI/fedora-rawhide-x86_64/08344105-python-castor-extractor/build-08344105.rsync.log
+[2024-12-05 13:13:55,055][  INFO][PID:1954339] rsyncing finished.
+[2024-12-05 13:13:55,056][  INFO][PID:1954339] Releasing VM back to pool
+[2024-12-05 13:13:55,080][  INFO][PID:1954339] Searching for 'success' file in resultdir
+[2024-12-05 13:13:55,081][ ERROR][PID:1954339] Build failed: Backend process error: No success file => build failure
+[2024-12-05 13:13:55,083][  INFO][PID:1954339] Finished build: id=8344105 failed=True timeout=18000 destdir=/var/lib/copr/public_html/results/@copr/PyPI chroot=fedora-rawhide-x86_64 
+[2024-12-05 13:13:55,087][ ERROR][PID:1954339] Backend process error: No success file => build failure
+[2024-12-05 13:13:55,088][  INFO][PID:1954339] Worker failed build, took 47.64497375488281
+[2024-12-05 13:13:55,089][  INFO][PID:1954339] Sending build state back to frontend: {
+    "builds": [
+        {
+            "timeout": 18000,
+            "frontend_base_url": "https://copr.fedorainfracloud.org",
+            "memory_reqs": 2048,
+            "enable_net": false,
+            "project_owner": "@copr",
+            "project_name": "PyPI",
+            "project_dirname": "PyPI",
+            "submitter": "ksurma",
+            "ended_on": 1733404435.0883837,
+            "started_on": 1733404387.44341,
+            "submitted_on": null,
+            "status": 0,
+            "chroot": "fedora-rawhide-x86_64",
+            "arch": "x86_64",
+            "buildroot_pkgs": [],
+            "task_id": "8344105-fedora-rawhide-x86_64",
+            "build_id": 8344105,
+            "package_name": "python-castor-extractor",
+            "package_version": "0.22.0-1",
+            "git_repo": "https://copr-dist-git.fedorainfracloud.org/git/@copr/PyPI/python-castor-extractor",
+            "git_hash": "17113dabd002845293231d7333bbc66e9288cdf0",
+            "git_branch": null,
+            "source_type": null,
+            "source_json": null,
+            "pkg_name": null,
+            "pkg_main_version": null,
+            "pkg_epoch": null,
+            "pkg_release": null,
+            "srpm_url": null,
+            "uses_devel_repo": false,
+            "sandbox": "@copr/PyPI--ksurma",
+            "results": null,
+            "appstream": false,
+            "allow_user_ssh": false,
+            "ssh_public_keys": null,
+            "storage": null,
+            "background": true,
+            "fedora_review": false,
+            "isolation": "default",
+            "repo_priority": null,
+            "repos": [
+                {
+                    "baseurl": "https://download.copr.fedorainfracloud.org/results/@copr/PyPI/fedora-rawhide-x86_64/",
+                    "id": "copr_base",
+                    "name": "Copr repository",
+                    "priority": null
+                }
+            ],
+            "tags": [
+                "arch_x86_64"
+            ],
+            "with_opts": [],
+            "without_opts": [],
+            "destdir": "/var/lib/copr/public_html/results/@copr/PyPI",
+            "results_repo_url": "https://download.copr.fedorainfracloud.org/results/@copr/PyPI",
+            "result_dir": "08344105-python-castor-extractor",
+            "built_packages": "",
+            "id": 8344105,
+            "mockchain_macros": {
+                "copr_username": "@copr",
+                "copr_projectname": "PyPI",
+                "vendor": "Fedora Project COPR (@copr/PyPI)"
+            }
+        }
+    ]
+}
+[2024-12-05 13:13:55,135][  INFO][PID:1954339] Sending fedora-messaging bus message in build.end
+[2024-12-05 13:13:55,158][  INFO][PID:1954339] Compressing /var/lib/copr/public_html/results/@copr/PyPI/fedora-rawhide-x86_64/08344105-python-castor-extractor/builder-live.log by gzip
+[2024-12-05 13:13:55,164][  INFO][PID:1954339] Running command 'gzip /var/lib/copr/public_html/results/@copr/PyPI/fedora-rawhide-x86_64/08344105-python-castor-extractor/builder-live.log' as PID 1962340
+[2024-12-05 13:13:55,169][  INFO][PID:1954339] Finished after 0 seconds with exit code 0 (gzip /var/lib/copr/public_html/results/@copr/PyPI/fedora-rawhide-x86_64/08344105-python-castor-extractor/builder-live.log)
+[2024-12-05 13:13:55,170][  INFO][PID:1954339] Compressing /var/lib/copr/public_html/results/@copr/PyPI/fedora-rawhide-x86_64/08344105-python-castor-extractor/backend.log by gzip

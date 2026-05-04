@@ -1,0 +1,230 @@
+Mock Version: 6.1
+Mock Version: 6.1
+Mock Version: 6.1
+ENTER ['do_with_status'](['bash', '--login', '-c', '/usr/bin/rpmbuild -bs --noclean --target noarch --nodeps /builddir/build/SPECS/rubygem-hitimes.spec'], chrootPath='/var/lib/mock/f41-build-59817139-6576644/root'env={'TERM': 'vt100', 'SHELL': '/bin/bash', 'HOME': '/builddir', 'HOSTNAME': 'mock', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'PROMPT_COMMAND': 'printf "\\033]0;<mock-chroot>\\007"', 'PS1': '<mock-chroot> \\s-\\v\\$ ', 'LANG': 'C.UTF-8'}shell=Falselogger=<mockbuild.trace_decorator.getLog object at 0x7fffb0d71370>timeout=201600uid=1000gid=425user='mockbuild'unshare_net=TrueprintOutput=Falsenspawn_args=['--capability=cap_ipc_lock', '--bind=/tmp/mock-resolv.epdy32q5:/etc/resolv.conf', '--bind=/dev/btrfs-control', '--bind=/dev/mapper/control', '--bind=/dev/fuse', '--bind=/dev/loop-control', '--bind=/dev/loop0', '--bind=/dev/loop1', '--bind=/dev/loop2', '--bind=/dev/loop3', '--bind=/dev/loop4', '--bind=/dev/loop5', '--bind=/dev/loop6', '--bind=/dev/loop7', '--bind=/dev/loop8', '--bind=/dev/loop9', '--bind=/dev/loop10', '--bind=/dev/loop11'])
+Using nspawn with args ['--capability=cap_ipc_lock', '--bind=/tmp/mock-resolv.epdy32q5:/etc/resolv.conf', '--bind=/dev/btrfs-control', '--bind=/dev/mapper/control', '--bind=/dev/fuse', '--bind=/dev/loop-control', '--bind=/dev/loop0', '--bind=/dev/loop1', '--bind=/dev/loop2', '--bind=/dev/loop3', '--bind=/dev/loop4', '--bind=/dev/loop5', '--bind=/dev/loop6', '--bind=/dev/loop7', '--bind=/dev/loop8', '--bind=/dev/loop9', '--bind=/dev/loop10', '--bind=/dev/loop11']
+Executing command: ['/usr/bin/systemd-nspawn', '-q', '-M', 'ecefcc11b4174dc9966d6cbe99854033', '-D', '/var/lib/mock/f41-build-59817139-6576644/root', '-a', '-u', 'mockbuild', '--capability=cap_ipc_lock', '--bind=/tmp/mock-resolv.epdy32q5:/etc/resolv.conf', '--bind=/dev/btrfs-control', '--bind=/dev/mapper/control', '--bind=/dev/fuse', '--bind=/dev/loop-control', '--bind=/dev/loop0', '--bind=/dev/loop1', '--bind=/dev/loop2', '--bind=/dev/loop3', '--bind=/dev/loop4', '--bind=/dev/loop5', '--bind=/dev/loop6', '--bind=/dev/loop7', '--bind=/dev/loop8', '--bind=/dev/loop9', '--bind=/dev/loop10', '--bind=/dev/loop11', '--console=pipe', '--setenv=TERM=vt100', '--setenv=SHELL=/bin/bash', '--setenv=HOME=/builddir', '--setenv=HOSTNAME=mock', '--setenv=PATH=/usr/bin:/bin:/usr/sbin:/sbin', '--setenv=PROMPT_COMMAND=printf "\\033]0;<mock-chroot>\\007"', '--setenv=PS1=<mock-chroot> \\s-\\v\\$ ', '--setenv=LANG=C.UTF-8', '--resolv-conf=off', 'bash', '--login', '-c', '/usr/bin/rpmbuild -bs --noclean --target noarch --nodeps /builddir/build/SPECS/rubygem-hitimes.spec'] with env {'TERM': 'vt100', 'SHELL': '/bin/bash', 'HOME': '/builddir', 'HOSTNAME': 'mock', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'PROMPT_COMMAND': 'printf "\\033]0;<mock-chroot>\\007"', 'PS1': '<mock-chroot> \\s-\\v\\$ ', 'LANG': 'C.UTF-8', 'SYSTEMD_NSPAWN_TMPFS_TMP': '0', 'SYSTEMD_SECCOMP': '0'} and shell False
+Building target platforms: noarch
+Building for target noarch
+setting SOURCE_DATE_EPOCH=1721347200
+Wrote: /builddir/build/SRPMS/rubygem-hitimes-2.0.0-10.fc41.src.rpm
+Child return code was: 0
+ENTER ['do_with_status'](['bash', '--login', '-c', '/usr/bin/rpmbuild -bb --noclean --target noarch --nodeps /builddir/build/SPECS/rubygem-hitimes.spec'], chrootPath='/var/lib/mock/f41-build-59817139-6576644/root'env={'TERM': 'vt100', 'SHELL': '/bin/bash', 'HOME': '/builddir', 'HOSTNAME': 'mock', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'PROMPT_COMMAND': 'printf "\\033]0;<mock-chroot>\\007"', 'PS1': '<mock-chroot> \\s-\\v\\$ ', 'LANG': 'C.UTF-8'}shell=Falselogger=<mockbuild.trace_decorator.getLog object at 0x7fffb0d71370>timeout=201600uid=1000gid=425user='mockbuild'unshare_net=TrueprintOutput=Falsenspawn_args=['--capability=cap_ipc_lock', '--bind=/tmp/mock-resolv.epdy32q5:/etc/resolv.conf', '--bind=/dev/btrfs-control', '--bind=/dev/mapper/control', '--bind=/dev/fuse', '--bind=/dev/loop-control', '--bind=/dev/loop0', '--bind=/dev/loop1', '--bind=/dev/loop2', '--bind=/dev/loop3', '--bind=/dev/loop4', '--bind=/dev/loop5', '--bind=/dev/loop6', '--bind=/dev/loop7', '--bind=/dev/loop8', '--bind=/dev/loop9', '--bind=/dev/loop10', '--bind=/dev/loop11'])
+Using nspawn with args ['--capability=cap_ipc_lock', '--bind=/tmp/mock-resolv.epdy32q5:/etc/resolv.conf', '--bind=/dev/btrfs-control', '--bind=/dev/mapper/control', '--bind=/dev/fuse', '--bind=/dev/loop-control', '--bind=/dev/loop0', '--bind=/dev/loop1', '--bind=/dev/loop2', '--bind=/dev/loop3', '--bind=/dev/loop4', '--bind=/dev/loop5', '--bind=/dev/loop6', '--bind=/dev/loop7', '--bind=/dev/loop8', '--bind=/dev/loop9', '--bind=/dev/loop10', '--bind=/dev/loop11']
+Executing command: ['/usr/bin/systemd-nspawn', '-q', '-M', '8701535bb8c2424791ce4e62c50c8f4d', '-D', '/var/lib/mock/f41-build-59817139-6576644/root', '-a', '-u', 'mockbuild', '--capability=cap_ipc_lock', '--bind=/tmp/mock-resolv.epdy32q5:/etc/resolv.conf', '--bind=/dev/btrfs-control', '--bind=/dev/mapper/control', '--bind=/dev/fuse', '--bind=/dev/loop-control', '--bind=/dev/loop0', '--bind=/dev/loop1', '--bind=/dev/loop2', '--bind=/dev/loop3', '--bind=/dev/loop4', '--bind=/dev/loop5', '--bind=/dev/loop6', '--bind=/dev/loop7', '--bind=/dev/loop8', '--bind=/dev/loop9', '--bind=/dev/loop10', '--bind=/dev/loop11', '--console=pipe', '--setenv=TERM=vt100', '--setenv=SHELL=/bin/bash', '--setenv=HOME=/builddir', '--setenv=HOSTNAME=mock', '--setenv=PATH=/usr/bin:/bin:/usr/sbin:/sbin', '--setenv=PROMPT_COMMAND=printf "\\033]0;<mock-chroot>\\007"', '--setenv=PS1=<mock-chroot> \\s-\\v\\$ ', '--setenv=LANG=C.UTF-8', '--resolv-conf=off', 'bash', '--login', '-c', '/usr/bin/rpmbuild -bb --noclean --target noarch --nodeps /builddir/build/SPECS/rubygem-hitimes.spec'] with env {'TERM': 'vt100', 'SHELL': '/bin/bash', 'HOME': '/builddir', 'HOSTNAME': 'mock', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'PROMPT_COMMAND': 'printf "\\033]0;<mock-chroot>\\007"', 'PS1': '<mock-chroot> \\s-\\v\\$ ', 'LANG': 'C.UTF-8', 'SYSTEMD_NSPAWN_TMPFS_TMP': '0', 'SYSTEMD_SECCOMP': '0'} and shell False
+Building target platforms: noarch
+Building for target noarch
+setting SOURCE_DATE_EPOCH=1721347200
+Executing(%mkbuilddir): /bin/sh -e /var/tmp/rpm-tmp.tuUXoV
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.rd1vRw
++ umask 022
++ cd /builddir/build/BUILD/rubygem-hitimes-2.0.0-build
++ cd /builddir/build/BUILD/rubygem-hitimes-2.0.0-build
++ rm -rf hitimes-2.0.0
++ /usr/lib/rpm/rpmuncompress -x /builddir/build/SOURCES/hitimes-2.0.0.gem
+Unpacked gem: '/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0'
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd hitimes-2.0.0
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.3w0jFo
++ umask 022
++ cd /builddir/build/BUILD/rubygem-hitimes-2.0.0-build
++ CFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -mcpu=power8 -mtune=power8 -fasynchronous-unwind-tables -fstack-clash-protection '
++ export CFLAGS
++ CXXFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -mcpu=power8 -mtune=power8 -fasynchronous-unwind-tables -fstack-clash-protection '
++ export CXXFLAGS
++ FFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -mcpu=power8 -mtune=power8 -fasynchronous-unwind-tables -fstack-clash-protection -I/usr/lib/gfortran/modules '
++ export FFLAGS
++ FCFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -mcpu=power8 -mtune=power8 -fasynchronous-unwind-tables -fstack-clash-protection -I/usr/lib/gfortran/modules '
++ export FCFLAGS
++ VALAFLAGS=-g
++ export VALAFLAGS
++ RUSTFLAGS='-Copt-level=3 -Cdebuginfo=2 -Ccodegen-units=1 -Cstrip=none -Cforce-frame-pointers=yes --cap-lints=warn'
++ export RUSTFLAGS
++ LDFLAGS='-Wl,-z,relro -Wl,--as-needed   -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1  '
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib:
++ export LT_SYS_LIBRARY_PATH
++ CC=gcc
++ export CC
++ CXX=g++
++ export CXX
++ cd hitimes-2.0.0
++ gem build ../hitimes-2.0.0.gemspec
+WARNING:  expected RubyGems version 3.5.22, was 3.0.3
+WARNING:  See https://guides.rubygems.org/specification-reference/ for help
+  Successfully built RubyGem
+  Name: hitimes
+  Version: 2.0.0
+  File: hitimes-2.0.0.gem
++ mkdir -p ./usr/share/gems
++ CONFIGURE_ARGS='--with-cflags='\''-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wno-complain-wrong-lang -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -mcpu=power8 -mtune=power8 -fasynchronous-unwind-tables -fstack-clash-protection'\'' --with-cxxflags='\''-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wno-complain-wrong-lang -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -mcpu=power8 -mtune=power8 -fasynchronous-unwind-tables -fstack-clash-protection'\'' --with-ldflags='\''-Wl,-z,relro -Wl,--as-needed   -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1  '\'' '
++ gem install -V --local --build-root . --force --document=ri,rdoc hitimes-2.0.0.gem
+WARNING:  You build with buildroot.
+  Build root: /builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0
+  Bin dir: /builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/bin
+  Gem home: /builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems
+  Plugins dir: /builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/plugins
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/CONTRIBUTING.md
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/HISTORY.md
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/LICENSE
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/Manifest.txt
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/README.md
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/Rakefile
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/examples/benchmarks.rb
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/examples/stats.rb
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/lib/hitimes.rb
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/lib/hitimes/initialize.rb
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/lib/hitimes/instant.rb
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/lib/hitimes/interval.rb
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/lib/hitimes/metric.rb
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/lib/hitimes/mutexed_stats.rb
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/lib/hitimes/paths.rb
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/lib/hitimes/stats.rb
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/lib/hitimes/timed_metric.rb
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/lib/hitimes/timed_value_metric.rb
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/lib/hitimes/value_metric.rb
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/lib/hitimes/version.rb
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/spec/hitimes_spec.rb
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/spec/interval_spec.rb
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/spec/metric_spec.rb
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/spec/mutex_stats_spec.rb
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/spec/paths_spec.rb
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/spec/spec_helper.rb
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/spec/stats_spec.rb
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/spec/timed_metric_spec.rb
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/spec/timed_value_metric_spec.rb
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/spec/value_metric_spec.rb
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/spec/version_spec.rb
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/tasks/default.rake
+/builddir/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0/tasks/this.rb
+Successfully installed hitimes-2.0.0
+Parsing documentation for hitimes-2.0.0
+Parsing sources...
+  6% [ 1/16]  CONTRIBUTING.md
+ 12% [ 2/16]  HISTORY.md
+ 18% [ 3/16]  Manifest.txt
+ 25% [ 4/16]  README.md
+ 31% [ 5/16]  lib/hitimes.rb
+ 37% [ 6/16]  lib/hitimes/initialize.rb
+ 43% [ 7/16]  lib/hitimes/instant.rb
+ 50% [ 8/16]  lib/hitimes/interval.rb
+ 56% [ 9/16]  lib/hitimes/metric.rb
+ 62% [10/16]  lib/hitimes/mutexed_stats.rb
+ 68% [11/16]  lib/hitimes/paths.rb
+ 75% [12/16]  lib/hitimes/stats.rb
+ 81% [13/16]  lib/hitimes/timed_metric.rb
+ 87% [14/16]  lib/hitimes/timed_value_metric.rb
+ 93% [15/16]  lib/hitimes/value_metric.rb
+100% [16/16]  lib/hitimes/version.rb
+Installing ri documentation for hitimes-2.0.0
+Installing darkfish documentation for hitimes-2.0.0
+Done installing documentation for hitimes after 1 seconds
+1 gem installed
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.DpS3qM
++ umask 022
++ cd /builddir/build/BUILD/rubygem-hitimes-2.0.0-build
++ '[' /builddir/build/BUILD/rubygem-hitimes-2.0.0-build/BUILDROOT '!=' / ']'
++ rm -rf /builddir/build/BUILD/rubygem-hitimes-2.0.0-build/BUILDROOT
+++ dirname /builddir/build/BUILD/rubygem-hitimes-2.0.0-build/BUILDROOT
++ mkdir -p /builddir/build/BUILD/rubygem-hitimes-2.0.0-build
++ mkdir /builddir/build/BUILD/rubygem-hitimes-2.0.0-build/BUILDROOT
++ CFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -mcpu=power8 -mtune=power8 -fasynchronous-unwind-tables -fstack-clash-protection '
++ export CFLAGS
++ CXXFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -mcpu=power8 -mtune=power8 -fasynchronous-unwind-tables -fstack-clash-protection '
++ export CXXFLAGS
++ FFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -mcpu=power8 -mtune=power8 -fasynchronous-unwind-tables -fstack-clash-protection -I/usr/lib/gfortran/modules '
++ export FFLAGS
++ FCFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -mcpu=power8 -mtune=power8 -fasynchronous-unwind-tables -fstack-clash-protection -I/usr/lib/gfortran/modules '
++ export FCFLAGS
++ VALAFLAGS=-g
++ export VALAFLAGS
++ RUSTFLAGS='-Copt-level=3 -Cdebuginfo=2 -Ccodegen-units=1 -Cstrip=none -Cforce-frame-pointers=yes --cap-lints=warn'
++ export RUSTFLAGS
++ LDFLAGS='-Wl,-z,relro -Wl,--as-needed   -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1  '
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib:
++ export LT_SYS_LIBRARY_PATH
++ CC=gcc
++ export CC
++ CXX=g++
++ export CXX
++ cd hitimes-2.0.0
++ mkdir -p /builddir/build/BUILD/rubygem-hitimes-2.0.0-build/BUILDROOT/usr/share/gems
++ cp -pa ./usr/share/gems/build_info ./usr/share/gems/cache ./usr/share/gems/doc ./usr/share/gems/extensions ./usr/share/gems/gems ./usr/share/gems/plugins ./usr/share/gems/specifications /builddir/build/BUILD/rubygem-hitimes-2.0.0-build/BUILDROOT/usr/share/gems/
++ /usr/lib/rpm/check-buildroot
++ /usr/lib/rpm/redhat/brp-ldconfig
++ /usr/lib/rpm/brp-compress
++ /usr/lib/rpm/brp-strip /usr/bin/strip
++ /usr/lib/rpm/brp-strip-comment-note /usr/bin/strip /usr/bin/objdump
++ /usr/lib/rpm/redhat/brp-strip-lto /usr/bin/strip
++ /usr/lib/rpm/brp-strip-static-archive /usr/bin/strip
++ /usr/lib/rpm/check-rpaths
++ /usr/lib/rpm/redhat/brp-mangle-shebangs
++ /usr/lib/rpm/brp-remove-la-files
++ env /usr/lib/rpm/redhat/brp-python-bytecompile '' 1 0 -j8
++ /usr/lib/rpm/redhat/brp-python-hardlink
++ /usr/bin/add-determinism --brp -j8 /builddir/build/BUILD/rubygem-hitimes-2.0.0-build/BUILDROOT
+Scanned 36 directories and 200 files,
+               processed 17 inodes,
+               0 modified (0 replaced + 0 rewritten),
+               0 unsupported format, 0 errors
+Executing(%check): /bin/sh -e /var/tmp/rpm-tmp.ngnHUf
++ umask 022
++ cd /builddir/build/BUILD/rubygem-hitimes-2.0.0-build
++ CFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -mcpu=power8 -mtune=power8 -fasynchronous-unwind-tables -fstack-clash-protection '
++ export CFLAGS
++ CXXFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -mcpu=power8 -mtune=power8 -fasynchronous-unwind-tables -fstack-clash-protection '
++ export CXXFLAGS
++ FFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -mcpu=power8 -mtune=power8 -fasynchronous-unwind-tables -fstack-clash-protection -I/usr/lib/gfortran/modules '
++ export FFLAGS
++ FCFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -mcpu=power8 -mtune=power8 -fasynchronous-unwind-tables -fstack-clash-protection -I/usr/lib/gfortran/modules '
++ export FCFLAGS
++ VALAFLAGS=-g
++ export VALAFLAGS
++ RUSTFLAGS='-Copt-level=3 -Cdebuginfo=2 -Ccodegen-units=1 -Cstrip=none -Cforce-frame-pointers=yes --cap-lints=warn'
++ export RUSTFLAGS
++ LDFLAGS='-Wl,-z,relro -Wl,--as-needed   -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1  '
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib:
++ export LT_SYS_LIBRARY_PATH
++ CC=gcc
++ export CC
++ CXX=g++
++ export CXX
+~/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0/usr/share/gems/gems/hitimes-2.0.0 ~/build/BUILD/rubygem-hitimes-2.0.0-build/hitimes-2.0.0
++ cd hitimes-2.0.0
++ pushd .//usr/share/gems/gems/hitimes-2.0.0
++ sed -i '/^if RUBY_VERSION/,/^end$/ s/^/# /g' spec/spec_helper.rb
++ ruby -Ilib:spec -e 'Dir.glob "./spec/*spec.rb", &method(:require)'
+Run options: --seed 53807
+# Running:
+.......................................................................................................F.........F..................
+Finished in 7.228097s, 18.2621 runs/s, 29.0533 assertions/s.
+  1) Failure:
+Hitimes::TimedValueMetric#test_0008_calculates the stddev of the durations [spec/timed_value_metric_spec.rb:61]:
+Expected |0.05 - 0.047793456202974996| (0.002206543797025007) to be <= 0.001.
+  2) Failure:
+Hitimes::TimedValueMetric#test_0017_can measure a block of code from an instance [spec/timed_value_metric_spec.rb:125]:
+Expected |0.15 - 0.16569746200000002| (0.015697462000000023) to be <= 0.004.
+132 runs, 210 assertions, 2 failures, 0 errors, 0 skips
+RPM build errors:
+error: Bad exit status from /var/tmp/rpm-tmp.ngnHUf (%check)
+    Bad exit status from /var/tmp/rpm-tmp.ngnHUf (%check)
+Child return code was: 1
+EXCEPTION: [Error('Command failed: \n # /usr/bin/systemd-nspawn -q -M 8701535bb8c2424791ce4e62c50c8f4d -D /var/lib/mock/f41-build-59817139-6576644/root -a -u mockbuild --capability=cap_ipc_lock --bind=/tmp/mock-resolv.epdy32q5:/etc/resolv.conf --bind=/dev/btrfs-control --bind=/dev/mapper/control --bind=/dev/fuse --bind=/dev/loop-control --bind=/dev/loop0 --bind=/dev/loop1 --bind=/dev/loop2 --bind=/dev/loop3 --bind=/dev/loop4 --bind=/dev/loop5 --bind=/dev/loop6 --bind=/dev/loop7 --bind=/dev/loop8 --bind=/dev/loop9 --bind=/dev/loop10 --bind=/dev/loop11 --console=pipe --setenv=TERM=vt100 --setenv=SHELL=/bin/bash --setenv=HOME=/builddir --setenv=HOSTNAME=mock --setenv=PATH=/usr/bin:/bin:/usr/sbin:/sbin \'--setenv=PROMPT_COMMAND=printf "\\033]0;<mock-chroot>\\007"\' \'--setenv=PS1=<mock-chroot> \\s-\\v\\$ \' --setenv=LANG=C.UTF-8 --resolv-conf=off bash --login -c \'/usr/bin/rpmbuild -bb --noclean --target noarch --nodeps /builddir/build/SPECS/rubygem-hitimes.spec\'\n', 1)]
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/site-packages/mockbuild/trace_decorator.py", line 93, in trace
+    result = func(*args, **kw)
+  File "/usr/lib/python3.13/site-packages/mockbuild/util.py", line 610, in do_with_status
+    raise exception.Error("Command failed: \n # %s\n%s" % (cmd_pretty(command, env), output), child.returncode)
+mockbuild.exception.Error: Command failed: 
+ # /usr/bin/systemd-nspawn -q -M 8701535bb8c2424791ce4e62c50c8f4d -D /var/lib/mock/f41-build-59817139-6576644/root -a -u mockbuild --capability=cap_ipc_lock --bind=/tmp/mock-resolv.epdy32q5:/etc/resolv.conf --bind=/dev/btrfs-control --bind=/dev/mapper/control --bind=/dev/fuse --bind=/dev/loop-control --bind=/dev/loop0 --bind=/dev/loop1 --bind=/dev/loop2 --bind=/dev/loop3 --bind=/dev/loop4 --bind=/dev/loop5 --bind=/dev/loop6 --bind=/dev/loop7 --bind=/dev/loop8 --bind=/dev/loop9 --bind=/dev/loop10 --bind=/dev/loop11 --console=pipe --setenv=TERM=vt100 --setenv=SHELL=/bin/bash --setenv=HOME=/builddir --setenv=HOSTNAME=mock --setenv=PATH=/usr/bin:/bin:/usr/sbin:/sbin '--setenv=PROMPT_COMMAND=printf "\033]0;<mock-chroot>\007"' '--setenv=PS1=<mock-chroot> \s-\v\$ ' --setenv=LANG=C.UTF-8 --resolv-conf=off bash --login -c '/usr/bin/rpmbuild -bb --noclean --target noarch --nodeps /builddir/build/SPECS/rubygem-hitimes.spec'
+

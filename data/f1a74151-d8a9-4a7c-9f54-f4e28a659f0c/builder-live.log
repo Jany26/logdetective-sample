@@ -1,0 +1,298 @@
+Warning: Permanently added '54.147.252.229' (ED25519) to the list of known hosts.
+
+You can reproduce this build on your computer by running:
+
+  sudo dnf install copr-rpmbuild
+  /usr/bin/copr-rpmbuild --verbose --drop-resultdir --task-url https://copr.fedorainfracloud.org/backend/get-build-task/7146205-fedora-40-x86_64 --chroot fedora-40-x86_64
+
+
+Version: 0.71
+PID: 6598
+Logging PID: 6599
+Task:
+{'allow_user_ssh': False,
+ 'appstream': False,
+ 'background': False,
+ 'build_id': 7146205,
+ 'buildroot_pkgs': [],
+ 'chroot': 'fedora-40-x86_64',
+ 'enable_net': False,
+ 'fedora_review': False,
+ 'git_hash': '12d6a942cd7ae3aa65365d01036890ef217234e2',
+ 'git_repo': 'https://copr-dist-git.fedorainfracloud.org/git/rpmsoftwaremanagement/dnf5-testing/dnf',
+ 'isolation': 'default',
+ 'memory_reqs': 2048,
+ 'package_name': 'dnf',
+ 'package_version': '4.19.0-1',
+ 'project_dirname': 'dnf5-testing',
+ 'project_name': 'dnf5-testing',
+ 'project_owner': 'rpmsoftwaremanagement',
+ 'repo_priority': None,
+ 'repos': [{'baseurl': 'https://download.copr.fedorainfracloud.org/results/rpmsoftwaremanagement/dnf5-testing/fedora-40-x86_64/',
+            'id': 'copr_base',
+            'name': 'Copr repository',
+            'priority': None}],
+ 'sandbox': 'rpmsoftwaremanagement/dnf5-testing--rpmsoftwaremanagement',
+ 'source_json': {},
+ 'source_type': None,
+ 'ssh_public_keys': None,
+ 'submitter': 'rpmsoftwaremanagement',
+ 'tags': [],
+ 'task_id': '7146205-fedora-40-x86_64',
+ 'timeout': 18000,
+ 'uses_devel_repo': False,
+ 'with_opts': ['dnf5_obsoletes_dnf'],
+ 'without_opts': []}
+
+Running: git clone https://copr-dist-git.fedorainfracloud.org/git/rpmsoftwaremanagement/dnf5-testing/dnf /var/lib/copr-rpmbuild/workspace/workdir-_e7uskp6/dnf --depth 500 --no-single-branch --recursive
+
+cmd: ['git', 'clone', 'https://copr-dist-git.fedorainfracloud.org/git/rpmsoftwaremanagement/dnf5-testing/dnf', '/var/lib/copr-rpmbuild/workspace/workdir-_e7uskp6/dnf', '--depth', '500', '--no-single-branch', '--recursive']
+cwd: .
+rc: 0
+stdout: 
+stderr: Cloning into '/var/lib/copr-rpmbuild/workspace/workdir-_e7uskp6/dnf'...
+
+Running: git checkout 12d6a942cd7ae3aa65365d01036890ef217234e2 --
+
+cmd: ['git', 'checkout', '12d6a942cd7ae3aa65365d01036890ef217234e2', '--']
+cwd: /var/lib/copr-rpmbuild/workspace/workdir-_e7uskp6/dnf
+rc: 0
+stdout: 
+stderr: Note: switching to '12d6a942cd7ae3aa65365d01036890ef217234e2'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 12d6a94 automatic import of dnf
+
+Running: copr-distgit-client sources
+
+cmd: ['copr-distgit-client', 'sources']
+cwd: /var/lib/copr-rpmbuild/workspace/workdir-_e7uskp6/dnf
+rc: 0
+stdout: 
+stderr: INFO: Reading stdout from command: git rev-parse --abbrev-ref HEAD
+INFO: Reading stdout from command: git rev-parse HEAD
+INFO: Reading sources specification file: sources
+INFO: Downloading dnf-4.19.0.tar.gz
+INFO: Reading stdout from command: curl --help all
+INFO: Calling: curl -H Pragma: -o dnf-4.19.0.tar.gz --location --connect-timeout 60 --retry 3 --retry-delay 10 --remote-time --show-error --fail --retry-all-errors https://copr-dist-git.fedorainfracloud.org/repo/pkgs/rpmsoftwaremanagement/dnf5-testing/dnf/dnf-4.19.0.tar.gz/md5/21a1eaaa8a4ab1b222460983125c141b/dnf-4.19.0.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 2105k  100 2105k    0     0   135M      0 --:--:-- --:--:-- --:--:--  137M
+/usr/bin/tail: /var/lib/copr-rpmbuild/main.log: file truncated
+INFO: Reading stdout from command: md5sum dnf-4.19.0.tar.gz
+
+Running (timeout=18000): unbuffer mock --spec /var/lib/copr-rpmbuild/workspace/workdir-_e7uskp6/dnf/dnf.spec --sources /var/lib/copr-rpmbuild/workspace/workdir-_e7uskp6/dnf --resultdir /var/lib/copr-rpmbuild/results --uniqueext 1710324132.528990 -r /var/lib/copr-rpmbuild/results/configs/child.cfg --with dnf5_obsoletes_dnf
+INFO: mock.py version 5.5 starting (python version = 3.12.1, NVR = mock-5.5-1.fc39), args: /usr/libexec/mock/mock --spec /var/lib/copr-rpmbuild/workspace/workdir-_e7uskp6/dnf/dnf.spec --sources /var/lib/copr-rpmbuild/workspace/workdir-_e7uskp6/dnf --resultdir /var/lib/copr-rpmbuild/results --uniqueext 1710324132.528990 -r /var/lib/copr-rpmbuild/results/configs/child.cfg --with dnf5_obsoletes_dnf
+Start(bootstrap): init plugins
+INFO: tmpfs initialized
+INFO: selinux enabled
+INFO: chroot_scan: initialized
+INFO: compress_logs: initialized
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: tmpfs initialized
+INFO: selinux enabled
+INFO: chroot_scan: initialized
+INFO: compress_logs: initialized
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+INFO: Start(/var/lib/copr-rpmbuild/workspace/workdir-_e7uskp6/dnf/dnf.spec)  Config(fedora-40-x86_64)
+Start: clean chroot
+Finish: clean chroot
+Mock Version: 5.5
+INFO: Mock Version: 5.5
+Start(bootstrap): chroot init
+INFO: mounting tmpfs at /var/lib/mock/fedora-40-x86_64-bootstrap-1710324132.528990/root.
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: Guessed host environment type: unknown
+INFO: Using bootstrap image: registry.fedoraproject.org/fedora:40
+INFO: Pulling image: registry.fedoraproject.org/fedora:40
+INFO: Copy content of container registry.fedoraproject.org/fedora:40 to /var/lib/mock/fedora-40-x86_64-bootstrap-1710324132.528990/root
+INFO: Checking that registry.fedoraproject.org/fedora:40 image matches host's architecture
+INFO: mounting registry.fedoraproject.org/fedora:40 with podman image mount
+INFO: image registry.fedoraproject.org/fedora:40 as /var/lib/containers/storage/overlay/8d3b52bd7baca8b7c86c3cea26a0cc19786aba5d864073bdbcaa6b7dbdbd9364/merged
+INFO: umounting image registry.fedoraproject.org/fedora:40 (/var/lib/containers/storage/overlay/8d3b52bd7baca8b7c86c3cea26a0cc19786aba5d864073bdbcaa6b7dbdbd9364/merged) with podman image umount
+INFO: Using 'dnf' instead of 'dnf5' for bootstrap chroot
+INFO: Package manager dnf detected and used (fallback)
+INFO: Bootstrap image not marked ready
+Start(bootstrap): installing dnf5 tooling
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Copr repository                                 465 kB/s |  13 kB     00:00    
+fedora                                           52 MB/s |  33 MB     00:00    
+updates                                         2.5 kB/s | 134  B     00:00    
+Dependencies resolved.
+================================================================================
+ Package             Architecture  Version               Repository        Size
+================================================================================
+Installing:
+ dnf5                x86_64        5.1.12-1.fc40         copr_base        581 k
+     replacing  dnf.noarch 4.19.0-1.fc40
+     replacing  yum.noarch 4.19.0-1.fc40
+ dnf5-plugins        x86_64        5.1.12-1.fc40         copr_base        345 k
+Installing dependencies:
+ fmt                 x86_64        10.2.1-3.fc40         fedora           125 k
+ libdnf5             x86_64        5.1.12-1.fc40         copr_base        975 k
+ libdnf5-cli         x86_64        5.1.12-1.fc40         copr_base        262 k
+ sdbus-cpp           x86_64        1.4.0-2.fc40          fedora           110 k
+
+Transaction Summary
+================================================================================
+Install  6 Packages
+
+Total download size: 2.3 M
+Downloading Packages:
+(1/6): dnf5-5.1.12-1.fc40.x86_64.rpm             35 MB/s | 581 kB     00:00    
+(2/6): libdnf5-5.1.12-1.fc40.x86_64.rpm          54 MB/s | 975 kB     00:00    
+(3/6): dnf5-plugins-5.1.12-1.fc40.x86_64.rpm     18 MB/s | 345 kB     00:00    
+(4/6): libdnf5-cli-5.1.12-1.fc40.x86_64.rpm      77 MB/s | 262 kB     00:00    
+(5/6): fmt-10.2.1-3.fc40.x86_64.rpm             9.2 MB/s | 125 kB     00:00    
+(6/6): sdbus-cpp-1.4.0-2.fc40.x86_64.rpm        7.3 MB/s | 110 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                            34 MB/s | 2.3 MB     00:00     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Error: Transaction test error:
+  file /etc/dnf/dnf.conf from install of libdnf5-5.1.12-1.fc40.x86_64 conflicts with file from package dnf-data-4.19.0-1.fc40.noarch
+
+WARNING: DNF command failed, retrying, attempt #2, sleeping 10s
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Copr repository                                 112 kB/s | 1.5 kB     00:00    
+fedora                                           80 kB/s |  21 kB     00:00    
+updates                                          86 kB/s |  24 kB     00:00    
+Dependencies resolved.
+================================================================================
+ Package             Architecture  Version               Repository        Size
+================================================================================
+Installing:
+ dnf5                x86_64        5.1.12-1.fc40         copr_base        581 k
+     replacing  dnf.noarch 4.19.0-1.fc40
+     replacing  yum.noarch 4.19.0-1.fc40
+ dnf5-plugins        x86_64        5.1.12-1.fc40         copr_base        345 k
+Installing dependencies:
+ fmt                 x86_64        10.2.1-3.fc40         fedora           125 k
+ libdnf5             x86_64        5.1.12-1.fc40         copr_base        975 k
+ libdnf5-cli         x86_64        5.1.12-1.fc40         copr_base        262 k
+ sdbus-cpp           x86_64        1.4.0-2.fc40          fedora           110 k
+
+Transaction Summary
+================================================================================
+Install  6 Packages
+
+Total size: 2.3 M
+Downloading Packages:
+[SKIPPED] dnf5-5.1.12-1.fc40.x86_64.rpm: Already downloaded                    
+[SKIPPED] dnf5-plugins-5.1.12-1.fc40.x86_64.rpm: Already downloaded            
+[SKIPPED] libdnf5-5.1.12-1.fc40.x86_64.rpm: Already downloaded                 
+[SKIPPED] libdnf5-cli-5.1.12-1.fc40.x86_64.rpm: Already downloaded             
+[SKIPPED] fmt-10.2.1-3.fc40.x86_64.rpm: Already downloaded                     
+[SKIPPED] sdbus-cpp-1.4.0-2.fc40.x86_64.rpm: Already downloaded                
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Error: Transaction test error:
+  file /etc/dnf/dnf.conf from install of libdnf5-5.1.12-1.fc40.x86_64 conflicts with file from package dnf-data-4.19.0-1.fc40.noarch
+
+WARNING: DNF command failed, retrying, attempt #3, sleeping 10s
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Copr repository                                 125 kB/s | 1.5 kB     00:00    
+fedora                                           68 kB/s |  21 kB     00:00    
+updates                                         890 kB/s |  24 kB     00:00    
+Dependencies resolved.
+================================================================================
+ Package             Architecture  Version               Repository        Size
+================================================================================
+Installing:
+ dnf5                x86_64        5.1.12-1.fc40         copr_base        581 k
+     replacing  dnf.noarch 4.19.0-1.fc40
+     replacing  yum.noarch 4.19.0-1.fc40
+ dnf5-plugins        x86_64        5.1.12-1.fc40         copr_base        345 k
+Installing dependencies:
+ fmt                 x86_64        10.2.1-3.fc40         fedora           125 k
+ libdnf5             x86_64        5.1.12-1.fc40         copr_base        975 k
+ libdnf5-cli         x86_64        5.1.12-1.fc40         copr_base        262 k
+ sdbus-cpp           x86_64        1.4.0-2.fc40          fedora           110 k
+
+Transaction Summary
+================================================================================
+Install  6 Packages
+
+Total size: 2.3 M
+Downloading Packages:
+[SKIPPED] dnf5-5.1.12-1.fc40.x86_64.rpm: Already downloaded                    
+[SKIPPED] dnf5-plugins-5.1.12-1.fc40.x86_64.rpm: Already downloaded            
+[SKIPPED] libdnf5-5.1.12-1.fc40.x86_64.rpm: Already downloaded                 
+[SKIPPED] libdnf5-cli-5.1.12-1.fc40.x86_64.rpm: Already downloaded             
+[SKIPPED] fmt-10.2.1-3.fc40.x86_64.rpm: Already downloaded                     
+[SKIPPED] sdbus-cpp-1.4.0-2.fc40.x86_64.rpm: Already downloaded                
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Error: Transaction test error:
+  file /etc/dnf/dnf.conf from install of libdnf5-5.1.12-1.fc40.x86_64 conflicts with file from package dnf-data-4.19.0-1.fc40.noarch
+
+ERROR: Exception(/var/lib/copr-rpmbuild/workspace/workdir-_e7uskp6/dnf/dnf.spec) Config(fedora-40-x86_64) 0 minutes 30 seconds
+INFO: Results and/or logs in: /var/lib/copr-rpmbuild/results
+INFO: Cleaning up build root ('cleanup_on_failure=True')
+Start: clean chroot
+Finish: clean chroot
+ERROR: Command failed: 
+ # /usr/bin/systemd-nspawn -q -M b37ab66af1d744cabab3e82742428a21 -D /var/lib/mock/fedora-40-x86_64-bootstrap-1710324132.528990/root -a --console=pipe --setenv=TERM=vt100 --setenv=SHELL=/bin/bash --setenv=HOME=/var/lib/mock/fedora-40-x86_64-bootstrap-1710324132.528990/root/installation-homedir --setenv=HOSTNAME=mock --setenv=PATH=/usr/bin:/bin:/usr/sbin:/sbin '--setenv=PROMPT_COMMAND=printf "\033]0;<mock-chroot>\007"' '--setenv=PS1=<mock-chroot> \s-\v\$ ' --setenv=LANG=C.UTF-8 --setenv=LC_MESSAGES=C.UTF-8 --setenv=SYSTEMD_NSPAWN_TMPFS_TMP=0 --setenv=SYSTEMD_SECCOMP=0 --resolv-conf=off /usr/bin/dnf-3 --releasever 40 --setopt=deltarpm=False --setopt=allow_vendor_change=yes --allowerasing --disableplugin=local --disableplugin=spacewalk --disableplugin=versionlock install dnf5 dnf5-plugins --setopt=tsflags=nocontexts --setopt=tsflags=nocontexts --setopt=tsflags=nocontexts
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Copr repository                                 125 kB/s | 1.5 kB     00:00    
+fedora                                           68 kB/s |  21 kB     00:00    
+updates                                         890 kB/s |  24 kB     00:00    
+Dependencies resolved.
+================================================================================
+ Package             Architecture  Version               Repository        Size
+================================================================================
+Installing:
+ dnf5                x86_64        5.1.12-1.fc40         copr_base        581 k
+     replacing  dnf.noarch 4.19.0-1.fc40
+     replacing  yum.noarch 4.19.0-1.fc40
+ dnf5-plugins        x86_64        5.1.12-1.fc40         copr_base        345 k
+Installing dependencies:
+ fmt                 x86_64        10.2.1-3.fc40         fedora           125 k
+ libdnf5             x86_64        5.1.12-1.fc40         copr_base        975 k
+ libdnf5-cli         x86_64        5.1.12-1.fc40         copr_base        262 k
+ sdbus-cpp           x86_64        1.4.0-2.fc40          fedora           110 k
+
+Transaction Summary
+================================================================================
+Install  6 Packages
+
+Total size: 2.3 M
+Downloading Packages:
+[SKIPPED] dnf5-5.1.12-1.fc40.x86_64.rpm: Already downloaded                    
+[SKIPPED] dnf5-plugins-5.1.12-1.fc40.x86_64.rpm: Already downloaded            
+[SKIPPED] libdnf5-5.1.12-1.fc40.x86_64.rpm: Already downloaded                 
+[SKIPPED] libdnf5-cli-5.1.12-1.fc40.x86_64.rpm: Already downloaded             
+[SKIPPED] fmt-10.2.1-3.fc40.x86_64.rpm: Already downloaded                     
+[SKIPPED] sdbus-cpp-1.4.0-2.fc40.x86_64.rpm: Already downloaded                
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Error: Transaction test error:
+  file /etc/dnf/dnf.conf from install of libdnf5-5.1.12-1.fc40.x86_64 conflicts with file from package dnf-data-4.19.0-1.fc40.noarch
+
+
+Copr build error: Build failed

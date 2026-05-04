@@ -1,0 +1,183 @@
+[2025-06-16 11:08:25,500][  INFO][PID:119974] Marking build as starting
+[2025-06-16 11:08:26,149][  INFO][PID:119974] Checking for cancel request
+[2025-06-16 11:08:26,163][  INFO][PID:119974] VM allocation process starts
+[2025-06-16 11:08:26,253][  INFO][PID:119974] Trying to allocate VM: ResallocHost, ticket_id=3506587, requested_tags=['copr_builder', 'arch_x86_64']
+[2025-06-16 11:08:31,279][  INFO][PID:119974] Checking for cancel request
+[2025-06-16 11:08:36,294][  INFO][PID:119974] Checking for cancel request
+[2025-06-16 11:08:41,324][  INFO][PID:119974] Checking for cancel request
+[2025-06-16 11:08:44,541][  INFO][PID:119974] Allocated host ResallocHost, ticket_id=3506587, hostname=107.23.0.119, name=aws_x86_64_spot_prod_04826227_20250616_105332, requested_tags=['copr_builder', 'arch_x86_64']
+[2025-06-16 11:08:44,545][  INFO][PID:119974] Allocating ssh connection to builder
+[2025-06-16 11:08:44,547][  INFO][PID:119974] Checking that builder machine is OK
+[2025-06-16 11:08:45,075][  INFO][PID:119974] Running remote command: copr-builder-ready fedora-rawhide-x86_64
+[2025-06-16 11:08:45,460][  INFO][PID:119974] Red Hat subscription not needed for fedora-rawhide-x86_64
+Builder is ready to be used
+
+[2025-06-16 11:08:45,468][  INFO][PID:119974] Filling build.info file with builder info
+[2025-06-16 11:08:45,470][  INFO][PID:119974] Checking for cancel request
+[2025-06-16 11:08:45,480][  INFO][PID:119974] Sending build state back to frontend: {
+    "builds": [
+        {
+            "timeout": 18000,
+            "frontend_base_url": "https://copr.fedorainfracloud.org",
+            "memory_reqs": 2048,
+            "enable_net": false,
+            "project_owner": "@copr",
+            "project_name": "PyPI",
+            "project_dirname": "PyPI",
+            "submitter": "ksurma",
+            "ended_on": null,
+            "started_on": 1750072125.4801824,
+            "submitted_on": null,
+            "status": 3,
+            "chroot": "fedora-rawhide-x86_64",
+            "arch": "x86_64",
+            "buildroot_pkgs": [],
+            "task_id": "9165238-fedora-rawhide-x86_64",
+            "build_id": 9165238,
+            "package_name": "python-idds-common",
+            "package_version": "2.2.41-1",
+            "git_repo": "https://copr-dist-git.fedorainfracloud.org/git/@copr/PyPI/python-idds-common",
+            "git_hash": "64ad76b3b64c7a36305d988caab3dacd1fdfd02b",
+            "git_branch": null,
+            "source_type": null,
+            "source_json": null,
+            "pkg_name": null,
+            "pkg_main_version": null,
+            "pkg_epoch": null,
+            "pkg_release": null,
+            "srpm_url": null,
+            "uses_devel_repo": false,
+            "sandbox": "@copr/PyPI--ksurma",
+            "results": null,
+            "appstream": false,
+            "allow_user_ssh": false,
+            "ssh_public_keys": null,
+            "storage": null,
+            "background": true,
+            "fedora_review": false,
+            "isolation": "default",
+            "repo_priority": null,
+            "repos": [
+                {
+                    "baseurl": "https://download.copr.fedorainfracloud.org/results/@copr/PyPI/fedora-rawhide-x86_64/",
+                    "id": "copr_base",
+                    "name": "Copr repository",
+                    "priority": null
+                }
+            ],
+            "tags": [
+                "arch_x86_64"
+            ],
+            "with_opts": [],
+            "without_opts": [],
+            "destdir": "/var/lib/copr/public_html/results/@copr/PyPI",
+            "results_repo_url": "https://download.copr.fedorainfracloud.org/results/@copr/PyPI",
+            "result_dir": "09165238-python-idds-common",
+            "built_packages": "",
+            "id": 9165238,
+            "mockchain_macros": {
+                "copr_username": "@copr",
+                "copr_projectname": "PyPI",
+                "vendor": "Fedora Project COPR (@copr/PyPI)"
+            }
+        }
+    ]
+}
+[2025-06-16 11:08:45,561][  INFO][PID:119974] Sending fedora-messaging bus message in build.start
+[2025-06-16 11:08:48,824][  INFO][PID:119974] Sending fedora-messaging bus message in chroot.start
+[2025-06-16 11:08:48,862][  INFO][PID:119974] Starting remote build: copr-rpmbuild --verbose --drop-resultdir --task-url https://copr.fedorainfracloud.org/backend/get-build-task/9165238-fedora-rawhide-x86_64 --chroot fedora-rawhide-x86_64 --detached
+[2025-06-16 11:08:52,272][  INFO][PID:119974] Downloading the builder-live.log file, attempt 1
+[2025-06-16 11:08:52,279][  INFO][PID:119974] Popen command started: ssh -F /home/copr/.ssh/config mockbuilder@107.23.0.119 copr-rpmbuild-log
+[2025-06-16 11:08:57,332][  INFO][PID:119974] Periodic builder liveness probe: alive
+[2025-06-16 11:08:57,335][  INFO][PID:119974] Checking for cancel request
+[2025-06-16 11:09:02,342][  INFO][PID:119974] Checking for cancel request
+[2025-06-16 11:09:07,347][  INFO][PID:119974] Checking for cancel request
+[2025-06-16 11:09:12,352][  INFO][PID:119974] Checking for cancel request
+[2025-06-16 11:09:17,366][  INFO][PID:119974] Checking for cancel request
+[2025-06-16 11:09:22,388][  INFO][PID:119974] Checking for cancel request
+[2025-06-16 11:09:27,395][  INFO][PID:119974] Checking for cancel request
+[2025-06-16 11:09:32,409][  INFO][PID:119974] Checking for cancel request
+[2025-06-16 11:09:36,517][  INFO][PID:119974] Downloading results from builder
+[2025-06-16 11:09:36,520][  INFO][PID:119974] rsyncing of mockbuilder@107.23.0.119:/var/lib/copr-rpmbuild/results/ to /var/lib/copr/public_html/results/@copr/PyPI/fedora-rawhide-x86_64/09165238-python-idds-common started
+[2025-06-16 11:09:36,540][  INFO][PID:119974] Popen command started: /usr/bin/rsync -rltDvH --chmod=D755,F644 -e 'ssh -F /home/copr/.ssh/config' mockbuilder@107.23.0.119:/var/lib/copr-rpmbuild/results/ /var/lib/copr/public_html/results/@copr/PyPI/fedora-rawhide-x86_64/09165238-python-idds-common/ &> /var/lib/copr/public_html/results/@copr/PyPI/fedora-rawhide-x86_64/09165238-python-idds-common/build-09165238.rsync.log
+[2025-06-16 11:09:37,076][  INFO][PID:119974] rsyncing finished.
+[2025-06-16 11:09:37,078][  INFO][PID:119974] Releasing VM back to pool
+[2025-06-16 11:09:37,144][  INFO][PID:119974] Searching for 'success' file in resultdir
+[2025-06-16 11:09:37,156][ ERROR][PID:119974] Build failed: Backend process error: No success file => build failure
+[2025-06-16 11:09:37,169][  INFO][PID:119974] Finished build: id=9165238 failed=True timeout=18000 destdir=/var/lib/copr/public_html/results/@copr/PyPI chroot=fedora-rawhide-x86_64 
+[2025-06-16 11:09:37,192][ ERROR][PID:119974] Backend process error: No success file => build failure
+[2025-06-16 11:09:37,200][  INFO][PID:119974] Worker failed build, took 51.71780490875244
+[2025-06-16 11:09:37,212][  INFO][PID:119974] Sending build state back to frontend: {
+    "builds": [
+        {
+            "timeout": 18000,
+            "frontend_base_url": "https://copr.fedorainfracloud.org",
+            "memory_reqs": 2048,
+            "enable_net": false,
+            "project_owner": "@copr",
+            "project_name": "PyPI",
+            "project_dirname": "PyPI",
+            "submitter": "ksurma",
+            "ended_on": 1750072177.1979873,
+            "started_on": 1750072125.4801824,
+            "submitted_on": null,
+            "status": 0,
+            "chroot": "fedora-rawhide-x86_64",
+            "arch": "x86_64",
+            "buildroot_pkgs": [],
+            "task_id": "9165238-fedora-rawhide-x86_64",
+            "build_id": 9165238,
+            "package_name": "python-idds-common",
+            "package_version": "2.2.41-1",
+            "git_repo": "https://copr-dist-git.fedorainfracloud.org/git/@copr/PyPI/python-idds-common",
+            "git_hash": "64ad76b3b64c7a36305d988caab3dacd1fdfd02b",
+            "git_branch": null,
+            "source_type": null,
+            "source_json": null,
+            "pkg_name": null,
+            "pkg_main_version": null,
+            "pkg_epoch": null,
+            "pkg_release": null,
+            "srpm_url": null,
+            "uses_devel_repo": false,
+            "sandbox": "@copr/PyPI--ksurma",
+            "results": null,
+            "appstream": false,
+            "allow_user_ssh": false,
+            "ssh_public_keys": null,
+            "storage": null,
+            "background": true,
+            "fedora_review": false,
+            "isolation": "default",
+            "repo_priority": null,
+            "repos": [
+                {
+                    "baseurl": "https://download.copr.fedorainfracloud.org/results/@copr/PyPI/fedora-rawhide-x86_64/",
+                    "id": "copr_base",
+                    "name": "Copr repository",
+                    "priority": null
+                }
+            ],
+            "tags": [
+                "arch_x86_64"
+            ],
+            "with_opts": [],
+            "without_opts": [],
+            "destdir": "/var/lib/copr/public_html/results/@copr/PyPI",
+            "results_repo_url": "https://download.copr.fedorainfracloud.org/results/@copr/PyPI",
+            "result_dir": "09165238-python-idds-common",
+            "built_packages": "",
+            "id": 9165238,
+            "mockchain_macros": {
+                "copr_username": "@copr",
+                "copr_projectname": "PyPI",
+                "vendor": "Fedora Project COPR (@copr/PyPI)"
+            }
+        }
+    ]
+}
+[2025-06-16 11:09:37,271][  INFO][PID:119974] Sending fedora-messaging bus message in build.end
+[2025-06-16 11:09:37,402][  INFO][PID:119974] Compressing /var/lib/copr/public_html/results/@copr/PyPI/fedora-rawhide-x86_64/09165238-python-idds-common/builder-live.log by gzip
+[2025-06-16 11:09:37,416][  INFO][PID:119974] Running command 'gzip /var/lib/copr/public_html/results/@copr/PyPI/fedora-rawhide-x86_64/09165238-python-idds-common/builder-live.log' as PID 131518
+[2025-06-16 11:09:37,431][  INFO][PID:119974] Finished after 0 seconds with exit code 0 (gzip /var/lib/copr/public_html/results/@copr/PyPI/fedora-rawhide-x86_64/09165238-python-idds-common/builder-live.log)
+[2025-06-16 11:09:37,448][  INFO][PID:119974] Compressing /var/lib/copr/public_html/results/@copr/PyPI/fedora-rawhide-x86_64/09165238-python-idds-common/backend.log by gzip

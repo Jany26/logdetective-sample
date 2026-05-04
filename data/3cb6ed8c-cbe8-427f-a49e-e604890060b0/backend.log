@@ -1,0 +1,173 @@
+[2024-01-26 05:40:11,142][  INFO][PID:3743068] Marking build as starting
+[2024-01-26 05:40:11,466][  INFO][PID:3743068] Trying to allocate VM
+[2024-01-26 05:46:31,290][  INFO][PID:3743068] Allocated host ResallocHost, ticket_id=886393, hostname=2620:52:3:1:dead:beef:cafe:c117
+[2024-01-26 05:46:31,291][  INFO][PID:3743068] Allocating ssh connection to builder
+[2024-01-26 05:46:31,293][  INFO][PID:3743068] Checking that builder machine is OK
+[2024-01-26 05:46:31,349][  INFO][PID:3743068] Popen command started: ssh -F /home/copr/.ssh/config mockbuilder@2620:52:3:1:dead:beef:cafe:c117 'rpm -q copr-rpmbuild --qf "%{VERSION}
+"'
+[2024-01-26 05:46:32,999][  INFO][PID:3743068] Popen command started: ssh -F /home/copr/.ssh/config mockbuilder@2620:52:3:1:dead:beef:cafe:c117 '/usr/bin/test -f /etc/mock/fedora-39-i386.cfg'
+[2024-01-26 05:46:33,471][  INFO][PID:3743068] Filling build.info file with builder info
+[2024-01-26 05:46:33,481][  INFO][PID:3743068] Sending build state back to frontend: {
+    "builds": [
+        {
+            "timeout": 18000,
+            "frontend_base_url": "https://copr.fedorainfracloud.org",
+            "memory_reqs": 2048,
+            "enable_net": false,
+            "project_owner": "psimovec",
+            "project_name": "scipy-1.10.0",
+            "project_dirname": "scipy-1.10.0",
+            "submitter": "https://src.fedoraproject.org/user/releng",
+            "ended_on": null,
+            "started_on": 1706247993.4813156,
+            "submitted_on": null,
+            "status": 3,
+            "chroot": "fedora-39-i386",
+            "arch": "i386",
+            "buildroot_pkgs": [],
+            "task_id": "6957408-fedora-39-i386",
+            "build_id": 6957408,
+            "package_name": "python-ipyparallel",
+            "package_version": "8.6.1-6",
+            "git_repo": "https://copr-dist-git.fedorainfracloud.org/git/psimovec/scipy-1.10.0/python-ipyparallel",
+            "git_hash": "c4d801983846d581fd6bf46c169ffab8a36015a5",
+            "git_branch": null,
+            "source_type": null,
+            "source_json": null,
+            "pkg_name": null,
+            "pkg_main_version": null,
+            "pkg_epoch": null,
+            "pkg_release": null,
+            "srpm_url": null,
+            "uses_devel_repo": false,
+            "sandbox": "psimovec/scipy-1.10.0--https://src.fedoraproject.org/user/releng",
+            "results": null,
+            "appstream": false,
+            "background": true,
+            "fedora_review": false,
+            "isolation": "default",
+            "repo_priority": null,
+            "repos": [
+                {
+                    "baseurl": "https://download.copr.fedorainfracloud.org/results/psimovec/scipy-1.10.0/fedora-39-i386/",
+                    "id": "copr_base",
+                    "name": "Copr repository",
+                    "priority": null
+                },
+                {
+                    "baseurl": "http://kojipkgs.fedoraproject.org/repos/rawhide/latest/$basearch/",
+                    "id": "http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch",
+                    "name": "Additional repo http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch"
+                }
+            ],
+            "tags": [
+                "arch_i386"
+            ],
+            "with_opts": [],
+            "without_opts": [],
+            "destdir": "/var/lib/copr/public_html/results/psimovec/scipy-1.10.0",
+            "results_repo_url": "https://download.copr.fedorainfracloud.org/results/psimovec/scipy-1.10.0",
+            "result_dir": "06957408-python-ipyparallel",
+            "built_packages": "",
+            "id": 6957408,
+            "mockchain_macros": {
+                "copr_username": "psimovec",
+                "copr_projectname": "scipy-1.10.0",
+                "vendor": "Fedora Project COPR (psimovec/scipy-1.10.0)"
+            }
+        }
+    ]
+}
+[2024-01-26 05:46:33,693][  INFO][PID:3743068] Sending fedora-messaging bus message in build.start
+[2024-01-26 05:46:41,165][  INFO][PID:3743068] Sending fedora-messaging bus message in chroot.start
+[2024-01-26 05:46:41,209][  INFO][PID:3743068] Starting remote build: copr-rpmbuild --verbose --drop-resultdir --task-url https://copr.fedorainfracloud.org/backend/get-build-task/6957408-fedora-39-i386 --chroot fedora-39-i386 --detached
+[2024-01-26 05:46:41,262][  INFO][PID:3743068] Popen command started: ssh -F /home/copr/.ssh/config mockbuilder@2620:52:3:1:dead:beef:cafe:c117 'copr-rpmbuild --verbose --drop-resultdir --task-url https://copr.fedorainfracloud.org/backend/get-build-task/6957408-fedora-39-i386 --chroot fedora-39-i386 --detached'
+[2024-01-26 05:46:41,965][  INFO][PID:3743068] Downloading the builder-live.log file, attempt 1
+[2024-01-26 05:46:41,981][  INFO][PID:3743068] Popen command started: ssh -F /home/copr/.ssh/config mockbuilder@2620:52:3:1:dead:beef:cafe:c117 copr-rpmbuild-log
+[2024-01-26 05:54:19,285][  INFO][PID:3743068] Downloading results from builder
+[2024-01-26 05:54:19,288][  INFO][PID:3743068] rsyncing of mockbuilder@[2620:52:3:1:dead:beef:cafe:c117]:/var/lib/copr-rpmbuild/results/ to /var/lib/copr/public_html/results/psimovec/scipy-1.10.0/fedora-39-i386/06957408-python-ipyparallel started
+[2024-01-26 05:54:19,301][  INFO][PID:3743068] Popen command started: /usr/bin/rsync -rltDvH --chmod=D755,F644 -e 'ssh -F /home/copr/.ssh/config' mockbuilder@[2620:52:3:1:dead:beef:cafe:c117]:/var/lib/copr-rpmbuild/results/ /var/lib/copr/public_html/results/psimovec/scipy-1.10.0/fedora-39-i386/06957408-python-ipyparallel/ &> /var/lib/copr/public_html/results/psimovec/scipy-1.10.0/fedora-39-i386/06957408-python-ipyparallel/build-06957408.rsync.log
+[2024-01-26 05:54:20,239][  INFO][PID:3743068] rsyncing finished.
+[2024-01-26 05:54:20,240][  INFO][PID:3743068] Releasing VM back to pool
+[2024-01-26 05:54:20,293][  INFO][PID:3743068] Searching for 'success' file in resultdir
+[2024-01-26 05:54:20,295][ ERROR][PID:3743068] Build failed: Backend process error: No success file => build failure
+[2024-01-26 05:54:20,302][  INFO][PID:3743068] Finished build: id=6957408 failed=True timeout=18000 destdir=/var/lib/copr/public_html/results/psimovec/scipy-1.10.0 chroot=fedora-39-i386 
+[2024-01-26 05:54:20,306][ ERROR][PID:3743068] Backend process error: No success file => build failure
+[2024-01-26 05:54:20,307][  INFO][PID:3743068] Worker failed build, took 466.82649087905884
+[2024-01-26 05:54:20,310][  INFO][PID:3743068] Sending build state back to frontend: {
+    "builds": [
+        {
+            "timeout": 18000,
+            "frontend_base_url": "https://copr.fedorainfracloud.org",
+            "memory_reqs": 2048,
+            "enable_net": false,
+            "project_owner": "psimovec",
+            "project_name": "scipy-1.10.0",
+            "project_dirname": "scipy-1.10.0",
+            "submitter": "https://src.fedoraproject.org/user/releng",
+            "ended_on": 1706248460.3078065,
+            "started_on": 1706247993.4813156,
+            "submitted_on": null,
+            "status": 0,
+            "chroot": "fedora-39-i386",
+            "arch": "i386",
+            "buildroot_pkgs": [],
+            "task_id": "6957408-fedora-39-i386",
+            "build_id": 6957408,
+            "package_name": "python-ipyparallel",
+            "package_version": "8.6.1-6",
+            "git_repo": "https://copr-dist-git.fedorainfracloud.org/git/psimovec/scipy-1.10.0/python-ipyparallel",
+            "git_hash": "c4d801983846d581fd6bf46c169ffab8a36015a5",
+            "git_branch": null,
+            "source_type": null,
+            "source_json": null,
+            "pkg_name": null,
+            "pkg_main_version": null,
+            "pkg_epoch": null,
+            "pkg_release": null,
+            "srpm_url": null,
+            "uses_devel_repo": false,
+            "sandbox": "psimovec/scipy-1.10.0--https://src.fedoraproject.org/user/releng",
+            "results": null,
+            "appstream": false,
+            "background": true,
+            "fedora_review": false,
+            "isolation": "default",
+            "repo_priority": null,
+            "repos": [
+                {
+                    "baseurl": "https://download.copr.fedorainfracloud.org/results/psimovec/scipy-1.10.0/fedora-39-i386/",
+                    "id": "copr_base",
+                    "name": "Copr repository",
+                    "priority": null
+                },
+                {
+                    "baseurl": "http://kojipkgs.fedoraproject.org/repos/rawhide/latest/$basearch/",
+                    "id": "http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch",
+                    "name": "Additional repo http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch"
+                }
+            ],
+            "tags": [
+                "arch_i386"
+            ],
+            "with_opts": [],
+            "without_opts": [],
+            "destdir": "/var/lib/copr/public_html/results/psimovec/scipy-1.10.0",
+            "results_repo_url": "https://download.copr.fedorainfracloud.org/results/psimovec/scipy-1.10.0",
+            "result_dir": "06957408-python-ipyparallel",
+            "built_packages": "",
+            "id": 6957408,
+            "mockchain_macros": {
+                "copr_username": "psimovec",
+                "copr_projectname": "scipy-1.10.0",
+                "vendor": "Fedora Project COPR (psimovec/scipy-1.10.0)"
+            }
+        }
+    ]
+}
+[2024-01-26 05:54:20,558][  INFO][PID:3743068] Sending fedora-messaging bus message in build.end
+[2024-01-26 05:54:20,636][  INFO][PID:3743068] Compressing /var/lib/copr/public_html/results/psimovec/scipy-1.10.0/fedora-39-i386/06957408-python-ipyparallel/builder-live.log by gzip
+[2024-01-26 05:54:20,653][  INFO][PID:3743068] Running command 'gzip /var/lib/copr/public_html/results/psimovec/scipy-1.10.0/fedora-39-i386/06957408-python-ipyparallel/builder-live.log' as PID 3830635
+[2024-01-26 05:54:20,674][  INFO][PID:3743068] Finished after 0 seconds with exit code 0 (gzip /var/lib/copr/public_html/results/psimovec/scipy-1.10.0/fedora-39-i386/06957408-python-ipyparallel/builder-live.log)
+[2024-01-26 05:54:20,676][  INFO][PID:3743068] Compressing /var/lib/copr/public_html/results/psimovec/scipy-1.10.0/fedora-39-i386/06957408-python-ipyparallel/backend.log by gzip
+[2024-01-26 05:54:20,720][  INFO][PID:3743068] Running command 'gzip /var/lib/copr/public_html/results/psimovec/scipy-1.10.0/fedora-39-i386/06957408-python-ipyparallel/backend.log' as PID 3830640

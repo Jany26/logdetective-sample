@@ -1,0 +1,45 @@
+source_project_name: freeipa
+source_project_version: ''
+issue: Package repository was not available.
+log_detective_version: 3.10.0
+log_detective_analysis: |
+    The build failed because DNF encountered a `404 Not Found` error when attempting to download metadata for the `copr_freeipa_freeipa_master_fedora_releasever_basearch` repository, preventing the installation of required packages. Ensure the specified Copr repository URL is correct and that the project provides packages for the `fedora-38-aarch64` target.
+log_files:
+    - builder-live.log
+    - backend.log
+    - build.log
+notes: |
+    Sample comes from packager-annotated notes submitted to logdetective.com.
+    Additional text contains more context.
+
+    Resolution: Ensure that all repositories used by package manager are available before build.
+
+    Snippets:
+
+    In builder-live.log:
+    ```
+    Copr build error: Build failed
+    ```
+    => Build failure message.
+
+    In builder-live.log:
+    ```
+    Copr repository                                 3.4 kB/s | 257  B     00:00
+    Additional repo copr_freeipa_freeipa_master_fed 5.3 kB/s | 341  B     00:00
+    Errors during downloading metadata for repository 'copr_freeipa_freeipa_master_fedora_releasever_basearch':
+      - Status code: 404 for https://download.copr.fedorainfracloud.org/results/@freeipa/freeipa-master/fedora-38-aarch64/repodata/repomd.xml (IP: 108.138.85.53)
+    Error: Failed to download m
+    ```
+    => Final, unsuccessful attempt to download repository metadata.
+
+    In builder-live.log:
+    ```
+    This system is not registered with an entitlement server. You can use subscription-manager to register.
+    ```
+    => Server isn't enrolled in Red Hat subscription.
+
+    In backend.log:
+    ```
+    [2024-01-30 06:54:14,752][ ERROR][PID:3785726] Backend process error: No success file => build failure
+    ```
+    => Build was declared as failed, since there is no success file.

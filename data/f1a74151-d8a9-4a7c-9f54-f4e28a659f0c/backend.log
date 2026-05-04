@@ -1,0 +1,169 @@
+[2024-03-13 10:01:41,295][  INFO][PID:3390661] Marking build as starting
+[2024-03-13 10:01:41,575][  INFO][PID:3390661] Trying to allocate VM
+[2024-03-13 10:02:10,060][  INFO][PID:3390661] Allocated host ResallocHost, ticket_id=1632174, hostname=54.147.252.229
+[2024-03-13 10:02:10,061][  INFO][PID:3390661] Allocating ssh connection to builder
+[2024-03-13 10:02:10,062][  INFO][PID:3390661] Checking that builder machine is OK
+[2024-03-13 10:02:10,414][  INFO][PID:3390661] Popen command started: ssh -F /home/copr/.ssh/config mockbuilder@54.147.252.229 '/usr/bin/test -f /etc/mock/fedora-40-x86_64.cfg'
+[2024-03-13 10:02:10,631][  INFO][PID:3390661] Filling build.info file with builder info
+[2024-03-13 10:02:10,633][  INFO][PID:3390661] Sending build state back to frontend: {
+    "builds": [
+        {
+            "timeout": 18000,
+            "frontend_base_url": "https://copr.fedorainfracloud.org",
+            "memory_reqs": 2048,
+            "enable_net": false,
+            "project_owner": "rpmsoftwaremanagement",
+            "project_name": "dnf5-testing",
+            "project_dirname": "dnf5-testing",
+            "submitter": "rpmsoftwaremanagement",
+            "ended_on": null,
+            "started_on": 1710324130.6332467,
+            "submitted_on": null,
+            "status": 3,
+            "chroot": "fedora-40-x86_64",
+            "arch": "x86_64",
+            "buildroot_pkgs": [],
+            "task_id": "7146205-fedora-40-x86_64",
+            "build_id": 7146205,
+            "package_name": "dnf",
+            "package_version": "4.19.0-1",
+            "git_repo": "https://copr-dist-git.fedorainfracloud.org/git/rpmsoftwaremanagement/dnf5-testing/dnf",
+            "git_hash": "12d6a942cd7ae3aa65365d01036890ef217234e2",
+            "git_branch": null,
+            "source_type": null,
+            "source_json": null,
+            "pkg_name": null,
+            "pkg_main_version": null,
+            "pkg_epoch": null,
+            "pkg_release": null,
+            "srpm_url": null,
+            "uses_devel_repo": false,
+            "sandbox": "rpmsoftwaremanagement/dnf5-testing--rpmsoftwaremanagement",
+            "results": null,
+            "appstream": false,
+            "allow_user_ssh": false,
+            "ssh_public_keys": null,
+            "background": false,
+            "fedora_review": false,
+            "isolation": "default",
+            "repo_priority": null,
+            "repos": [
+                {
+                    "baseurl": "https://download.copr.fedorainfracloud.org/results/rpmsoftwaremanagement/dnf5-testing/fedora-40-x86_64/",
+                    "id": "copr_base",
+                    "name": "Copr repository",
+                    "priority": null
+                }
+            ],
+            "tags": [
+                "arch_x86_64"
+            ],
+            "with_opts": [
+                "dnf5_obsoletes_dnf"
+            ],
+            "without_opts": [],
+            "destdir": "/var/lib/copr/public_html/results/rpmsoftwaremanagement/dnf5-testing",
+            "results_repo_url": "https://download.copr.fedorainfracloud.org/results/rpmsoftwaremanagement/dnf5-testing",
+            "result_dir": "07146205-dnf",
+            "built_packages": "",
+            "id": 7146205,
+            "mockchain_macros": {
+                "copr_username": "rpmsoftwaremanagement",
+                "copr_projectname": "dnf5-testing",
+                "vendor": "Fedora Project COPR (rpmsoftwaremanagement/dnf5-testing)"
+            }
+        }
+    ]
+}
+[2024-03-13 10:02:10,735][  INFO][PID:3390661] Sending fedora-messaging bus message in build.start
+[2024-03-13 10:02:11,633][  INFO][PID:3390661] Sending fedora-messaging bus message in chroot.start
+[2024-03-13 10:02:11,668][  INFO][PID:3390661] Starting remote build: copr-rpmbuild --verbose --drop-resultdir --task-url https://copr.fedorainfracloud.org/backend/get-build-task/7146205-fedora-40-x86_64 --chroot fedora-40-x86_64 --detached
+[2024-03-13 10:02:12,042][  INFO][PID:3390661] Downloading the builder-live.log file, attempt 1
+[2024-03-13 10:02:12,048][  INFO][PID:3390661] Popen command started: ssh -F /home/copr/.ssh/config mockbuilder@54.147.252.229 copr-rpmbuild-log
+[2024-03-13 10:02:17,069][  INFO][PID:3390661] Status: False
+[2024-03-13 10:02:45,659][  INFO][PID:3390661] Downloading results from builder
+[2024-03-13 10:02:45,666][  INFO][PID:3390661] rsyncing of mockbuilder@54.147.252.229:/var/lib/copr-rpmbuild/results/ to /var/lib/copr/public_html/results/rpmsoftwaremanagement/dnf5-testing/fedora-40-x86_64/07146205-dnf started
+[2024-03-13 10:02:45,675][  INFO][PID:3390661] Popen command started: /usr/bin/rsync -rltDvH --chmod=D755,F644 -e 'ssh -F /home/copr/.ssh/config' mockbuilder@54.147.252.229:/var/lib/copr-rpmbuild/results/ /var/lib/copr/public_html/results/rpmsoftwaremanagement/dnf5-testing/fedora-40-x86_64/07146205-dnf/ &> /var/lib/copr/public_html/results/rpmsoftwaremanagement/dnf5-testing/fedora-40-x86_64/07146205-dnf/build-07146205.rsync.log
+[2024-03-13 10:02:46,112][  INFO][PID:3390661] rsyncing finished.
+[2024-03-13 10:02:46,112][  INFO][PID:3390661] Releasing VM back to pool
+[2024-03-13 10:02:46,144][  INFO][PID:3390661] Searching for 'success' file in resultdir
+[2024-03-13 10:02:46,145][ ERROR][PID:3390661] Build failed: Backend process error: No success file => build failure
+[2024-03-13 10:02:46,147][  INFO][PID:3390661] Finished build: id=7146205 failed=True timeout=18000 destdir=/var/lib/copr/public_html/results/rpmsoftwaremanagement/dnf5-testing chroot=fedora-40-x86_64 
+[2024-03-13 10:02:46,150][ ERROR][PID:3390661] Backend process error: No success file => build failure
+[2024-03-13 10:02:46,152][  INFO][PID:3390661] Worker failed build, took 35.519043922424316
+[2024-03-13 10:02:46,153][  INFO][PID:3390661] Sending build state back to frontend: {
+    "builds": [
+        {
+            "timeout": 18000,
+            "frontend_base_url": "https://copr.fedorainfracloud.org",
+            "memory_reqs": 2048,
+            "enable_net": false,
+            "project_owner": "rpmsoftwaremanagement",
+            "project_name": "dnf5-testing",
+            "project_dirname": "dnf5-testing",
+            "submitter": "rpmsoftwaremanagement",
+            "ended_on": 1710324166.1522906,
+            "started_on": 1710324130.6332467,
+            "submitted_on": null,
+            "status": 0,
+            "chroot": "fedora-40-x86_64",
+            "arch": "x86_64",
+            "buildroot_pkgs": [],
+            "task_id": "7146205-fedora-40-x86_64",
+            "build_id": 7146205,
+            "package_name": "dnf",
+            "package_version": "4.19.0-1",
+            "git_repo": "https://copr-dist-git.fedorainfracloud.org/git/rpmsoftwaremanagement/dnf5-testing/dnf",
+            "git_hash": "12d6a942cd7ae3aa65365d01036890ef217234e2",
+            "git_branch": null,
+            "source_type": null,
+            "source_json": null,
+            "pkg_name": null,
+            "pkg_main_version": null,
+            "pkg_epoch": null,
+            "pkg_release": null,
+            "srpm_url": null,
+            "uses_devel_repo": false,
+            "sandbox": "rpmsoftwaremanagement/dnf5-testing--rpmsoftwaremanagement",
+            "results": null,
+            "appstream": false,
+            "allow_user_ssh": false,
+            "ssh_public_keys": null,
+            "background": false,
+            "fedora_review": false,
+            "isolation": "default",
+            "repo_priority": null,
+            "repos": [
+                {
+                    "baseurl": "https://download.copr.fedorainfracloud.org/results/rpmsoftwaremanagement/dnf5-testing/fedora-40-x86_64/",
+                    "id": "copr_base",
+                    "name": "Copr repository",
+                    "priority": null
+                }
+            ],
+            "tags": [
+                "arch_x86_64"
+            ],
+            "with_opts": [
+                "dnf5_obsoletes_dnf"
+            ],
+            "without_opts": [],
+            "destdir": "/var/lib/copr/public_html/results/rpmsoftwaremanagement/dnf5-testing",
+            "results_repo_url": "https://download.copr.fedorainfracloud.org/results/rpmsoftwaremanagement/dnf5-testing",
+            "result_dir": "07146205-dnf",
+            "built_packages": "",
+            "id": 7146205,
+            "mockchain_macros": {
+                "copr_username": "rpmsoftwaremanagement",
+                "copr_projectname": "dnf5-testing",
+                "vendor": "Fedora Project COPR (rpmsoftwaremanagement/dnf5-testing)"
+            }
+        }
+    ]
+}
+[2024-03-13 10:02:46,323][  INFO][PID:3390661] Sending fedora-messaging bus message in build.end
+[2024-03-13 10:02:46,359][  INFO][PID:3390661] Compressing /var/lib/copr/public_html/results/rpmsoftwaremanagement/dnf5-testing/fedora-40-x86_64/07146205-dnf/builder-live.log by gzip
+[2024-03-13 10:02:46,363][  INFO][PID:3390661] Running command 'gzip /var/lib/copr/public_html/results/rpmsoftwaremanagement/dnf5-testing/fedora-40-x86_64/07146205-dnf/builder-live.log' as PID 3398934
+[2024-03-13 10:02:46,369][  INFO][PID:3390661] Finished after 0 seconds with exit code 0 (gzip /var/lib/copr/public_html/results/rpmsoftwaremanagement/dnf5-testing/fedora-40-x86_64/07146205-dnf/builder-live.log)
+[2024-03-13 10:02:46,371][  INFO][PID:3390661] Compressing /var/lib/copr/public_html/results/rpmsoftwaremanagement/dnf5-testing/fedora-40-x86_64/07146205-dnf/backend.log by gzip
+[2024-03-13 10:02:46,373][  INFO][PID:3390661] Running command 'gzip /var/lib/copr/public_html/results/rpmsoftwaremanagement/dnf5-testing/fedora-40-x86_64/07146205-dnf/backend.log' as PID 3398936

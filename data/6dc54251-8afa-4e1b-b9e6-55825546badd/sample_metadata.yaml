@@ -1,0 +1,42 @@
+source_project_name: rubygem-hitimes
+source_project_version: 2.0.0-10
+issue: |
+    The time-based tests were not bet ween 0 and 0.001 and 0.004.
+log_detective_version: 3.10.0
+log_detective_analysis: |
+    The RPM package build failed because the `%check` section of the spec file exited with a non-zero status. This was caused by unit tests failing during the build, specifically due to numerical comparison tolerances not being met. To resolve this, either adjust the test tolerances, fix the underlying code causing the discrepancies, or consider conditionally skipping the failing tests in the `%check` section of the spec file if they are not critical or are environment-dependent.
+log_files:
+    - build.log
+    - root.log
+    - mock_output.log
+notes: |
+    Sample comes from packager-annotated notes submitted to logdetective.com.
+    Additional text contains more context.
+
+    Resolution: Re-run the build, the tests might pass.
+    Ignore these time-sensitive tests as they are unreliable. Increase the time difference expected in tests, which would take into account slower platforms.
+
+    Snippets:
+
+    In build.log:
+    ```
+    + ruby -Ilib:spec -e 'Dir.glob "./spec/*spec.rb", &method(:require)'
+    Run options: --seed 53807
+    # Running:
+    .......................................................................................................F.........F..................
+    Finished in 7.228097s, 18.2621 runs/s, 29.0533 assertions/s.
+      1) Failure:
+    Hitimes::TimedValueMetric#test_0008_calculates the stddev of the durations [spec/timed_value_metric_spec.rb:61]:
+    Expected |0.05 - 0.047793456202974996| (0.002206543797025007) to be <= 0.001.
+      2) Failure:
+    Hitimes::TimedValueMetric#test_0017_can measure a block of code from an instance [spec/timed_value_metric_spec.rb:125]:
+    Expected |0.15 - 0.16569746200000002| (0.015697462000000023) to be <= 0.004.
+    132 runs, 210 assertions, 2 failures, 0 errors, 0 skips
+    ```
+    => Test failure. These tests measure time and comparing that the difference is in range.
+
+    In root.log:
+    ```
+    DEBUG buildroot.py:867:  kernel version == 6.12.13-200.fc41.ppc64le
+    ```
+    => ppc64le platform can be slower with regards to execution and time sensitive tests do not account for slower (or software virtualized) platforms.

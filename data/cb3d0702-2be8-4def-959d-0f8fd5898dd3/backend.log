@@ -1,0 +1,552 @@
+[2025-06-26 10:16:24,619][  INFO][PID:2437819] Marking build as starting
+[2025-06-26 10:16:24,646][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:16:24,647][  INFO][PID:2437819] VM allocation process starts
+[2025-06-26 10:16:24,664][  INFO][PID:2437819] Trying to allocate VM: ResallocHost, ticket_id=3680662, requested_tags=['copr_builder', 'arch_x86_64']
+[2025-06-26 10:16:27,678][  INFO][PID:2437819] Allocated host ResallocHost, ticket_id=3680662, hostname=2620:52:3:1:dead:beef:cafe:c18c, name=copr_hv_x86_64_03_prod_05015009_20250626_101159, requested_tags=['copr_builder', 'arch_x86_64']
+[2025-06-26 10:16:27,678][  INFO][PID:2437819] Allocating ssh connection to builder
+[2025-06-26 10:16:27,679][  INFO][PID:2437819] Checking that builder machine is OK
+[2025-06-26 10:16:28,291][  INFO][PID:2437819] Running remote command: copr-builder-ready fedora-42-x86_64
+[2025-06-26 10:16:28,616][  INFO][PID:2437819] Red Hat subscription not needed for fedora-42-x86_64
+Builder is ready to be used
+
+[2025-06-26 10:16:28,617][  INFO][PID:2437819] Filling build.info file with builder info
+[2025-06-26 10:16:28,618][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:16:28,622][  INFO][PID:2437819] Sending build state back to frontend: {
+    "builds": [
+        {
+            "timeout": 18000,
+            "frontend_base_url": "https://copr.fedorainfracloud.org",
+            "memory_reqs": 2048,
+            "enable_net": true,
+            "project_owner": "medzik",
+            "project_name": "jetbrains",
+            "project_dirname": "jetbrains",
+            "submitter": "medzik",
+            "ended_on": null,
+            "started_on": 1750932988.622166,
+            "submitted_on": null,
+            "status": 3,
+            "chroot": "fedora-42-x86_64",
+            "arch": "x86_64",
+            "buildroot_pkgs": [],
+            "task_id": "9213137-fedora-42-x86_64",
+            "build_id": 9213137,
+            "package_name": "android-studio",
+            "package_version": "2025.1.1.13-3",
+            "git_repo": "https://copr-dist-git.fedorainfracloud.org/git/medzik/jetbrains/android-studio",
+            "git_hash": "838ad490a985ca141444a8fee3ae823f8d02696a",
+            "git_branch": null,
+            "source_type": null,
+            "source_json": null,
+            "pkg_name": null,
+            "pkg_main_version": null,
+            "pkg_epoch": null,
+            "pkg_release": null,
+            "srpm_url": null,
+            "uses_devel_repo": false,
+            "sandbox": "medzik/jetbrains--medzik",
+            "results": null,
+            "appstream": true,
+            "allow_user_ssh": false,
+            "ssh_public_keys": null,
+            "storage": null,
+            "repos": [
+                {
+                    "baseurl": "https://download.copr.fedorainfracloud.org/results/medzik/jetbrains/fedora-42-x86_64/",
+                    "id": "copr_base",
+                    "name": "Copr repository",
+                    "priority": null
+                }
+            ],
+            "background": false,
+            "fedora_review": false,
+            "isolation": "default",
+            "repo_priority": null,
+            "tags": [
+                "arch_x86_64"
+            ],
+            "with_opts": [],
+            "without_opts": [],
+            "destdir": "/var/lib/copr/public_html/results/medzik/jetbrains",
+            "results_repo_url": "https://download.copr.fedorainfracloud.org/results/medzik/jetbrains",
+            "result_dir": "09213137-android-studio",
+            "built_packages": "",
+            "id": 9213137,
+            "mockchain_macros": {
+                "copr_username": "medzik",
+                "copr_projectname": "jetbrains",
+                "vendor": "Fedora Project COPR (medzik/jetbrains)"
+            }
+        }
+    ]
+}
+[2025-06-26 10:16:28,676][  INFO][PID:2437819] Sending fedora-messaging bus message in build.start
+[2025-06-26 10:16:29,403][  INFO][PID:2437819] Sending fedora-messaging bus message in chroot.start
+[2025-06-26 10:16:29,425][  INFO][PID:2437819] Starting remote build: copr-rpmbuild --verbose --drop-resultdir --task-url https://copr.fedorainfracloud.org/backend/get-build-task/9213137-fedora-42-x86_64 --chroot fedora-42-x86_64 --detached
+[2025-06-26 10:16:30,006][  INFO][PID:2437819] Downloading the builder-live.log file, attempt 1
+[2025-06-26 10:16:30,008][  INFO][PID:2437819] Popen command started: ssh -F /home/copr/.ssh/config mockbuilder@2620:52:3:1:dead:beef:cafe:c18c copr-rpmbuild-log
+[2025-06-26 10:16:35,013][  INFO][PID:2437819] Periodic builder liveness probe: alive
+[2025-06-26 10:16:35,014][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:16:40,015][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:16:45,016][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:16:50,017][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:16:55,018][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:17:00,020][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:17:05,021][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:17:10,022][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:17:15,023][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:17:20,024][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:17:25,026][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:17:30,027][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:17:35,028][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:17:40,029][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:17:45,031][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:17:50,032][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:17:55,033][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:18:00,035][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:18:05,036][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:18:10,039][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:18:15,041][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:18:20,042][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:18:25,043][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:18:30,044][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:18:35,045][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:18:40,047][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:18:45,048][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:18:50,049][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:18:55,050][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:19:00,052][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:19:05,053][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:19:10,054][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:19:15,055][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:19:20,057][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:19:25,058][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:19:30,060][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:19:35,061][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:19:40,062][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:19:45,064][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:19:50,065][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:19:55,067][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:20:00,068][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:20:05,069][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:20:10,071][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:20:15,072][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:20:20,073][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:20:25,074][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:20:30,076][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:20:35,078][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:20:40,080][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:20:45,082][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:20:50,086][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:20:55,087][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:21:00,088][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:21:05,089][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:21:10,090][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:21:15,092][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:21:20,093][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:21:25,094][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:21:30,095][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:21:35,097][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:21:40,098][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:21:45,099][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:21:50,101][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:21:55,102][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:22:00,108][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:22:05,123][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:22:10,125][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:22:15,129][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:22:20,130][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:22:25,132][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:22:30,133][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:22:35,135][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:22:40,136][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:22:45,140][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:22:50,143][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:22:55,144][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:23:00,146][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:23:05,147][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:23:10,148][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:23:15,149][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:23:20,152][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:23:25,154][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:23:30,155][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:23:35,157][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:23:40,158][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:23:45,160][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:23:50,161][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:23:55,162][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:24:00,164][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:24:05,165][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:24:10,166][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:24:15,167][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:24:20,168][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:24:25,169][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:24:30,171][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:24:35,172][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:24:40,173][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:24:45,174][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:24:50,175][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:24:55,176][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:25:00,177][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:25:05,179][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:25:10,180][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:25:15,181][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:25:20,182][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:25:25,184][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:25:30,190][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:25:35,192][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:25:40,193][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:25:45,193][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:25:50,195][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:25:55,196][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:26:00,197][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:26:05,198][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:26:10,199][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:26:15,200][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:26:20,201][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:26:25,202][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:26:30,202][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:26:35,237][  INFO][PID:2437819] Periodic builder liveness probe: alive
+[2025-06-26 10:26:35,237][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:26:40,238][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:26:45,239][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:26:50,241][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:26:55,243][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:27:00,244][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:27:05,248][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:27:10,249][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:27:15,250][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:27:20,251][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:27:25,253][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:27:30,254][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:27:35,259][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:27:40,261][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:27:45,264][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:27:50,269][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:27:55,270][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:28:00,271][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:28:05,273][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:28:10,275][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:28:15,277][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:28:20,285][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:28:25,286][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:28:30,288][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:28:35,291][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:28:40,292][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:28:45,293][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:28:50,296][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:28:55,297][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:29:00,298][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:29:05,300][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:29:10,305][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:29:15,306][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:29:20,308][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:29:25,315][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:29:30,320][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:29:35,321][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:29:40,323][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:29:45,324][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:29:50,326][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:29:55,327][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:30:00,329][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:30:05,330][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:30:10,333][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:30:15,337][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:30:20,341][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:30:25,343][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:30:30,346][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:30:35,348][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:30:40,349][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:30:45,351][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:30:50,352][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:30:55,353][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:31:00,362][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:31:05,363][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:31:10,364][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:31:15,367][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:31:20,369][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:31:25,371][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:31:30,372][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:31:35,375][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:31:40,389][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:31:45,390][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:31:50,391][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:31:55,393][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:32:00,399][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:32:05,402][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:32:10,403][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:32:15,406][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:32:20,417][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:32:25,418][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:32:30,420][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:32:35,426][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:32:40,427][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:32:45,436][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:32:50,442][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:32:55,444][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:33:00,447][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:33:05,451][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:33:10,460][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:33:15,461][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:33:20,464][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:33:25,468][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:33:30,474][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:33:35,476][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:33:40,480][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:33:45,485][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:33:50,491][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:33:55,497][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:34:00,499][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:34:05,507][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:34:10,511][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:34:15,515][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:34:20,518][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:34:25,519][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:34:30,521][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:34:35,524][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:34:40,526][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:34:45,528][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:34:50,532][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:34:55,536][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:35:00,538][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:35:05,539][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:35:10,543][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:35:15,547][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:35:20,549][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:35:25,553][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:35:30,558][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:35:35,565][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:35:40,576][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:35:45,579][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:35:50,585][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:35:55,587][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:36:00,590][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:36:05,594][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:36:10,596][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:36:15,599][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:36:20,602][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:36:25,605][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:36:30,609][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:36:35,645][  INFO][PID:2437819] Periodic builder liveness probe: alive
+[2025-06-26 10:36:35,645][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:36:40,651][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:36:45,654][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:36:50,656][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:36:55,660][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:37:00,661][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:37:05,662][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:37:10,664][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:37:15,669][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:37:20,671][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:37:25,676][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:37:30,679][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:37:35,680][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:37:40,683][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:37:45,684][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:37:50,685][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:37:55,686][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:38:00,687][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:38:05,689][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:38:10,690][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:38:15,692][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:38:20,694][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:38:25,695][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:38:30,698][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:38:35,700][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:38:40,702][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:38:45,703][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:38:50,704][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:38:55,706][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:39:00,707][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:39:05,708][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:39:10,709][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:39:15,710][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:39:20,711][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:39:25,712][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:39:30,713][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:39:35,715][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:39:40,720][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:39:45,723][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:39:50,724][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:39:55,726][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:40:00,727][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:40:05,730][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:40:10,731][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:40:15,732][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:40:20,735][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:40:25,736][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:40:30,740][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:40:35,741][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:40:40,742][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:40:45,746][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:40:50,750][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:40:55,755][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:41:00,760][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:41:05,763][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:41:10,764][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:41:15,766][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:41:20,768][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:41:25,770][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:41:30,774][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:41:35,776][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:41:40,777][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:41:45,778][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:41:50,780][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:41:55,781][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:42:00,782][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:42:05,784][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:42:10,785][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:42:15,787][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:42:20,788][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:42:25,790][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:42:30,796][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:42:35,798][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:42:40,799][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:42:45,800][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:42:50,801][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:42:55,813][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:43:00,816][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:43:05,818][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:43:10,823][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:43:15,826][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:43:20,828][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:43:25,829][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:43:30,830][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:43:35,831][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:43:40,833][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:43:45,834][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:43:50,840][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:43:55,841][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:44:00,844][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:44:05,848][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:44:10,850][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:44:15,852][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:44:20,856][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:44:25,858][  INFO][PID:2437819] Checking for cancel request
+[2025-06-26 10:44:29,772][  INFO][PID:2437819] Downloading results from builder
+[2025-06-26 10:44:29,774][  INFO][PID:2437819] rsyncing of mockbuilder@[2620:52:3:1:dead:beef:cafe:c18c]:/var/lib/copr-rpmbuild/results/ to /var/lib/copr/public_html/results/medzik/jetbrains/fedora-42-x86_64/09213137-android-studio started
+[2025-06-26 10:44:29,777][  INFO][PID:2437819] Popen command started: /usr/bin/rsync -rltDvH --chmod=D755,F644 -e 'ssh -F /home/copr/.ssh/config' mockbuilder@[2620:52:3:1:dead:beef:cafe:c18c]:/var/lib/copr-rpmbuild/results/ /var/lib/copr/public_html/results/medzik/jetbrains/fedora-42-x86_64/09213137-android-studio/ &> /var/lib/copr/public_html/results/medzik/jetbrains/fedora-42-x86_64/09213137-android-studio/build-09213137.rsync.log
+[2025-06-26 10:45:35,658][  INFO][PID:2437819] rsyncing finished.
+[2025-06-26 10:45:35,662][  INFO][PID:2437819] Releasing VM back to pool
+[2025-06-26 10:45:35,708][  INFO][PID:2437819] Searching for 'success' file in resultdir
+[2025-06-26 10:45:35,710][  INFO][PID:2437819] Going to sign pkgs from source: 9213137-fedora-42-x86_64 in chroot: /var/lib/copr/public_html/results/medzik/jetbrains/fedora-42-x86_64
+[2025-06-26 10:45:35,713][  INFO][PID:2437819] Calling '/bin/sign -u medzik#copr-team@redhat.com -p' (attempt #1)
+[2025-06-26 10:45:35,898][  INFO][PID:2437819] Calling '/bin/sign -4 -h sha256 -u medzik#copr-team@redhat.com -r /var/lib/copr/public_html/results/medzik/jetbrains/fedora-42-x86_64/09213137-android-studio/android-studio-2025.1.1.13-3.fc42.src.rpm' (attempt #1)
+[2025-06-26 10:46:30,389][  INFO][PID:2437819] signed rpm: /var/lib/copr/public_html/results/medzik/jetbrains/fedora-42-x86_64/09213137-android-studio/android-studio-2025.1.1.13-3.fc42.src.rpm
+[2025-06-26 10:46:30,391][  INFO][PID:2437819] Calling '/bin/sign -4 -h sha256 -u medzik#copr-team@redhat.com -r /var/lib/copr/public_html/results/medzik/jetbrains/fedora-42-x86_64/09213137-android-studio/android-studio-jbr-2025.1.1.13-3.fc42.x86_64.rpm' (attempt #1)
+[2025-06-26 10:46:33,687][  INFO][PID:2437819] signed rpm: /var/lib/copr/public_html/results/medzik/jetbrains/fedora-42-x86_64/09213137-android-studio/android-studio-jbr-2025.1.1.13-3.fc42.x86_64.rpm
+[2025-06-26 10:46:33,688][  INFO][PID:2437819] Calling '/bin/sign -4 -h sha256 -u medzik#copr-team@redhat.com -r /var/lib/copr/public_html/results/medzik/jetbrains/fedora-42-x86_64/09213137-android-studio/android-studio-2025.1.1.13-3.fc42.x86_64.rpm' (attempt #1)
+[2025-06-26 10:47:19,900][  INFO][PID:2437819] signed rpm: /var/lib/copr/public_html/results/medzik/jetbrains/fedora-42-x86_64/09213137-android-studio/android-studio-2025.1.1.13-3.fc42.x86_64.rpm
+[2025-06-26 10:47:19,903][  INFO][PID:2437819] Sign done
+[2025-06-26 10:47:19,904][  INFO][PID:2437819] Incremental createrepo run, adding 09213137-android-studio into https://download.copr.fedorainfracloud.org/results/medzik/jetbrains/fedora-42-x86_64, (auto-create-repo=True)
+[2025-06-26 10:47:19,907][  INFO][PID:2437819] Running command 'copr-repo --batched /var/lib/copr/public_html/results/medzik/jetbrains/fedora-42-x86_64 --add 09213137-android-studio' as PID 2717259
+[2025-06-26 10:50:27,046][  INFO][PID:2437819] Finished after 187 seconds with exit code 1 (copr-repo --batched /var/lib/copr/public_html/results/medzik/jetbrains/fedora-42-x86_64 --add 09213137-android-studio)
+stdout:
+
+stderr:
+Sub-command failed
+Traceback (most recent call last):
+  File "/usr/bin/copr-repo", line 445, in main
+    main_try_lock(opts, batch)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/bin/copr-repo", line 397, in main_try_lock
+    main_locked(opts, batch, opts.log)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/copr-repo", line 359, in main_locked
+    add_appdata(opts)
+    ~~~~~~~~~~~^^^^^^
+  File "/usr/bin/copr-repo", line 242, in add_appdata
+    run_cmd([
+    ~~~~~~~^^
+        "/usr/bin/timeout", "--kill-after=240", "180",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        "--origin=" + origin],
+        ^^^^^^^^^^^^^^^^^^^^^^
+        check=True, logger=opts.log)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/site-packages/copr_backend/helpers.py", line 148, in run_cmd
+    raise CommandException(exc_msg)
+copr_backend.helpers.CommandException: Command '/usr/bin/timeout --kill-after=240 180 /usr/bin/appstream-builder --temp-dir=/var/lib/copr/public_html/results/medzik/jetbrains/fedora-42-x86_64/tmp --cache-dir=/var/lib/copr/public_html/results/medzik/jetbrains/fedora-42-x86_64/cache --packages-dir=/var/lib/copr/public_html/results/medzik/jetbrains/fedora-42-x86_64 --output-dir=/var/lib/copr/public_html/results/medzik/jetbrains/fedora-42-x86_64/appdata --basename=appstream --include-failed --min-icon-size=48 --veto-ignore=missing-parents --enable-hidpi --origin=medzik/jetbrains' failed, exit code '124
+
+
+[2025-06-26 10:50:27,047][ ERROR][PID:2437819] Createrepo failed
+[2025-06-26 10:50:27,047][ ERROR][PID:2437819] Build failed: Backend process error: createrepo failed
+[2025-06-26 10:50:27,048][  INFO][PID:2437819] Finished build: id=9213137 failed=True timeout=18000 destdir=/var/lib/copr/public_html/results/medzik/jetbrains chroot=fedora-42-x86_64 
+[2025-06-26 10:50:27,050][ ERROR][PID:2437819] Backend process error: createrepo failed
+[2025-06-26 10:50:27,051][  INFO][PID:2437819] Worker failed build, took 2038.4293689727783
+[2025-06-26 10:50:27,052][  INFO][PID:2437819] Sending build state back to frontend: {
+    "builds": [
+        {
+            "timeout": 18000,
+            "frontend_base_url": "https://copr.fedorainfracloud.org",
+            "memory_reqs": 2048,
+            "enable_net": true,
+            "project_owner": "medzik",
+            "project_name": "jetbrains",
+            "project_dirname": "jetbrains",
+            "submitter": "medzik",
+            "ended_on": 1750935027.051535,
+            "started_on": 1750932988.622166,
+            "submitted_on": null,
+            "status": 0,
+            "chroot": "fedora-42-x86_64",
+            "arch": "x86_64",
+            "buildroot_pkgs": [],
+            "task_id": "9213137-fedora-42-x86_64",
+            "build_id": 9213137,
+            "package_name": "android-studio",
+            "package_version": "2025.1.1.13-3",
+            "git_repo": "https://copr-dist-git.fedorainfracloud.org/git/medzik/jetbrains/android-studio",
+            "git_hash": "838ad490a985ca141444a8fee3ae823f8d02696a",
+            "git_branch": null,
+            "source_type": null,
+            "source_json": null,
+            "pkg_name": null,
+            "pkg_main_version": null,
+            "pkg_epoch": null,
+            "pkg_release": null,
+            "srpm_url": null,
+            "uses_devel_repo": false,
+            "sandbox": "medzik/jetbrains--medzik",
+            "results": null,
+            "appstream": true,
+            "allow_user_ssh": false,
+            "ssh_public_keys": null,
+            "storage": null,
+            "repos": [
+                {
+                    "baseurl": "https://download.copr.fedorainfracloud.org/results/medzik/jetbrains/fedora-42-x86_64/",
+                    "id": "copr_base",
+                    "name": "Copr repository",
+                    "priority": null
+                }
+            ],
+            "background": false,
+            "fedora_review": false,
+            "isolation": "default",
+            "repo_priority": null,
+            "tags": [
+                "arch_x86_64"
+            ],
+            "with_opts": [],
+            "without_opts": [],
+            "destdir": "/var/lib/copr/public_html/results/medzik/jetbrains",
+            "results_repo_url": "https://download.copr.fedorainfracloud.org/results/medzik/jetbrains",
+            "result_dir": "09213137-android-studio",
+            "built_packages": "",
+            "id": 9213137,
+            "mockchain_macros": {
+                "copr_username": "medzik",
+                "copr_projectname": "jetbrains",
+                "vendor": "Fedora Project COPR (medzik/jetbrains)"
+            }
+        }
+    ]
+}
+[2025-06-26 10:50:27,081][  INFO][PID:2437819] Sending fedora-messaging bus message in build.end
+[2025-06-26 10:50:27,102][  INFO][PID:2437819] Compressing /var/lib/copr/public_html/results/medzik/jetbrains/fedora-42-x86_64/09213137-android-studio/builder-live.log by gzip
+[2025-06-26 10:50:27,104][  INFO][PID:2437819] Running command 'gzip /var/lib/copr/public_html/results/medzik/jetbrains/fedora-42-x86_64/09213137-android-studio/builder-live.log' as PID 2743917
+[2025-06-26 10:50:27,119][  INFO][PID:2437819] Finished after 0 seconds with exit code 0 (gzip /var/lib/copr/public_html/results/medzik/jetbrains/fedora-42-x86_64/09213137-android-studio/builder-live.log)
+[2025-06-26 10:50:27,120][  INFO][PID:2437819] Compressing /var/lib/copr/public_html/results/medzik/jetbrains/fedora-42-x86_64/09213137-android-studio/backend.log by gzip
+[2025-06-26 10:50:27,122][  INFO][PID:2437819] Running command 'gzip /var/lib/copr/public_html/results/medzik/jetbrains/fedora-42-x86_64/09213137-android-studio/backend.log' as PID 2743919

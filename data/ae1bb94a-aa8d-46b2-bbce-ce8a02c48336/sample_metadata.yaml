@@ -1,0 +1,42 @@
+source_project_name: scipy
+source_project_version: 1.14.0-1
+issue: |
+    The build failed because a dependency on python3dist(array-api-strict) couldn't be satisfied - the package does not exist in Fedora repositories.
+log_detective_version: 3.10.0
+log_detective_analysis: |
+    The build failed because the `pytest` dependency was not satisfied. Ensure that `BuildRequires: python3-pytest` is correctly specified in the spec file to pull in the necessary package.
+log_files:
+    - build.log
+    - root.log
+    - mock_output.log
+notes: |
+    Sample comes from packager-annotated notes submitted to logdetective.com.
+    Additional text contains more context.
+
+    Resolution: It is necessary to package the dependency for Fedora and wait until it is available in the repositories.
+
+    Snippets:
+
+    In build.log:
+    ```
+    Dynamic buildrequires detected
+    Going to install missing buildrequires. See root.log for details.
+    ```
+    => This indicates that the actual error is to be found in the root.log file.
+
+    In root.log:
+    ```
+    DEBUG util.py:461:  Failed to resolve the transaction:
+    DEBUG util.py:461:  Package "flexiblas-devel-3.4.4-1.fc41.x86_64" is already installed.
+    DEBUG util.py:461:  Package "gcc-c++-14.1.1-6.fc41.x86_64" is already installed.
+    DEBUG util.py:461:  Package "gcc-gfortran-14.1.1-6.fc41.x86_64" is already installed.
+    DEBUG util.py:461:  Package "pybind11-devel-2.12.0-2.fc41.x86_64" is already installed.
+    DEBUG util.py:461:  Package "pyproject-rpm-macros-1.12.2-1.fc41.noarch" is already installed.
+    DEBUG util.py:461:  Package "python3-devel-3.13.0~b3-1.fc41.x86_64" is already installed.
+    DEBUG util.py:461:  Package "python3-numpy-f2py-1:1.26.4-7.fc41.x86_64" is already installed.
+    DEBUG util.py:461:  No match for argument: python3dist(array-api-strict)
+    DEBUG util.py:461:  Package "python3-packaging-24.1-1.fc41.noarch" is already installed.
+    DEBUG util.py:461:  You can try to add to command line:
+    DEBUG util.py:461:    --skip-unavailable to skip unavailable packages
+    ```
+    => This is the dnf transaction that has failed. It lists packages that are already installed, those are irrelevant to the failure, but also packages that failed to install, in this case python3dist(array-api-strict).

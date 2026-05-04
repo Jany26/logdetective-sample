@@ -1,0 +1,1866 @@
+Warning: Permanently added '52.116.127.63' (ED25519) to the list of known hosts.
+
+You can reproduce this build on your computer by running:
+
+  sudo dnf install copr-rpmbuild
+  /usr/bin/copr-rpmbuild --verbose --drop-resultdir --task-url https://copr.fedorainfracloud.org/backend/get-build-task/6970305-fedora-rawhide-s390x --chroot fedora-rawhide-s390x
+
+
+Version: 0.70
+PID: 6358
+Logging PID: 6359
+Task:
+{'appstream': False,
+ 'background': True,
+ 'build_id': 6970305,
+ 'buildroot_pkgs': [],
+ 'chroot': 'fedora-rawhide-s390x',
+ 'enable_net': False,
+ 'fedora_review': False,
+ 'git_hash': '76cb634df6be9a2e25d52b40801aef342f1159d7',
+ 'git_repo': 'https://copr-dist-git.fedorainfracloud.org/git/psimovec/scipy-1.8.3/python-gensim',
+ 'isolation': 'default',
+ 'memory_reqs': 2048,
+ 'package_name': 'python-gensim',
+ 'package_version': '0.10.0-38',
+ 'project_dirname': 'scipy-1.8.3',
+ 'project_name': 'scipy-1.8.3',
+ 'project_owner': 'psimovec',
+ 'repo_priority': None,
+ 'repos': [{'baseurl': 'https://download.copr.fedorainfracloud.org/results/psimovec/scipy-1.8.3/fedora-rawhide-s390x/',
+            'id': 'copr_base',
+            'name': 'Copr repository',
+            'priority': None},
+           {'baseurl': 'http://kojipkgs.fedoraproject.org/repos/rawhide/latest/$basearch/',
+            'id': 'http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch',
+            'name': 'Additional repo http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch'}],
+ 'sandbox': 'psimovec/scipy-1.8.3--https://src.fedoraproject.org/user/releng',
+ 'source_json': {},
+ 'source_type': None,
+ 'submitter': 'https://src.fedoraproject.org/user/releng',
+ 'tags': [],
+ 'task_id': '6970305-fedora-rawhide-s390x',
+ 'timeout': 18000,
+ 'uses_devel_repo': False,
+ 'with_opts': [],
+ 'without_opts': []}
+
+Running: git clone https://copr-dist-git.fedorainfracloud.org/git/psimovec/scipy-1.8.3/python-gensim /var/lib/copr-rpmbuild/workspace/workdir-w6jhw6fn/python-gensim --depth 500 --no-single-branch --recursive
+
+cmd: ['git', 'clone', 'https://copr-dist-git.fedorainfracloud.org/git/psimovec/scipy-1.8.3/python-gensim', '/var/lib/copr-rpmbuild/workspace/workdir-w6jhw6fn/python-gensim', '--depth', '500', '--no-single-branch', '--recursive']
+cwd: .
+rc: 0
+stdout: 
+stderr: Cloning into '/var/lib/copr-rpmbuild/workspace/workdir-w6jhw6fn/python-gensim'...
+
+Running: git checkout 76cb634df6be9a2e25d52b40801aef342f1159d7 --
+
+cmd: ['git', 'checkout', '76cb634df6be9a2e25d52b40801aef342f1159d7', '--']
+cwd: /var/lib/copr-rpmbuild/workspace/workdir-w6jhw6fn/python-gensim
+rc: 0
+stdout: 
+stderr: Note: switching to '76cb634df6be9a2e25d52b40801aef342f1159d7'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 76cb634 automatic import of python-gensim
+
+Running: copr-distgit-client sources
+/usr/bin/tail: /var/lib/copr-rpmbuild/main.log: file truncated
+
+cmd: ['copr-distgit-client', 'sources']
+cwd: /var/lib/copr-rpmbuild/workspace/workdir-w6jhw6fn/python-gensim
+rc: 0
+stdout: 
+stderr: INFO: Reading stdout from command: git rev-parse --abbrev-ref HEAD
+INFO: Reading stdout from command: git rev-parse HEAD
+INFO: Reading sources specification file: sources
+INFO: Downloading python-gensim-0.10.0.tar.gz
+INFO: Reading stdout from command: curl --help all
+INFO: Calling: curl -H Pragma: -o python-gensim-0.10.0.tar.gz --location --connect-timeout 60 --retry 3 --retry-delay 10 --remote-time --show-error --fail --retry-all-errors https://copr-dist-git.fedorainfracloud.org/repo/pkgs/psimovec/scipy-1.8.3/python-gensim/python-gensim-0.10.0.tar.gz/md5/c0a1301cfc1de37f50f37329baf5d54f/python-gensim-0.10.0.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 2607k  100 2607k    0     0   514k      0  0:00:05  0:00:05 --:--:--  568k
+INFO: Reading stdout from command: md5sum python-gensim-0.10.0.tar.gz
+
+Running (timeout=18000): unbuffer mock --spec /var/lib/copr-rpmbuild/workspace/workdir-w6jhw6fn/python-gensim/python-gensim.spec --sources /var/lib/copr-rpmbuild/workspace/workdir-w6jhw6fn/python-gensim --resultdir /var/lib/copr-rpmbuild/results --uniqueext 1706527503.536589 -r /var/lib/copr-rpmbuild/results/configs/child.cfg
+INFO: mock.py version 5.4 starting (python version = 3.11.3, NVR = mock-5.4-1.fc38), args: /usr/libexec/mock/mock --spec /var/lib/copr-rpmbuild/workspace/workdir-w6jhw6fn/python-gensim/python-gensim.spec --sources /var/lib/copr-rpmbuild/workspace/workdir-w6jhw6fn/python-gensim --resultdir /var/lib/copr-rpmbuild/results --uniqueext 1706527503.536589 -r /var/lib/copr-rpmbuild/results/configs/child.cfg
+Start(bootstrap): init plugins
+INFO: tmpfs initialized
+INFO: selinux enabled
+INFO: chroot_scan: initialized
+INFO: compress_logs: initialized
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: tmpfs initialized
+INFO: selinux enabled
+INFO: chroot_scan: initialized
+INFO: compress_logs: initialized
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+INFO: Start(/var/lib/copr-rpmbuild/workspace/workdir-w6jhw6fn/python-gensim/python-gensim.spec)  Config(fedora-rawhide-s390x)
+Start: clean chroot
+Finish: clean chroot
+Mock Version: 5.4
+INFO: Mock Version: 5.4
+Start(bootstrap): chroot init
+INFO: mounting tmpfs at /var/lib/mock/fedora-rawhide-s390x-bootstrap-1706527503.536589/root.
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: Guessed host environment type: unknown
+INFO: Using bootstrap image: registry.fedoraproject.org/fedora:rawhide
+INFO: Pulling image: registry.fedoraproject.org/fedora:rawhide
+INFO: Copy content of container registry.fedoraproject.org/fedora:rawhide to /var/lib/mock/fedora-rawhide-s390x-bootstrap-1706527503.536589/root
+INFO: Checking that registry.fedoraproject.org/fedora:rawhide image matches host's architecture
+INFO: mounting registry.fedoraproject.org/fedora:rawhide with podman image mount
+INFO: image registry.fedoraproject.org/fedora:rawhide as /var/lib/containers/storage/overlay/8c220b99ee6925c17ff433cbcf1d932718244d650a4cd15d9648ef3cc172c455/merged
+INFO: umounting image registry.fedoraproject.org/fedora:rawhide (/var/lib/containers/storage/overlay/8c220b99ee6925c17ff433cbcf1d932718244d650a4cd15d9648ef3cc172c455/merged) with podman image umount
+INFO: Using 'dnf' instead of 'dnf5' for bootstrap chroot
+INFO: Package manager dnf detected and used (fallback)
+INFO: Bootstrap image not marked ready
+Start(bootstrap): installing dnf5 tooling
+No matches found for the following disable plugin patterns: local, spacewalk, versionlock
+Copr repository                                 435 kB/s | 2.2 MB     00:05    
+Additional repo http_kojipkgs_fedoraproject_org 4.4 MB/s |  68 MB     00:15    
+fedora                                          5.2 MB/s |  65 MB     00:12    
+Last metadata expiration check: 0:00:01 ago on Mon Jan 29 11:26:11 2024.
+Dependencies resolved.
+=========================================================================================================
+ Package        Arch   Version       Repository                                                      Size
+=========================================================================================================
+Installing:
+ dnf5           s390x  5.1.11-1.fc40 http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  542 k
+ dnf5-plugins   s390x  5.1.11-1.fc40 http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  328 k
+Installing dependencies:
+ fmt            s390x  10.2.1-1.fc40 http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  129 k
+ libdnf5        s390x  5.1.11-1.fc40 http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  927 k
+ libdnf5-cli    s390x  5.1.11-1.fc40 http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  225 k
+ sdbus-cpp      s390x  1.4.0-1.fc40  http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  103 k
+
+Transaction Summary
+=========================================================================================================
+Install  6 Packages
+
+Total download size: 2.2 M
+Installed size: 6.1 M
+Downloading Packages:
+(1/6): dnf5-plugins-5.1.11-1.fc40.s390x.rpm     9.8 MB/s | 328 kB     00:00    
+(2/6): fmt-10.2.1-1.fc40.s390x.rpm              3.6 MB/s | 129 kB     00:00    
+(3/6): dnf5-5.1.11-1.fc40.s390x.rpm              13 MB/s | 542 kB     00:00    
+(4/6): libdnf5-5.1.11-1.fc40.s390x.rpm          113 MB/s | 927 kB     00:00    
+(5/6): libdnf5-cli-5.1.11-1.fc40.s390x.rpm       36 MB/s | 225 kB     00:00    
+(6/6): sdbus-cpp-1.4.0-1.fc40.s390x.rpm          24 MB/s | 103 kB     00:00    
+--------------------------------------------------------------------------------
+Total                                            47 MB/s | 2.2 MB     00:00     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : fmt-10.2.1-1.fc40.s390x                                1/6 
+  Installing       : libdnf5-5.1.11-1.fc40.s390x                            2/6 
+  Installing       : libdnf5-cli-5.1.11-1.fc40.s390x                        3/6 
+  Installing       : dnf5-5.1.11-1.fc40.s390x                               4/6 
+  Installing       : sdbus-cpp-1.4.0-1.fc40.s390x                           5/6 
+  Installing       : dnf5-plugins-5.1.11-1.fc40.s390x                       6/6 
+  Running scriptlet: dnf5-plugins-5.1.11-1.fc40.s390x                       6/6 
+
+Installed:
+  dnf5-5.1.11-1.fc40.s390x               dnf5-plugins-5.1.11-1.fc40.s390x       
+  fmt-10.2.1-1.fc40.s390x                libdnf5-5.1.11-1.fc40.s390x            
+  libdnf5-cli-5.1.11-1.fc40.s390x        sdbus-cpp-1.4.0-1.fc40.s390x           
+
+Complete!
+INFO: Switching package manager from dnf to the dnf5 (direct choice)
+Finish(bootstrap): installing dnf5 tooling
+Start(bootstrap): creating root cache
+Finish(bootstrap): creating root cache
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: mounting tmpfs at /var/lib/mock/fedora-rawhide-s390x-1706527503.536589/root.
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+INFO: Package manager dnf5 detected and used (direct choice)
+INFO: Buildroot is handled by package management downloaded with a bootstrap image:
+  rpm-4.19.1-2.fc40.s390x
+  rpm-sequoia-1.5.0-2.fc40.s390x
+  python3-dnf-4.18.2-1.fc40.noarch
+  yum-4.18.2-1.fc40.noarch
+  dnf5-5.1.11-1.fc40.s390x
+  dnf5-plugins-5.1.11-1.fc40.s390x
+Start: installing minimal buildroot with dnf5
+Updating and loading repositories:
+ fedora                                 100% |   1.2 MiB/s |  18.8 MiB |  00m16s
+ Copr repository                        100% |  82.5 KiB/s | 417.1 KiB |  00m05s
+ Additional repo http_kojipkgs_fedorapr 100% | 141.1 MiB/s |  16.1 MiB |  00m00s
+Repositories loaded.
+Package                           Arch   Version                    Repository                                                         Size
+Installing group/module packages:                                                                                                          
+ bash                             s390x  5.2.26-1.fc40              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   8.3 MiB
+ bzip2                            s390x  1.0.8-16.fc39              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  99.2 KiB
+ coreutils                        s390x  9.4-3.fc40                 http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   6.2 MiB
+ cpio                             s390x  2.15-1.fc40                http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.1 MiB
+ diffutils                        s390x  3.10-3.fc39                http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.6 MiB
+ fedora-release-common            noarch 40-0.29                    http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  19.1 KiB
+ findutils                        s390x  1:4.9.0-6.fc40             http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.5 MiB
+ gawk                             s390x  5.3.0-1.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.8 MiB
+ glibc-minimal-langpack           s390x  2.38.9000-35.fc40          http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   0.0   B
+ grep                             s390x  3.11-5.fc40                http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.0 MiB
+ gzip                             s390x  1.12-6.fc39                http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 383.7 KiB
+ info                             s390x  7.1-1.fc40                 http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 405.1 KiB
+ patch                            s390x  2.7.6-22.fc39              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 274.3 KiB
+ redhat-rpm-config                noarch 280-1.fc40                 http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 183.2 KiB
+ rpm-build                        s390x  4.19.1-2.fc40              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 180.2 KiB
+ sed                              s390x  4.8-14.fc39                http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 809.6 KiB
+ shadow-utils                     s390x  2:4.14.0-4.fc40            http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   4.0 MiB
+ tar                              s390x  2:1.35-2.fc40              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   3.0 MiB
+ unzip                            s390x  6.0-62.fc39                http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 414.1 KiB
+ util-linux                       s390x  2.39.3-4.fc40              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   3.5 MiB
+ which                            s390x  2.21-40.fc39               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  83.9 KiB
+ xz                               s390x  5.4.5-1.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   2.0 MiB
+Installing dependencies:                                                                                                                   
+ alternatives                     s390x  1.26-1.fc40                http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  66.1 KiB
+ ansible-srpm-macros              noarch 1-12.fc40                  http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  35.7 KiB
+ audit-libs                       s390x  4.0-7.fc40                 http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 326.8 KiB
+ authselect                       s390x  1.5.0-1.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 156.3 KiB
+ authselect-libs                  s390x  1.5.0-1.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 989.2 KiB
+ basesystem                       noarch 11-18.fc39                 http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   0.0   B
+ binutils                         s390x  2.41-30.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  25.9 MiB
+ binutils-gold                    s390x  2.41-30.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   2.9 MiB
+ bzip2-libs                       s390x  1.0.8-16.fc39              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  88.5 KiB
+ ca-certificates                  noarch 2023.2.62_v7.0.401-4.fc40  http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   2.3 MiB
+ coreutils-common                 s390x  9.4-3.fc40                 http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  11.4 MiB
+ cracklib                         s390x  2.9.11-2.fc39              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 250.0 KiB
+ crypto-policies                  noarch 20231204-1.git1e3a2e4.fc40 http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 149.3 KiB
+ curl                             s390x  8.5.0-2.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 826.2 KiB
+ cyrus-sasl-lib                   s390x  2.1.28-17.fc40             http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   2.4 MiB
+ debugedit                        s390x  5.0-12.fc40                http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 202.5 KiB
+ dwz                              s390x  0.15-3.fc39                http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 314.6 KiB
+ ed                               s390x  1.20-1.fc40                http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 150.2 KiB
+ efi-srpm-macros                  noarch 5-9.fc39                   http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  40.1 KiB
+ elfutils                         s390x  0.190-4.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   2.9 MiB
+ elfutils-debuginfod-client       s390x  0.190-4.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  64.4 KiB
+ elfutils-default-yama-scope      noarch 0.190-4.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.8 KiB
+ elfutils-libelf                  s390x  0.190-4.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.0 MiB
+ elfutils-libs                    s390x  0.190-4.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 734.1 KiB
+ fedora-gpg-keys                  noarch 40-0.2                     http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 123.2 KiB
+ fedora-release                   noarch 40-0.29                    http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   0.0   B
+ fedora-release-identity-basic    noarch 40-0.29                    http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 694.0   B
+ fedora-repos                     noarch 40-0.2                     http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   4.9 KiB
+ fedora-repos-rawhide             noarch 40-0.2                     http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   2.2 KiB
+ file                             s390x  5.45-1.fc40                http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 103.3 KiB
+ file-libs                        s390x  5.45-1.fc40                http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   9.9 MiB
+ filesystem                       s390x  3.18-6.fc39                http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 106.0   B
+ fonts-srpm-macros                noarch 1:2.0.5-12.fc39            http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  55.3 KiB
+ forge-srpm-macros                noarch 0.2.0-1.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  37.4 KiB
+ fpc-srpm-macros                  noarch 1.3-8.fc39                 http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 144.0   B
+ gdb-minimal                      s390x  14.1-4.fc40                http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  12.5 MiB
+ gdbm                             s390x  1:1.23-4.fc39              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 483.9 KiB
+ gdbm-libs                        s390x  1:1.23-4.fc39              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 133.4 KiB
+ ghc-srpm-macros                  noarch 1.6.1-3.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 369.0   B
+ glibc                            s390x  2.38.9000-35.fc40          http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   5.4 MiB
+ glibc-common                     s390x  2.38.9000-35.fc40          http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.1 MiB
+ glibc-gconv-extra                s390x  2.38.9000-35.fc40          http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   7.7 MiB
+ gmp                              s390x  1:6.2.1-5.fc39             http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 765.1 KiB
+ gnat-srpm-macros                 noarch 6-3.fc39                   http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.0 KiB
+ go-srpm-macros                   noarch 3.3.1-1.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  60.6 KiB
+ jansson                          s390x  2.13.1-7.fc39              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  92.1 KiB
+ kernel-srpm-macros               noarch 1.0-20.fc39                http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.9 KiB
+ keyutils-libs                    s390x  1.6.3-1.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  54.2 KiB
+ krb5-libs                        s390x  1.21.2-3.fc40              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   2.4 MiB
+ libacl                           s390x  2.3.2-1.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  43.8 KiB
+ libarchive                       s390x  3.7.2-1.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.0 MiB
+ libattr                          s390x  2.5.2-1.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  28.3 KiB
+ libblkid                         s390x  2.39.3-4.fc40              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 256.9 KiB
+ libbrotli                        s390x  1.1.0-1.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 917.1 KiB
+ libcap                           s390x  2.69-1.fc40                http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 231.1 KiB
+ libcap-ng                        s390x  0.8.4-2.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  76.7 KiB
+ libcom_err                       s390x  1.47.0-2.fc39              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  67.0 KiB
+ libcurl                          s390x  8.5.0-2.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 820.5 KiB
+ libeconf                         s390x  0.5.2-1.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  55.8 KiB
+ libevent                         s390x  2.1.12-9.fc39              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 938.7 KiB
+ libfdisk                         s390x  2.39.3-4.fc40              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 394.7 KiB
+ libffi                           s390x  3.4.4-5.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  65.1 KiB
+ libgcc                           s390x  14.0.1-0.4.fc40            http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 173.2 KiB
+ libgomp                          s390x  14.0.1-0.4.fc40            http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 529.7 KiB
+ libidn2                          s390x  2.3.7-1.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 332.9 KiB
+ libmount                         s390x  2.39.3-4.fc40              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 372.0 KiB
+ libnghttp2                       s390x  1.59.0-1.fc40              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 173.9 KiB
+ libnsl2                          s390x  2.0.1-1.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  61.7 KiB
+ libpkgconf                       s390x  1.9.5-2.fc39               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  85.8 KiB
+ libpsl                           s390x  0.21.5-1.fc40              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  80.3 KiB
+ libpwquality                     s390x  1.4.5-6.fc39               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 420.9 KiB
+ libselinux                       s390x  3.6-2.fc40                 http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 188.9 KiB
+ libsemanage                      s390x  3.6-1.fc40                 http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 301.3 KiB
+ libsepol                         s390x  3.6-1.fc40                 http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 842.2 KiB
+ libsmartcols                     s390x  2.39.3-4.fc40              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 152.0 KiB
+ libssh                           s390x  0.10.6-2.fc40              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 529.0 KiB
+ libssh-config                    noarch 0.10.6-2.fc40              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 277.0   B
+ libstdc++                        s390x  14.0.1-0.4.fc40            http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   3.1 MiB
+ libtasn1                         s390x  4.19.0-3.fc39              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 187.5 KiB
+ libtirpc                         s390x  1.3.4-1.rc1.fc40           http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 214.6 KiB
+ libunistring                     s390x  1.1-5.fc40                 http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.8 MiB
+ libutempter                      s390x  1.2.1-10.fc39              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  57.3 KiB
+ libuuid                          s390x  2.39.3-4.fc40              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  37.3 KiB
+ libverto                         s390x  0.3.2-6.fc39               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  29.2 KiB
+ libxcrypt                        s390x  4.4.36-4.fc40              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 274.7 KiB
+ libxml2                          s390x  2.12.4-1.fc40              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.9 MiB
+ libzstd                          s390x  1.5.5-4.fc39               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 859.8 KiB
+ lua-libs                         s390x  5.4.6-3.fc39               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 324.9 KiB
+ lua-srpm-macros                  noarch 1-9.fc39                   http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.3 KiB
+ lz4-libs                         s390x  1.9.4-4.fc39               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 169.2 KiB
+ mpfr                             s390x  4.2.1-1.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 698.8 KiB
+ ncurses-base                     noarch 6.4-9.20240113.fc40        http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 326.2 KiB
+ ncurses-libs                     s390x  6.4-9.20240113.fc40        http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.1 MiB
+ ocaml-srpm-macros                noarch 9-1.fc40                   http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.9 KiB
+ openblas-srpm-macros             noarch 2-14.fc39                  http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 104.0   B
+ openldap                         s390x  2.6.6-1.fc39               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 669.0 KiB
+ openssl-libs                     s390x  1:3.1.4-1.fc40             http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   5.6 MiB
+ p11-kit                          s390x  0.25.3-1.fc40              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   2.5 MiB
+ p11-kit-trust                    s390x  0.25.3-1.fc40              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 467.2 KiB
+ package-notes-srpm-macros        noarch 0.5-9.fc39                 http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.6 KiB
+ pam                              s390x  1.6.0-1.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.7 MiB
+ pam-libs                         s390x  1.6.0-1.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 130.4 KiB
+ pcre2                            s390x  10.42-2.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 657.2 KiB
+ pcre2-syntax                     noarch 10.42-2.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 235.1 KiB
+ perl-srpm-macros                 noarch 1-51.fc39                  http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 861.0   B
+ pkgconf                          s390x  1.9.5-2.fc39               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  83.6 KiB
+ pkgconf-m4                       noarch 1.9.5-2.fc39               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  13.9 KiB
+ pkgconf-pkg-config               s390x  1.9.5-2.fc39               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 988.0   B
+ popt                             s390x  1.19-3.fc39                http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 144.6 KiB
+ publicsuffix-list-dafsa          noarch 20240107-1.fc40            http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  67.5 KiB
+ pyproject-srpm-macros            noarch 1.12.0-1.fc40              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.5 KiB
+ python-srpm-macros               noarch 3.12-7.fc40                http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  50.1 KiB
+ qt5-srpm-macros                  noarch 5.15.12-1.fc40             http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 492.0   B
+ qt6-srpm-macros                  noarch 6.6.1-3.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 456.0   B
+ readline                         s390x  8.2-7.fc40                 http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 556.8 KiB
+ rpm                              s390x  4.19.1-2.fc40              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   3.0 MiB
+ rpm-build-libs                   s390x  4.19.1-2.fc40              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 206.2 KiB
+ rpm-libs                         s390x  4.19.1-2.fc40              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 809.6 KiB
+ rpm-sequoia                      s390x  1.6.0-1.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   3.0 MiB
+ rust-srpm-macros                 noarch 25.2-2.fc40                http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   5.1 KiB
+ setup                            noarch 2.14.5-1.fc40              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 720.4 KiB
+ sqlite-libs                      s390x  3.45.0-1.fc40              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.6 MiB
+ systemd-libs                     s390x  255.3-1.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   2.0 MiB
+ util-linux-core                  s390x  2.39.3-4.fc40              http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.4 MiB
+ xxhash-libs                      s390x  0.8.2-1.fc39               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  68.0 KiB
+ xz-libs                          s390x  5.4.5-1.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 221.6 KiB
+ zig-srpm-macros                  noarch 1-1.fc40                   http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.1 KiB
+ zip                              s390x  3.0-39.fc40                http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 754.3 KiB
+ zlib-ng-compat                   s390x  2.1.6-1.fc40               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 117.4 KiB
+ zstd                             s390x  1.5.5-4.fc39               http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.8 MiB
+Installing groups:                                                                                                                         
+ Buildsystem building group                                                                                                                
+
+Transaction Summary:
+ Installing:      152 packages
+
+Total size of inbound packages is 52 MiB. Need to download 52 MiB.
+After this operation 179 MiB will be used (install 179 MiB, remove 0 B).
+[  1/152] bzip2-0:1.0.8-16.fc39.s390x   100% |   1.5 MiB/s |  53.2 KiB |  00m00s
+[  2/152] cpio-0:2.15-1.fc40.s390x      100% |  31.5 MiB/s | 290.6 KiB |  00m00s
+[  3/152] diffutils-0:3.10-3.fc39.s390x 100% |  43.2 MiB/s | 398.2 KiB |  00m00s
+[  4/152] fedora-release-common-0:40-0. 100% |   6.7 MiB/s |  20.5 KiB |  00m00s
+[  5/152] findutils-1:4.9.0-6.fc40.s390 100% |  59.5 MiB/s | 487.8 KiB |  00m00s
+[  6/152] coreutils-0:9.4-3.fc40.s390x  100% |  13.9 MiB/s |   1.2 MiB |  00m00s
+[  7/152] gawk-0:5.3.0-1.fc40.s390x     100% |  49.5 MiB/s |   1.1 MiB |  00m00s
+[  8/152] glibc-minimal-langpack-0:2.38 100% |  15.7 MiB/s |  96.4 KiB |  00m00s
+[  9/152] bash-0:5.2.26-1.fc40.s390x    100% |  18.9 MiB/s |   1.8 MiB |  00m00s
+[ 10/152] grep-0:3.11-5.fc40.s390x      100% |  20.5 MiB/s | 294.1 KiB |  00m00s
+[ 11/152] gzip-0:1.12-6.fc39.s390x      100% |  10.8 MiB/s | 166.3 KiB |  00m00s
+[ 12/152] info-0:7.1-1.fc40.s390x       100% |  15.9 MiB/s | 194.9 KiB |  00m00s
+[ 13/152] patch-0:2.7.6-22.fc39.s390x   100% |  14.5 MiB/s | 133.8 KiB |  00m00s
+[ 14/152] redhat-rpm-config-0:280-1.fc4 100% |   7.3 MiB/s |  75.2 KiB |  00m00s
+[ 15/152] rpm-build-0:4.19.1-2.fc40.s39 100% |   6.3 MiB/s |  71.4 KiB |  00m00s
+[ 16/152] sed-0:4.8-14.fc39.s390x       100% |  36.7 MiB/s | 300.3 KiB |  00m00s
+[ 17/152] unzip-0:6.0-62.fc39.s390x     100% |  27.1 MiB/s | 193.9 KiB |  00m00s
+[ 18/152] tar-2:1.35-2.fc40.s390x       100% |  65.0 MiB/s | 864.7 KiB |  00m00s
+[ 19/152] shadow-utils-2:4.14.0-4.fc40. 100% |  52.4 MiB/s |   1.2 MiB |  00m00s
+[ 20/152] which-0:2.21-40.fc39.s390x    100% |   3.2 MiB/s |  43.2 KiB |  00m00s
+[ 21/152] util-linux-0:2.39.3-4.fc40.s3 100% |  60.2 MiB/s |   1.1 MiB |  00m00s
+[ 22/152] xz-0:5.4.5-1.fc40.s390x       100% |  43.3 MiB/s | 532.1 KiB |  00m00s
+[ 23/152] xz-libs-0:5.4.5-1.fc40.s390x  100% |  18.6 MiB/s | 114.2 KiB |  00m00s
+[ 24/152] authselect-libs-0:1.5.0-1.fc4 100% |  25.3 MiB/s | 233.0 KiB |  00m00s
+[ 25/152] audit-libs-0:4.0-7.fc40.s390x 100% |   8.2 MiB/s | 125.2 KiB |  00m00s
+[ 26/152] libblkid-0:2.39.3-4.fc40.s390 100% |  19.6 MiB/s | 120.6 KiB |  00m00s
+[ 27/152] libcap-ng-0:0.8.4-2.fc40.s390 100% |   6.4 MiB/s |  32.9 KiB |  00m00s
+[ 28/152] libfdisk-0:2.39.3-4.fc40.s390 100% |  32.3 MiB/s | 165.6 KiB |  00m00s
+[ 29/152] glibc-0:2.38.9000-35.fc40.s39 100% |  61.1 MiB/s |   1.9 MiB |  00m00s
+[ 30/152] libmount-0:2.39.3-4.fc40.s390 100% |  31.0 MiB/s | 158.8 KiB |  00m00s
+[ 31/152] libselinux-0:3.6-2.fc40.s390x 100% |  18.0 MiB/s |  92.2 KiB |  00m00s
+[ 32/152] libsmartcols-0:2.39.3-4.fc40. 100% |  13.6 MiB/s |  69.7 KiB |  00m00s
+[ 33/152] libutempter-0:1.2.1-10.fc39.s 100% |   5.1 MiB/s |  26.0 KiB |  00m00s
+[ 34/152] libuuid-0:2.39.3-4.fc40.s390x 100% |   5.6 MiB/s |  28.6 KiB |  00m00s
+[ 35/152] ncurses-libs-0:6.4-9.20240113 100% |  70.7 MiB/s | 362.1 KiB |  00m00s
+[ 36/152] pam-libs-0:1.6.0-1.fc40.s390x 100% |   9.4 MiB/s |  58.0 KiB |  00m00s
+[ 37/152] pam-0:1.6.0-1.fc40.s390x      100% |  56.9 MiB/s | 524.6 KiB |  00m00s
+[ 38/152] readline-0:8.2-7.fc40.s390x   100% |  37.4 MiB/s | 230.0 KiB |  00m00s
+[ 39/152] systemd-libs-0:255.3-1.fc40.s 100% |  88.1 MiB/s | 721.7 KiB |  00m00s
+[ 40/152] util-linux-core-0:2.39.3-4.fc 100% |  54.1 MiB/s | 498.2 KiB |  00m00s
+[ 41/152] zlib-ng-compat-0:2.1.6-1.fc40 100% |   8.0 MiB/s |  65.8 KiB |  00m00s
+[ 42/152] bzip2-libs-0:1.0.8-16.fc39.s3 100% |  11.3 MiB/s |  46.4 KiB |  00m00s
+[ 43/152] libacl-0:2.3.2-1.fc40.s390x   100% |   5.0 MiB/s |  25.4 KiB |  00m00s
+[ 44/152] libcap-0:2.69-1.fc40.s390x    100% |  13.8 MiB/s |  84.7 KiB |  00m00s
+[ 45/152] libgcc-0:14.0.1-0.4.fc40.s390 100% |  17.2 MiB/s |  70.5 KiB |  00m00s
+[ 46/152] libattr-0:2.5.2-1.fc40.s390x  100% |   3.6 MiB/s |  18.3 KiB |  00m00s
+[ 47/152] libzstd-0:1.5.5-4.fc39.s390x  100% |  33.4 MiB/s | 342.4 KiB |  00m00s
+[ 48/152] lz4-libs-0:1.9.4-4.fc39.s390x 100% |   8.8 MiB/s |  80.9 KiB |  00m00s
+[ 49/152] libeconf-0:0.5.2-1.fc40.s390x 100% |   7.8 MiB/s |  32.0 KiB |  00m00s
+[ 50/152] libsemanage-0:3.6-1.fc40.s390 100% |  23.2 MiB/s | 118.6 KiB |  00m00s
+[ 51/152] libxcrypt-0:4.4.36-4.fc40.s39 100% |  24.1 MiB/s | 123.5 KiB |  00m00s
+[ 52/152] setup-0:2.14.5-1.fc40.noarch  100% |  36.2 MiB/s | 148.1 KiB |  00m00s
+[ 53/152] debugedit-0:5.0-12.fc40.s390x 100% |  15.9 MiB/s |  81.5 KiB |  00m00s
+[ 54/152] elfutils-0:0.190-4.fc40.s390x 100% |  50.7 MiB/s | 570.7 KiB |  00m00s
+[ 55/152] elfutils-libelf-0:0.190-4.fc4 100% |  27.9 MiB/s | 199.8 KiB |  00m00s
+[ 56/152] pkgconf-pkg-config-0:1.9.5-2. 100% |   1.9 MiB/s |   9.6 KiB |  00m00s
+[ 57/152] file-0:5.45-1.fc40.s390x      100% |   6.9 MiB/s |  49.1 KiB |  00m00s
+[ 58/152] popt-0:1.19-3.fc39.s390x      100% |  12.2 MiB/s |  62.2 KiB |  00m00s
+[ 59/152] rpm-0:4.19.1-2.fc40.s390x     100% |  45.2 MiB/s | 509.4 KiB |  00m00s
+[ 60/152] binutils-0:2.41-30.fc40.s390x 100% | 156.2 MiB/s |   5.9 MiB |  00m00s
+[ 61/152] rpm-build-libs-0:4.19.1-2.fc4 100% |   6.8 MiB/s |  97.2 KiB |  00m00s
+[ 62/152] rpm-libs-0:4.19.1-2.fc40.s390 100% |  39.5 MiB/s | 323.7 KiB |  00m00s
+[ 63/152] zstd-0:1.5.5-4.fc39.s390x     100% |  61.7 MiB/s | 505.7 KiB |  00m00s
+[ 64/152] ansible-srpm-macros-0:1-12.fc 100% |   6.8 MiB/s |  20.9 KiB |  00m00s
+[ 65/152] libarchive-0:3.7.2-1.fc40.s39 100% |  33.1 MiB/s | 440.0 KiB |  00m00s
+[ 66/152] glibc-gconv-extra-0:2.38.9000 100% |  97.8 MiB/s |   1.7 MiB |  00m00s
+[ 67/152] dwz-0:0.15-3.fc39.s390x       100% |  23.4 MiB/s | 143.6 KiB |  00m00s
+[ 68/152] efi-srpm-macros-0:5-9.fc39.no 100% |   2.7 MiB/s |  22.2 KiB |  00m00s
+[ 69/152] forge-srpm-macros-0:0.2.0-1.f 100% |   6.0 MiB/s |  18.5 KiB |  00m00s
+[ 70/152] fonts-srpm-macros-1:2.0.5-12. 100% |   8.6 MiB/s |  26.5 KiB |  00m00s
+[ 71/152] fpc-srpm-macros-0:1.3-8.fc39. 100% |   2.4 MiB/s |   7.4 KiB |  00m00s
+[ 72/152] ghc-srpm-macros-0:1.6.1-3.fc4 100% |   2.6 MiB/s |   8.1 KiB |  00m00s
+[ 73/152] gnat-srpm-macros-0:6-3.fc39.n 100% |   2.9 MiB/s |   8.8 KiB |  00m00s
+[ 74/152] go-srpm-macros-0:3.3.1-1.fc40 100% |   9.0 MiB/s |  27.7 KiB |  00m00s
+[ 75/152] kernel-srpm-macros-0:1.0-20.f 100% |   3.4 MiB/s |  10.5 KiB |  00m00s
+[ 76/152] lua-srpm-macros-0:1-9.fc39.no 100% |   2.8 MiB/s |   8.6 KiB |  00m00s
+[ 77/152] ocaml-srpm-macros-0:9-1.fc40. 100% |   1.8 MiB/s |   9.0 KiB |  00m00s
+[ 78/152] openblas-srpm-macros-0:2-14.f 100% |   1.5 MiB/s |   7.5 KiB |  00m00s
+[ 79/152] package-notes-srpm-macros-0:0 100% |   2.2 MiB/s |  11.2 KiB |  00m00s
+[ 80/152] perl-srpm-macros-0:1-51.fc39. 100% |   2.0 MiB/s |   8.0 KiB |  00m00s
+[ 81/152] pyproject-srpm-macros-0:1.12. 100% |   3.3 MiB/s |  13.6 KiB |  00m00s
+[ 82/152] python-srpm-macros-0:3.12-7.f 100% |   5.8 MiB/s |  23.8 KiB |  00m00s
+[ 83/152] qt5-srpm-macros-0:5.15.12-1.f 100% |   2.7 MiB/s |   8.4 KiB |  00m00s
+[ 84/152] qt6-srpm-macros-0:6.6.1-3.fc4 100% |   2.9 MiB/s |   8.8 KiB |  00m00s
+[ 85/152] rust-srpm-macros-0:25.2-2.fc4 100% |   4.2 MiB/s |  13.0 KiB |  00m00s
+[ 86/152] zig-srpm-macros-0:1-1.fc40.no 100% |   2.6 MiB/s |   8.0 KiB |  00m00s
+[ 87/152] pkgconf-0:1.9.5-2.fc39.s390x  100% |  10.4 MiB/s |  42.6 KiB |  00m00s
+[ 88/152] pkgconf-m4-0:1.9.5-2.fc39.noa 100% |   1.9 MiB/s |  13.9 KiB |  00m00s
+[ 89/152] libpkgconf-0:1.9.5-2.fc39.s39 100% |   7.4 MiB/s |  38.1 KiB |  00m00s
+[ 90/152] zip-0:3.0-39.fc40.s390x       100% |  21.2 MiB/s | 282.8 KiB |  00m00s
+[ 91/152] ed-0:1.20-1.fc40.s390x        100% |  11.6 MiB/s |  83.5 KiB |  00m00s
+[ 92/152] authselect-0:1.5.0-1.fc40.s39 100% |  20.0 MiB/s | 143.4 KiB |  00m00s
+[ 93/152] gdbm-1:1.23-4.fc39.s390x      100% |  29.6 MiB/s | 151.4 KiB |  00m00s
+[ 94/152] libnsl2-0:2.0.1-1.fc40.s390x  100% |   7.2 MiB/s |  29.4 KiB |  00m00s
+[ 95/152] gdbm-libs-1:1.23-4.fc39.s390x 100% |   9.4 MiB/s |  58.0 KiB |  00m00s
+[ 96/152] libpwquality-0:1.4.5-6.fc39.s 100% |  26.7 MiB/s | 109.3 KiB |  00m00s
+[ 97/152] libtirpc-0:1.3.4-1.rc1.fc40.s 100% |  18.8 MiB/s |  96.1 KiB |  00m00s
+[ 98/152] ca-certificates-0:2023.2.62_v 100% |  93.6 MiB/s | 862.6 KiB |  00m00s
+[ 99/152] crypto-policies-0:20231204-1. 100% |  13.4 MiB/s |  68.7 KiB |  00m00s
+[100/152] openssl-libs-1:3.1.4-1.fc40.s 100% | 110.1 MiB/s |   1.9 MiB |  00m00s
+[101/152] ncurses-base-0:6.4-9.20240113 100% |   8.9 MiB/s |  63.5 KiB |  00m00s
+[102/152] krb5-libs-0:1.21.2-3.fc40.s39 100% |  69.3 MiB/s | 780.5 KiB |  00m00s
+[103/152] libcom_err-0:1.47.0-2.fc39.s3 100% |   6.3 MiB/s |  26.0 KiB |  00m00s
+[104/152] libsepol-0:3.6-1.fc40.s390x   100% |  67.5 MiB/s | 345.7 KiB |  00m00s
+[105/152] cracklib-0:2.9.11-2.fc39.s390 100% |  20.4 MiB/s |  83.5 KiB |  00m00s
+[106/152] pcre2-0:10.42-2.fc40.s390x    100% |  40.7 MiB/s | 250.0 KiB |  00m00s
+[107/152] libxml2-0:2.12.4-1.fc40.s390x 100% |  86.0 MiB/s | 704.9 KiB |  00m00s
+[108/152] libverto-0:0.3.2-6.fc39.s390x 100% |   5.1 MiB/s |  20.8 KiB |  00m00s
+[109/152] keyutils-libs-0:1.6.3-1.fc40. 100% |   5.1 MiB/s |  31.3 KiB |  00m00s
+[110/152] basesystem-0:11-18.fc39.noarc 100% |   2.3 MiB/s |   7.2 KiB |  00m00s
+[111/152] glibc-common-0:2.38.9000-35.f 100% |  55.1 MiB/s | 394.9 KiB |  00m00s
+[112/152] gmp-1:6.2.1-5.fc39.s390x      100% |  39.6 MiB/s | 324.5 KiB |  00m00s
+[113/152] filesystem-0:3.18-6.fc39.s390 100% |  89.0 MiB/s |   1.1 MiB |  00m00s
+[114/152] mpfr-0:4.2.1-1.fc40.s390x     100% |  41.5 MiB/s | 297.2 KiB |  00m00s
+[115/152] elfutils-libs-0:0.190-4.fc40. 100% |  44.9 MiB/s | 275.7 KiB |  00m00s
+[116/152] fedora-repos-0:40-0.2.noarch  100% |   1.1 MiB/s |   9.3 KiB |  00m00s
+[117/152] file-libs-0:5.45-1.fc40.s390x 100% |  53.6 MiB/s | 768.8 KiB |  00m00s
+[118/152] libstdc++-0:14.0.1-0.4.fc40.s 100% |  79.3 MiB/s | 975.0 KiB |  00m00s
+[119/152] p11-kit-0:0.25.3-1.fc40.s390x 100% |  63.3 MiB/s | 518.6 KiB |  00m00s
+[120/152] coreutils-common-0:9.4-3.fc40 100% | 132.8 MiB/s |   2.1 MiB |  00m00s
+[121/152] alternatives-0:1.26-1.fc40.s3 100% |   9.9 MiB/s |  40.6 KiB |  00m00s
+[122/152] p11-kit-trust-0:0.25.3-1.fc40 100% |  27.8 MiB/s | 142.1 KiB |  00m00s
+[123/152] binutils-gold-0:2.41-30.fc40. 100% | 121.6 MiB/s | 995.8 KiB |  00m00s
+[124/152] elfutils-debuginfod-client-0: 100% |   3.4 MiB/s |  38.2 KiB |  00m00s
+[125/152] jansson-0:2.13.1-7.fc39.s390x 100% |   4.3 MiB/s |  44.1 KiB |  00m00s
+[126/152] lua-libs-0:5.4.6-3.fc39.s390x 100% |  27.7 MiB/s | 141.7 KiB |  00m00s
+[127/152] libgomp-0:14.0.1-0.4.fc40.s39 100% |  29.8 MiB/s | 335.9 KiB |  00m00s
+[128/152] sqlite-libs-0:3.45.0-1.fc40.s 100% |  53.1 MiB/s | 761.0 KiB |  00m00s
+[129/152] rpm-sequoia-0:1.6.0-1.fc40.s3 100% |  64.1 MiB/s | 984.1 KiB |  00m00s
+[130/152] pcre2-syntax-0:10.42-2.fc40.n 100% |  34.9 MiB/s | 143.1 KiB |  00m00s
+[131/152] libtasn1-0:4.19.0-3.fc39.s390 100% |  15.1 MiB/s |  77.2 KiB |  00m00s
+[132/152] libffi-0:3.4.4-5.fc40.s390x   100% |   4.9 MiB/s |  35.4 KiB |  00m00s
+[133/152] fedora-gpg-keys-0:40-0.2.noar 100% |  19.4 MiB/s | 119.4 KiB |  00m00s
+[134/152] elfutils-default-yama-scope-0 100% |   3.1 MiB/s |  12.8 KiB |  00m00s
+[135/152] fedora-release-0:40-0.29.noar 100% |   2.4 MiB/s |  10.0 KiB |  00m00s
+[136/152] fedora-repos-rawhide-0:40-0.2 100% | 743.6 KiB/s |   8.9 KiB |  00m00s
+[137/152] curl-0:8.5.0-2.fc40.s390x     100% |  72.8 MiB/s | 372.7 KiB |  00m00s
+[138/152] xxhash-libs-0:0.8.2-1.fc39.s3 100% |   7.2 MiB/s |  36.8 KiB |  00m00s
+[139/152] fedora-release-identity-basic 100% |   3.5 MiB/s |  10.8 KiB |  00m00s
+[140/152] libcurl-0:8.5.0-2.fc40.s390x  100% |  59.3 MiB/s | 364.2 KiB |  00m00s
+[141/152] libbrotli-0:1.1.0-1.fc40.s390 100% |  41.1 MiB/s | 378.5 KiB |  00m00s
+[142/152] gdb-minimal-0:14.1-4.fc40.s39 100% | 135.2 MiB/s |   4.2 MiB |  00m00s
+[143/152] libnghttp2-0:1.59.0-1.fc40.s3 100% |   8.6 MiB/s |  79.2 KiB |  00m00s
+[144/152] libidn2-0:2.3.7-1.fc40.s390x  100% |   7.4 MiB/s | 113.3 KiB |  00m00s
+[145/152] libssh-0:0.10.6-2.fc40.s390x  100% |  40.9 MiB/s | 209.3 KiB |  00m00s
+[146/152] libpsl-0:0.21.5-1.fc40.s390x  100% |  10.4 MiB/s |  63.7 KiB |  00m00s
+[147/152] openldap-0:2.6.6-1.fc39.s390x 100% |  28.4 MiB/s | 262.0 KiB |  00m00s
+[148/152] libevent-0:2.1.12-9.fc39.s390 100% |  50.7 MiB/s | 259.6 KiB |  00m00s
+[149/152] libssh-config-0:0.10.6-2.fc40 100% |   2.2 MiB/s |   9.1 KiB |  00m00s
+[150/152] cyrus-sasl-lib-0:2.1.28-17.fc 100% |  89.0 MiB/s | 820.3 KiB |  00m00s
+[151/152] publicsuffix-list-dafsa-0:202 100% |  14.2 MiB/s |  58.0 KiB |  00m00s
+[152/152] libunistring-0:1.1-5.fc40.s39 100% |  77.6 MiB/s | 556.3 KiB |  00m00s
+--------------------------------------------------------------------------------
+[152/152] Total                         100% | 103.5 MiB/s |  52.0 MiB |  00m01s
+Running transaction
+[  1/154] Verify package files          100% | 826.0   B/s | 152.0   B |  00m00s
+>>> Running pre-transaction scriptlet: filesystem-0:3.18-6.fc39.s390x
+>>> Stop pre-transaction scriptlet: filesystem-0:3.18-6.fc39.s390x
+[  2/154] Prepare transaction           100% |   3.0 KiB/s | 152.0   B |  00m00s
+[  3/154] Installing libgcc-0:14.0.1-0. 100% | 170.8 MiB/s | 174.9 KiB |  00m00s
+>>> Running post-install scriptlet: libgcc-0:14.0.1-0.4.fc40.s390x
+>>> Stop post-install scriptlet: libgcc-0:14.0.1-0.4.fc40.s390x
+[  4/154] Installing crypto-policies-0: 100% |  35.5 MiB/s | 181.7 KiB |  00m00s
+>>> Running post-install scriptlet: crypto-policies-0:20231204-1.git1e3a2e4.fc40
+>>> Stop post-install scriptlet: crypto-policies-0:20231204-1.git1e3a2e4.fc40.no
+[  5/154] Installing fedora-release-ide 100% |   0.0   B/s | 952.0   B |  00m00s
+[  6/154] Installing fedora-gpg-keys-0: 100% |  40.9 MiB/s | 167.6 KiB |  00m00s
+[  7/154] Installing fedora-repos-rawhi 100% |   0.0   B/s |   2.4 KiB |  00m00s
+[  8/154] Installing fedora-repos-0:40- 100% |   0.0   B/s |   5.7 KiB |  00m00s
+[  9/154] Installing fedora-release-com 100% |  22.6 MiB/s |  23.2 KiB |  00m00s
+[ 10/154] Installing fedora-release-0:4 100% |   0.0   B/s | 124.0   B |  00m00s
+[ 11/154] Installing setup-0:2.14.5-1.f 100% |  54.5 MiB/s | 725.8 KiB |  00m00s
+>>> Running post-install scriptlet: setup-0:2.14.5-1.fc40.noarch
+>>> Stop post-install scriptlet: setup-0:2.14.5-1.fc40.noarch
+[ 12/154] Installing filesystem-0:3.18- 100% |   2.8 MiB/s | 212.4 KiB |  00m00s
+[ 13/154] Installing basesystem-0:11-18 100% |   0.0   B/s | 124.0   B |  00m00s
+[ 14/154] Installing publicsuffix-list- 100% |   0.0   B/s |  68.3 KiB |  00m00s
+[ 15/154] Installing libssh-config-0:0. 100% |   0.0   B/s | 816.0   B |  00m00s
+[ 16/154] Installing pcre2-syntax-0:10. 100% | 232.0 MiB/s | 237.6 KiB |  00m00s
+[ 17/154] Installing coreutils-common-0 100% | 286.6 MiB/s |  11.5 MiB |  00m00s
+[ 18/154] Installing ncurses-base-0:6.4 100% |  68.7 MiB/s | 351.6 KiB |  00m00s
+[ 19/154] Installing glibc-minimal-lang 100% |   0.0   B/s | 124.0   B |  00m00s
+[ 20/154] Installing ncurses-libs-0:6.4 100% | 212.5 MiB/s |   1.1 MiB |  00m00s
+>>> Running pre-install scriptlet: glibc-0:2.38.9000-35.fc40.s390x
+>>> Stop pre-install scriptlet: glibc-0:2.38.9000-35.fc40.s390x
+[ 21/154] Installing glibc-0:2.38.9000- 100% | 180.6 MiB/s |   5.4 MiB |  00m00s
+>>> Running post-install scriptlet: glibc-0:2.38.9000-35.fc40.s390x
+>>> Stop post-install scriptlet: glibc-0:2.38.9000-35.fc40.s390x
+[ 22/154] Installing bash-0:5.2.26-1.fc 100% | 298.5 MiB/s |   8.4 MiB |  00m00s
+>>> Running post-install scriptlet: bash-0:5.2.26-1.fc40.s390x
+>>> Stop post-install scriptlet: bash-0:5.2.26-1.fc40.s390x
+[ 23/154] Installing glibc-common-0:2.3 100% | 158.4 MiB/s |   1.1 MiB |  00m00s
+[ 24/154] Installing glibc-gconv-extra- 100% | 205.0 MiB/s |   7.8 MiB |  00m00s
+>>> Running post-install scriptlet: glibc-gconv-extra-0:2.38.9000-35.fc40.s390x
+>>> Stop post-install scriptlet: glibc-gconv-extra-0:2.38.9000-35.fc40.s390x
+[ 25/154] Installing zlib-ng-compat-0:2 100% | 115.4 MiB/s | 118.2 KiB |  00m00s
+[ 26/154] Installing xz-libs-0:5.4.5-1. 100% | 217.5 MiB/s | 222.7 KiB |  00m00s
+[ 27/154] Installing bzip2-libs-0:1.0.8 100% |  87.5 MiB/s |  89.6 KiB |  00m00s
+[ 28/154] Installing libuuid-0:2.39.3-4 100% |   0.0   B/s |  38.6 KiB |  00m00s
+[ 29/154] Installing readline-0:8.2-7.f 100% | 272.9 MiB/s | 558.9 KiB |  00m00s
+[ 30/154] Installing libzstd-0:1.5.5-4. 100% | 280.3 MiB/s | 861.1 KiB |  00m00s
+[ 31/154] Installing elfutils-libelf-0: 100% | 249.3 MiB/s |   1.0 MiB |  00m00s
+[ 32/154] Installing popt-0:1.19-3.fc39 100% |  73.9 MiB/s | 151.3 KiB |  00m00s
+[ 33/154] Installing libstdc++-0:14.0.1 100% | 260.2 MiB/s |   3.1 MiB |  00m00s
+[ 34/154] Installing libblkid-0:2.39.3- 100% | 251.8 MiB/s | 257.8 KiB |  00m00s
+[ 35/154] Installing libattr-0:2.5.2-1. 100% |  28.6 MiB/s |  29.3 KiB |  00m00s
+[ 36/154] Installing libacl-0:2.3.2-1.f 100% |   0.0   B/s |  44.6 KiB |  00m00s
+[ 37/154] Installing libxcrypt-0:4.4.36 100% | 270.9 MiB/s | 277.4 KiB |  00m00s
+[ 38/154] Installing gmp-1:6.2.1-5.fc39 100% | 249.8 MiB/s | 767.4 KiB |  00m00s
+[ 39/154] Installing lz4-libs-0:1.9.4-4 100% | 166.3 MiB/s | 170.3 KiB |  00m00s
+[ 40/154] Installing libeconf-0:0.5.2-1 100% |   0.0   B/s |  57.5 KiB |  00m00s
+[ 41/154] Installing gdbm-libs-1:1.23-4 100% | 132.0 MiB/s | 135.1 KiB |  00m00s
+[ 42/154] Installing mpfr-0:4.2.1-1.fc4 100% | 228.0 MiB/s | 700.3 KiB |  00m00s
+[ 43/154] Installing gawk-0:5.3.0-1.fc4 100% | 258.6 MiB/s |   1.8 MiB |  00m00s
+[ 44/154] Installing dwz-0:0.15-3.fc39. 100% | 308.5 MiB/s | 315.9 KiB |  00m00s
+[ 45/154] Installing unzip-0:6.0-62.fc3 100% | 203.9 MiB/s | 417.6 KiB |  00m00s
+[ 46/154] Installing file-libs-0:5.45-1 100% | 473.6 MiB/s |   9.9 MiB |  00m00s
+[ 47/154] Installing file-0:5.45-1.fc40 100% | 102.3 MiB/s | 104.8 KiB |  00m00s
+[ 48/154] Installing libcap-ng-0:0.8.4- 100% |  76.7 MiB/s |  78.5 KiB |  00m00s
+[ 49/154] Installing audit-libs-0:4.0-7 100% | 160.6 MiB/s | 329.0 KiB |  00m00s
+[ 50/154] Installing pam-libs-0:1.6.0-1 100% | 129.5 MiB/s | 132.6 KiB |  00m00s
+[ 51/154] Installing libcap-0:2.69-1.fc 100% | 115.1 MiB/s | 235.8 KiB |  00m00s
+[ 52/154] Installing systemd-libs-0:255 100% | 247.8 MiB/s |   2.0 MiB |  00m00s
+[ 53/154] Installing libsmartcols-0:2.3 100% | 149.5 MiB/s | 153.1 KiB |  00m00s
+[ 54/154] Installing libcom_err-0:1.47. 100% |   0.0   B/s |  68.1 KiB |  00m00s
+[ 55/154] Installing libsepol-0:3.6-1.f 100% | 274.5 MiB/s | 843.2 KiB |  00m00s
+[ 56/154] Installing pcre2-0:10.42-2.fc 100% | 321.6 MiB/s | 658.6 KiB |  00m00s
+[ 57/154] Installing libselinux-0:3.6-2 100% | 185.7 MiB/s | 190.1 KiB |  00m00s
+[ 58/154] Installing sed-0:4.8-14.fc39. 100% | 199.6 MiB/s | 817.6 KiB |  00m00s
+[ 59/154] Installing grep-0:3.11-5.fc40 100% | 202.9 MiB/s |   1.0 MiB |  00m00s
+[ 60/154] Installing findutils-1:4.9.0- 100% | 212.7 MiB/s |   1.5 MiB |  00m00s
+[ 61/154] Installing xz-0:5.4.5-1.fc40. 100% | 222.3 MiB/s |   2.0 MiB |  00m00s
+[ 62/154] Installing libmount-0:2.39.3- 100% | 182.2 MiB/s | 373.2 KiB |  00m00s
+[ 63/154] Installing alternatives-0:1.2 100% |  66.2 MiB/s |  67.8 KiB |  00m00s
+[ 64/154] Installing jansson-0:2.13.1-7 100% |  91.3 MiB/s |  93.5 KiB |  00m00s
+[ 65/154] Installing lua-libs-0:5.4.6-3 100% | 318.4 MiB/s | 326.1 KiB |  00m00s
+[ 66/154] Installing libtasn1-0:4.19.0- 100% | 184.9 MiB/s | 189.3 KiB |  00m00s
+[ 67/154] Installing libunistring-0:1.1 100% | 252.8 MiB/s |   1.8 MiB |  00m00s
+[ 68/154] Installing libidn2-0:2.3.7-1. 100% | 110.3 MiB/s | 338.9 KiB |  00m00s
+[ 69/154] Installing libpsl-0:0.21.5-1. 100% |  79.5 MiB/s |  81.4 KiB |  00m00s
+[ 70/154] Installing util-linux-core-0: 100% | 197.9 MiB/s |   1.4 MiB |  00m00s
+[ 71/154] Installing tar-2:1.35-2.fc40. 100% | 273.5 MiB/s |   3.0 MiB |  00m00s
+[ 72/154] Installing libsemanage-0:3.6- 100% | 148.0 MiB/s | 303.1 KiB |  00m00s
+[ 73/154] Installing shadow-utils-2:4.1 100% | 131.8 MiB/s |   4.1 MiB |  00m00s
+>>> Running pre-install scriptlet: libutempter-0:1.2.1-10.fc39.s390x
+>>> Stop pre-install scriptlet: libutempter-0:1.2.1-10.fc39.s390x
+[ 74/154] Installing libutempter-0:1.2. 100% |  57.9 MiB/s |  59.3 KiB |  00m00s
+[ 75/154] Installing zip-0:3.0-39.fc40. 100% | 246.8 MiB/s | 758.2 KiB |  00m00s
+[ 76/154] Installing gdbm-1:1.23-4.fc39 100% | 159.1 MiB/s | 488.8 KiB |  00m00s
+[ 77/154] Installing cyrus-sasl-lib-0:2 100% | 237.8 MiB/s |   2.4 MiB |  00m00s
+[ 78/154] Installing zstd-0:1.5.5-4.fc3 100% | 298.4 MiB/s |   1.8 MiB |  00m00s
+[ 79/154] Installing libfdisk-0:2.39.3- 100% | 193.3 MiB/s | 395.9 KiB |  00m00s
+[ 80/154] Installing bzip2-0:1.0.8-16.f 100% | 101.3 MiB/s | 103.7 KiB |  00m00s
+[ 81/154] Installing libxml2-0:2.12.4-1 100% | 234.3 MiB/s |   1.9 MiB |  00m00s
+[ 82/154] Installing sqlite-libs-0:3.45 100% | 262.2 MiB/s |   1.6 MiB |  00m00s
+[ 83/154] Installing ed-0:1.20-1.fc40.s 100% | 148.9 MiB/s | 152.5 KiB |  00m00s
+[ 84/154] Installing patch-0:2.7.6-22.f 100% | 269.4 MiB/s | 275.8 KiB |  00m00s
+[ 85/154] Installing elfutils-default-y 100% | 510.7 KiB/s |   2.0 KiB |  00m00s
+>>> Running post-install scriptlet: elfutils-default-yama-scope-0:0.190-4.fc40.n
+>>> Stop post-install scriptlet: elfutils-default-yama-scope-0:0.190-4.fc40.noar
+[ 86/154] Installing cpio-0:2.15-1.fc40 100% | 186.5 MiB/s |   1.1 MiB |  00m00s
+[ 87/154] Installing diffutils-0:3.10-3 100% | 227.0 MiB/s |   1.6 MiB |  00m00s
+[ 88/154] Installing libpkgconf-0:1.9.5 100% |  84.9 MiB/s |  86.9 KiB |  00m00s
+[ 89/154] Installing pkgconf-0:1.9.5-2. 100% |  84.1 MiB/s |  86.1 KiB |  00m00s
+[ 90/154] Installing keyutils-libs-0:1. 100% |  54.3 MiB/s |  55.6 KiB |  00m00s
+[ 91/154] Installing libverto-0:0.3.2-6 100% |   0.0   B/s |  31.1 KiB |  00m00s
+[ 92/154] Installing libgomp-0:14.0.1-0 100% | 259.3 MiB/s | 531.1 KiB |  00m00s
+[ 93/154] Installing libffi-0:3.4.4-5.f 100% |  65.0 MiB/s |  66.5 KiB |  00m00s
+[ 94/154] Installing p11-kit-0:0.25.3-1 100% | 226.4 MiB/s |   2.5 MiB |  00m00s
+[ 95/154] Installing p11-kit-trust-0:0. 100% |  76.3 MiB/s | 469.0 KiB |  00m00s
+>>> Running post-install scriptlet: p11-kit-trust-0:0.25.3-1.fc40.s390x
+>>> Stop post-install scriptlet: p11-kit-trust-0:0.25.3-1.fc40.s390x
+[ 96/154] Installing openssl-libs-1:3.1 100% | 235.1 MiB/s |   5.6 MiB |  00m00s
+[ 97/154] Installing coreutils-0:9.4-3. 100% | 188.3 MiB/s |   6.2 MiB |  00m00s
+>>> Running pre-install scriptlet: ca-certificates-0:2023.2.62_v7.0.401-4.fc40.n
+>>> Stop pre-install scriptlet: ca-certificates-0:2023.2.62_v7.0.401-4.fc40.noar
+[ 98/154] Installing ca-certificates-0: 100% |   2.3 MiB/s |   2.3 MiB |  00m01s
+>>> Running post-install scriptlet: ca-certificates-0:2023.2.62_v7.0.401-4.fc40.
+>>> Stop post-install scriptlet: ca-certificates-0:2023.2.62_v7.0.401-4.fc40.noa
+[ 99/154] Installing krb5-libs-0:1.21.2 100% | 204.3 MiB/s |   2.5 MiB |  00m00s
+[100/154] Installing libtirpc-0:1.3.4-1 100% | 211.3 MiB/s | 216.3 KiB |  00m00s
+[101/154] Installing gzip-0:1.12-6.fc39 100% | 126.7 MiB/s | 389.3 KiB |  00m00s
+>>> Running pre-install scriptlet: authselect-libs-0:1.5.0-1.fc40.s390x
+>>> Stop pre-install scriptlet: authselect-libs-0:1.5.0-1.fc40.s390x
+[102/154] Installing authselect-libs-0: 100% | 163.4 MiB/s |   1.0 MiB |  00m00s
+[103/154] Installing authselect-0:1.5.0 100% |  78.4 MiB/s | 160.6 KiB |  00m00s
+[104/154] Installing cracklib-0:2.9.11- 100% |  85.1 MiB/s | 261.4 KiB |  00m00s
+[105/154] Installing libpwquality-0:1.4 100% | 105.8 MiB/s | 433.2 KiB |  00m00s
+[106/154] Installing libnsl2-0:2.0.1-1. 100% |  61.4 MiB/s |  62.8 KiB |  00m00s
+[107/154] Installing pam-0:1.6.0-1.fc40 100% | 149.7 MiB/s |   1.8 MiB |  00m00s
+[108/154] Installing libssh-0:0.10.6-2. 100% | 259.3 MiB/s | 531.1 KiB |  00m00s
+[109/154] Installing libarchive-0:3.7.2 100% | 247.2 MiB/s |   1.0 MiB |  00m00s
+[110/154] Installing rpm-sequoia-0:1.6. 100% | 303.4 MiB/s |   3.0 MiB |  00m00s
+[111/154] Installing rpm-libs-0:4.19.1- 100% | 264.0 MiB/s | 811.1 KiB |  00m00s
+[112/154] Installing libevent-0:2.1.12- 100% | 184.1 MiB/s | 942.5 KiB |  00m00s
+[113/154] Installing openldap-0:2.6.6-1 100% | 219.0 MiB/s | 672.8 KiB |  00m00s
+[114/154] Installing xxhash-libs-0:0.8. 100% |  67.8 MiB/s |  69.4 KiB |  00m00s
+[115/154] Installing libbrotli-0:1.1.0- 100% | 149.6 MiB/s | 919.4 KiB |  00m00s
+[116/154] Installing libnghttp2-0:1.59. 100% |  85.5 MiB/s | 175.1 KiB |  00m00s
+[117/154] Installing libcurl-0:8.5.0-2. 100% | 160.5 MiB/s | 821.6 KiB |  00m00s
+[118/154] Installing elfutils-debuginfo 100% |  64.9 MiB/s |  66.4 KiB |  00m00s
+[119/154] Installing elfutils-libs-0:0. 100% | 239.6 MiB/s | 735.9 KiB |  00m00s
+[120/154] Installing binutils-gold-0:2. 100% | 178.4 MiB/s |   2.9 MiB |  00m00s
+>>> Running post-install scriptlet: binutils-gold-0:2.41-30.fc40.s390x
+>>> Stop post-install scriptlet: binutils-gold-0:2.41-30.fc40.s390x
+[121/154] Installing binutils-0:2.41-30 100% | 247.1 MiB/s |  25.9 MiB |  00m00s
+>>> Running post-install scriptlet: binutils-0:2.41-30.fc40.s390x
+>>> Stop post-install scriptlet: binutils-0:2.41-30.fc40.s390x
+[122/154] Installing elfutils-0:0.190-4 100% | 293.1 MiB/s |   2.9 MiB |  00m00s
+[123/154] Installing gdb-minimal-0:14.1 100% | 284.6 MiB/s |  12.5 MiB |  00m00s
+[124/154] Installing debugedit-0:5.0-12 100% | 200.4 MiB/s | 205.2 KiB |  00m00s
+[125/154] Installing rpm-build-libs-0:4 100% | 202.2 MiB/s | 207.0 KiB |  00m00s
+[126/154] Installing curl-0:8.5.0-2.fc4 100% |  80.9 MiB/s | 828.5 KiB |  00m00s
+>>> Running pre-install scriptlet: rpm-0:4.19.1-2.fc40.s390x
+>>> Stop pre-install scriptlet: rpm-0:4.19.1-2.fc40.s390x
+[127/154] Installing rpm-0:4.19.1-2.fc4 100% | 141.1 MiB/s |   2.4 MiB |  00m00s
+[128/154] Installing efi-srpm-macros-0: 100% |   0.0   B/s |  41.2 KiB |  00m00s
+[129/154] Installing lua-srpm-macros-0: 100% |   0.0   B/s |   1.9 KiB |  00m00s
+[130/154] Installing zig-srpm-macros-0: 100% |   0.0   B/s |   1.7 KiB |  00m00s
+[131/154] Installing pkgconf-m4-0:1.9.5 100% |   0.0   B/s |  14.3 KiB |  00m00s
+[132/154] Installing pkgconf-pkg-config 100% |   1.7 MiB/s |   1.8 KiB |  00m00s
+[133/154] Installing rust-srpm-macros-0 100% |   0.0   B/s |   5.8 KiB |  00m00s
+[134/154] Installing qt6-srpm-macros-0: 100% |   0.0   B/s | 732.0   B |  00m00s
+[135/154] Installing qt5-srpm-macros-0: 100% |   0.0   B/s | 768.0   B |  00m00s
+[136/154] Installing perl-srpm-macros-0 100% |   0.0   B/s |   1.1 KiB |  00m00s
+[137/154] Installing package-notes-srpm 100% |   0.0   B/s |   2.0 KiB |  00m00s
+[138/154] Installing openblas-srpm-macr 100% |   0.0   B/s | 384.0   B |  00m00s
+[139/154] Installing ocaml-srpm-macros- 100% |   0.0   B/s |   2.2 KiB |  00m00s
+[140/154] Installing kernel-srpm-macros 100% |   0.0   B/s |   2.3 KiB |  00m00s
+[141/154] Installing gnat-srpm-macros-0 100% |   0.0   B/s |   1.3 KiB |  00m00s
+[142/154] Installing ghc-srpm-macros-0: 100% |   0.0   B/s | 648.0   B |  00m00s
+[143/154] Installing fpc-srpm-macros-0: 100% |   0.0   B/s | 420.0   B |  00m00s
+[144/154] Installing ansible-srpm-macro 100% |   0.0   B/s |  36.2 KiB |  00m00s
+[145/154] Installing fonts-srpm-macros- 100% |  55.1 MiB/s |  56.5 KiB |  00m00s
+[146/154] Installing forge-srpm-macros- 100% |   0.0   B/s |  38.6 KiB |  00m00s
+[147/154] Installing go-srpm-macros-0:3 100% |   0.0   B/s |  61.6 KiB |  00m00s
+[148/154] Installing python-srpm-macros 100% |   0.0   B/s |  51.3 KiB |  00m00s
+[149/154] Installing redhat-rpm-config- 100% |  92.6 MiB/s | 189.6 KiB |  00m00s
+[150/154] Installing rpm-build-0:4.19.1 100% |  91.9 MiB/s | 188.3 KiB |  00m00s
+[151/154] Installing pyproject-srpm-mac 100% |   2.0 MiB/s |   2.1 KiB |  00m00s
+[152/154] Installing util-linux-0:2.39. 100% | 187.3 MiB/s |   3.6 MiB |  00m00s
+[153/154] Installing which-0:2.21-40.fc 100% |  42.1 MiB/s |  86.1 KiB |  00m00s
+[154/154] Installing info-0:7.1-1.fc40. 100% | 337.4 KiB/s | 405.5 KiB |  00m01s
+>>> Running post-transaction scriptlet: filesystem-0:3.18-6.fc39.s390x
+>>> Stop post-transaction scriptlet: filesystem-0:3.18-6.fc39.s390x
+>>> Running post-transaction scriptlet: ca-certificates-0:2023.2.62_v7.0.401-4.f
+>>> Stop post-transaction scriptlet: ca-certificates-0:2023.2.62_v7.0.401-4.fc40
+>>> Running post-transaction scriptlet: authselect-libs-0:1.5.0-1.fc40.s390x
+>>> Stop post-transaction scriptlet: authselect-libs-0:1.5.0-1.fc40.s390x
+>>> Running post-transaction scriptlet: rpm-0:4.19.1-2.fc40.s390x
+>>> Stop post-transaction scriptlet: rpm-0:4.19.1-2.fc40.s390x
+>>> Running trigger-install scriptlet: glibc-common-0:2.38.9000-35.fc40.s390x
+>>> Stop trigger-install scriptlet: glibc-common-0:2.38.9000-35.fc40.s390x
+>>> Running trigger-install scriptlet: info-0:7.1-1.fc40.s390x
+>>> Stop trigger-install scriptlet: info-0:7.1-1.fc40.s390x
+Warning: skipped PGP checks for 152 package(s).
+Finish: installing minimal buildroot with dnf5
+Start: creating root cache
+Finish: creating root cache
+Finish: chroot init
+INFO: Installed packages:
+INFO: alternatives-1.26-1.fc40.s390x
+ansible-srpm-macros-1-12.fc40.noarch
+audit-libs-4.0-7.fc40.s390x
+authselect-1.5.0-1.fc40.s390x
+authselect-libs-1.5.0-1.fc40.s390x
+basesystem-11-18.fc39.noarch
+bash-5.2.26-1.fc40.s390x
+binutils-2.41-30.fc40.s390x
+binutils-gold-2.41-30.fc40.s390x
+bzip2-1.0.8-16.fc39.s390x
+bzip2-libs-1.0.8-16.fc39.s390x
+ca-certificates-2023.2.62_v7.0.401-4.fc40.noarch
+coreutils-9.4-3.fc40.s390x
+coreutils-common-9.4-3.fc40.s390x
+cpio-2.15-1.fc40.s390x
+cracklib-2.9.11-2.fc39.s390x
+crypto-policies-20231204-1.git1e3a2e4.fc40.noarch
+curl-8.5.0-2.fc40.s390x
+cyrus-sasl-lib-2.1.28-17.fc40.s390x
+debugedit-5.0-12.fc40.s390x
+diffutils-3.10-3.fc39.s390x
+dwz-0.15-3.fc39.s390x
+ed-1.20-1.fc40.s390x
+efi-srpm-macros-5-9.fc39.noarch
+elfutils-0.190-4.fc40.s390x
+elfutils-debuginfod-client-0.190-4.fc40.s390x
+elfutils-default-yama-scope-0.190-4.fc40.noarch
+elfutils-libelf-0.190-4.fc40.s390x
+elfutils-libs-0.190-4.fc40.s390x
+fedora-gpg-keys-40-0.2.noarch
+fedora-release-40-0.29.noarch
+fedora-release-common-40-0.29.noarch
+fedora-release-identity-basic-40-0.29.noarch
+fedora-repos-40-0.2.noarch
+fedora-repos-rawhide-40-0.2.noarch
+file-5.45-1.fc40.s390x
+file-libs-5.45-1.fc40.s390x
+filesystem-3.18-6.fc39.s390x
+findutils-4.9.0-6.fc40.s390x
+fonts-srpm-macros-2.0.5-12.fc39.noarch
+forge-srpm-macros-0.2.0-1.fc40.noarch
+fpc-srpm-macros-1.3-8.fc39.noarch
+gawk-5.3.0-1.fc40.s390x
+gdb-minimal-14.1-4.fc40.s390x
+gdbm-1.23-4.fc39.s390x
+gdbm-libs-1.23-4.fc39.s390x
+ghc-srpm-macros-1.6.1-3.fc40.noarch
+glibc-2.38.9000-35.fc40.s390x
+glibc-common-2.38.9000-35.fc40.s390x
+glibc-gconv-extra-2.38.9000-35.fc40.s390x
+glibc-minimal-langpack-2.38.9000-35.fc40.s390x
+gmp-6.2.1-5.fc39.s390x
+gnat-srpm-macros-6-3.fc39.noarch
+go-srpm-macros-3.3.1-1.fc40.noarch
+grep-3.11-5.fc40.s390x
+gzip-1.12-6.fc39.s390x
+info-7.1-1.fc40.s390x
+jansson-2.13.1-7.fc39.s390x
+kernel-srpm-macros-1.0-20.fc39.noarch
+keyutils-libs-1.6.3-1.fc40.s390x
+krb5-libs-1.21.2-3.fc40.s390x
+libacl-2.3.2-1.fc40.s390x
+libarchive-3.7.2-1.fc40.s390x
+libattr-2.5.2-1.fc40.s390x
+libblkid-2.39.3-4.fc40.s390x
+libbrotli-1.1.0-1.fc40.s390x
+libcap-2.69-1.fc40.s390x
+libcap-ng-0.8.4-2.fc40.s390x
+libcom_err-1.47.0-2.fc39.s390x
+libcurl-8.5.0-2.fc40.s390x
+libeconf-0.5.2-1.fc40.s390x
+libevent-2.1.12-9.fc39.s390x
+libfdisk-2.39.3-4.fc40.s390x
+libffi-3.4.4-5.fc40.s390x
+libgcc-14.0.1-0.4.fc40.s390x
+libgomp-14.0.1-0.4.fc40.s390x
+libidn2-2.3.7-1.fc40.s390x
+libmount-2.39.3-4.fc40.s390x
+libnghttp2-1.59.0-1.fc40.s390x
+libnsl2-2.0.1-1.fc40.s390x
+libpkgconf-1.9.5-2.fc39.s390x
+libpsl-0.21.5-1.fc40.s390x
+libpwquality-1.4.5-6.fc39.s390x
+libselinux-3.6-2.fc40.s390x
+libsemanage-3.6-1.fc40.s390x
+libsepol-3.6-1.fc40.s390x
+libsmartcols-2.39.3-4.fc40.s390x
+libssh-0.10.6-2.fc40.s390x
+libssh-config-0.10.6-2.fc40.noarch
+libstdc++-14.0.1-0.4.fc40.s390x
+libtasn1-4.19.0-3.fc39.s390x
+libtirpc-1.3.4-1.rc1.fc40.s390x
+libunistring-1.1-5.fc40.s390x
+libutempter-1.2.1-10.fc39.s390x
+libuuid-2.39.3-4.fc40.s390x
+libverto-0.3.2-6.fc39.s390x
+libxcrypt-4.4.36-4.fc40.s390x
+libxml2-2.12.4-1.fc40.s390x
+libzstd-1.5.5-4.fc39.s390x
+lua-libs-5.4.6-3.fc39.s390x
+lua-srpm-macros-1-9.fc39.noarch
+lz4-libs-1.9.4-4.fc39.s390x
+mpfr-4.2.1-1.fc40.s390x
+ncurses-base-6.4-9.20240113.fc40.noarch
+ncurses-libs-6.4-9.20240113.fc40.s390x
+ocaml-srpm-macros-9-1.fc40.noarch
+openblas-srpm-macros-2-14.fc39.noarch
+openldap-2.6.6-1.fc39.s390x
+openssl-libs-3.1.4-1.fc40.s390x
+p11-kit-0.25.3-1.fc40.s390x
+p11-kit-trust-0.25.3-1.fc40.s390x
+package-notes-srpm-macros-0.5-9.fc39.noarch
+pam-1.6.0-1.fc40.s390x
+pam-libs-1.6.0-1.fc40.s390x
+patch-2.7.6-22.fc39.s390x
+pcre2-10.42-2.fc40.s390x
+pcre2-syntax-10.42-2.fc40.noarch
+perl-srpm-macros-1-51.fc39.noarch
+pkgconf-1.9.5-2.fc39.s390x
+pkgconf-m4-1.9.5-2.fc39.noarch
+pkgconf-pkg-config-1.9.5-2.fc39.s390x
+popt-1.19-3.fc39.s390x
+publicsuffix-list-dafsa-20240107-1.fc40.noarch
+pyproject-srpm-macros-1.12.0-1.fc40.noarch
+python-srpm-macros-3.12-7.fc40.noarch
+qt5-srpm-macros-5.15.12-1.fc40.noarch
+qt6-srpm-macros-6.6.1-3.fc40.noarch
+readline-8.2-7.fc40.s390x
+redhat-rpm-config-280-1.fc40.noarch
+rpm-4.19.1-2.fc40.s390x
+rpm-build-4.19.1-2.fc40.s390x
+rpm-build-libs-4.19.1-2.fc40.s390x
+rpm-libs-4.19.1-2.fc40.s390x
+rpm-sequoia-1.6.0-1.fc40.s390x
+rust-srpm-macros-25.2-2.fc40.noarch
+sed-4.8-14.fc39.s390x
+setup-2.14.5-1.fc40.noarch
+shadow-utils-4.14.0-4.fc40.s390x
+sqlite-libs-3.45.0-1.fc40.s390x
+systemd-libs-255.3-1.fc40.s390x
+tar-1.35-2.fc40.s390x
+unzip-6.0-62.fc39.s390x
+util-linux-2.39.3-4.fc40.s390x
+util-linux-core-2.39.3-4.fc40.s390x
+which-2.21-40.fc39.s390x
+xxhash-libs-0.8.2-1.fc39.s390x
+xz-5.4.5-1.fc40.s390x
+xz-libs-5.4.5-1.fc40.s390x
+zig-srpm-macros-1-1.fc40.noarch
+zip-3.0-39.fc40.s390x
+zlib-ng-compat-2.1.6-1.fc40.s390x
+zstd-1.5.5-4.fc39.s390x
+Start: buildsrpm
+Start: rpmbuild -bs
+warning: %patchN is deprecated (1 usages found), use %patch N (or %patch -P N)
+Building target platforms: s390x
+Building for target s390x
+setting SOURCE_DATE_EPOCH=1706486400
+Wrote: /builddir/build/SRPMS/python-gensim-0.10.0-38.fc40.src.rpm
+
+RPM build warnings:
+    %patchN is deprecated (1 usages found), use %patch N (or %patch -P N)
+Finish: rpmbuild -bs
+INFO: chroot_scan: 1 files copied to /var/lib/copr-rpmbuild/results/chroot_scan
+INFO: /var/lib/mock/fedora-rawhide-s390x-1706527503.536589/root/var/log/dnf5.log
+Finish: buildsrpm
+INFO: Done(/var/lib/copr-rpmbuild/workspace/workdir-w6jhw6fn/python-gensim/python-gensim.spec) Config(child) 2 minutes 20 seconds
+INFO: Results and/or logs in: /var/lib/copr-rpmbuild/results
+INFO: Cleaning up build root ('cleanup_on_success=True')
+Start: clean chroot
+INFO: unmounting tmpfs.
+Finish: clean chroot
+INFO: Start(/var/lib/copr-rpmbuild/results/python-gensim-0.10.0-38.fc40.src.rpm)  Config(fedora-rawhide-s390x)
+Start(bootstrap): chroot init
+INFO: mounting tmpfs at /var/lib/mock/fedora-rawhide-s390x-bootstrap-1706527503.536589/root.
+INFO: reusing tmpfs at /var/lib/mock/fedora-rawhide-s390x-bootstrap-1706527503.536589/root.
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: mounting tmpfs at /var/lib/mock/fedora-rawhide-s390x-1706527503.536589/root.
+INFO: calling preinit hooks
+INFO: enabled root cache
+Start: unpacking root cache
+Finish: unpacking root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+INFO: Buildroot is handled by package management downloaded with a bootstrap image:
+  rpm-4.19.1-2.fc40.s390x
+  rpm-sequoia-1.5.0-2.fc40.s390x
+  python3-dnf-4.18.2-1.fc40.noarch
+  yum-4.18.2-1.fc40.noarch
+  dnf5-5.1.11-1.fc40.s390x
+  dnf5-plugins-5.1.11-1.fc40.s390x
+Finish: chroot init
+Start: build phase for python-gensim-0.10.0-38.fc40.src.rpm
+Start: build setup for python-gensim-0.10.0-38.fc40.src.rpm
+warning: %patchN is deprecated (1 usages found), use %patch N (or %patch -P N)
+Building target platforms: s390x
+Building for target s390x
+setting SOURCE_DATE_EPOCH=1706486400
+Wrote: /builddir/build/SRPMS/python-gensim-0.10.0-38.fc40.src.rpm
+
+RPM build warnings:
+    %patchN is deprecated (1 usages found), use %patch N (or %patch -P N)
+Updating and loading repositories:
+ Additional repo http_kojipkgs_fedorapr 100% | 158.6 KiB/s |   4.1 KiB |  00m00s
+ fedora                                 100% | 111.7 KiB/s |   3.9 KiB |  00m00s
+ Copr repository                        100% | 107.7 KiB/s |   2.2 KiB |  00m00s
+Repositories loaded.
+Package                         Arch   Version             Repository                                                         Size
+Installing:                                                                                                                       
+ fdupes                         s390x  1:2.2.1-3.fc39      http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 103.5 KiB
+ gcc                            s390x  14.0.1-0.4.fc40     http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  76.0 MiB
+ make                           s390x  1:4.4.1-2.fc39      http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.9 MiB
+ python3-cython                 s390x  3.0.8-1.fc40        http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  18.1 MiB
+ python3-devel                  s390x  3.12.1-2.fc40       http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.2 MiB
+ python3-nose                   noarch 1.3.7-43.fc40       http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.2 MiB
+ python3-numpy                  s390x  1:1.26.2-2.fc40     http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  42.0 MiB
+ python3-scipy                  s390x  1.11.3-3.fc40       http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  64.0 MiB
+ python3-setuptools             noarch 68.2.2-1.fc40       http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   7.1 MiB
+ python3-six                    noarch 1.16.0-12.fc39      http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 117.7 KiB
+ python3-sphinx                 noarch 1:7.2.6-6.fc40      http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  10.8 MiB
+Installing dependencies:                                                                                                          
+ annobin-docs                   noarch 12.38-1.fc40        http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  95.6 KiB
+ annobin-plugin-gcc             s390x  12.38-1.fc40        http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 966.5 KiB
+ cpp                            s390x  14.0.1-0.4.fc40     http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  25.4 MiB
+ expat                          s390x  2.5.0-3.fc39        http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 302.4 KiB
+ flexiblas                      s390x  3.4.1-1.fc40        http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  46.7 KiB
+ flexiblas-netlib               s390x  3.4.1-1.fc40        http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  11.7 MiB
+ flexiblas-openblas-openmp      s390x  3.4.1-1.fc40        http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  39.2 KiB
+ gc                             s390x  8.2.2-4.fc39        http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 273.8 KiB
+ gcc-plugin-annobin             s390x  14.0.1-0.4.fc40     http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  56.8 KiB
+ glibc-devel                    s390x  2.38.9000-35.fc40   http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 392.1 KiB
+ glibc-headers-s390             noarch 2.38.9000-35.fc40   http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   2.1 MiB
+ guile22                        s390x  2.2.7-9.fc39        http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  43.8 MiB
+ kernel-headers                 s390x  6.8.0-0.rc1.12.fc40 http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   6.2 MiB
+ libasan                        s390x  14.0.1-0.4.fc40     http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.6 MiB
+ libatomic                      s390x  14.0.1-0.4.fc40     http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  32.3 KiB
+ libb2                          s390x  0.98.1-9.fc39       http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  41.9 KiB
+ libgfortran                    s390x  14.0.1-0.4.fc40     http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   2.2 MiB
+ libmpc                         s390x  1.3.1-3.fc39        http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 164.5 KiB
+ libtool-ltdl                   s390x  2.4.7-10.fc40       http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  74.0 KiB
+ libubsan                       s390x  14.0.1-0.4.fc40     http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 491.3 KiB
+ libxcrypt-devel                s390x  4.4.36-4.fc40       http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  30.3 KiB
+ mpdecimal                      s390x  2.5.1-7.fc39        http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 228.7 KiB
+ openblas                       s390x  0.3.26-1.fc40       http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  96.0 KiB
+ openblas-openmp                s390x  0.3.26-1.fc40       http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  15.2 MiB
+ pcre2-utf32                    s390x  10.42-2.fc40        http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 573.8 KiB
+ pyproject-rpm-macros           noarch 1.12.0-1.fc40       http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  98.8 KiB
+ python-pip-wheel               noarch 23.3.2-1.fc40       http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.5 MiB
+ python-rpm-macros              noarch 3.12-7.fc40         http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  22.1 KiB
+ python3                        s390x  3.12.1-2.fc40       http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  31.6 KiB
+ python3-appdirs                noarch 1.4.4-11.fc39       http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  68.9 KiB
+ python3-babel                  noarch 2.13.1-1.fc40       http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  31.2 MiB
+ python3-charset-normalizer     noarch 3.3.2-1.fc40        http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 312.7 KiB
+ python3-docutils               noarch 0.20.1-1.fc40       http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   4.8 MiB
+ python3-idna                   noarch 3.6-1.fc40          http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 502.3 KiB
+ python3-imagesize              noarch 1.4.1-5.fc40        http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  34.7 KiB
+ python3-jinja2                 noarch 3.1.3-1.fc40        http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   3.0 MiB
+ python3-libs                   s390x  3.12.1-2.fc40       http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  41.8 MiB
+ python3-markupsafe             s390x  2.1.3-2.fc39        http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  56.0 KiB
+ python3-numpy-f2py             s390x  1:1.26.2-2.fc40     http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   2.6 MiB
+ python3-packaging              noarch 23.2-2.fc40         http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 421.1 KiB
+ python3-pooch                  noarch 1.5.2-12.fc39       http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 547.8 KiB
+ python3-pygments               noarch 2.17.2-1.fc40       http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  10.3 MiB
+ python3-requests               noarch 2.31.0-1.fc40       http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 462.4 KiB
+ python3-rpm-generators         noarch 14-8.fc40           http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  82.3 KiB
+ python3-rpm-macros             noarch 3.12-7.fc40         http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   6.4 KiB
+ python3-snowballstemmer        noarch 2.2.0-7.fc39        http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.7 MiB
+ python3-sphinx-theme-alabaster noarch 0.7.16-1.fc40       http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch  41.9 KiB
+ python3-urllib3                noarch 1.26.18-1.fc40      http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch 996.2 KiB
+ tzdata                         noarch 2023d-2.fc40        http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch   1.6 MiB
+
+Transaction Summary:
+ Installing:       60 packages
+
+Total size of inbound packages is 115 MiB. Need to download 115 MiB.
+After this operation 437 MiB will be used (install 437 MiB, remove 0 B).
+[ 1/60] fdupes-1:2.2.1-3.fc39.s390x     100% |   1.6 MiB/s |  53.1 KiB |  00m00s
+[ 2/60] python3-devel-0:3.12.1-2.fc40.s 100% |  38.2 MiB/s | 273.9 KiB |  00m00s
+[ 3/60] python3-nose-0:1.3.7-43.fc40.no 100% |  52.2 MiB/s | 320.9 KiB |  00m00s
+[ 4/60] make-1:4.4.1-2.fc39.s390x       100% |  12.2 MiB/s | 597.5 KiB |  00m00s
+[ 5/60] python3-scipy-0:1.11.3-3.fc40.s 100% | 257.8 MiB/s |  16.5 MiB |  00m00s
+[ 6/60] python3-setuptools-0:68.2.2-1.f 100% | 108.2 MiB/s |   1.4 MiB |  00m00s
+[ 7/60] python3-numpy-1:1.26.2-2.fc40.s 100% |  78.0 MiB/s |   6.9 MiB |  00m00s
+[ 8/60] python3-six-0:1.16.0-12.fc39.no 100% |   4.4 MiB/s |  40.9 KiB |  00m00s
+[ 9/60] python3-sphinx-1:7.2.6-6.fc40.n 100% | 124.2 MiB/s |   2.5 MiB |  00m00s
+[10/60] cpp-0:14.0.1-0.4.fc40.s390x     100% | 188.0 MiB/s |   9.6 MiB |  00m00s
+[11/60] python3-cython-0:3.0.8-1.fc40.s 100% | 110.4 MiB/s |   3.9 MiB |  00m00s
+[12/60] python3-0:3.12.1-2.fc40.s390x   100% |   3.7 MiB/s |  26.4 KiB |  00m00s
+[13/60] python3-docutils-0:0.20.1-1.fc4 100% |  88.3 MiB/s | 994.7 KiB |  00m00s
+[14/60] gcc-0:14.0.1-0.4.fc40.s390x     100% | 127.2 MiB/s |  30.3 MiB |  00m00s
+[15/60] python3-imagesize-0:1.4.1-5.fc4 100% | 777.8 KiB/s |  21.8 KiB |  00m00s
+[16/60] python3-babel-0:2.13.1-1.fc40.n 100% | 125.2 MiB/s |   6.8 MiB |  00m00s
+[17/60] python3-jinja2-0:3.1.3-1.fc40.n 100% |  47.2 MiB/s | 483.7 KiB |  00m00s
+[18/60] python3-packaging-0:23.2-2.fc40 100% |  12.5 MiB/s | 115.5 KiB |  00m00s
+[19/60] python3-snowballstemmer-0:2.2.0 100% |  46.8 MiB/s | 239.6 KiB |  00m00s
+[20/60] python3-requests-0:2.31.0-1.fc4 100% |  22.9 MiB/s | 140.9 KiB |  00m00s
+[21/60] python3-sphinx-theme-alabaster- 100% |   4.7 MiB/s |  23.9 KiB |  00m00s
+[22/60] python3-pygments-0:2.17.2-1.fc4 100% | 164.9 MiB/s |   2.3 MiB |  00m00s
+[23/60] libgfortran-0:14.0.1-0.4.fc40.s 100% |  58.6 MiB/s | 600.5 KiB |  00m00s
+[24/60] python3-numpy-f2py-1:1.26.2-2.f 100% |  50.9 MiB/s | 468.9 KiB |  00m00s
+[25/60] flexiblas-netlib-0:3.4.1-1.fc40 100% | 160.7 MiB/s |   3.7 MiB |  00m00s
+[26/60] python3-pooch-0:1.5.2-12.fc39.n 100% |  15.8 MiB/s | 113.0 KiB |  00m00s
+[27/60] python3-charset-normalizer-0:3. 100% |  16.1 MiB/s |  99.1 KiB |  00m00s
+[28/60] python3-appdirs-0:1.4.4-11.fc39 100% |   7.5 MiB/s |  22.9 KiB |  00m00s
+[29/60] python3-idna-0:3.6-1.fc40.noarc 100% |  19.7 MiB/s | 100.7 KiB |  00m00s
+[30/60] python3-urllib3-0:1.26.18-1.fc4 100% |  49.6 MiB/s | 253.7 KiB |  00m00s
+[31/60] python3-markupsafe-0:2.1.3-2.fc 100% |   5.9 MiB/s |  30.0 KiB |  00m00s
+[32/60] gc-0:8.2.2-4.fc39.s390x         100% |  16.0 MiB/s | 114.4 KiB |  00m00s
+[33/60] libtool-ltdl-0:2.4.7-10.fc40.s3 100% |   6.0 MiB/s |  37.1 KiB |  00m00s
+[34/60] guile22-0:2.2.7-9.fc39.s390x    100% | 188.9 MiB/s |   6.4 MiB |  00m00s
+[35/60] glibc-devel-0:2.38.9000-35.fc40 100% |   9.4 MiB/s | 115.2 KiB |  00m00s
+[36/60] python3-libs-0:3.12.1-2.fc40.s3 100% | 192.1 MiB/s |   8.8 MiB |  00m00s
+[37/60] libatomic-0:14.0.1-0.4.fc40.s39 100% |   1.9 MiB/s |  21.3 KiB |  00m00s
+[38/60] libasan-0:14.0.1-0.4.fc40.s390x 100% |  42.4 MiB/s | 520.5 KiB |  00m00s
+[39/60] flexiblas-0:3.4.1-1.fc40.s390x  100% |   8.1 MiB/s |  24.8 KiB |  00m00s
+[40/60] libmpc-0:1.3.1-3.fc39.s390x     100% |  14.3 MiB/s |  73.3 KiB |  00m00s
+[41/60] libubsan-0:14.0.1-0.4.fc40.s390 100% |  41.9 MiB/s | 214.4 KiB |  00m00s
+[42/60] flexiblas-openblas-openmp-0:3.4 100% |   4.3 MiB/s |  17.5 KiB |  00m00s
+[43/60] pcre2-utf32-0:10.42-2.fc40.s390 100% |  42.7 MiB/s | 218.7 KiB |  00m00s
+[44/60] expat-0:2.5.0-3.fc39.s390x      100% |  27.8 MiB/s | 113.9 KiB |  00m00s
+[45/60] libb2-0:0.98.1-9.fc39.s390x     100% |   6.5 MiB/s |  26.8 KiB |  00m00s
+[46/60] mpdecimal-0:2.5.1-7.fc39.s390x  100% |  19.5 MiB/s | 100.0 KiB |  00m00s
+[47/60] python-pip-wheel-0:23.3.2-1.fc4 100% | 147.1 MiB/s |   1.5 MiB |  00m00s
+[48/60] tzdata-0:2023d-2.fc40.noarch    100% |  52.9 MiB/s | 433.6 KiB |  00m00s
+[49/60] glibc-headers-s390-0:2.38.9000- 100% |  56.0 MiB/s | 515.9 KiB |  00m00s
+[50/60] libxcrypt-devel-0:4.4.36-4.fc40 100% |   5.6 MiB/s |  28.9 KiB |  00m00s
+[51/60] kernel-headers-0:6.8.0-0.rc1.12 100% | 119.5 MiB/s |   1.4 MiB |  00m00s
+[52/60] openblas-0:0.3.26-1.fc40.s390x  100% |   5.4 MiB/s |  38.4 KiB |  00m00s
+[53/60] gcc-plugin-annobin-0:14.0.1-0.4 100% |   6.7 MiB/s |  34.4 KiB |  00m00s
+[54/60] pyproject-rpm-macros-0:1.12.0-1 100% |   8.1 MiB/s |  41.4 KiB |  00m00s
+[55/60] python-rpm-macros-0:3.12-7.fc40 100% |   3.5 MiB/s |  18.0 KiB |  00m00s
+[56/60] python3-rpm-generators-0:14-8.f 100% |   7.3 MiB/s |  30.0 KiB |  00m00s
+[57/60] python3-rpm-macros-0:3.12-7.fc4 100% |   2.5 MiB/s |  12.8 KiB |  00m00s
+[58/60] openblas-openmp-0:0.3.26-1.fc40 100% | 161.1 MiB/s |   4.3 MiB |  00m00s
+[59/60] annobin-plugin-gcc-0:12.38-1.fc 100% | 103.8 MiB/s | 956.3 KiB |  00m00s
+[60/60] annobin-docs-0:12.38-1.fc40.noa 100% |  12.5 MiB/s |  89.6 KiB |  00m00s
+--------------------------------------------------------------------------------
+[60/60] Total                           100% | 289.3 MiB/s | 114.9 MiB |  00m00s
+Running transaction
+[ 1/62] Verify package files            100% | 166.0   B/s |  60.0   B |  00m00s
+[ 2/62] Prepare transaction             100% | 425.0   B/s |  60.0   B |  00m00s
+[ 3/62] Installing python-rpm-macros-0: 100% |  22.3 MiB/s |  22.8 KiB |  00m00s
+[ 4/62] Installing libgfortran-0:14.0.1 100% | 180.9 MiB/s |   2.2 MiB |  00m00s
+[ 5/62] Installing python3-rpm-macros-0 100% |   0.0   B/s |   6.7 KiB |  00m00s
+[ 6/62] Installing libmpc-0:1.3.1-3.fc3 100% |  81.1 MiB/s | 166.0 KiB |  00m00s
+[ 7/62] Installing cpp-0:14.0.1-0.4.fc4 100% | 220.7 MiB/s |  25.4 MiB |  00m00s
+[ 8/62] Installing pyproject-rpm-macros 100% |  98.4 MiB/s | 100.8 KiB |  00m00s
+[ 9/62] Installing annobin-docs-0:12.38 100% |   0.0   B/s |  96.6 KiB |  00m00s
+[10/62] Installing openblas-0:0.3.26-1. 100% |  95.5 MiB/s |  97.8 KiB |  00m00s
+[11/62] Installing openblas-openmp-0:0. 100% | 315.9 MiB/s |  15.2 MiB |  00m00s
+[12/62] Installing flexiblas-0:3.4.1-1. 100% |   0.0   B/s |  47.9 KiB |  00m00s
+[13/62] Installing flexiblas-openblas-o 100% |   0.0   B/s |  40.0 KiB |  00m00s
+[14/62] Installing flexiblas-netlib-0:3 100% | 284.6 MiB/s |  11.7 MiB |  00m00s
+[15/62] Installing kernel-headers-0:6.8 100% | 172.1 MiB/s |   6.4 MiB |  00m00s
+[16/62] Installing glibc-headers-s390-0 100% | 122.5 MiB/s |   2.2 MiB |  00m00s
+[17/62] Installing libxcrypt-devel-0:4. 100% |  31.8 MiB/s |  32.6 KiB |  00m00s
+[18/62] Installing glibc-devel-0:2.38.9 100% |  96.6 MiB/s | 395.8 KiB |  00m00s
+[19/62] Installing tzdata-0:2023d-2.fc4 100% |  57.8 MiB/s |   1.9 MiB |  00m00s
+[20/62] Installing python-pip-wheel-0:2 100% | 506.6 MiB/s |   1.5 MiB |  00m00s
+[21/62] Installing mpdecimal-0:2.5.1-7. 100% | 224.4 MiB/s | 229.8 KiB |  00m00s
+[22/62] Installing libb2-0:0.98.1-9.fc3 100% |   0.0   B/s |  43.0 KiB |  00m00s
+[23/62] Installing expat-0:2.5.0-3.fc39 100% |  49.6 MiB/s | 304.5 KiB |  00m00s
+[24/62] Installing python3-libs-0:3.12. 100% | 267.0 MiB/s |  42.2 MiB |  00m00s
+[25/62] Installing python3-0:3.12.1-2.f 100% |  32.6 MiB/s |  33.4 KiB |  00m00s
+[26/62] Installing python3-packaging-0: 100% |  70.3 MiB/s | 431.9 KiB |  00m00s
+[27/62] Installing python3-numpy-1:1.26 100% | 313.3 MiB/s |  42.3 MiB |  00m00s
+[28/62] Installing python3-setuptools-0 100% | 226.5 MiB/s |   7.2 MiB |  00m00s
+[29/62] Installing python3-idna-0:3.6-1 100% | 124.2 MiB/s | 508.6 KiB |  00m00s
+[30/62] Installing python3-urllib3-0:1. 100% | 110.9 MiB/s |   1.0 MiB |  00m00s
+[31/62] Installing python3-babel-0:2.13 100% | 223.9 MiB/s |  31.3 MiB |  00m00s
+[32/62] Installing python3-rpm-generato 100% |  81.5 MiB/s |  83.4 KiB |  00m00s
+[33/62] Installing python3-devel-0:3.12 100% | 106.3 MiB/s |   1.3 MiB |  00m00s
+[34/62] Installing python3-numpy-f2py-1 100% | 177.1 MiB/s |   2.7 MiB |  00m00s
+[35/62] Installing python3-docutils-0:0 100% | 203.5 MiB/s |   4.9 MiB |  00m00s
+[36/62] Installing python3-imagesize-0: 100% |  12.3 MiB/s |  37.8 KiB |  00m00s
+[37/62] Installing python3-pygments-0:2 100% | 224.2 MiB/s |  10.5 MiB |  00m00s
+[38/62] Installing python3-snowballstem 100% | 283.9 MiB/s |   1.7 MiB |  00m00s
+[39/62] Installing python3-sphinx-theme 100% |  45.2 MiB/s |  46.3 KiB |  00m00s
+[40/62] Installing python3-charset-norm 100% | 157.5 MiB/s | 322.7 KiB |  00m00s
+[41/62] Installing python3-requests-0:2 100% | 154.5 MiB/s | 474.5 KiB |  00m00s
+[42/62] Installing python3-appdirs-0:1. 100% |  69.4 MiB/s |  71.1 KiB |  00m00s
+[43/62] Installing python3-pooch-0:1.5. 100% | 183.2 MiB/s | 562.9 KiB |  00m00s
+[44/62] Installing python3-markupsafe-0 100% |  58.7 MiB/s |  60.1 KiB |  00m00s
+[45/62] Installing python3-jinja2-0:3.1 100% | 299.9 MiB/s |   3.0 MiB |  00m00s
+[46/62] Installing pcre2-utf32-0:10.42- 100% | 280.6 MiB/s | 574.6 KiB |  00m00s
+[47/62] Installing libubsan-0:14.0.1-0. 100% | 240.3 MiB/s | 492.1 KiB |  00m00s
+[48/62] Installing libatomic-0:14.0.1-0 100% |   0.0   B/s |  33.2 KiB |  00m00s
+[49/62] Installing libasan-0:14.0.1-0.4 100% | 273.7 MiB/s |   1.6 MiB |  00m00s
+[50/62] Installing libtool-ltdl-0:2.4.7 100% |  73.3 MiB/s |  75.1 KiB |  00m00s
+[51/62] Installing gc-0:8.2.2-4.fc39.s3 100% |  89.9 MiB/s | 276.3 KiB |  00m00s
+[52/62] Installing guile22-0:2.2.7-9.fc 100% | 363.3 MiB/s |  44.0 MiB |  00m00s
+[53/62] Installing make-1:4.4.1-2.fc39. 100% | 265.5 MiB/s |   1.9 MiB |  00m00s
+[54/62] Installing gcc-0:14.0.1-0.4.fc4 100% | 307.9 MiB/s |  76.0 MiB |  00m00s
+>>> Running trigger-install scriptlet: redhat-rpm-config-0:280-1.fc40.noarch
+>>> Stop trigger-install scriptlet: redhat-rpm-config-0:280-1.fc40.noarch
+[55/62] Installing gcc-plugin-annobin-0 100% |   5.7 MiB/s |  58.4 KiB |  00m00s
+>>> Running trigger-install scriptlet: redhat-rpm-config-0:280-1.fc40.noarch
+>>> Stop trigger-install scriptlet: redhat-rpm-config-0:280-1.fc40.noarch
+[56/62] Installing annobin-plugin-gcc-0 100% |  72.7 MiB/s | 968.1 KiB |  00m00s
+>>> Running trigger-install scriptlet: redhat-rpm-config-0:280-1.fc40.noarch
+>>> Stop trigger-install scriptlet: redhat-rpm-config-0:280-1.fc40.noarch
+[57/62] Installing fdupes-1:2.2.1-3.fc3 100% |  34.3 MiB/s | 105.4 KiB |  00m00s
+[58/62] Installing python3-sphinx-1:7.2 100% | 195.9 MiB/s |  11.0 MiB |  00m00s
+[59/62] Installing python3-scipy-0:1.11 100% | 300.5 MiB/s |  64.3 MiB |  00m00s
+[60/62] Installing python3-nose-0:1.3.7 100% | 182.0 MiB/s |   1.3 MiB |  00m00s
+[61/62] Installing python3-six-0:1.16.0 100% |  58.6 MiB/s | 120.0 KiB |  00m00s
+[62/62] Installing python3-cython-0:3.0 100% | 109.0 MiB/s |  18.2 MiB |  00m00s
+>>> Running trigger-install scriptlet: glibc-common-0:2.38.9000-35.fc40.s390x
+>>> Stop trigger-install scriptlet: glibc-common-0:2.38.9000-35.fc40.s390x
+>>> Running trigger-install scriptlet: info-0:7.1-1.fc40.s390x
+>>> Stop trigger-install scriptlet: info-0:7.1-1.fc40.s390x
+Warning: skipped PGP checks for 60 package(s).
+Finish: build setup for python-gensim-0.10.0-38.fc40.src.rpm
+Start: rpmbuild python-gensim-0.10.0-38.fc40.src.rpm
+warning: %patchN is deprecated (1 usages found), use %patch N (or %patch -P N)
+Building target platforms: s390x
+Building for target s390x
+setting SOURCE_DATE_EPOCH=1706486400
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.UfxKcc
++ umask 022
++ cd /builddir/build/BUILD
++ cd /builddir/build/BUILD
++ rm -rf gensim-0.10.0
++ /usr/lib/rpm/rpmuncompress -x /builddir/build/SOURCES/python-gensim-0.10.0.tar.gz
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd gensim-0.10.0
++ rm -rf /builddir/build/BUILD/gensim-0.10.0-SPECPARTS
++ /usr/bin/mkdir -p /builddir/build/BUILD/gensim-0.10.0-SPECPARTS
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ find gensim/examples -type f -name '*.addons' -print0
++ xargs -0 rm -f
++ _file=docs/src/_static/js/jquery-migrate-1.1.1.min.js
++ sed -i.orig -e 's!\r$!!g' docs/src/_static/js/jquery-migrate-1.1.1.min.js
++ touch -r docs/src/_static/js/jquery-migrate-1.1.1.min.js.orig docs/src/_static/js/jquery-migrate-1.1.1.min.js
++ rm -rf docs/src/_static/js/jquery-migrate-1.1.1.min.js.orig
+++ find . -type f -name '*.py'
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./setup.py
++ touch -r ./setup.py ./setup.py.new
++ mv -f ./setup.py.new ./setup.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim_addons/models/__init__.py
++ touch -r ./gensim_addons/models/__init__.py ./gensim_addons/models/__init__.py.new
++ mv -f ./gensim_addons/models/__init__.py.new ./gensim_addons/models/__init__.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim_addons/__init__.py
++ touch -r ./gensim_addons/__init__.py ./gensim_addons/__init__.py.new
++ mv -f ./gensim_addons/__init__.py.new ./gensim_addons/__init__.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/utils.py
++ touch -r ./gensim/utils.py ./gensim/utils.py.new
++ mv -f ./gensim/utils.py.new ./gensim/utils.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/test/test_word2vec.py
++ touch -r ./gensim/test/test_word2vec.py ./gensim/test/test_word2vec.py.new
++ mv -f ./gensim/test/test_word2vec.py.new ./gensim/test/test_word2vec.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/test/test_utils.py
++ touch -r ./gensim/test/test_utils.py ./gensim/test/test_utils.py.new
++ mv -f ./gensim/test/test_utils.py.new ./gensim/test/test_utils.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/test/test_similarities.py
++ touch -r ./gensim/test/test_similarities.py ./gensim/test/test_similarities.py.new
++ mv -f ./gensim/test/test_similarities.py.new ./gensim/test/test_similarities.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/test/test_parsing.py
++ touch -r ./gensim/test/test_parsing.py ./gensim/test/test_parsing.py.new
++ mv -f ./gensim/test/test_parsing.py.new ./gensim/test/test_parsing.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/test/test_models.py
++ touch -r ./gensim/test/test_models.py ./gensim/test/test_models.py.new
++ mv -f ./gensim/test/test_models.py.new ./gensim/test/test_models.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/test/test_miislita.py
++ touch -r ./gensim/test/test_miislita.py ./gensim/test/test_miislita.py.new
++ mv -f ./gensim/test/test_miislita.py.new ./gensim/test/test_miislita.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/test/test_lee.py
++ touch -r ./gensim/test/test_lee.py ./gensim/test/test_lee.py.new
++ mv -f ./gensim/test/test_lee.py.new ./gensim/test/test_lee.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/test/test_corpora_hashdictionary.py
++ touch -r ./gensim/test/test_corpora_hashdictionary.py ./gensim/test/test_corpora_hashdictionary.py.new
++ mv -f ./gensim/test/test_corpora_hashdictionary.py.new ./gensim/test/test_corpora_hashdictionary.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/test/test_corpora_dictionary.py
++ touch -r ./gensim/test/test_corpora_dictionary.py ./gensim/test/test_corpora_dictionary.py.new
++ mv -f ./gensim/test/test_corpora_dictionary.py.new ./gensim/test/test_corpora_dictionary.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/test/test_corpora.py
++ touch -r ./gensim/test/test_corpora.py ./gensim/test/test_corpora.py.new
++ mv -f ./gensim/test/test_corpora.py.new ./gensim/test/test_corpora.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/test/test_big.py
++ touch -r ./gensim/test/test_big.py ./gensim/test/test_big.py.new
++ mv -f ./gensim/test/test_big.py.new ./gensim/test/test_big.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/test/svd_error.py
++ touch -r ./gensim/test/svd_error.py ./gensim/test/svd_error.py.new
++ mv -f ./gensim/test/svd_error.py.new ./gensim/test/svd_error.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/test/simspeed2.py
++ touch -r ./gensim/test/simspeed2.py ./gensim/test/simspeed2.py.new
++ mv -f ./gensim/test/simspeed2.py.new ./gensim/test/simspeed2.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/test/simspeed.py
++ touch -r ./gensim/test/simspeed.py ./gensim/test/simspeed.py.new
++ mv -f ./gensim/test/simspeed.py.new ./gensim/test/simspeed.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/test/__init__.py
++ touch -r ./gensim/test/__init__.py ./gensim/test/__init__.py.new
++ mv -f ./gensim/test/__init__.py.new ./gensim/test/__init__.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/similarities/docsim.py
++ touch -r ./gensim/similarities/docsim.py ./gensim/similarities/docsim.py.new
++ mv -f ./gensim/similarities/docsim.py.new ./gensim/similarities/docsim.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/similarities/__init__.py
++ touch -r ./gensim/similarities/__init__.py ./gensim/similarities/__init__.py.new
++ mv -f ./gensim/similarities/__init__.py.new ./gensim/similarities/__init__.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/scripts/make_wikicorpus.py
++ touch -r ./gensim/scripts/make_wikicorpus.py ./gensim/scripts/make_wikicorpus.py.new
++ mv -f ./gensim/scripts/make_wikicorpus.py.new ./gensim/scripts/make_wikicorpus.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/scripts/__init__.py
++ touch -r ./gensim/scripts/__init__.py ./gensim/scripts/__init__.py.new
++ mv -f ./gensim/scripts/__init__.py.new ./gensim/scripts/__init__.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/parsing/preprocessing.py
++ touch -r ./gensim/parsing/preprocessing.py ./gensim/parsing/preprocessing.py.new
++ mv -f ./gensim/parsing/preprocessing.py.new ./gensim/parsing/preprocessing.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/parsing/porter.py
++ touch -r ./gensim/parsing/porter.py ./gensim/parsing/porter.py.new
++ mv -f ./gensim/parsing/porter.py.new ./gensim/parsing/porter.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/parsing/__init__.py
++ touch -r ./gensim/parsing/__init__.py ./gensim/parsing/__init__.py.new
++ mv -f ./gensim/parsing/__init__.py.new ./gensim/parsing/__init__.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/nosy.py
++ touch -r ./gensim/nosy.py ./gensim/nosy.py.new
++ mv -f ./gensim/nosy.py.new ./gensim/nosy.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/models/word2vec.py
++ touch -r ./gensim/models/word2vec.py ./gensim/models/word2vec.py.new
++ mv -f ./gensim/models/word2vec.py.new ./gensim/models/word2vec.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/models/tfidfmodel.py
++ touch -r ./gensim/models/tfidfmodel.py ./gensim/models/tfidfmodel.py.new
++ mv -f ./gensim/models/tfidfmodel.py.new ./gensim/models/tfidfmodel.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/models/rpmodel.py
++ touch -r ./gensim/models/rpmodel.py ./gensim/models/rpmodel.py.new
++ mv -f ./gensim/models/rpmodel.py.new ./gensim/models/rpmodel.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/models/lsimodel.py
++ touch -r ./gensim/models/lsimodel.py ./gensim/models/lsimodel.py.new
++ mv -f ./gensim/models/lsimodel.py.new ./gensim/models/lsimodel.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/models/lsi_worker.py
++ touch -r ./gensim/models/lsi_worker.py ./gensim/models/lsi_worker.py.new
++ mv -f ./gensim/models/lsi_worker.py.new ./gensim/models/lsi_worker.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/models/lsi_dispatcher.py
++ touch -r ./gensim/models/lsi_dispatcher.py ./gensim/models/lsi_dispatcher.py.new
++ mv -f ./gensim/models/lsi_dispatcher.py.new ./gensim/models/lsi_dispatcher.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/models/logentropy_model.py
++ touch -r ./gensim/models/logentropy_model.py ./gensim/models/logentropy_model.py.new
++ mv -f ./gensim/models/logentropy_model.py.new ./gensim/models/logentropy_model.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/models/ldamodel.py
++ touch -r ./gensim/models/ldamodel.py ./gensim/models/ldamodel.py.new
++ mv -f ./gensim/models/ldamodel.py.new ./gensim/models/ldamodel.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/models/ldamallet.py
++ touch -r ./gensim/models/ldamallet.py ./gensim/models/ldamallet.py.new
++ mv -f ./gensim/models/ldamallet.py.new ./gensim/models/ldamallet.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/models/lda_worker.py
++ touch -r ./gensim/models/lda_worker.py ./gensim/models/lda_worker.py.new
++ mv -f ./gensim/models/lda_worker.py.new ./gensim/models/lda_worker.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/models/lda_dispatcher.py
++ touch -r ./gensim/models/lda_dispatcher.py ./gensim/models/lda_dispatcher.py.new
++ mv -f ./gensim/models/lda_dispatcher.py.new ./gensim/models/lda_dispatcher.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/models/hdpmodel.py
++ touch -r ./gensim/models/hdpmodel.py ./gensim/models/hdpmodel.py.new
++ mv -f ./gensim/models/hdpmodel.py.new ./gensim/models/hdpmodel.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/models/__init__.py
++ touch -r ./gensim/models/__init__.py ./gensim/models/__init__.py.new
++ mv -f ./gensim/models/__init__.py.new ./gensim/models/__init__.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/matutils.py
++ touch -r ./gensim/matutils.py ./gensim/matutils.py.new
++ mv -f ./gensim/matutils.py.new ./gensim/matutils.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/interfaces.py
++ touch -r ./gensim/interfaces.py ./gensim/interfaces.py.new
++ mv -f ./gensim/interfaces.py.new ./gensim/interfaces.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/examples/dmlcz/sources.py
++ touch -r ./gensim/examples/dmlcz/sources.py ./gensim/examples/dmlcz/sources.py.new
++ mv -f ./gensim/examples/dmlcz/sources.py.new ./gensim/examples/dmlcz/sources.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/examples/dmlcz/gensim_xml.py
++ touch -r ./gensim/examples/dmlcz/gensim_xml.py ./gensim/examples/dmlcz/gensim_xml.py.new
++ mv -f ./gensim/examples/dmlcz/gensim_xml.py.new ./gensim/examples/dmlcz/gensim_xml.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/examples/dmlcz/gensim_genmodel.py
++ touch -r ./gensim/examples/dmlcz/gensim_genmodel.py ./gensim/examples/dmlcz/gensim_genmodel.py.new
++ mv -f ./gensim/examples/dmlcz/gensim_genmodel.py.new ./gensim/examples/dmlcz/gensim_genmodel.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/examples/dmlcz/gensim_build.py
++ touch -r ./gensim/examples/dmlcz/gensim_build.py ./gensim/examples/dmlcz/gensim_build.py.new
++ mv -f ./gensim/examples/dmlcz/gensim_build.py.new ./gensim/examples/dmlcz/gensim_build.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/examples/dmlcz/dmlcorpus.py
++ touch -r ./gensim/examples/dmlcz/dmlcorpus.py ./gensim/examples/dmlcz/dmlcorpus.py.new
++ mv -f ./gensim/examples/dmlcz/dmlcorpus.py.new ./gensim/examples/dmlcz/dmlcorpus.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/examples/dmlcz/__init__.py
++ touch -r ./gensim/examples/dmlcz/__init__.py ./gensim/examples/dmlcz/__init__.py.new
++ mv -f ./gensim/examples/dmlcz/__init__.py.new ./gensim/examples/dmlcz/__init__.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/corpora/wikicorpus.py
++ touch -r ./gensim/corpora/wikicorpus.py ./gensim/corpora/wikicorpus.py.new
++ mv -f ./gensim/corpora/wikicorpus.py.new ./gensim/corpora/wikicorpus.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/corpora/ucicorpus.py
++ touch -r ./gensim/corpora/ucicorpus.py ./gensim/corpora/ucicorpus.py.new
++ mv -f ./gensim/corpora/ucicorpus.py.new ./gensim/corpora/ucicorpus.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/corpora/textcorpus.py
++ touch -r ./gensim/corpora/textcorpus.py ./gensim/corpora/textcorpus.py.new
++ mv -f ./gensim/corpora/textcorpus.py.new ./gensim/corpora/textcorpus.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/corpora/svmlightcorpus.py
++ touch -r ./gensim/corpora/svmlightcorpus.py ./gensim/corpora/svmlightcorpus.py.new
++ mv -f ./gensim/corpora/svmlightcorpus.py.new ./gensim/corpora/svmlightcorpus.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/corpora/mmcorpus.py
++ touch -r ./gensim/corpora/mmcorpus.py ./gensim/corpora/mmcorpus.py.new
++ mv -f ./gensim/corpora/mmcorpus.py.new ./gensim/corpora/mmcorpus.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/corpora/malletcorpus.py
++ touch -r ./gensim/corpora/malletcorpus.py ./gensim/corpora/malletcorpus.py.new
++ mv -f ./gensim/corpora/malletcorpus.py.new ./gensim/corpora/malletcorpus.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/corpora/lowcorpus.py
++ touch -r ./gensim/corpora/lowcorpus.py ./gensim/corpora/lowcorpus.py.new
++ mv -f ./gensim/corpora/lowcorpus.py.new ./gensim/corpora/lowcorpus.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/corpora/indexedcorpus.py
++ touch -r ./gensim/corpora/indexedcorpus.py ./gensim/corpora/indexedcorpus.py.new
++ mv -f ./gensim/corpora/indexedcorpus.py.new ./gensim/corpora/indexedcorpus.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/corpora/hashdictionary.py
++ touch -r ./gensim/corpora/hashdictionary.py ./gensim/corpora/hashdictionary.py.new
++ mv -f ./gensim/corpora/hashdictionary.py.new ./gensim/corpora/hashdictionary.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/corpora/dictionary.py
++ touch -r ./gensim/corpora/dictionary.py ./gensim/corpora/dictionary.py.new
++ mv -f ./gensim/corpora/dictionary.py.new ./gensim/corpora/dictionary.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/corpora/csvcorpus.py
++ touch -r ./gensim/corpora/csvcorpus.py ./gensim/corpora/csvcorpus.py.new
++ mv -f ./gensim/corpora/csvcorpus.py.new ./gensim/corpora/csvcorpus.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/corpora/bleicorpus.py
++ touch -r ./gensim/corpora/bleicorpus.py ./gensim/corpora/bleicorpus.py.new
++ mv -f ./gensim/corpora/bleicorpus.py.new ./gensim/corpora/bleicorpus.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/corpora/__init__.py
++ touch -r ./gensim/corpora/__init__.py ./gensim/corpora/__init__.py.new
++ mv -f ./gensim/corpora/__init__.py.new ./gensim/corpora/__init__.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./gensim/__init__.py
++ touch -r ./gensim/__init__.py ./gensim/__init__.py.new
++ mv -f ./gensim/__init__.py.new ./gensim/__init__.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./ez_setup.py
++ touch -r ./ez_setup.py ./ez_setup.py.new
++ mv -f ./ez_setup.py.new ./ez_setup.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./docs/src/conf.py
++ touch -r ./docs/src/conf.py ./docs/src/conf.py.new
++ mv -f ./docs/src/conf.py.new ./docs/src/conf.py
++ for _file in `find . -type f -name '*.py'`
++ sed '1{\@^#!/usr/bin/env python@d}' ./__init__.py
++ touch -r ./__init__.py ./__init__.py.new
++ mv -f ./__init__.py.new ./__init__.py
++ sed -i -e 's!^DEFAULT_VERSION = "1.3.2"!DEFAULT_VERSION = "0.9"!' ez_setup.py
+Patch #0 (fix-docs-build.patch):
++ echo 'Patch #0 (fix-docs-build.patch):'
++ /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+patching file docs/src/gensim_theme/genindex.html
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.X2ScAU
++ umask 022
++ cd /builddir/build/BUILD
++ CFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=z13 -mtune=z14 -fasynchronous-unwind-tables -fstack-clash-protection '
++ export CFLAGS
++ CXXFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=z13 -mtune=z14 -fasynchronous-unwind-tables -fstack-clash-protection '
++ export CXXFLAGS
++ FFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=z13 -mtune=z14 -fasynchronous-unwind-tables -fstack-clash-protection -I/usr/lib64/gfortran/modules '
++ export FFLAGS
++ FCFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=z13 -mtune=z14 -fasynchronous-unwind-tables -fstack-clash-protection -I/usr/lib64/gfortran/modules '
++ export FCFLAGS
++ VALAFLAGS=-g
++ export VALAFLAGS
++ RUSTFLAGS='-Copt-level=3 -Cdebuginfo=2 -Ccodegen-units=1 -Cstrip=none -Clink-arg=-Wl,-z,relro -Clink-arg=-Wl,-z,now -Clink-arg=-specs=/usr/lib/rpm/redhat/redhat-package-notes --cap-lints=warn'
++ export RUSTFLAGS
++ LDFLAGS='-Wl,-z,relro -Wl,--as-needed   -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld-errors -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes '
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ export LT_SYS_LIBRARY_PATH
++ CC=gcc
++ export CC
++ CXX=g++
++ export CXX
++ cd gensim-0.10.0
++ CFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=z13 -mtune=z14 -fasynchronous-unwind-tables -fstack-clash-protection '
++ LDFLAGS='-Wl,-z,relro -Wl,--as-needed   -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld-errors -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes '
++ /usr/bin/python3 setup.py build '--executable=/usr/bin/python3 -sP'
+running build
+running build_py
+creating build
+creating build/lib
+creating build/lib/gensim
+copying gensim/__init__.py -> build/lib/gensim
+copying gensim/interfaces.py -> build/lib/gensim
+copying gensim/matutils.py -> build/lib/gensim
+copying gensim/nosy.py -> build/lib/gensim
+copying gensim/utils.py -> build/lib/gensim
+creating build/lib/gensim/test
+copying gensim/test/__init__.py -> build/lib/gensim/test
+copying gensim/test/simspeed.py -> build/lib/gensim/test
+copying gensim/test/simspeed2.py -> build/lib/gensim/test
+copying gensim/test/svd_error.py -> build/lib/gensim/test
+copying gensim/test/test_big.py -> build/lib/gensim/test
+copying gensim/test/test_corpora.py -> build/lib/gensim/test
+copying gensim/test/test_corpora_dictionary.py -> build/lib/gensim/test
+copying gensim/test/test_corpora_hashdictionary.py -> build/lib/gensim/test
+copying gensim/test/test_lee.py -> build/lib/gensim/test
+copying gensim/test/test_miislita.py -> build/lib/gensim/test
+copying gensim/test/test_models.py -> build/lib/gensim/test
+copying gensim/test/test_parsing.py -> build/lib/gensim/test
+copying gensim/test/test_similarities.py -> build/lib/gensim/test
+copying gensim/test/test_utils.py -> build/lib/gensim/test
+copying gensim/test/test_word2vec.py -> build/lib/gensim/test
+creating build/lib/gensim/similarities
+copying gensim/similarities/__init__.py -> build/lib/gensim/similarities
+copying gensim/similarities/docsim.py -> build/lib/gensim/similarities
+creating build/lib/gensim/scripts
+copying gensim/scripts/__init__.py -> build/lib/gensim/scripts
+copying gensim/scripts/make_wikicorpus.py -> build/lib/gensim/scripts
+copying gensim/scripts/make_wiki_online_nodebug.py -> build/lib/gensim/scripts
+copying gensim/scripts/make_wiki_online_lemma.py -> build/lib/gensim/scripts
+copying gensim/scripts/make_wiki_online.py -> build/lib/gensim/scripts
+copying gensim/scripts/make_wiki_lemma.py -> build/lib/gensim/scripts
+copying gensim/scripts/make_wiki.py -> build/lib/gensim/scripts
+creating build/lib/gensim/parsing
+copying gensim/parsing/__init__.py -> build/lib/gensim/parsing
+copying gensim/parsing/porter.py -> build/lib/gensim/parsing
+copying gensim/parsing/preprocessing.py -> build/lib/gensim/parsing
+creating build/lib/gensim/models
+copying gensim/models/__init__.py -> build/lib/gensim/models
+copying gensim/models/hdpmodel.py -> build/lib/gensim/models
+copying gensim/models/lda_dispatcher.py -> build/lib/gensim/models
+copying gensim/models/lda_worker.py -> build/lib/gensim/models
+copying gensim/models/ldamallet.py -> build/lib/gensim/models
+copying gensim/models/ldamodel.py -> build/lib/gensim/models
+copying gensim/models/logentropy_model.py -> build/lib/gensim/models
+copying gensim/models/lsi_dispatcher.py -> build/lib/gensim/models
+copying gensim/models/lsi_worker.py -> build/lib/gensim/models
+copying gensim/models/lsimodel.py -> build/lib/gensim/models
+copying gensim/models/rpmodel.py -> build/lib/gensim/models
+copying gensim/models/tfidfmodel.py -> build/lib/gensim/models
+copying gensim/models/word2vec.py -> build/lib/gensim/models
+creating build/lib/gensim/corpora
+copying gensim/corpora/__init__.py -> build/lib/gensim/corpora
+copying gensim/corpora/bleicorpus.py -> build/lib/gensim/corpora
+copying gensim/corpora/csvcorpus.py -> build/lib/gensim/corpora
+copying gensim/corpora/dictionary.py -> build/lib/gensim/corpora
+copying gensim/corpora/hashdictionary.py -> build/lib/gensim/corpora
+copying gensim/corpora/indexedcorpus.py -> build/lib/gensim/corpora
+copying gensim/corpora/lowcorpus.py -> build/lib/gensim/corpora
+copying gensim/corpora/malletcorpus.py -> build/lib/gensim/corpora
+copying gensim/corpora/mmcorpus.py -> build/lib/gensim/corpora
+copying gensim/corpora/svmlightcorpus.py -> build/lib/gensim/corpora
+copying gensim/corpora/textcorpus.py -> build/lib/gensim/corpora
+copying gensim/corpora/ucicorpus.py -> build/lib/gensim/corpora
+copying gensim/corpora/wikicorpus.py -> build/lib/gensim/corpora
+running egg_info
+creating gensim.egg-info
+writing gensim.egg-info/PKG-INFO
+writing dependency_links to gensim.egg-info/dependency_links.txt
+writing requirements to gensim.egg-info/requires.txt
+writing top-level names to gensim.egg-info/top_level.txt
+writing manifest file 'gensim.egg-info/SOURCES.txt'
+reading manifest file 'gensim.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+adding license file 'COPYING'
+adding license file 'COPYING.LESSER'
+writing manifest file 'gensim.egg-info/SOURCES.txt'
+/usr/lib/python3.12/site-packages/setuptools/command/build_py.py:204: _Warning: Package 'gensim.test.test_data' is absent from the `packages` configuration.
+!!
+
+        ********************************************************************************
+        ############################
+        # Package would be ignored #
+        ############################
+        Python recognizes 'gensim.test.test_data' as an importable package[^1],
+        but it is absent from setuptools' `packages` configuration.
+
+        This leads to an ambiguous overall configuration. If you want to distribute this
+        package, please make sure that 'gensim.test.test_data' is explicitly added
+        to the `packages` configuration field.
+
+        Alternatively, you can also rely on setuptools' discovery methods
+        (for example by using `find_namespace_packages(...)`/`find_namespace:`
+        instead of `find_packages(...)`/`find:`).
+
+        You can read more about "package discovery" on setuptools documentation page:
+
+        - https://setuptools.pypa.io/en/latest/userguide/package_discovery.html
+
+        If you don't want 'gensim.test.test_data' to be distributed and are
+        already explicitly excluding 'gensim.test.test_data' via
+        `find_namespace_packages(...)/find_namespace` or `find_packages(...)/find`,
+        you can try to use `exclude_package_data`, or `include-package-data=False` in
+        combination with a more fine grained `package-data` configuration.
+
+        You can read more about "package data files" on setuptools documentation page:
+
+        - https://setuptools.pypa.io/en/latest/userguide/datafiles.html
+
+
+        [^1]: For Python, any directory (with suitable naming) can be imported,
+              even if it does not contain any `.py` files.
+              On the other hand, currently there is no concept of package data
+              directory, all directories are treated like packages.
+        ********************************************************************************
+
+!!
+  check.warn(importable)
+creating build/lib/gensim/test/test_data
+copying gensim/test/test_data/head500.noblanks.cor -> build/lib/gensim/test/test_data
+copying gensim/test/test_data/head500.noblanks.cor.bz2 -> build/lib/gensim/test/test_data
+copying gensim/test/test_data/head500.noblanks.cor_tfidf.model -> build/lib/gensim/test/test_data
+copying gensim/test/test_data/head500.noblanks.cor_wordids.txt -> build/lib/gensim/test/test_data
+copying gensim/test/test_data/lee.cor -> build/lib/gensim/test/test_data
+copying gensim/test/test_data/lee_background.cor -> build/lib/gensim/test/test_data
+copying gensim/test/test_data/miIslita.cor -> build/lib/gensim/test/test_data
+copying gensim/test/test_data/para2para_text1.txt -> build/lib/gensim/test/test_data
+copying gensim/test/test_data/para2para_text2.txt -> build/lib/gensim/test/test_data
+copying gensim/test/test_data/similarities0-1.txt -> build/lib/gensim/test/test_data
+copying gensim/test/test_data/test_corpus_ok.mm -> build/lib/gensim/test/test_data
+copying gensim/test/test_data/test_corpus_small.mm -> build/lib/gensim/test/test_data
+copying gensim/test/test_data/testcorpus.blei -> build/lib/gensim/test/test_data
+copying gensim/test/test_data/testcorpus.blei.vocab -> build/lib/gensim/test/test_data
+copying gensim/test/test_data/testcorpus.low -> build/lib/gensim/test/test_data
+copying gensim/test/test_data/testcorpus.mallet -> build/lib/gensim/test/test_data
+copying gensim/test/test_data/testcorpus.mm -> build/lib/gensim/test/test_data
+copying gensim/test/test_data/testcorpus.svmlight -> build/lib/gensim/test/test_data
+copying gensim/test/test_data/testcorpus.uci -> build/lib/gensim/test/test_data
+copying gensim/test/test_data/testcorpus.uci.vocab -> build/lib/gensim/test/test_data
+copying gensim/models/voidptr.h -> build/lib/gensim/models
+copying gensim/models/word2vec_inner.pyx -> build/lib/gensim/models
+running build
+running build_py
+creating build/lib.linux-s390x-cpython-312
+creating build/lib.linux-s390x-cpython-312/gensim_addons
+copying gensim_addons/__init__.py -> build/lib.linux-s390x-cpython-312/gensim_addons
+creating build/lib.linux-s390x-cpython-312/gensim_addons/models
+copying gensim_addons/models/__init__.py -> build/lib.linux-s390x-cpython-312/gensim_addons/models
+running egg_info
+creating gensim_addons.egg-info
+writing gensim_addons.egg-info/PKG-INFO
+writing dependency_links to gensim_addons.egg-info/dependency_links.txt
+writing requirements to gensim_addons.egg-info/requires.txt
+writing top-level names to gensim_addons.egg-info/top_level.txt
+writing manifest file 'gensim_addons.egg-info/SOURCES.txt'
+reading manifest file 'gensim_addons.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+adding license file 'COPYING'
+adding license file 'COPYING.LESSER'
+writing manifest file 'gensim_addons.egg-info/SOURCES.txt'
+copying gensim_addons/models/word2vec_inner.pyx -> build/lib.linux-s390x-cpython-312/gensim_addons/models
+running build_ext
+/usr/lib64/python3.12/site-packages/Cython/Compiler/Main.py:381: FutureWarning: Cython directive 'language_level' not set, using '3str' for now (Py3). This has changed from earlier releases! File: /builddir/build/BUILD/gensim-0.10.0/gensim_addons/models/word2vec_inner.pyx
+  tree = Parsing.p_module(s, pxd, full_module_name)
+performance hint: gensim_addons/models/word2vec_inner.pyx:76:5: Exception check on 'fast_sentence0_sg_hs' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'fast_sentence0_sg_hs' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'fast_sentence0_sg_hs' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:98:5: Exception check on 'fast_sentence1_sg_hs' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'fast_sentence1_sg_hs' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'fast_sentence1_sg_hs' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:120:5: Exception check on 'fast_sentence2_sg_hs' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'fast_sentence2_sg_hs' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'fast_sentence2_sg_hs' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:273:5: Exception check on 'fast_sentence0_cbow_hs' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'fast_sentence0_cbow_hs' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'fast_sentence0_cbow_hs' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:313:5: Exception check on 'fast_sentence1_cbow_hs' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'fast_sentence1_cbow_hs' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'fast_sentence1_cbow_hs' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:353:5: Exception check on 'fast_sentence2_cbow_hs' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'fast_sentence2_cbow_hs' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'fast_sentence2_cbow_hs' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:88:25: Exception check after calling 'dsdot' will always require the GIL to be acquired. Declare 'dsdot' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+performance hint: gensim_addons/models/word2vec_inner.pyx:93:13: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:94:13: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:95:9: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:110:24: Exception check after calling 'sdot' will always require the GIL to be acquired. Declare 'sdot' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+performance hint: gensim_addons/models/word2vec_inner.pyx:115:13: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:116:13: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:117:9: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:175:25: Exception check after calling 'dsdot' will always require the GIL to be acquired. Declare 'dsdot' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+performance hint: gensim_addons/models/word2vec_inner.pyx:180:13: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:181:13: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:183:9: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:215:24: Exception check after calling 'sdot' will always require the GIL to be acquired. Declare 'sdot' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+performance hint: gensim_addons/models/word2vec_inner.pyx:220:13: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:221:13: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:223:9: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:291:17: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:294:13: Exception check after calling 'sscal' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'sscal' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'sscal' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:299:25: Exception check after calling 'dsdot' will always require the GIL to be acquired. Declare 'dsdot' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+performance hint: gensim_addons/models/word2vec_inner.pyx:304:13: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:305:13: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:311:17: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:331:17: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:334:13: Exception check after calling 'sscal' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'sscal' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'sscal' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:339:24: Exception check after calling 'sdot' will always require the GIL to be acquired. Declare 'sdot' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+performance hint: gensim_addons/models/word2vec_inner.pyx:344:13: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:345:13: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:351:17: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:423:17: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:426:13: Exception check after calling 'sscal' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'sscal' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'sscal' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:442:25: Exception check after calling 'dsdot' will always require the GIL to be acquired. Declare 'dsdot' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+performance hint: gensim_addons/models/word2vec_inner.pyx:447:13: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:448:13: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:454:17: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:480:17: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:483:13: Exception check after calling 'sscal' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'sscal' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'sscal' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:499:24: Exception check after calling 'sdot' will always require the GIL to be acquired. Declare 'sdot' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+performance hint: gensim_addons/models/word2vec_inner.pyx:504:13: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:505:13: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:511:17: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:652:39: Exception check after calling 'fast_sentence_sg_hs' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'fast_sentence_sg_hs' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'fast_sentence_sg_hs' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:654:54: Exception check after calling 'fast_sentence_sg_neg' will always require the GIL to be acquired. Declare 'fast_sentence_sg_neg' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+performance hint: gensim_addons/models/word2vec_inner.pyx:731:37: Exception check after calling 'fast_sentence_cbow_hs' will always require the GIL to be acquired.
+Possible solutions:
+	1. Declare 'fast_sentence_cbow_hs' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+	2. Use an 'int' return type on 'fast_sentence_cbow_hs' to allow an error code to be returned.
+performance hint: gensim_addons/models/word2vec_inner.pyx:733:52: Exception check after calling 'fast_sentence_cbow_neg' will always require the GIL to be acquired. Declare 'fast_sentence_cbow_neg' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+Compiling gensim_addons/models/word2vec_inner.pyx because it changed.
+[1/1] Cythonizing gensim_addons/models/word2vec_inner.pyx
+building 'gensim_addons.models.word2vec_inner' extension
+creating build/temp.linux-s390x-cpython-312
+creating build/temp.linux-s390x-cpython-312/gensim_addons
+creating build/temp.linux-s390x-cpython-312/gensim_addons/models
+gcc -fno-strict-overflow -Wsign-compare -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DNDEBUG -fexceptions -fexceptions -fexceptions -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=z13 -mtune=z14 -fasynchronous-unwind-tables -fstack-clash-protection -fPIC -I/builddir/build/BUILD/gensim-0.10.0/gensim/models -I/usr/lib64/python3.12/site-packages/numpy/core/include -I/usr/include/python3.12 -c gensim_addons/models/word2vec_inner.c -o build/temp.linux-s390x-cpython-312/gensim_addons/models/word2vec_inner.o
+In file included from /usr/lib64/python3.12/site-packages/numpy/core/include/numpy/ndarraytypes.h:1929,
+                 from /usr/lib64/python3.12/site-packages/numpy/core/include/numpy/ndarrayobject.h:12,
+                 from /usr/lib64/python3.12/site-packages/numpy/core/include/numpy/arrayobject.h:5,
+                 from gensim_addons/models/word2vec_inner.c:1216:
+/usr/lib64/python3.12/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: #warning "Using deprecated NumPy API, disable it with " "#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-Wcpp]
+   17 | #warning "Using deprecated NumPy API, disable it with " \
+      |  ^~~~~~~
+gensim_addons/models/word2vec_inner.c: In function ‘__pyx_pf_13gensim_addons_6models_14word2vec_inner_4init’:
+gensim_addons/models/word2vec_inner.c:10941:76: error: assignment to ‘__pyx_t_13gensim_addons_6models_14word2vec_inner_fast_sentence_cbow_hs_ptr’ {aka ‘void (*)(const unsigned int *, const unsigned char *, int *, float *, float *, float *, const int,  unsigned int *, const float,  float *, int,  int,  int,  int)’} from incompatible pointer type ‘void (*)(const __pyx_t_5numpy_uint32_t *, const __pyx_t_5numpy_uint8_t *, int *, __pyx_t_13gensim_addons_6models_14word2vec_inner_REAL_t *, __pyx_t_13gensim_addons_6models_14word2vec_inner_REAL_t *, __pyx_t_13gensim_addons_6models_14word2vec_inner_REAL_t *, const int,  const __pyx_t_5numpy_uint32_t *, const __pyx_t_13gensim_addons_6models_14word2vec_inner_REAL_t,  __pyx_t_13gensim_addons_6models_14word2vec_inner_REAL_t *, int,  int,  int,  int)’ {aka ‘void (*)(const unsigned int *, const unsigned char *, int *, float *, float *, float *, const int,  const unsigned int *, const float,  float *, int,  int,  int,  int)’} [-Wincompatible-pointer-types]
+10941 |     __pyx_v_13gensim_addons_6models_14word2vec_inner_fast_sentence_cbow_hs = __pyx_f_13gensim_addons_6models_14word2vec_inner_fast_sentence0_cbow_hs;
+      |                                                                            ^
+gensim_addons/models/word2vec_inner.c:11008:76: error: assignment to ‘__pyx_t_13gensim_addons_6models_14word2vec_inner_fast_sentence_cbow_hs_ptr’ {aka ‘void (*)(const unsigned int *, const unsigned char *, int *, float *, float *, float *, const int,  unsigned int *, const float,  float *, int,  int,  int,  int)’} from incompatible pointer type ‘void (*)(const __pyx_t_5numpy_uint32_t *, const __pyx_t_5numpy_uint8_t *, int *, __pyx_t_13gensim_addons_6models_14word2vec_inner_REAL_t *, __pyx_t_13gensim_addons_6models_14word2vec_inner_REAL_t *, __pyx_t_13gensim_addons_6models_14word2vec_inner_REAL_t *, const int,  const __pyx_t_5numpy_uint32_t *, const __pyx_t_13gensim_addons_6models_14word2vec_inner_REAL_t,  __pyx_t_13gensim_addons_6models_14word2vec_inner_REAL_t *, int,  int,  int,  int)’ {aka ‘void (*)(const unsigned int *, const unsigned char *, int *, float *, float *, float *, const int,  const unsigned int *, const float,  float *, int,  int,  int,  int)’} [-Wincompatible-pointer-types]
+11008 |     __pyx_v_13gensim_addons_6models_14word2vec_inner_fast_sentence_cbow_hs = __pyx_f_13gensim_addons_6models_14word2vec_inner_fast_sentence1_cbow_hs;
+      |                                                                            ^
+gensim_addons/models/word2vec_inner.c:11066:76: error: assignment to ‘__pyx_t_13gensim_addons_6models_14word2vec_inner_fast_sentence_cbow_hs_ptr’ {aka ‘void (*)(const unsigned int *, const unsigned char *, int *, float *, float *, float *, const int,  unsigned int *, const float,  float *, int,  int,  int,  int)’} from incompatible pointer type ‘void (*)(const __pyx_t_5numpy_uint32_t *, const __pyx_t_5numpy_uint8_t *, int *, __pyx_t_13gensim_addons_6models_14word2vec_inner_REAL_t *, __pyx_t_13gensim_addons_6models_14word2vec_inner_REAL_t *, __pyx_t_13gensim_addons_6models_14word2vec_inner_REAL_t *, const int,  const __pyx_t_5numpy_uint32_t *, const __pyx_t_13gensim_addons_6models_14word2vec_inner_REAL_t,  __pyx_t_13gensim_addons_6models_14word2vec_inner_REAL_t *, int,  int,  int,  int)’ {aka ‘void (*)(const unsigned int *, const unsigned char *, int *, float *, float *, float *, const int,  const unsigned int *, const float,  float *, int,  int,  int,  int)’} [-Wincompatible-pointer-types]
+11066 |     __pyx_v_13gensim_addons_6models_14word2vec_inner_fast_sentence_cbow_hs = __pyx_f_13gensim_addons_6models_14word2vec_inner_fast_sentence2_cbow_hs;
+      |                                                                            ^
+error: command '/usr/bin/gcc' failed with exit code 1
+error: Bad exit status from /var/tmp/rpm-tmp.X2ScAU (%build)
+
+RPM build warnings:
+
+RPM build errors:
+    %patchN is deprecated (1 usages found), use %patch N (or %patch -P N)
+    Bad exit status from /var/tmp/rpm-tmp.X2ScAU (%build)
+Finish: rpmbuild python-gensim-0.10.0-38.fc40.src.rpm
+Finish: build phase for python-gensim-0.10.0-38.fc40.src.rpm
+INFO: chroot_scan: 1 files copied to /var/lib/copr-rpmbuild/results/chroot_scan
+INFO: /var/lib/mock/fedora-rawhide-s390x-1706527503.536589/root/var/log/dnf5.log
+ERROR: Exception(/var/lib/copr-rpmbuild/results/python-gensim-0.10.0-38.fc40.src.rpm) Config(fedora-rawhide-s390x) 0 minutes 10 seconds
+INFO: Results and/or logs in: /var/lib/copr-rpmbuild/results
+INFO: Cleaning up build root ('cleanup_on_failure=True')
+Start: clean chroot
+INFO: unmounting tmpfs.
+Finish: clean chroot
+ERROR: Command failed: 
+ # /usr/bin/systemd-nspawn -q -M e9963e7736b54916b0d7b7ffc60770d2 -D /var/lib/mock/fedora-rawhide-s390x-1706527503.536589/root -a -u mockbuild --capability=cap_ipc_lock --rlimit=RLIMIT_NOFILE=10240 --capability=cap_ipc_lock --bind=/tmp/mock-resolv.xrl2fnzz:/etc/resolv.conf --bind=/dev/btrfs-control --bind=/dev/mapper/control --bind=/dev/fuse --bind=/dev/loop-control --bind=/dev/loop0 --bind=/dev/loop1 --bind=/dev/loop2 --bind=/dev/loop3 --bind=/dev/loop4 --bind=/dev/loop5 --bind=/dev/loop6 --bind=/dev/loop7 --bind=/dev/loop8 --bind=/dev/loop9 --bind=/dev/loop10 --bind=/dev/loop11 --console=pipe --setenv=TERM=vt100 --setenv=SHELL=/bin/bash --setenv=HOME=/builddir --setenv=HOSTNAME=mock --setenv=PATH=/usr/bin:/bin:/usr/sbin:/sbin '--setenv=PROMPT_COMMAND=printf "\033]0;<mock-chroot>\007"' '--setenv=PS1=<mock-chroot> \s-\v\$ ' --setenv=LANG=C.UTF-8 --resolv-conf=off bash --login -c '/usr/bin/rpmbuild -bb  --target s390x --nodeps /builddir/build/originals/python-gensim.spec'
+
+Copr build error: Build failed

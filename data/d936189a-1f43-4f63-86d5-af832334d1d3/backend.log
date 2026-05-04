@@ -1,0 +1,175 @@
+[2024-01-30 06:53:42,474][  INFO][PID:3785726] Marking build as starting
+[2024-01-30 06:53:42,570][  INFO][PID:3785726] Trying to allocate VM
+[2024-01-30 06:53:45,639][  INFO][PID:3785726] Allocated host ResallocHost, ticket_id=946183, hostname=18.205.150.225
+[2024-01-30 06:53:45,640][  INFO][PID:3785726] Allocating ssh connection to builder
+[2024-01-30 06:53:45,640][  INFO][PID:3785726] Checking that builder machine is OK
+[2024-01-30 06:53:45,641][  INFO][PID:3785726] Popen command started: ssh -F /home/copr/.ssh/config mockbuilder@18.205.150.225 'rpm -q copr-rpmbuild --qf "%{VERSION}
+"'
+[2024-01-30 06:53:46,115][  INFO][PID:3785726] Popen command started: ssh -F /home/copr/.ssh/config mockbuilder@18.205.150.225 '/usr/bin/test -f /etc/mock/fedora-38-aarch64.cfg'
+[2024-01-30 06:53:46,431][  INFO][PID:3785726] Filling build.info file with builder info
+[2024-01-30 06:53:46,433][  INFO][PID:3785726] Sending build state back to frontend: {
+    "builds": [
+        {
+            "timeout": 18000,
+            "frontend_base_url": "https://copr.fedorainfracloud.org",
+            "memory_reqs": 2048,
+            "enable_net": true,
+            "project_owner": "@freeipa",
+            "project_name": "freeipa-master-nightly",
+            "project_dirname": "freeipa-master-nightly",
+            "submitter": "https://api.github.com/users/abbra",
+            "ended_on": null,
+            "started_on": 1706597626.43278,
+            "submitted_on": null,
+            "status": 3,
+            "chroot": "fedora-38-aarch64",
+            "arch": "aarch64",
+            "buildroot_pkgs": [],
+            "task_id": "6972777-fedora-38-aarch64",
+            "build_id": 6972777,
+            "package_name": "freeipa",
+            "package_version": "4.12.0.dev202401300652+git-0",
+            "git_repo": "https://copr-dist-git.fedorainfracloud.org/git/@freeipa/freeipa-master-nightly/freeipa",
+            "git_hash": "e64c181f4c045428b03b080802429436b7eb1e4c",
+            "git_branch": null,
+            "source_type": null,
+            "source_json": null,
+            "pkg_name": null,
+            "pkg_main_version": null,
+            "pkg_epoch": null,
+            "pkg_release": null,
+            "srpm_url": null,
+            "uses_devel_repo": false,
+            "sandbox": "@freeipa/freeipa-master-nightly--https://api.github.com/users/abbra",
+            "results": null,
+            "appstream": false,
+            "background": true,
+            "bootstrap": "on",
+            "fedora_review": false,
+            "isolation": "default",
+            "repo_priority": null,
+            "repos": [
+                {
+                    "baseurl": "https://download.copr.fedorainfracloud.org/results/@freeipa/freeipa-master-nightly/fedora-38-aarch64/",
+                    "id": "copr_base",
+                    "name": "Copr repository",
+                    "priority": null
+                },
+                {
+                    "baseurl": "https://download.copr.fedorainfracloud.org/results/@freeipa/freeipa-master/fedora-38-aarch64/",
+                    "id": "copr_freeipa_freeipa_master_fedora_releasever_basearch",
+                    "name": "Additional repo copr_freeipa_freeipa_master_fedora_releasever_basearch"
+                }
+            ],
+            "tags": [
+                "arch_aarch64"
+            ],
+            "with_opts": [],
+            "without_opts": [],
+            "destdir": "/var/lib/copr/public_html/results/@freeipa/freeipa-master-nightly",
+            "results_repo_url": "https://download.copr.fedorainfracloud.org/results/@freeipa/freeipa-master-nightly",
+            "result_dir": "06972777-freeipa",
+            "built_packages": "",
+            "id": 6972777,
+            "mockchain_macros": {
+                "copr_username": "@freeipa",
+                "copr_projectname": "freeipa-master-nightly",
+                "vendor": "Fedora Project COPR (@freeipa/freeipa-master-nightly)"
+            }
+        }
+    ]
+}
+[2024-01-30 06:53:46,506][  INFO][PID:3785726] Sending fedora-messaging bus message in build.start
+[2024-01-30 06:53:47,273][  INFO][PID:3785726] Sending fedora-messaging bus message in chroot.start
+[2024-01-30 06:53:47,298][  INFO][PID:3785726] Starting remote build: copr-rpmbuild --verbose --drop-resultdir --task-url https://copr.fedorainfracloud.org/backend/get-build-task/6972777-fedora-38-aarch64 --chroot fedora-38-aarch64 --detached
+[2024-01-30 06:53:47,303][  INFO][PID:3785726] Popen command started: ssh -F /home/copr/.ssh/config mockbuilder@18.205.150.225 'copr-rpmbuild --verbose --drop-resultdir --task-url https://copr.fedorainfracloud.org/backend/get-build-task/6972777-fedora-38-aarch64 --chroot fedora-38-aarch64 --detached'
+[2024-01-30 06:53:47,985][  INFO][PID:3785726] Downloading the builder-live.log file, attempt 1
+[2024-01-30 06:53:48,011][  INFO][PID:3785726] Popen command started: ssh -F /home/copr/.ssh/config mockbuilder@18.205.150.225 copr-rpmbuild-log
+[2024-01-30 06:54:14,420][  INFO][PID:3785726] Downloading results from builder
+[2024-01-30 06:54:14,421][  INFO][PID:3785726] rsyncing of mockbuilder@18.205.150.225:/var/lib/copr-rpmbuild/results/ to /var/lib/copr/public_html/results/@freeipa/freeipa-master-nightly/fedora-38-aarch64/06972777-freeipa started
+[2024-01-30 06:54:14,423][  INFO][PID:3785726] Popen command started: /usr/bin/rsync -rltDvH --chmod=D755,F644 -e 'ssh -F /home/copr/.ssh/config' mockbuilder@18.205.150.225:/var/lib/copr-rpmbuild/results/ /var/lib/copr/public_html/results/@freeipa/freeipa-master-nightly/fedora-38-aarch64/06972777-freeipa/ &> /var/lib/copr/public_html/results/@freeipa/freeipa-master-nightly/fedora-38-aarch64/06972777-freeipa/build-06972777.rsync.log
+[2024-01-30 06:54:14,732][  INFO][PID:3785726] rsyncing finished.
+[2024-01-30 06:54:14,733][  INFO][PID:3785726] Releasing VM back to pool
+[2024-01-30 06:54:14,748][  INFO][PID:3785726] Searching for 'success' file in resultdir
+[2024-01-30 06:54:14,748][ ERROR][PID:3785726] Build failed: Backend process error: No success file => build failure
+[2024-01-30 06:54:14,749][  INFO][PID:3785726] Finished build: id=6972777 failed=True timeout=18000 destdir=/var/lib/copr/public_html/results/@freeipa/freeipa-master-nightly chroot=fedora-38-aarch64 
+[2024-01-30 06:54:14,752][ ERROR][PID:3785726] Backend process error: No success file => build failure
+[2024-01-30 06:54:14,753][  INFO][PID:3785726] Worker failed build, took 28.32055163383484
+[2024-01-30 06:54:14,754][  INFO][PID:3785726] Sending build state back to frontend: {
+    "builds": [
+        {
+            "timeout": 18000,
+            "frontend_base_url": "https://copr.fedorainfracloud.org",
+            "memory_reqs": 2048,
+            "enable_net": true,
+            "project_owner": "@freeipa",
+            "project_name": "freeipa-master-nightly",
+            "project_dirname": "freeipa-master-nightly",
+            "submitter": "https://api.github.com/users/abbra",
+            "ended_on": 1706597654.7533317,
+            "started_on": 1706597626.43278,
+            "submitted_on": null,
+            "status": 0,
+            "chroot": "fedora-38-aarch64",
+            "arch": "aarch64",
+            "buildroot_pkgs": [],
+            "task_id": "6972777-fedora-38-aarch64",
+            "build_id": 6972777,
+            "package_name": "freeipa",
+            "package_version": "4.12.0.dev202401300652+git-0",
+            "git_repo": "https://copr-dist-git.fedorainfracloud.org/git/@freeipa/freeipa-master-nightly/freeipa",
+            "git_hash": "e64c181f4c045428b03b080802429436b7eb1e4c",
+            "git_branch": null,
+            "source_type": null,
+            "source_json": null,
+            "pkg_name": null,
+            "pkg_main_version": null,
+            "pkg_epoch": null,
+            "pkg_release": null,
+            "srpm_url": null,
+            "uses_devel_repo": false,
+            "sandbox": "@freeipa/freeipa-master-nightly--https://api.github.com/users/abbra",
+            "results": null,
+            "appstream": false,
+            "background": true,
+            "bootstrap": "on",
+            "fedora_review": false,
+            "isolation": "default",
+            "repo_priority": null,
+            "repos": [
+                {
+                    "baseurl": "https://download.copr.fedorainfracloud.org/results/@freeipa/freeipa-master-nightly/fedora-38-aarch64/",
+                    "id": "copr_base",
+                    "name": "Copr repository",
+                    "priority": null
+                },
+                {
+                    "baseurl": "https://download.copr.fedorainfracloud.org/results/@freeipa/freeipa-master/fedora-38-aarch64/",
+                    "id": "copr_freeipa_freeipa_master_fedora_releasever_basearch",
+                    "name": "Additional repo copr_freeipa_freeipa_master_fedora_releasever_basearch"
+                }
+            ],
+            "tags": [
+                "arch_aarch64"
+            ],
+            "with_opts": [],
+            "without_opts": [],
+            "destdir": "/var/lib/copr/public_html/results/@freeipa/freeipa-master-nightly",
+            "results_repo_url": "https://download.copr.fedorainfracloud.org/results/@freeipa/freeipa-master-nightly",
+            "result_dir": "06972777-freeipa",
+            "built_packages": "",
+            "id": 6972777,
+            "mockchain_macros": {
+                "copr_username": "@freeipa",
+                "copr_projectname": "freeipa-master-nightly",
+                "vendor": "Fedora Project COPR (@freeipa/freeipa-master-nightly)"
+            }
+        }
+    ]
+}
+[2024-01-30 06:54:14,856][  INFO][PID:3785726] Sending fedora-messaging bus message in build.end
+[2024-01-30 06:54:14,882][  INFO][PID:3785726] Compressing /var/lib/copr/public_html/results/@freeipa/freeipa-master-nightly/fedora-38-aarch64/06972777-freeipa/builder-live.log by gzip
+[2024-01-30 06:54:14,884][  INFO][PID:3785726] Running command 'gzip /var/lib/copr/public_html/results/@freeipa/freeipa-master-nightly/fedora-38-aarch64/06972777-freeipa/builder-live.log' as PID 3787001
+[2024-01-30 06:54:14,886][  INFO][PID:3785726] Finished after 0 seconds with exit code 0 (gzip /var/lib/copr/public_html/results/@freeipa/freeipa-master-nightly/fedora-38-aarch64/06972777-freeipa/builder-live.log)
+[2024-01-30 06:54:14,886][  INFO][PID:3785726] Compressing /var/lib/copr/public_html/results/@freeipa/freeipa-master-nightly/fedora-38-aarch64/06972777-freeipa/backend.log by gzip
+[2024-01-30 06:54:14,888][  INFO][PID:3785726] Running command 'gzip /var/lib/copr/public_html/results/@freeipa/freeipa-master-nightly/fedora-38-aarch64/06972777-freeipa/backend.log' as PID 3787002

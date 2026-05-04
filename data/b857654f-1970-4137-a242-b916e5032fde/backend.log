@@ -1,0 +1,173 @@
+[2024-01-29 11:19:27,511][  INFO][PID:2362777] Marking build as starting
+[2024-01-29 11:19:27,600][  INFO][PID:2362777] Trying to allocate VM
+[2024-01-29 11:24:45,875][  INFO][PID:2362777] Allocated host ResallocHost, ticket_id=935443, hostname=52.116.127.63
+[2024-01-29 11:24:45,875][  INFO][PID:2362777] Allocating ssh connection to builder
+[2024-01-29 11:24:45,876][  INFO][PID:2362777] Checking that builder machine is OK
+[2024-01-29 11:24:45,877][  INFO][PID:2362777] Popen command started: ssh -F /home/copr/.ssh/config mockbuilder@52.116.127.63 'rpm -q copr-rpmbuild --qf "%{VERSION}
+"'
+[2024-01-29 11:24:46,333][  INFO][PID:2362777] Popen command started: ssh -F /home/copr/.ssh/config mockbuilder@52.116.127.63 '/usr/bin/test -f /etc/mock/fedora-rawhide-s390x.cfg'
+[2024-01-29 11:24:46,597][  INFO][PID:2362777] Filling build.info file with builder info
+[2024-01-29 11:24:46,599][  INFO][PID:2362777] Sending build state back to frontend: {
+    "builds": [
+        {
+            "timeout": 18000,
+            "frontend_base_url": "https://copr.fedorainfracloud.org",
+            "memory_reqs": 2048,
+            "enable_net": false,
+            "project_owner": "psimovec",
+            "project_name": "scipy-1.8.3",
+            "project_dirname": "scipy-1.8.3",
+            "submitter": "https://src.fedoraproject.org/user/releng",
+            "ended_on": null,
+            "started_on": 1706527486.5990684,
+            "submitted_on": null,
+            "status": 3,
+            "chroot": "fedora-rawhide-s390x",
+            "arch": "s390x",
+            "buildroot_pkgs": [],
+            "task_id": "6970305-fedora-rawhide-s390x",
+            "build_id": 6970305,
+            "package_name": "python-gensim",
+            "package_version": "0.10.0-38",
+            "git_repo": "https://copr-dist-git.fedorainfracloud.org/git/psimovec/scipy-1.8.3/python-gensim",
+            "git_hash": "76cb634df6be9a2e25d52b40801aef342f1159d7",
+            "git_branch": null,
+            "source_type": null,
+            "source_json": null,
+            "pkg_name": null,
+            "pkg_main_version": null,
+            "pkg_epoch": null,
+            "pkg_release": null,
+            "srpm_url": null,
+            "uses_devel_repo": false,
+            "sandbox": "psimovec/scipy-1.8.3--https://src.fedoraproject.org/user/releng",
+            "results": null,
+            "appstream": false,
+            "background": true,
+            "fedora_review": false,
+            "isolation": "default",
+            "repo_priority": null,
+            "repos": [
+                {
+                    "baseurl": "https://download.copr.fedorainfracloud.org/results/psimovec/scipy-1.8.3/fedora-rawhide-s390x/",
+                    "id": "copr_base",
+                    "name": "Copr repository",
+                    "priority": null
+                },
+                {
+                    "baseurl": "http://kojipkgs.fedoraproject.org/repos/rawhide/latest/$basearch/",
+                    "id": "http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch",
+                    "name": "Additional repo http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch"
+                }
+            ],
+            "tags": [
+                "arch_s390x"
+            ],
+            "with_opts": [],
+            "without_opts": [],
+            "destdir": "/var/lib/copr/public_html/results/psimovec/scipy-1.8.3",
+            "results_repo_url": "https://download.copr.fedorainfracloud.org/results/psimovec/scipy-1.8.3",
+            "result_dir": "06970305-python-gensim",
+            "built_packages": "",
+            "id": 6970305,
+            "mockchain_macros": {
+                "copr_username": "psimovec",
+                "copr_projectname": "scipy-1.8.3",
+                "vendor": "Fedora Project COPR (psimovec/scipy-1.8.3)"
+            }
+        }
+    ]
+}
+[2024-01-29 11:24:46,670][  INFO][PID:2362777] Sending fedora-messaging bus message in build.start
+[2024-01-29 11:24:47,321][  INFO][PID:2362777] Sending fedora-messaging bus message in chroot.start
+[2024-01-29 11:24:47,342][  INFO][PID:2362777] Starting remote build: copr-rpmbuild --verbose --drop-resultdir --task-url https://copr.fedorainfracloud.org/backend/get-build-task/6970305-fedora-rawhide-s390x --chroot fedora-rawhide-s390x --detached
+[2024-01-29 11:24:47,343][  INFO][PID:2362777] Popen command started: ssh -F /home/copr/.ssh/config mockbuilder@52.116.127.63 'copr-rpmbuild --verbose --drop-resultdir --task-url https://copr.fedorainfracloud.org/backend/get-build-task/6970305-fedora-rawhide-s390x --chroot fedora-rawhide-s390x --detached'
+[2024-01-29 11:24:47,921][  INFO][PID:2362777] Downloading the builder-live.log file, attempt 1
+[2024-01-29 11:24:47,923][  INFO][PID:2362777] Popen command started: ssh -F /home/copr/.ssh/config mockbuilder@52.116.127.63 copr-rpmbuild-log
+[2024-01-29 11:27:37,305][  INFO][PID:2362777] Downloading results from builder
+[2024-01-29 11:27:37,306][  INFO][PID:2362777] rsyncing of mockbuilder@52.116.127.63:/var/lib/copr-rpmbuild/results/ to /var/lib/copr/public_html/results/psimovec/scipy-1.8.3/fedora-rawhide-s390x/06970305-python-gensim started
+[2024-01-29 11:27:37,307][  INFO][PID:2362777] Popen command started: /usr/bin/rsync -rltDvH --chmod=D755,F644 -e 'ssh -F /home/copr/.ssh/config' mockbuilder@52.116.127.63:/var/lib/copr-rpmbuild/results/ /var/lib/copr/public_html/results/psimovec/scipy-1.8.3/fedora-rawhide-s390x/06970305-python-gensim/ &> /var/lib/copr/public_html/results/psimovec/scipy-1.8.3/fedora-rawhide-s390x/06970305-python-gensim/build-06970305.rsync.log
+[2024-01-29 11:27:37,621][  INFO][PID:2362777] rsyncing finished.
+[2024-01-29 11:27:37,622][  INFO][PID:2362777] Releasing VM back to pool
+[2024-01-29 11:27:37,637][  INFO][PID:2362777] Searching for 'success' file in resultdir
+[2024-01-29 11:27:37,638][ ERROR][PID:2362777] Build failed: Backend process error: No success file => build failure
+[2024-01-29 11:27:37,640][  INFO][PID:2362777] Finished build: id=6970305 failed=True timeout=18000 destdir=/var/lib/copr/public_html/results/psimovec/scipy-1.8.3 chroot=fedora-rawhide-s390x 
+[2024-01-29 11:27:37,642][ ERROR][PID:2362777] Backend process error: No success file => build failure
+[2024-01-29 11:27:37,642][  INFO][PID:2362777] Worker failed build, took 171.0436294078827
+[2024-01-29 11:27:37,643][  INFO][PID:2362777] Sending build state back to frontend: {
+    "builds": [
+        {
+            "timeout": 18000,
+            "frontend_base_url": "https://copr.fedorainfracloud.org",
+            "memory_reqs": 2048,
+            "enable_net": false,
+            "project_owner": "psimovec",
+            "project_name": "scipy-1.8.3",
+            "project_dirname": "scipy-1.8.3",
+            "submitter": "https://src.fedoraproject.org/user/releng",
+            "ended_on": 1706527657.6426978,
+            "started_on": 1706527486.5990684,
+            "submitted_on": null,
+            "status": 0,
+            "chroot": "fedora-rawhide-s390x",
+            "arch": "s390x",
+            "buildroot_pkgs": [],
+            "task_id": "6970305-fedora-rawhide-s390x",
+            "build_id": 6970305,
+            "package_name": "python-gensim",
+            "package_version": "0.10.0-38",
+            "git_repo": "https://copr-dist-git.fedorainfracloud.org/git/psimovec/scipy-1.8.3/python-gensim",
+            "git_hash": "76cb634df6be9a2e25d52b40801aef342f1159d7",
+            "git_branch": null,
+            "source_type": null,
+            "source_json": null,
+            "pkg_name": null,
+            "pkg_main_version": null,
+            "pkg_epoch": null,
+            "pkg_release": null,
+            "srpm_url": null,
+            "uses_devel_repo": false,
+            "sandbox": "psimovec/scipy-1.8.3--https://src.fedoraproject.org/user/releng",
+            "results": null,
+            "appstream": false,
+            "background": true,
+            "fedora_review": false,
+            "isolation": "default",
+            "repo_priority": null,
+            "repos": [
+                {
+                    "baseurl": "https://download.copr.fedorainfracloud.org/results/psimovec/scipy-1.8.3/fedora-rawhide-s390x/",
+                    "id": "copr_base",
+                    "name": "Copr repository",
+                    "priority": null
+                },
+                {
+                    "baseurl": "http://kojipkgs.fedoraproject.org/repos/rawhide/latest/$basearch/",
+                    "id": "http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch",
+                    "name": "Additional repo http_kojipkgs_fedoraproject_org_repos_rawhide_latest_basearch"
+                }
+            ],
+            "tags": [
+                "arch_s390x"
+            ],
+            "with_opts": [],
+            "without_opts": [],
+            "destdir": "/var/lib/copr/public_html/results/psimovec/scipy-1.8.3",
+            "results_repo_url": "https://download.copr.fedorainfracloud.org/results/psimovec/scipy-1.8.3",
+            "result_dir": "06970305-python-gensim",
+            "built_packages": "",
+            "id": 6970305,
+            "mockchain_macros": {
+                "copr_username": "psimovec",
+                "copr_projectname": "scipy-1.8.3",
+                "vendor": "Fedora Project COPR (psimovec/scipy-1.8.3)"
+            }
+        }
+    ]
+}
+[2024-01-29 11:27:37,720][  INFO][PID:2362777] Sending fedora-messaging bus message in build.end
+[2024-01-29 11:27:37,740][  INFO][PID:2362777] Compressing /var/lib/copr/public_html/results/psimovec/scipy-1.8.3/fedora-rawhide-s390x/06970305-python-gensim/builder-live.log by gzip
+[2024-01-29 11:27:37,742][  INFO][PID:2362777] Running command 'gzip /var/lib/copr/public_html/results/psimovec/scipy-1.8.3/fedora-rawhide-s390x/06970305-python-gensim/builder-live.log' as PID 2415516
+[2024-01-29 11:27:37,748][  INFO][PID:2362777] Finished after 0 seconds with exit code 0 (gzip /var/lib/copr/public_html/results/psimovec/scipy-1.8.3/fedora-rawhide-s390x/06970305-python-gensim/builder-live.log)
+[2024-01-29 11:27:37,749][  INFO][PID:2362777] Compressing /var/lib/copr/public_html/results/psimovec/scipy-1.8.3/fedora-rawhide-s390x/06970305-python-gensim/backend.log by gzip
+[2024-01-29 11:27:37,750][  INFO][PID:2362777] Running command 'gzip /var/lib/copr/public_html/results/psimovec/scipy-1.8.3/fedora-rawhide-s390x/06970305-python-gensim/backend.log' as PID 2415517

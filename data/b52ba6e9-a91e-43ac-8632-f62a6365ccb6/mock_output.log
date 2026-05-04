@@ -1,0 +1,263 @@
+2024-03-13 14:43:38,982 [INFO] {3795968} koji.build.buildroot:577 Running mock as kojibuilder
+ERROR: Option --new-chroot has been deprecated. Use --isolation=nspawn instead.
+INFO: mock.py version 5.5 starting (python version = 3.12.1, NVR = mock-5.5-1.fc39), args: /usr/libexec/mock/mock -r koji/f41-build-49652926-5916286 --new-chroot --init
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start: clean chroot
+Finish: clean chroot
+Mock Version: 5.5
+INFO: Mock Version: 5.5
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: Package manager dnf5 detected and used (fallback)
+Start(bootstrap): installing dnf5 tooling
+Finish(bootstrap): installing dnf5 tooling
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled HW Info plugin
+INFO: Package manager dnf5 detected and used (direct choice)
+Start: installing minimal buildroot with dnf5
+Finish: installing minimal buildroot with dnf5
+Finish: chroot init
+INFO: Installed packages:
+INFO: alternatives-1.26-3.fc40.i686
+ansible-srpm-macros-1-14.fc40.noarch
+audit-libs-4.0.1-1.fc41.i686
+authselect-1.5.0-5.fc41.i686
+authselect-libs-1.5.0-5.fc41.i686
+basesystem-11-20.fc40.noarch
+bash-5.2.26-3.fc40.i686
+binutils-2.42.50-5.fc41.i686
+binutils-gold-2.42.50-5.fc41.i686
+bzip2-1.0.8-18.fc40.i686
+bzip2-libs-1.0.8-18.fc40.i686
+ca-certificates-2023.2.62_v7.0.401-6.fc40.noarch
+coreutils-9.4-6.fc40.i686
+coreutils-common-9.4-6.fc40.i686
+cpio-2.15-1.fc40.i686
+cracklib-2.9.11-5.fc40.i686
+crypto-policies-20240304-1.git0375239.fc41.noarch
+curl-8.6.0-7.fc41.i686
+cyrus-sasl-lib-2.1.28-19.fc40.i686
+debugedit-5.0-14.fc40.i686
+diffutils-3.10-5.fc40.i686
+dwz-0.15-6.fc40.i686
+ed-1.20.1-1.fc41.i686
+efi-srpm-macros-5-11.fc40.noarch
+elfutils-0.191-2.fc41.i686
+elfutils-debuginfod-client-0.191-2.fc41.i686
+elfutils-default-yama-scope-0.191-2.fc41.noarch
+elfutils-libelf-0.191-2.fc41.i686
+elfutils-libs-0.191-2.fc41.i686
+fedora-gpg-keys-41-0.1.noarch
+fedora-release-41-0.6.noarch
+fedora-release-common-41-0.6.noarch
+fedora-release-identity-basic-41-0.6.noarch
+fedora-repos-41-0.1.noarch
+fedora-repos-rawhide-41-0.1.noarch
+file-5.45-5.fc41.i686
+file-libs-5.45-5.fc41.i686
+filesystem-3.18-8.fc40.i686
+findutils-4.9.0-8.fc40.i686
+fonts-srpm-macros-2.0.5-14.fc40.noarch
+forge-srpm-macros-0.3.0-1.fc41.noarch
+fpc-srpm-macros-1.3-12.fc40.noarch
+gawk-5.3.0-3.fc40.i686
+gdb-minimal-14.2-1.fc41.i686
+gdbm-1.23-6.fc40.i686
+gdbm-libs-1.23-6.fc40.i686
+ghc-srpm-macros-1.9-1.fc41.noarch
+glibc-2.39.9000-5.fc41.i686
+glibc-common-2.39.9000-5.fc41.i686
+glibc-gconv-extra-2.39.9000-5.fc41.i686
+glibc-minimal-langpack-2.39.9000-5.fc41.i686
+gmp-6.3.0-1.fc41.i686
+gnat-srpm-macros-6-5.fc40.noarch
+go-srpm-macros-3.5.0-1.fc41.noarch
+grep-3.11-7.fc40.i686
+gzip-1.13-1.fc40.i686
+info-7.1-2.fc40.i686
+jansson-2.13.1-9.fc40.i686
+kernel-srpm-macros-1.0-23.fc41.noarch
+keyutils-libs-1.6.3-3.fc40.i686
+krb5-libs-1.21.2-5.fc40.i686
+libacl-2.3.2-1.fc40.i686
+libarchive-3.7.2-3.fc40.i686
+libattr-2.5.2-3.fc40.i686
+libblkid-2.40-0.11.rc1.fc41.i686
+libbrotli-1.1.0-3.fc40.i686
+libcap-2.69-3.fc40.i686
+libcap-ng-0.8.4-4.fc40.i686
+libcom_err-1.47.0-5.fc40.i686
+libcurl-8.6.0-7.fc41.i686
+libeconf-0.6.2-1.fc41.i686
+libevent-2.1.12-12.fc40.i686
+libfdisk-2.40-0.11.rc1.fc41.i686
+libffi-3.4.4-8.fc41.i686
+libgcc-14.0.1-0.8.fc41.i686
+libgomp-14.0.1-0.8.fc41.i686
+libidn2-2.3.7-1.fc40.i686
+libmount-2.40-0.11.rc1.fc41.i686
+libnghttp2-1.60.0-2.fc41.i686
+libnsl2-2.0.1-1.fc40.i686
+libpkgconf-2.1.0-1.fc40.i686
+libpsl-0.21.5-3.fc40.i686
+libpwquality-1.4.5-9.fc40.i686
+libselinux-3.6-4.fc40.i686
+libsemanage-3.6-3.fc40.i686
+libsepol-3.6-3.fc40.i686
+libsmartcols-2.40-0.11.rc1.fc41.i686
+libssh-0.10.6-6.fc41.i686
+libssh-config-0.10.6-6.fc41.noarch
+libstdc++-14.0.1-0.8.fc41.i686
+libtasn1-4.19.0-6.fc40.i686
+libtirpc-1.3.4-1.rc2.fc40.2.i686
+libtool-ltdl-2.4.7-10.fc40.i686
+libunistring-1.1-7.fc41.i686
+libutempter-1.2.1-13.fc40.i686
+libuuid-2.40-0.11.rc1.fc41.i686
+libverto-0.3.2-8.fc40.i686
+libxcrypt-4.4.36-5.fc40.i686
+libxml2-2.12.5-1.fc40.i686
+libzstd-1.5.5-5.fc40.i686
+lua-libs-5.4.6-5.fc40.i686
+lua-srpm-macros-1-13.fc40.noarch
+lz4-libs-1.9.4-6.fc40.i686
+mpfr-4.2.1-3.fc40.i686
+ncurses-base-6.4-12.20240127.fc40.noarch
+ncurses-libs-6.4-12.20240127.fc40.i686
+ocaml-srpm-macros-9-3.fc40.noarch
+openblas-srpm-macros-2-17.fc41.noarch
+openldap-2.6.7-1.fc40.i686
+openssl-libs-3.2.1-3.fc41.i686
+p11-kit-0.25.3-4.fc40.i686
+p11-kit-trust-0.25.3-4.fc40.i686
+package-notes-srpm-macros-0.5-11.fc40.noarch
+pam-1.6.0-2.fc41.i686
+pam-libs-1.6.0-2.fc41.i686
+patch-2.7.6-24.fc40.i686
+pcre2-10.42-2.fc40.2.i686
+pcre2-syntax-10.42-2.fc40.2.noarch
+perl-srpm-macros-1-53.fc40.noarch
+pkgconf-2.1.0-1.fc40.i686
+pkgconf-m4-2.1.0-1.fc40.noarch
+pkgconf-pkg-config-2.1.0-1.fc40.i686
+popt-1.19-6.fc40.i686
+publicsuffix-list-dafsa-20240107-3.fc40.noarch
+pyproject-srpm-macros-1.12.0-1.fc40.noarch
+python-srpm-macros-3.12-7.fc40.noarch
+qt5-srpm-macros-5.15.12-3.fc40.noarch
+qt6-srpm-macros-6.6.2-1.fc41.noarch
+readline-8.2-8.fc40.i686
+redhat-rpm-config-286-1.fc41.noarch
+rpm-4.19.1.1-1.fc40.i686
+rpm-build-4.19.1.1-1.fc40.i686
+rpm-build-libs-4.19.1.1-1.fc40.i686
+rpm-libs-4.19.1.1-1.fc40.i686
+rpm-sequoia-1.6.0-2.fc40.i686
+rust-srpm-macros-26.2-1.fc41.noarch
+sed-4.9-1.fc40.i686
+setup-2.14.5-2.fc40.noarch
+shadow-utils-4.15.1-1.fc41.i686
+sqlite-libs-3.45.2-1.fc41.i686
+systemd-libs-255.4-1.fc41.i686
+tar-1.35-3.fc40.i686
+unzip-6.0-63.fc40.i686
+util-linux-2.40-0.11.rc1.fc41.i686
+util-linux-core-2.40-0.11.rc1.fc41.i686
+which-2.21-41.fc40.i686
+xxhash-libs-0.8.2-2.fc40.i686
+xz-5.6.1-1.fc41.i686
+xz-libs-5.6.1-1.fc41.i686
+zig-srpm-macros-1-2.fc40.noarch
+zip-3.0-40.fc40.i686
+zlib-ng-compat-2.1.6-2.fc40.i686
+zstd-1.5.5-5.fc40.i686
+Finish: run
+2024-03-13 14:44:16,886 [INFO] {3796553} koji.build.buildroot:577 Running mock as kojibuilder
+ERROR: Option --new-chroot has been deprecated. Use --isolation=nspawn instead.
+INFO: mock.py version 5.5 starting (python version = 3.12.1, NVR = mock-5.5-1.fc39), args: /usr/libexec/mock/mock -r koji/f41-build-49652926-5916286 --new-chroot --chroot 'uname -r'
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Mock Version: 5.5
+INFO: Mock Version: 5.5
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: Package manager dnf5 detected and used (fallback)
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled HW Info plugin
+INFO: Package manager dnf5 detected and used (direct choice)
+Finish: chroot init
+INFO: Running in chroot: ['uname -r']
+Start: chroot ['uname -r']
+6.8.0-0.rc7.55.fc40.1.x86_64
+Finish: chroot ['uname -r']
+Finish: run
+2024-03-13 14:44:22,160 [INFO] {3796605} koji.build.buildroot:577 Running mock as kojibuilder
+ERROR: Option --new-chroot has been deprecated. Use --isolation=nspawn instead.
+INFO: mock.py version 5.5 starting (python version = 3.12.1, NVR = mock-5.5-1.fc39), args: /usr/libexec/mock/mock -r koji/f41-build-49652926-5916286 --new-chroot --no-clean --target i686 --rebuild /var/tmp/koji/tasks/8516/114898516/local/work/tasks/8504/114898504/python-ratinabox-1.12.3-1.fc41.src.rpm
+Start(bootstrap): init plugins
+INFO: selinux enabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+INFO: Start(/var/tmp/koji/tasks/8516/114898516/local/work/tasks/8504/114898504/python-ratinabox-1.12.3-1.fc41.src.rpm)  Config(f41-build-49652926-5916286)
+Mock Version: 5.5
+INFO: Mock Version: 5.5
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: Package manager dnf5 detected and used (fallback)
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled HW Info plugin
+INFO: Package manager dnf5 detected and used (direct choice)
+INFO: Buildroot is handled by package management installed into bootstrap:
+  rpm-4.19.1.1-1.fc40.i686
+  rpm-sequoia-1.6.0-2.fc40.i686
+  dnf5-5.1.14-1.fc41.i686
+  dnf5-plugins-5.1.14-1.fc41.i686
+Finish: chroot init
+Start: build phase for python-ratinabox-1.12.3-1.fc41.src.rpm
+Start: build setup for python-ratinabox-1.12.3-1.fc41.src.rpm
+Finish: build setup for python-ratinabox-1.12.3-1.fc41.src.rpm
+Start: rpmbuild python-ratinabox-1.12.3-1.fc41.src.rpm
+INFO: Going to install missing dynamic buildrequires
+INFO: Going to install missing dynamic buildrequires
+Finish: rpmbuild python-ratinabox-1.12.3-1.fc41.src.rpm
+Finish: build phase for python-ratinabox-1.12.3-1.fc41.src.rpm
+ERROR: Exception(/var/tmp/koji/tasks/8516/114898516/local/work/tasks/8504/114898504/python-ratinabox-1.12.3-1.fc41.src.rpm) Config(f41-build-49652926-5916286) 0 minutes 25 seconds
+INFO: Results and/or logs in: /var/lib/mock/f41-build-49652926-5916286/result
+ERROR: Command failed: 
+ # /usr/bin/systemd-nspawn -q -M bf2d06a0244c41bba79a6fe7349c56f8 -D /var/lib/mock/f41-build-49652926-5916286-bootstrap/root -a --capability=cap_ipc_lock --bind=/tmp/mock-resolv.n2o8hcc3:/etc/resolv.conf --console=pipe --setenv=TERM=vt100 --setenv=SHELL=/bin/bash --setenv=HOME=/var/lib/mock/f41-build-49652926-5916286/root/installation-homedir --setenv=HOSTNAME=mock --setenv=PATH=/usr/bin:/bin:/usr/sbin:/sbin '--setenv=PROMPT_COMMAND=printf "\033]0;<mock-chroot>\007"' '--setenv=PS1=<mock-chroot> \s-\v\$ ' --setenv=LANG=C.UTF-8 --setenv=LC_MESSAGES=C.UTF-8 --resolv-conf=off /usr/bin/dnf5 builddep --installroot /var/lib/mock/f41-build-49652926-5916286/root/ /var/lib/mock/f41-build-49652926-5916286/root/builddir/build/SRPMS/python-ratinabox-1.12.3-1.fc41.buildreqs.nosrc.rpm --setopt=deltarpm=False --setopt=allow_vendor_change=yes --allowerasing --setopt=tsflags=nocontexts
+Updating and loading repositories:
+Repositories loaded.
+Failed to resolve the transaction:
+Package "pyproject-rpm-macros-1.12.0-1.fc40.noarch" is already installed.
+Package "python3-devel-3.12.2-2.fc41.i686" is already installed.
+Package "python3-packaging-23.2-4.fc40.noarch" is already installed.
+Package "python3-pip-24.0-2.fc41.noarch" is already installed.
+Package "python3-pytest-7.4.3-3.fc40.noarch" is already installed.
+Package "python3-pytest-xdist-3.5.0-3.fc40.noarch" is already installed.
+No match for argument: python3dist(scikit-learn)
+Package "python3-setuptools-69.1.1-1.fc41.noarch" is already installed.
+Package "python3-wheel-1:0.41.2-3.fc40.noarch" is already installed.
+

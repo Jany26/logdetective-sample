@@ -1,0 +1,75 @@
+source_project_name: python-idds-common
+source_project_version: 2.2.41-1
+issue: |
+    Problem: cannot install the best candidate for the job
+    Failed to resolve the transaction:
+    Package "pyproject-rpm-macros-1.18.1-1.fc43.noarch" is already installed.
+    Package "python3-devel-3.14.0~b2-3.fc43.x86_64" is already installed.
+    Package "python3-packaging-25.0-3.fc43.noarch" is already installed.
+    Package "python3-pip-25.1.1-4.fc43.noarch" is already installed.
+    Package "python3-pip-25.1.1-4.fc43.noarch" is already installed.
+    Package "python3-setuptools-78.1.1-7.fc43.noarch" is already installed.
+log_detective_version: 3.10.0
+log_detective_analysis: |
+    The build failed because `dnf5 builddep` could not resolve the transaction due to missing Python 3.13 dependencies for `python3-requests`. This indicates an incompatibility or missing `python(abi) = 3.13` and its associated `python3.13dist` packages in the configured repositories for Fedora 43. Ensure that the build environment has access to a complete set of Python 3.13 packages and their dependencies, or adjust the spec file to use compatible versions if Python 3.13 is not fully supported in the target Fedora release.
+log_files:
+    - builder-live.log
+    - backend.log
+    - build.log
+notes: |
+    Sample comes from packager-annotated notes submitted to logdetective.com.
+    Additional text contains more context.
+
+    Resolution: To resolve this failure, following can be attempted but since its Copr ttl access may not be possible.
+    An available official source of the packages should be possible to add in the build file,
+
+    Snippets:
+
+    In builder-live.log:
+    ```
+    /usr/lib/python3.14/site-packages/setuptools/_distutils/cmd.py:135: SetuptoolsDeprecationWarning: bdist_wheel.universal is deprecated
+    !!
+
+            ********************************************************************************
+            With Python 2.7 end-of-life, support for building universal wheels
+            (i.e., wheels that support both Python 2 and Python 3)
+            is being obviated.
+            Please discontinue using this option, or if you still need it,
+            file an issue with pypa/setuptools describing your use case.
+
+            By 2025-Aug-30, you need to update your project and remove deprecated calls
+            or your builds will no longer be supported.
+            ********************************************************************************
+
+    !!
+    ```
+    => Warning not relevant for this build, but makes sense to consider while debugging python2.7 applications in the future.
+
+    In builder-live.log:
+    ```
+    INFO: Going to install missing dynamic buildrequires
+    Updating and loading repositories:
+     fedora                                 100% |  78.7 KiB/s |  28.4 KiB |  00m00s
+     Copr repository                        100% |  57.0 KiB/s |   1.5 KiB |  00m00s
+    Repositories loaded.
+    Failed to resolve the transaction:
+    Package "pyproject-rpm-macros-1.18.1-1.fc43.noarch" is already installed.
+    Package "python3-devel-3.14.0~b2-3.fc43.x86_64" is already installed.
+    Package "python3-packaging-25.0-3.fc43.noarch" is already installed.
+    Package "python3-pip-25.1.1-4.fc43.noarch" is already installed.
+    Package "python3-pip-25.1.1-4.fc43.noarch" is already installed.
+    Package "python3-setuptools-78.1.1-7.fc43.noarch" is already installed.
+    Problem: cannot install the best candidate for the job
+      - nothing provides python(abi) = 3.13 needed by python3-requests-2.32.4-1.fc43.noarch from copr_base
+      - nothing provides python3.13dist(certifi) >= 2017.4.17 needed by python3-requests-2.32.4-1.fc43.noarch from copr_base
+      - nothing provides (python3.13dist(charset-normalizer) < 4~~ with python3.13dist(charset-normalizer) >= 2) needed by python3-requests-2.32.4-1.fc43.noarch from copr_base
+      - nothing provides (python3.13dist(idna) < 4~~ with python3.13dist(idna) >= 2.5) needed by python3-requests-2.32.4-1.fc43.noarch from copr_base
+    You can try to add to command line:
+    ```
+    => Missing dynamic buildrequires packages seem to be the culprit for this build failure
+
+    In build.log:
+    ```
+    Executing command: ['/usr/bin/systemd-nspawn', '-q', '-M', '78ee3ad797934bc8810467f68a13483c', '-D', '/var/lib/mock/fedora-rawhide-x86_64-1750072132.132465/root', '-a', '-u', 'mockbuild', '--capability=cap_ipc_lock', '--rlimit=RLIMIT_NOFILE=10240', '--capability=cap_ipc_lock', '--bind=/tmp/mock-resolv.rwsw4_o9:/etc/resolv.conf', '--bind=/dev/btrfs-control', '--bind=/dev/mapper/control', '--bind=/dev/fuse', '--bind=/dev/loop-control', '--bind=/dev/loop0', '--bind=/dev/loop1', '--bind=/dev/loop2', '--bind=/dev/loop3', '--bind=/dev/loop4', '--bind=/dev/loop5', '--bind=/dev/loop6', '--bind=/dev/loop7', '--bind=/dev/loop8', '--bind=/dev/loop9', '--bind=/dev/loop10', '--bind=/dev/loop11', '--console=pipe', '--setenv=TERM=vt100', '--setenv=SHELL=/bin/bash', '--setenv=HOME=/builddir', '--setenv=HOSTNAME=mock', '--setenv=PATH=/usr/bin:/bin:/usr/sbin:/sbin', '--setenv=PROMPT_COMMAND=printf "\\033]0;<mock-chroot>\\007"', '--setenv=PS1=<mock-chroot> \\s-\\v\\$ ', '--setenv=LANG=C.UTF-8', '--resolv-conf=off', 'bash', '--login', '-c', '/usr/bin/rpmbuild -bs  --target x86_64 --nodeps /builddir/build/SPECS/python-idds-common.spec'] with env {'TERM': 'vt100', 'SHELL': '/bin/bash', 'HOME': '/builddir', 'HOSTNAME': 'mock', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'PROMPT_COMMAND': 'printf "\\033]0;<mock-chroot>\\007"', 'PS1': '<mock-chroot> \\s-\\v\\$ ', 'LANG': 'C.UTF-8', 'SYSTEMD_NSPAWN_TMPFS_TMP': '0', 'SYSTEMD_SECCOMP': '0'} and shell False
+    ```
+    => Due to the missing packages systemd-nspawn is unable to spin up the virtual container, hence deployment fails.

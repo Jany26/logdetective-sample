@@ -1,0 +1,69 @@
+source_project_name: android-studio
+source_project_version: 2025.1.1.13-3
+issue: |
+    Backend process `createrepo` has failed, this in turn caused the build failure.
+log_detective_version: 3.10.0
+log_detective_analysis: |
+    The RPM build process completed with a warning because the `%source_date_epoch_from_changelog` directive was used, but the `%changelog` section in the spec file contained no entries to derive a date from. To resolve this, ensure the `%changelog` section has valid entries or remove `%source_date_epoch_from_changelog` if not needed.
+log_files:
+    - builder-live.log
+    - backend.log
+    - build.log
+notes: |
+    Sample comes from packager-annotated notes submitted to logdetective.com.
+    Additional text contains more context.
+
+    Resolution: The error was encountered while waiting for a process to complete. It is possible that there is a problem with latency on your network, or the `createrepo` itself may have a problem handling response.
+
+    Snippets:
+
+    In builder-live.log:
+    ```
+    RPM build warnings:
+        %source_date_epoch_from_changelog is set, but %changelog has no entries to take a date from
+        absolute symlink: /usr/bin/android-studio -> /usr/share/android-studio/bin/studio
+    ```
+    => Cumulative warnings from RPM build process. These shouldn't cause the build the fail.
+
+    In backend.log:
+    ```
+    stderr:
+    Sub-command failed
+    Traceback (most recent call last):
+      File "/usr/bin/copr-repo", line 445, in main
+        main_try_lock(opts, batch)
+        ~~~~~~~~~~~~~^^^^^^^^^^^^^
+      File "/usr/bin/copr-repo", line 397, in main_try_lock
+        main_locked(opts, batch, opts.log)
+        ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+      File "/usr/bin/copr-repo", line 359, in main_locked
+        add_appdata(opts)
+        ~~~~~~~~~~~^^^^^^
+      File "/usr/bin/copr-repo", line 242, in add_appdata
+        run_cmd([
+        ~~~~~~~^^
+            "/usr/bin/timeout", "--kill-after=240", "180",
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        ...<10 lines>...
+            "--origin=" + origin],
+            ^^^^^^^^^^^^^^^^^^^^^^
+            check=True, logger=opts.log)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/usr/lib/python3.13/site-packages/copr_backend/helpers.py", line 148, in run_cmd
+        raise CommandException(exc_msg)
+    copr_backend.helpers.CommandException: Command '/usr/bin/timeout --kill-after=240 180 /usr/bin/appstream-builder --temp-dir=/var/lib/copr/public_html/results/medzik/jetbrains/fedora-42-x86_64/tmp --cache-dir=/var/lib/copr/public_html/results/medzik/jetbrains/fedora-42-x86_64/cache --packages-dir=/var/lib/copr/public_html/results/medzik/jetbrains/fedora-42-x86_64 --output-dir=/var/lib/copr/public_html/results/medzik/jetbrains/fedora-42-x86_64/appdata --basename=appstream --include-failed --min-icon-size=48 --veto-ignore=missing-parents --enable-hidpi --origin=medzik/jetbrains' failed, exit code '124
+    ```
+    => Stack trace of exception encountered during command execution.
+
+    In backend.log:
+    ```
+    [2025-06-26 10:50:27,047][ ERROR][PID:2437819] Createrepo failed
+    ```
+    => Error was encountered by the Createrepo.
+
+    In build.log:
+    ```
+    RPM build warnings:
+        %source_date_epoch_from_changelog is set, but %changelog has no entries to take a date from
+    ```
+    => RPM build warning about lack of any entries n %changelog macro. This means that %source_date_epoch_from_changelog can not function properly.
