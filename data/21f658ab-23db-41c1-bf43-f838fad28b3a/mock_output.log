@@ -1,0 +1,255 @@
+2025-03-18 14:48:05,688 [INFO] {4056637} koji.build.buildroot:509 Running mock as kojibuilder
+ERROR: Option --new-chroot has been deprecated. Use --isolation=nspawn instead.
+INFO: mock.py version 6.0 starting (python version = 3.13.2, NVR = mock-6.0-1.fc41), args: /usr/libexec/mock/mock -r koji/f40-build-58054473-6561875 --new-chroot --init
+Start(bootstrap): init plugins
+INFO: selinux enabled
+INFO: rpmautospec: initialized
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+INFO: rpmautospec: initialized
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Start: clean chroot
+Finish: clean chroot
+Mock Version: 6.0
+INFO: Mock Version: 6.0
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: Package manager dnf5 detected and used (fallback)
+Start(bootstrap): installing dnf5 tooling
+Finish(bootstrap): installing dnf5 tooling
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled HW Info plugin
+INFO: Package manager dnf5 detected and used (direct choice)
+Start: installing minimal buildroot with dnf5
+Finish: installing minimal buildroot with dnf5
+Finish: chroot init
+INFO: Installed packages:
+INFO: alternatives-1.27-1.fc40.x86_64
+ansible-srpm-macros-1-16.fc40.noarch
+audit-libs-4.0.3-1.fc40.x86_64
+authselect-1.5.0-6.fc40.x86_64
+authselect-libs-1.5.0-6.fc40.x86_64
+basesystem-11-20.fc40.noarch
+bash-5.2.26-3.fc40.x86_64
+binutils-2.41-38.fc40.x86_64
+binutils-gold-2.41-38.fc40.x86_64
+bzip2-1.0.8-18.fc40.x86_64
+bzip2-libs-1.0.8-18.fc40.x86_64
+ca-certificates-2024.2.69_v8.0.401-1.0.fc40.noarch
+coreutils-9.4-9.fc40.x86_64
+coreutils-common-9.4-9.fc40.x86_64
+cpio-2.15-1.fc40.x86_64
+cracklib-2.9.11-5.fc40.x86_64
+crypto-policies-20241011-1.git5930b9a.fc40.noarch
+curl-8.6.0-10.fc40.x86_64
+cyrus-sasl-lib-2.1.28-19.fc40.x86_64
+debugedit-5.0-18.fc40.x86_64
+diffutils-3.10-5.fc40.x86_64
+dwz-0.15-8.fc40.x86_64
+ed-1.20.2-1.fc40.x86_64
+efi-srpm-macros-5-11.fc40.noarch
+elfutils-0.192-9.fc40.x86_64
+elfutils-debuginfod-client-0.192-9.fc40.x86_64
+elfutils-default-yama-scope-0.192-9.fc40.noarch
+elfutils-libelf-0.192-9.fc40.x86_64
+elfutils-libs-0.192-9.fc40.x86_64
+fedora-gpg-keys-40-2.noarch
+fedora-release-40-40.noarch
+fedora-release-common-40-40.noarch
+fedora-release-identity-basic-40-40.noarch
+fedora-repos-40-2.noarch
+file-5.45-4.fc40.x86_64
+file-libs-5.45-4.fc40.x86_64
+filesystem-3.18-8.fc40.x86_64
+findutils-4.9.0-9.fc40.x86_64
+fonts-srpm-macros-2.0.5-14.fc40.noarch
+forge-srpm-macros-0.4.0-1.fc40.noarch
+fpc-srpm-macros-1.3-12.fc40.noarch
+gawk-5.3.0-3.fc40.x86_64
+gdb-minimal-16.2-1.fc40.x86_64
+gdbm-1.23-6.fc40.x86_64
+gdbm-libs-1.23-6.fc40.x86_64
+ghc-srpm-macros-1.9.1-1.fc40.noarch
+glibc-2.39-37.fc40.x86_64
+glibc-common-2.39-37.fc40.x86_64
+glibc-gconv-extra-2.39-37.fc40.x86_64
+glibc-minimal-langpack-2.39-37.fc40.x86_64
+gmp-6.2.1-8.fc40.x86_64
+gnat-srpm-macros-6-5.fc40.noarch
+go-srpm-macros-3.5.0-1.fc40.noarch
+grep-3.11-7.fc40.x86_64
+gzip-1.13-1.fc40.x86_64
+info-7.1-2.fc40.x86_64
+jansson-2.13.1-9.fc40.x86_64
+json-c-0.17-3.fc40.x86_64
+kernel-srpm-macros-1.0-23.fc40.noarch
+keyutils-libs-1.6.3-3.fc40.x86_64
+krb5-libs-1.21.3-3.fc40.x86_64
+libacl-2.3.2-1.fc40.x86_64
+libarchive-3.7.2-7.fc40.x86_64
+libattr-2.5.2-3.fc40.x86_64
+libblkid-2.40.2-1.fc40.x86_64
+libbrotli-1.1.0-3.fc40.x86_64
+libcap-2.69-8.fc40.x86_64
+libcap-ng-0.8.4-4.fc40.x86_64
+libcom_err-1.47.0-5.fc40.x86_64
+libcurl-8.6.0-10.fc40.x86_64
+libeconf-0.6.2-2.fc40.x86_64
+libevent-2.1.12-12.fc40.x86_64
+libfdisk-2.40.2-1.fc40.x86_64
+libffi-3.4.4-7.fc40.x86_64
+libgcc-14.2.1-3.fc40.x86_64
+libgomp-14.2.1-3.fc40.x86_64
+libidn2-2.3.7-1.fc40.x86_64
+libmount-2.40.2-1.fc40.x86_64
+libnghttp2-1.59.0-3.fc40.x86_64
+libnsl2-2.0.1-1.fc40.x86_64
+libpkgconf-2.1.1-2.fc40.x86_64
+libpsl-0.21.5-3.fc40.x86_64
+libpwquality-1.4.5-9.fc40.x86_64
+libselinux-3.7-5.fc40.x86_64
+libsemanage-3.7-2.fc40.x86_64
+libsepol-3.7-2.fc40.x86_64
+libsmartcols-2.40.2-1.fc40.x86_64
+libssh-0.10.6-5.fc40.x86_64
+libssh-config-0.10.6-5.fc40.noarch
+libstdc++-14.2.1-3.fc40.x86_64
+libtasn1-4.20.0-1.fc40.x86_64
+libtirpc-1.3.6-1.rc3.fc40.x86_64
+libtool-ltdl-2.4.7-10.fc40.x86_64
+libunistring-1.1-7.fc40.x86_64
+libutempter-1.2.1-13.fc40.x86_64
+libuuid-2.40.2-1.fc40.x86_64
+libverto-0.3.2-8.fc40.x86_64
+libxcrypt-4.4.38-6.fc40.x86_64
+libxml2-2.12.9-1.fc40.x86_64
+libzstd-1.5.7-1.fc40.x86_64
+lua-libs-5.4.6-5.fc40.x86_64
+lua-srpm-macros-1-13.fc40.noarch
+lz4-libs-1.9.4-6.fc40.x86_64
+mpfr-4.2.1-4.fc40.x86_64
+ncurses-base-6.4-12.20240127.fc40.noarch
+ncurses-libs-6.4-12.20240127.fc40.x86_64
+ocaml-srpm-macros-9-3.fc40.noarch
+openblas-srpm-macros-2-16.fc40.noarch
+openldap-2.6.8-2.fc40.x86_64
+openssl-libs-3.2.4-1.fc40.x86_64
+p11-kit-0.25.5-1.fc40.x86_64
+p11-kit-trust-0.25.5-1.fc40.x86_64
+package-notes-srpm-macros-0.5-11.fc40.noarch
+pam-1.6.1-5.fc40.x86_64
+pam-libs-1.6.1-5.fc40.x86_64
+patch-2.7.6-24.fc40.x86_64
+pcre2-10.44-1.fc40.x86_64
+pcre2-syntax-10.44-1.fc40.noarch
+perl-srpm-macros-1-53.fc40.noarch
+pkgconf-2.1.1-2.fc40.x86_64
+pkgconf-m4-2.1.1-2.fc40.noarch
+pkgconf-pkg-config-2.1.1-2.fc40.x86_64
+popt-1.19-6.fc40.x86_64
+publicsuffix-list-dafsa-20250116-1.fc40.noarch
+pyproject-srpm-macros-1.17.0-1.fc40.noarch
+python-srpm-macros-3.12-8.fc40.noarch
+qt5-srpm-macros-5.15.15-1.fc40.noarch
+qt6-srpm-macros-6.8.2-1.fc40.noarch
+readline-8.2-8.fc40.x86_64
+redhat-rpm-config-288-1.fc40.noarch
+rpm-4.19.1.1-1.fc40.x86_64
+rpm-build-4.19.1.1-1.fc40.x86_64
+rpm-build-libs-4.19.1.1-1.fc40.x86_64
+rpm-libs-4.19.1.1-1.fc40.x86_64
+rpm-sequoia-1.7.0-5.fc40.x86_64
+rust-srpm-macros-26.3-1.fc40.noarch
+sed-4.9-1.fc40.x86_64
+setup-2.14.5-2.fc40.noarch
+shadow-utils-4.15.1-4.fc40.x86_64
+sqlite-libs-3.45.1-3.fc40.x86_64
+systemd-libs-255.18-1.fc40.x86_64
+tar-1.35-3.fc40.x86_64
+unzip-6.0-63.fc40.x86_64
+util-linux-2.40.2-1.fc40.x86_64
+util-linux-core-2.40.2-1.fc40.x86_64
+which-2.21-41.fc40.x86_64
+xxhash-libs-0.8.3-1.fc40.x86_64
+xz-5.4.6-3.fc40.x86_64
+xz-libs-5.4.6-3.fc40.x86_64
+zig-srpm-macros-1-2.fc40.noarch
+zip-3.0-40.fc40.x86_64
+zlib-ng-compat-2.1.7-2.fc40.x86_64
+zstd-1.5.7-1.fc40.x86_64
+Finish: run
+2025-03-18 14:48:42,166 [INFO] {4056969} koji.build.buildroot:509 Running mock as kojibuilder
+ERROR: Option --new-chroot has been deprecated. Use --isolation=nspawn instead.
+INFO: mock.py version 6.0 starting (python version = 3.13.2, NVR = mock-6.0-1.fc41), args: /usr/libexec/mock/mock -r koji/f40-build-58054473-6561875 --new-chroot --chroot 'uname -r'
+Start(bootstrap): init plugins
+INFO: selinux enabled
+INFO: rpmautospec: initialized
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+INFO: rpmautospec: initialized
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Mock Version: 6.0
+INFO: Mock Version: 6.0
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: Package manager dnf5 detected and used (fallback)
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled HW Info plugin
+INFO: Package manager dnf5 detected and used (direct choice)
+Finish: chroot init
+INFO: Running in chroot: ['uname -r']
+Start: chroot ['uname -r']
+6.12.10-200.fc41.x86_64
+Finish: chroot ['uname -r']
+Finish: run
+2025-03-18 14:48:46,468 [INFO] {4057000} koji.build.buildroot:509 Running mock as kojibuilder
+ERROR: Option --new-chroot has been deprecated. Use --isolation=nspawn instead.
+INFO: mock.py version 6.0 starting (python version = 3.13.2, NVR = mock-6.0-1.fc41), args: /usr/libexec/mock/mock -r koji/f40-build-58054473-6561875 --new-chroot --no-clean --target x86_64 --rebuild /var/tmp/koji/tasks/886/130440886/local/work/tasks/846/130440846/ignition-2.21.0-1.fc40.src.rpm
+Start(bootstrap): init plugins
+INFO: selinux enabled
+INFO: rpmautospec: initialized
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux enabled
+INFO: rpmautospec: initialized
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+INFO: Start(/var/tmp/koji/tasks/886/130440886/local/work/tasks/846/130440846/ignition-2.21.0-1.fc40.src.rpm)  Config(f40-build-58054473-6561875)
+Mock Version: 6.0
+INFO: Mock Version: 6.0
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: Package manager dnf5 detected and used (fallback)
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled HW Info plugin
+INFO: Package manager dnf5 detected and used (direct choice)
+INFO: Buildroot is handled by package management installed into bootstrap:
+  rpm-4.19.1.1-1.fc40.x86_64
+  rpm-sequoia-1.7.0-5.fc40.x86_64
+  dnf5-5.1.17-4.fc40.x86_64
+  dnf5-plugins-5.1.17-4.fc40.x86_64
+Finish: chroot init
+Start: build phase for ignition-2.21.0-1.fc40.src.rpm
+Start: build setup for ignition-2.21.0-1.fc40.src.rpm
+Finish: build setup for ignition-2.21.0-1.fc40.src.rpm
+Start: rpmbuild ignition-2.21.0-1.fc40.src.rpm
+Finish: rpmbuild ignition-2.21.0-1.fc40.src.rpm
+Finish: build phase for ignition-2.21.0-1.fc40.src.rpm
+ERROR: Exception(/var/tmp/koji/tasks/886/130440886/local/work/tasks/846/130440846/ignition-2.21.0-1.fc40.src.rpm) Config(f40-build-58054473-6561875) 0 minutes 20 seconds
+INFO: Results and/or logs in: /var/lib/mock/f40-build-58054473-6561875/result
+ERROR: Command failed: 
+ # /usr/bin/systemd-nspawn -q -M e324a6a632c340e4b2e4e04c278543ea -D /var/lib/mock/f40-build-58054473-6561875/root -a -u mockbuild --capability=cap_ipc_lock --bind=/tmp/mock-resolv.rmyqzvho:/etc/resolv.conf --bind=/dev/btrfs-control --bind=/dev/mapper/control --bind=/dev/fuse --bind=/dev/loop-control --bind=/dev/loop0 --bind=/dev/loop1 --bind=/dev/loop2 --bind=/dev/loop3 --bind=/dev/loop4 --bind=/dev/loop5 --bind=/dev/loop6 --bind=/dev/loop7 --bind=/dev/loop8 --bind=/dev/loop9 --bind=/dev/loop10 --bind=/dev/loop11 --console=pipe --setenv=TERM=vt100 --setenv=SHELL=/bin/bash --setenv=HOME=/builddir --setenv=HOSTNAME=mock --setenv=PATH=/usr/bin:/bin:/usr/sbin:/sbin '--setenv=PROMPT_COMMAND=printf "\033]0;<mock-chroot>\007"' '--setenv=PS1=<mock-chroot> \s-\v\$ ' --setenv=LANG=C.UTF-8 --resolv-conf=off bash --login -c '/usr/bin/rpmbuild -bb --noclean --target x86_64 --nodeps /builddir/build/SPECS/ignition.spec'
+

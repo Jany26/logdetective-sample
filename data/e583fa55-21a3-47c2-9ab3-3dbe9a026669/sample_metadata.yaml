@@ -1,0 +1,35 @@
+source_project_name: cri-o
+source_project_version: |-
+    1.33.0-2.20250509075346213411.pr9190.239.geb76e5c22
+issue: |
+    The build seems to be running without issues, the dependencies install fine.
+log_detective_version: 3.10.0
+log_detective_analysis: |
+    Based on the provided log snippets, there is no indication of a build failure. The logs show the successful creation of RPM packages and the completion of the build process.
+log_files:
+    - builder-live.log
+    - backend.log
+    - build.log
+notes: |
+    Annotated snippets below seem irrelevant, there might have been some other underlying issue not detectable purely from build logs.
+
+    Sample comes from packager-annotated notes submitted to logdetective.com.
+    Additional text contains more context.
+
+    Resolution: Either optimise resources to execute the build faster or incease time-out on server/backend.
+
+    Snippets:
+
+    In builder-live.log:
+    ```
+    warning: Unsupported auto-load script at offset 0 in section .debug_gdb_scripts
+    of file /builddir/build/BUILD/cri-o-1.33.0-build/BUILDROOT/usr/bin/crio.
+    Use `info auto-load python-scripts [REGEXP]' to list them.
+    ```
+    => Seems to be warning about using an unsupported script, this may not be important but can be noted
+
+    In backend.log:
+    ```
+    [2025-05-09 07:57:20,638][  INFO][PID:1195855] Finished build: id=9013973 failed=False timeout=18000 destdir=/var/lib/copr/public_html/results/packit/cri-o-cri-o-9190 chroot=fedora-42-x86_64
+    ```
+    => This one seems important, the failure seems to be due to timeout

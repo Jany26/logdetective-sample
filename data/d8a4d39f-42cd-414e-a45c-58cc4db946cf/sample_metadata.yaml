@@ -1,0 +1,27 @@
+source_project_name: python-castor-extractor
+source_project_version: 0.22.0-1
+issue: |
+    The error message indicates your RPM build for the python-castor-extractor package failed because it couldn't find the required build file "setup.py".
+    The pyproject_buildrequires.py script is used by RPM to generate build dependencies for Python packages.
+    It tries to determine the build tools required by the package based on pyproject.toml and "setup.py" files.
+    In this case, the script specifically checks for setuptools version 61.2 or higher (indicated by Handling setuptools>=61.2 from build-system.requires).
+log_detective_version: 3.10.0
+log_detective_analysis: |
+    The build failed because the Python build system, specifically the `pyproject_buildrequires.py` script, expected a `setup.py` file for what it considered a "legacy project" but could not find it. This typically occurs when a Python project has migrated to a `pyproject.toml` based build system and the RPM spec file or build environment is not correctly configured to handle the modern project structure. Ensure the project's `pyproject.toml` is present and that the spec file specifies the correct build backend (e.g., `python3-flit-core` or `python3-hatchling`) instead of relying on a `setup.py` file.
+log_files:
+    - builder-live.log
+    - backend.log
+    - build.log
+notes: |
+    Sample comes from packager-annotated notes submitted to logdetective.com.
+    Additional text contains more context.
+
+    Resolution:
+
+    Snippets:
+
+    In builder-live.log:
+    ```
+    FileNotFoundError: File "setup.py" not found for legacy project.
+    ```
+    => The script searches for "setup.py" but can't find it, resulting in a FileNotFoundError.

@@ -1,0 +1,100 @@
+source_project_name: python-gensim
+source_project_version: 0.10.0-38
+issue: |
+    Incompatible pointer types caused a compilation error in `gensim_addons/models/word2vec_inner.pyx`. The cause is possibly incompatible versions of Cython and numpy.
+log_detective_version: 3.10.0
+log_detective_analysis: |
+    The build failed due to a C compilation error in `gensim_addons/models/word2vec_inner.c` caused by an assignment of an incompatible pointer type. This indicates an issue with the generated C code, likely from Cython, possibly due to a mismatch in `numpy` or `Cython` versions used during code generation and compilation. The solution is to ensure compatible versions of `Cython` and `numpy` are used to generate and compile the C extension, or to patch the source to resolve the pointer type incompatibility.
+log_files:
+    - builder-live.log
+    - backend.log
+    - build.log
+notes: |
+    Sample comes from packager-annotated notes submitted to logdetective.com.
+    Additional text contains more context.
+
+    Resolution: Ensure assignment of compatible pointer types to variables.
+
+    Snippets:
+
+    In builder-live.log:
+    ```
+    /usr/lib64/python3.12/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: #warning "Using deprecated NumPy API, disable it with " "#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-Wcpp]
+       17 | #warning "Using deprecated NumPy API, disable it with " \
+          |  ^~~~~~~
+    ```
+    => Deprecated NumPy API being used.
+
+    In builder-live.log:
+    ```
+    sdot' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+    performance hint: gensim_addons/models/word2vec_inner.pyx:344:13: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+    Possible solutions:
+        1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+        2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+    performance hint: gensim_addons/models/word2vec_inner.pyx:345:13: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+    Possible solutions:
+        1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+        2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+    performance hint: gensim_addons/models/word2vec_inner.pyx:351:17: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+    Possible solutions:
+        1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+        2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+    performance hint: gensim_addons/models/word2vec_inner.pyx:423:17: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+    Possible solutions:
+        1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+        2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+    performance hint: gensim_addons/models/word2vec_inner.pyx:426:13: Exception check after calling 'sscal' will always require the GIL to be acquired.
+    Possible solutions:
+        1. Declare 'sscal' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+        2. Use an 'int' return type on 'sscal' to allow an error code to be returned.
+    performance hint: gensim_addons/models/word2vec_inner.pyx:442:25: Exception check after calling 'dsdot' will always require the GIL to be acquired. Declare 'dsdot' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+    performance hint: gensim_addons/models/word2vec_inner.pyx:447:13: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+    Possible solutions:
+        1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+        2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+    performance hint: gensim_addons/models/word2vec_inner.pyx:448:13: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+    Possible solutions:
+        1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+        2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+    performance hint: gensim_addons/models/word2vec_inner.pyx:454:17: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+    Possible solutions:
+        1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+        2. Use an 'int' return type on 'saxpy' to allow an error code to be returned.
+    performance hint: gensim_addons/models/word2vec_inner.pyx:480:17: Exception check after calling 'saxpy' will always require the GIL to be acquired.
+    Possible solutions:
+        1. Declare 'saxpy' as 'noexcept' if you control the definition and you're sure you don't want the function to raise exceptions.
+        2. Use an 'int' return type on
+    ```
+    => Incompatible pointer assignment in compiled Cython code.
+
+    In builder-live.log:
+    ```
+    error: command '/usr/bin/gcc' failed with exit code 1
+    ```
+    => GCC exited with failure.
+
+    In builder-live.log:
+    ```
+    Copr build error: Build failed
+    ```
+    => Final build failure report.
+
+    In builder-live.log:
+    ```
+    /usr/lib/python3.12/site-packages/setuptools/command/build_py.py:204: _Warning: Package 'gensim.test.test_data' is absent from the `packages` configuration.
+    ```
+    => Imported package is absent from the 'packages' configuration. It isn't clear if the package should be distributed or not.
+
+    In backend.log:
+    ```
+    [2024-01-29 11:27:37,642][ ERROR][PID:2362777] Backend process error: No success file => build failure
+    ```
+    => Build failure detected as there was no success file.
+
+    In build.log:
+    ```
+    RPM build warnings:
+        %patchN is deprecated (1 usages found), use %patch N (or %patch -P N)
+    ```
+    => Usage of deprecated '%patchN' spec file directive.

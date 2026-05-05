@@ -1,0 +1,45 @@
+source_project_name: ignition
+source_project_version: 2.21.0-1
+issue: |
+    Available go version is 1.22.12, however the project's dependency "google.com/go/auth" requires go version greater than or equal to 1.23.0
+log_detective_version: 3.10.0
+log_detective_analysis: |
+    The build failed because a Go module required Go version 1.23.0 or newer, but the build environment was running Go version 1.22.12. Update the Go compiler in the build environment to satisfy the minimum version requirement.
+log_files:
+    - build.log
+    - root.log
+    - mock_output.log
+notes: |
+    Sample comes from packager-annotated notes submitted to logdetective.com.
+    Additional text contains more context.
+
+    Resolution: Either:
+    * Manually adjust using a patch the required go version in vendored dependency in go.mod to require 1.22 instead of 1.23
+    or
+    * Re-do the the inclusion of dependencies to take into consideration that the go version is 1.22
+
+    Snippets:
+
+    In build.log:
+    ```
+    + go build -buildmode pie -compiler gc '-tags=rpm_crashtraceback ' -a -v -x -ldflags '-X github.com/coreos/ignition/v2/internal/version.Raw=2.21.0 -X github.com/coreos/ignition/v2/internal/distro.selinuxRelabel=true  -X github.com/coreos/ignition/version=2.21.0 -B 0x720a533500b90469c56d2b0ce9989db20f9b343e -compressdwarf=false -linkmode=external -extldflags '\''-Wl,-z,relro -Wl,--as-needed  -Wl,-z,pack-relative-relocs -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes  '\''' -o ./ignition internal/main.go
+    ```
+    => Command to attempt to compile the module that resulted in the build failure.
+
+    In build.log:
+    ```
+    go: cloud.google.com/go/auth in vendor/modules.txt
+    ```
+    => Place where we can adjust or inspect the vendored dependency for precise information if version and requirements.
+
+    In build.log:
+    ```
+    requires go >= 1.23.0
+    ```
+    => The reason for the failures, requirement is go version >= 1.23.0, which is not satisfied with the available packages.
+
+    In root.log:
+    ```
+    golang                  x86_64 1.22.12-1.fc40
+    ```
+    => Exact version that was installed from repositories. The version used is from Fedora 40 for x86_64 and the golang version is 1.22.12

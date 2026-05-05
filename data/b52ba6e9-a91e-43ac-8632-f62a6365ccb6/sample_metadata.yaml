@@ -1,0 +1,37 @@
+source_project_name: python-ratinabox
+source_project_version: 1.12.3-1
+issue: |
+    It was not possible to install build dependencies on this architeture, most probably a missing dependency python3dist(scikit-learn), or a typo.
+log_detective_version: 3.10.0
+log_detective_analysis: |
+    The package build failed because the `setuptools` build dependency was not satisfied. Ensure that `python3-setuptools` or the equivalent package is correctly listed as a `BuildRequires` in the spec file.
+log_files:
+    - build.log
+    - root.log
+    - mock_output.log
+notes: |
+    Sample comes from packager-annotated notes submitted to logdetective.com.
+    Additional text contains more context.
+
+    Resolution: Check whether build dependency is really available for the architecture or whether it is just a typo.
+
+    Snippets:
+
+    In build.log:
+    ```
+    Dynamic buildrequires detected
+    Going to install missing buildrequires. See root.log for details.
+    ```
+    => This is problem in the relevant part in build log about missing build dependencies
+
+    In root.log:
+    ```
+    DEBUG util.py:461:  Failed to resolve the transaction:
+    ```
+    => It explains that dnf was not able to install required build dependencies.
+
+    In root.log:
+    ```
+    DEBUG util.py:461:  No match for argument: python3dist(scikit-learn)
+    ```
+    => There are details about missing dependencies mentioned in previous snipped

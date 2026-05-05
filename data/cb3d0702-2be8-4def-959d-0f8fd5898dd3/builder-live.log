@@ -1,0 +1,1329 @@
+Warning: Permanently added '2620:52:3:1:dead:beef:cafe:c18c' (ED25519) to the list of known hosts.
+
+You can reproduce this build on your computer by running:
+
+  sudo dnf install copr-rpmbuild
+  /usr/bin/copr-rpmbuild --verbose --drop-resultdir --task-url https://copr.fedorainfracloud.org/backend/get-build-task/9213137-fedora-42-x86_64 --chroot fedora-42-x86_64
+
+
+Version: 1.3
+PID: 2307
+Logging PID: 2308
+Task:
+{'allow_user_ssh': False,
+ 'appstream': True,
+ 'background': False,
+ 'build_id': 9213137,
+ 'buildroot_pkgs': [],
+ 'chroot': 'fedora-42-x86_64',
+ 'enable_net': True,
+ 'fedora_review': False,
+ 'git_hash': '838ad490a985ca141444a8fee3ae823f8d02696a',
+ 'git_repo': 'https://copr-dist-git.fedorainfracloud.org/git/medzik/jetbrains/android-studio',
+ 'isolation': 'default',
+ 'memory_reqs': 2048,
+ 'package_name': 'android-studio',
+ 'package_version': '2025.1.1.13-3',
+ 'project_dirname': 'jetbrains',
+ 'project_name': 'jetbrains',
+ 'project_owner': 'medzik',
+ 'repo_priority': None,
+ 'repos': [{'baseurl': 'https://download.copr.fedorainfracloud.org/results/medzik/jetbrains/fedora-42-x86_64/',
+            'id': 'copr_base',
+            'name': 'Copr repository',
+            'priority': None}],
+ 'sandbox': 'medzik/jetbrains--medzik',
+ 'source_json': {},
+ 'source_type': None,
+ 'ssh_public_keys': None,
+ 'storage': None,
+ 'submitter': 'medzik',
+ 'tags': [],
+ 'task_id': '9213137-fedora-42-x86_64',
+ 'timeout': 18000,
+ 'uses_devel_repo': False,
+ 'with_opts': [],
+ 'without_opts': []}
+
+Running: git clone https://copr-dist-git.fedorainfracloud.org/git/medzik/jetbrains/android-studio /var/lib/copr-rpmbuild/workspace/workdir-4r3a971e/android-studio --depth 500 --no-single-branch --recursive
+
+cmd: ['git', 'clone', 'https://copr-dist-git.fedorainfracloud.org/git/medzik/jetbrains/android-studio', '/var/lib/copr-rpmbuild/workspace/workdir-4r3a971e/android-studio', '--depth', '500', '--no-single-branch', '--recursive']
+cwd: .
+rc: 0
+stdout: 
+stderr: Cloning into '/var/lib/copr-rpmbuild/workspace/workdir-4r3a971e/android-studio'...
+
+Running: git checkout 838ad490a985ca141444a8fee3ae823f8d02696a --
+
+cmd: ['git', 'checkout', '838ad490a985ca141444a8fee3ae823f8d02696a', '--']
+cwd: /var/lib/copr-rpmbuild/workspace/workdir-4r3a971e/android-studio
+rc: 0
+stdout: 
+stderr: Note: switching to '838ad490a985ca141444a8fee3ae823f8d02696a'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 838ad49 automatic import of android-studio
+
+Running: dist-git-client sources
+
+cmd: ['dist-git-client', 'sources']
+cwd: /var/lib/copr-rpmbuild/workspace/workdir-4r3a971e/android-studio
+rc: 0
+stdout: 
+stderr: INFO: Reading stdout from command: git rev-parse --abbrev-ref HEAD
+INFO: Reading stdout from command: git rev-parse HEAD
+INFO: Reading sources specification file: sources
+INFO: Downloading android-studio-2025.1.1.13-linux.tar.gz
+INFO: Reading stdout from command: curl --help all
+INFO: Calling: curl -H Pragma: -o android-studio-2025.1.1.13-linux.tar.gz --location --connect-timeout 60 --retry 3 --retry-delay 10 --remote-time --show-error --fail --retry-all-errors https://copr-dist-git.fedorainfracloud.org/repo/pkgs/medzik/jetbrains/android-studio/android-studio-2025.1.1.13-linux.tar.gz/md5/39f9679be5f79e928c00631f037c50e0/android-studio-2025.1.1.13-linux.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+tail: /var/lib/copr-rpmbuild/main.log: file truncated
+100 1445M  100 1445M    0     0  13.2M      0  0:01:48  0:01:48 --:--:-- 41.3M
+INFO: Reading stdout from command: md5sum android-studio-2025.1.1.13-linux.tar.gz
+
+Running (timeout=18000): unbuffer mock --spec /var/lib/copr-rpmbuild/workspace/workdir-4r3a971e/android-studio/android-studio.spec --sources /var/lib/copr-rpmbuild/workspace/workdir-4r3a971e/android-studio --resultdir /var/lib/copr-rpmbuild/results --uniqueext 1750933101.870995 -r /var/lib/copr-rpmbuild/results/configs/child.cfg
+INFO: mock.py version 6.3 starting (python version = 3.13.3, NVR = mock-6.3-1.fc42), args: /usr/libexec/mock/mock --spec /var/lib/copr-rpmbuild/workspace/workdir-4r3a971e/android-studio/android-studio.spec --sources /var/lib/copr-rpmbuild/workspace/workdir-4r3a971e/android-studio --resultdir /var/lib/copr-rpmbuild/results --uniqueext 1750933101.870995 -r /var/lib/copr-rpmbuild/results/configs/child.cfg
+Start(bootstrap): init plugins
+INFO: tmpfs initialized
+INFO: selinux enabled
+INFO: chroot_scan: initialized
+INFO: compress_logs: initialized
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: tmpfs initialized
+INFO: selinux enabled
+INFO: chroot_scan: initialized
+INFO: compress_logs: initialized
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+INFO: Start(/var/lib/copr-rpmbuild/workspace/workdir-4r3a971e/android-studio/android-studio.spec)  Config(fedora-42-x86_64)
+Start: clean chroot
+Finish: clean chroot
+Mock Version: 6.3
+INFO: Mock Version: 6.3
+Start(bootstrap): chroot init
+INFO: mounting tmpfs at /var/lib/mock/fedora-42-x86_64-bootstrap-1750933101.870995/root.
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: Guessed host environment type: unknown
+INFO: Using container image: registry.fedoraproject.org/fedora:42
+INFO: Pulling image: registry.fedoraproject.org/fedora:42
+INFO: Tagging container image as mock-bootstrap-3d3f2633-519e-42c6-a6a1-ae0e6823ad44
+INFO: Checking that cefeb460bf38bca060b2ff2b11e127b980ff6f693e7a7511e19bc95db4269fd2 image matches host's architecture
+INFO: Copy content of container cefeb460bf38bca060b2ff2b11e127b980ff6f693e7a7511e19bc95db4269fd2 to /var/lib/mock/fedora-42-x86_64-bootstrap-1750933101.870995/root
+INFO: mounting cefeb460bf38bca060b2ff2b11e127b980ff6f693e7a7511e19bc95db4269fd2 with podman image mount
+INFO: image cefeb460bf38bca060b2ff2b11e127b980ff6f693e7a7511e19bc95db4269fd2 as /var/lib/containers/storage/overlay/e3c576dcd79cd5c6dfea8d5003e903ec05f9599d1e620539cdf9646b03995c64/merged
+INFO: umounting image cefeb460bf38bca060b2ff2b11e127b980ff6f693e7a7511e19bc95db4269fd2 (/var/lib/containers/storage/overlay/e3c576dcd79cd5c6dfea8d5003e903ec05f9599d1e620539cdf9646b03995c64/merged) with podman image umount
+INFO: Removing image mock-bootstrap-3d3f2633-519e-42c6-a6a1-ae0e6823ad44
+INFO: Package manager dnf5 detected and used (fallback)
+INFO: Not updating bootstrap chroot, bootstrap_image_ready=True
+Start(bootstrap): creating root cache
+Finish(bootstrap): creating root cache
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: mounting tmpfs at /var/lib/mock/fedora-42-x86_64-1750933101.870995/root.
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+INFO: Package manager dnf5 detected and used (direct choice)
+INFO: Buildroot is handled by package management downloaded with a bootstrap image:
+  rpm-4.20.1-1.fc42.x86_64
+  rpm-sequoia-1.7.0-5.fc42.x86_64
+  dnf5-5.2.13.1-1.fc42.x86_64
+  dnf5-plugins-5.2.13.1-1.fc42.x86_64
+Start: installing minimal buildroot with dnf5
+Updating and loading repositories:
+ updates                                100% |  15.4 MiB/s |   6.8 MiB |  00m00s
+ fedora                                 100% |  25.4 MiB/s |  35.4 MiB |  00m01s
+ Copr repository                        100% | 560.2 KiB/s |  73.4 KiB |  00m00s
+Repositories loaded.
+Package                            Arch   Version                    Repository      Size
+Installing group/module packages:
+ bash                              x86_64 5.2.37-1.fc42              fedora       8.2 MiB
+ bzip2                             x86_64 1.0.8-20.fc42              fedora      99.3 KiB
+ coreutils                         x86_64 9.6-4.fc42                 updates      5.4 MiB
+ cpio                              x86_64 2.15-4.fc42                fedora       1.1 MiB
+ diffutils                         x86_64 3.12-1.fc42                updates      1.6 MiB
+ fedora-release-common             noarch 42-26                      updates     20.2 KiB
+ findutils                         x86_64 1:4.10.0-5.fc42            fedora       1.9 MiB
+ gawk                              x86_64 5.3.1-1.fc42               fedora       1.7 MiB
+ glibc-minimal-langpack            x86_64 2.41-7.fc42                updates      0.0   B
+ grep                              x86_64 3.11-10.fc42               fedora       1.0 MiB
+ gzip                              x86_64 1.13-3.fc42                fedora     392.9 KiB
+ info                              x86_64 7.2-3.fc42                 fedora     357.9 KiB
+ patch                             x86_64 2.8-1.fc42                 updates    222.8 KiB
+ redhat-rpm-config                 noarch 342-4.fc42                 updates    185.5 KiB
+ rpm-build                         x86_64 4.20.1-1.fc42              fedora     168.7 KiB
+ sed                               x86_64 4.9-4.fc42                 fedora     857.3 KiB
+ shadow-utils                      x86_64 2:4.17.4-1.fc42            fedora       4.0 MiB
+ tar                               x86_64 2:1.35-5.fc42              fedora       3.0 MiB
+ unzip                             x86_64 6.0-66.fc42                fedora     390.3 KiB
+ util-linux                        x86_64 2.40.4-7.fc42              fedora       3.4 MiB
+ which                             x86_64 2.23-2.fc42                updates     83.5 KiB
+ xz                                x86_64 1:5.8.1-2.fc42             updates      1.3 MiB
+Installing dependencies:
+ add-determinism                   x86_64 0.6.0-1.fc42               fedora       2.5 MiB
+ alternatives                      x86_64 1.33-1.fc42                updates     62.2 KiB
+ ansible-srpm-macros               noarch 1-17.1.fc42                fedora      35.7 KiB
+ audit-libs                        x86_64 4.0.5-1.fc42               updates    351.3 KiB
+ basesystem                        noarch 11-22.fc42                 fedora       0.0   B
+ binutils                          x86_64 2.44-3.fc42                fedora      25.9 MiB
+ build-reproducibility-srpm-macros noarch 0.6.0-1.fc42               fedora     735.0   B
+ bzip2-libs                        x86_64 1.0.8-20.fc42              fedora      84.6 KiB
+ ca-certificates                   noarch 2024.2.69_v8.0.401-6.fc42  updates      2.6 MiB
+ coreutils-common                  x86_64 9.6-4.fc42                 updates     11.1 MiB
+ crypto-policies                   noarch 20250214-1.gitff7551b.fc42 fedora     137.2 KiB
+ curl                              x86_64 8.11.1-5.fc42              updates    450.7 KiB
+ cyrus-sasl-lib                    x86_64 2.1.28-30.fc42             fedora       2.3 MiB
+ debugedit                         x86_64 5.1-6.fc42                 updates    192.7 KiB
+ dwz                               x86_64 0.15-9.fc42                fedora     291.0 KiB
+ ed                                x86_64 1.21-2.fc42                fedora     146.5 KiB
+ efi-srpm-macros                   noarch 6-3.fc42                   updates     40.1 KiB
+ elfutils                          x86_64 0.193-2.fc42               updates      2.9 MiB
+ elfutils-debuginfod-client        x86_64 0.193-2.fc42               updates     83.9 KiB
+ elfutils-default-yama-scope       noarch 0.193-2.fc42               updates      1.8 KiB
+ elfutils-libelf                   x86_64 0.193-2.fc42               updates      1.2 MiB
+ elfutils-libs                     x86_64 0.193-2.fc42               updates    683.4 KiB
+ fedora-gpg-keys                   noarch 42-1                       fedora     128.2 KiB
+ fedora-release                    noarch 42-26                      updates      0.0   B
+ fedora-release-identity-basic     noarch 42-26                      updates    674.0   B
+ fedora-repos                      noarch 42-1                       fedora       4.9 KiB
+ file                              x86_64 5.46-3.fc42                updates    100.2 KiB
+ file-libs                         x86_64 5.46-3.fc42                updates     11.9 MiB
+ filesystem                        x86_64 3.18-42.fc42               updates    112.0   B
+ filesystem-srpm-macros            noarch 3.18-42.fc42               updates     38.2 KiB
+ fonts-srpm-macros                 noarch 1:2.0.5-22.fc42            updates     55.8 KiB
+ forge-srpm-macros                 noarch 0.4.0-2.fc42               fedora      38.9 KiB
+ fpc-srpm-macros                   noarch 1.3-14.fc42                fedora     144.0   B
+ gdb-minimal                       x86_64 16.3-1.fc42                updates     13.2 MiB
+ gdbm-libs                         x86_64 1:1.23-9.fc42              fedora     129.9 KiB
+ ghc-srpm-macros                   noarch 1.9.2-2.fc42               fedora     779.0   B
+ glibc                             x86_64 2.41-7.fc42                updates      6.6 MiB
+ glibc-common                      x86_64 2.41-7.fc42                updates      1.0 MiB
+ glibc-gconv-extra                 x86_64 2.41-7.fc42                updates      7.2 MiB
+ gmp                               x86_64 1:6.3.0-4.fc42             fedora     811.3 KiB
+ gnat-srpm-macros                  noarch 6-7.fc42                   fedora       1.0 KiB
+ go-srpm-macros                    noarch 3.6.0-6.fc42               fedora      60.8 KiB
+ jansson                           x86_64 2.14-2.fc42                fedora      93.1 KiB
+ json-c                            x86_64 0.18-2.fc42                fedora      86.7 KiB
+ kernel-srpm-macros                noarch 1.0-25.fc42                fedora       1.9 KiB
+ keyutils-libs                     x86_64 1.6.3-5.fc42               fedora      58.3 KiB
+ krb5-libs                         x86_64 1.21.3-6.fc42              updates      2.3 MiB
+ libacl                            x86_64 2.3.2-3.fc42               fedora      38.3 KiB
+ libarchive                        x86_64 3.7.7-4.fc42               fedora     930.6 KiB
+ libattr                           x86_64 2.5.2-5.fc42               fedora      27.1 KiB
+ libblkid                          x86_64 2.40.4-7.fc42              fedora     262.4 KiB
+ libbrotli                         x86_64 1.1.0-6.fc42               fedora     841.3 KiB
+ libcap                            x86_64 2.73-2.fc42                fedora     207.1 KiB
+ libcap-ng                         x86_64 0.8.5-4.fc42               fedora      72.9 KiB
+ libcom_err                        x86_64 1.47.2-3.fc42              fedora      67.1 KiB
+ libcurl                           x86_64 8.11.1-5.fc42              updates    834.0 KiB
+ libeconf                          x86_64 0.7.6-2.fc42               updates     64.6 KiB
+ libevent                          x86_64 2.1.12-15.fc42             fedora     903.1 KiB
+ libfdisk                          x86_64 2.40.4-7.fc42              fedora     372.3 KiB
+ libffi                            x86_64 3.4.6-5.fc42               fedora      82.3 KiB
+ libgcc                            x86_64 15.1.1-2.fc42              updates    266.6 KiB
+ libgomp                           x86_64 15.1.1-2.fc42              updates    539.1 KiB
+ libidn2                           x86_64 2.3.8-1.fc42               fedora     556.5 KiB
+ libmount                          x86_64 2.40.4-7.fc42              fedora     356.3 KiB
+ libnghttp2                        x86_64 1.64.0-3.fc42              fedora     170.4 KiB
+ libpkgconf                        x86_64 2.3.0-2.fc42               fedora      78.1 KiB
+ libpsl                            x86_64 0.21.5-5.fc42              fedora      76.4 KiB
+ libselinux                        x86_64 3.8-2.fc42                 updates    193.1 KiB
+ libsemanage                       x86_64 3.8.1-2.fc42               updates    304.4 KiB
+ libsepol                          x86_64 3.8-1.fc42                 fedora     826.0 KiB
+ libsmartcols                      x86_64 2.40.4-7.fc42              fedora     180.4 KiB
+ libssh                            x86_64 0.11.1-4.fc42              fedora     565.5 KiB
+ libssh-config                     noarch 0.11.1-4.fc42              fedora     277.0   B
+ libstdc++                         x86_64 15.1.1-2.fc42              updates      2.8 MiB
+ libtasn1                          x86_64 4.20.0-1.fc42              fedora     176.3 KiB
+ libtool-ltdl                      x86_64 2.5.4-4.fc42               fedora      70.1 KiB
+ libunistring                      x86_64 1.1-9.fc42                 fedora       1.7 MiB
+ libuuid                           x86_64 2.40.4-7.fc42              fedora      37.3 KiB
+ libverto                          x86_64 0.3.2-10.fc42              fedora      25.4 KiB
+ libxcrypt                         x86_64 4.4.38-7.fc42              updates    284.5 KiB
+ libxml2                           x86_64 2.12.10-1.fc42             fedora       1.7 MiB
+ libzstd                           x86_64 1.5.7-1.fc42               fedora     807.8 KiB
+ lua-libs                          x86_64 5.4.8-1.fc42               updates    280.8 KiB
+ lua-srpm-macros                   noarch 1-15.fc42                  fedora       1.3 KiB
+ lz4-libs                          x86_64 1.10.0-2.fc42              fedora     157.4 KiB
+ mpfr                              x86_64 4.2.2-1.fc42               fedora     828.8 KiB
+ ncurses-base                      noarch 6.5-5.20250125.fc42        fedora     326.8 KiB
+ ncurses-libs                      x86_64 6.5-5.20250125.fc42        fedora     946.3 KiB
+ ocaml-srpm-macros                 noarch 10-4.fc42                  fedora       1.9 KiB
+ openblas-srpm-macros              noarch 2-19.fc42                  fedora     112.0   B
+ openldap                          x86_64 2.6.9-3.fc42               fedora     655.1 KiB
+ openssl-libs                      x86_64 1:3.2.4-3.fc42             fedora       7.8 MiB
+ p11-kit                           x86_64 0.25.5-5.fc42              fedora       2.2 MiB
+ p11-kit-trust                     x86_64 0.25.5-5.fc42              fedora     395.5 KiB
+ package-notes-srpm-macros         noarch 0.5-13.fc42                fedora       1.6 KiB
+ pam-libs                          x86_64 1.7.0-6.fc42               updates    126.7 KiB
+ pcre2                             x86_64 10.45-1.fc42               fedora     697.7 KiB
+ pcre2-syntax                      noarch 10.45-1.fc42               fedora     273.9 KiB
+ perl-srpm-macros                  noarch 1-57.fc42                  fedora     861.0   B
+ pkgconf                           x86_64 2.3.0-2.fc42               fedora      88.5 KiB
+ pkgconf-m4                        noarch 2.3.0-2.fc42               fedora      14.4 KiB
+ pkgconf-pkg-config                x86_64 2.3.0-2.fc42               fedora     989.0   B
+ popt                              x86_64 1.19-8.fc42                fedora     132.8 KiB
+ publicsuffix-list-dafsa           noarch 20250616-1.fc42            updates     69.1 KiB
+ pyproject-srpm-macros             noarch 1.18.1-1.fc42              fedora       1.9 KiB
+ python-srpm-macros                noarch 3.13-4.fc42                fedora      51.0 KiB
+ qt5-srpm-macros                   noarch 5.15.17-1.fc42             updates    500.0   B
+ qt6-srpm-macros                   noarch 6.9.1-1.fc42               updates    464.0   B
+ readline                          x86_64 8.2-13.fc42                fedora     485.0 KiB
+ rpm                               x86_64 4.20.1-1.fc42              fedora       3.1 MiB
+ rpm-build-libs                    x86_64 4.20.1-1.fc42              fedora     206.6 KiB
+ rpm-libs                          x86_64 4.20.1-1.fc42              fedora     721.8 KiB
+ rpm-sequoia                       x86_64 1.7.0-5.fc42               fedora       2.4 MiB
+ rust-srpm-macros                  noarch 26.3-4.fc42                fedora       4.8 KiB
+ setup                             noarch 2.15.0-13.fc42             fedora     720.9 KiB
+ sqlite-libs                       x86_64 3.47.2-2.fc42              fedora       1.5 MiB
+ systemd-libs                      x86_64 257.6-1.fc42               updates      2.2 MiB
+ systemd-standalone-sysusers       x86_64 257.6-1.fc42               updates    277.3 KiB
+ tree-sitter-srpm-macros           noarch 0.1.0-8.fc42               fedora       6.5 KiB
+ util-linux-core                   x86_64 2.40.4-7.fc42              fedora       1.4 MiB
+ xxhash-libs                       x86_64 0.8.3-2.fc42               fedora      90.2 KiB
+ xz-libs                           x86_64 1:5.8.1-2.fc42             updates    217.8 KiB
+ zig-srpm-macros                   noarch 1-4.fc42                   fedora       1.1 KiB
+ zip                               x86_64 3.0-43.fc42                fedora     698.5 KiB
+ zlib-ng-compat                    x86_64 2.2.4-3.fc42               fedora     137.6 KiB
+ zstd                              x86_64 1.5.7-1.fc42               fedora       1.7 MiB
+Installing groups:
+ Buildsystem building group                                                              
+
+Transaction Summary:
+ Installing:       148 packages
+
+Total size of inbound packages is 52 MiB. Need to download 52 MiB.
+After this operation, 177 MiB extra will be used (install 177 MiB, remove 0 B).
+[  1/148] bzip2-0:1.0.8-20.fc42.x86_64  100% | 565.9 KiB/s |  52.1 KiB |  00m00s
+[  2/148] bash-0:5.2.37-1.fc42.x86_64   100% |  11.4 MiB/s |   1.8 MiB |  00m00s
+[  3/148] findutils-1:4.10.0-5.fc42.x86 100% |   8.0 MiB/s | 551.5 KiB |  00m00s
+[  4/148] cpio-0:2.15-4.fc42.x86_64     100% |   1.8 MiB/s | 294.6 KiB |  00m00s
+[  5/148] grep-0:3.11-10.fc42.x86_64    100% |   4.9 MiB/s | 300.1 KiB |  00m00s
+[  6/148] gzip-0:1.13-3.fc42.x86_64     100% |   2.8 MiB/s | 170.4 KiB |  00m00s
+[  7/148] info-0:7.2-3.fc42.x86_64      100% |   2.6 MiB/s | 183.8 KiB |  00m00s
+[  8/148] rpm-build-0:4.20.1-1.fc42.x86 100% |   5.0 MiB/s |  81.8 KiB |  00m00s
+[  9/148] sed-0:4.9-4.fc42.x86_64       100% |   9.1 MiB/s | 317.3 KiB |  00m00s
+[ 10/148] unzip-0:6.0-66.fc42.x86_64    100% |   4.7 MiB/s | 184.6 KiB |  00m00s
+[ 11/148] tar-2:1.35-5.fc42.x86_64      100% |  14.3 MiB/s | 862.5 KiB |  00m00s
+[ 12/148] shadow-utils-2:4.17.4-1.fc42. 100% |  15.0 MiB/s |   1.3 MiB |  00m00s
+[ 13/148] fedora-release-common-0:42-26 100% | 481.9 KiB/s |  25.5 KiB |  00m00s
+[ 14/148] gawk-0:5.3.1-1.fc42.x86_64    100% |  41.5 MiB/s |   1.1 MiB |  00m00s
+[ 15/148] diffutils-0:3.12-1.fc42.x86_6 100% |   2.8 MiB/s | 392.6 KiB |  00m00s
+[ 16/148] patch-0:2.8-1.fc42.x86_64     100% |   5.5 MiB/s | 113.5 KiB |  00m00s
+[ 17/148] coreutils-0:9.6-4.fc42.x86_64 100% |   7.1 MiB/s |   1.1 MiB |  00m00s
+[ 18/148] glibc-minimal-langpack-0:2.41 100% |   1.8 MiB/s | 106.9 KiB |  00m00s
+[ 19/148] redhat-rpm-config-0:342-4.fc4 100% |   4.9 MiB/s |  81.1 KiB |  00m00s
+[ 20/148] which-0:2.23-2.fc42.x86_64    100% |   1.9 MiB/s |  41.7 KiB |  00m00s
+[ 21/148] util-linux-0:2.40.4-7.fc42.x8 100% |  44.4 MiB/s |   1.2 MiB |  00m00s
+[ 22/148] ncurses-libs-0:6.5-5.20250125 100% |  14.9 MiB/s | 335.0 KiB |  00m00s
+[ 23/148] bzip2-libs-0:1.0.8-20.fc42.x8 100% |   1.5 MiB/s |  43.6 KiB |  00m00s
+[ 24/148] xz-1:5.8.1-2.fc42.x86_64      100% |   8.9 MiB/s | 572.6 KiB |  00m00s
+[ 25/148] pcre2-0:10.45-1.fc42.x86_64   100% |   3.2 MiB/s | 262.8 KiB |  00m00s
+[ 26/148] libarchive-0:3.7.7-4.fc42.x86 100% |   4.3 MiB/s | 411.8 KiB |  00m00s
+[ 27/148] popt-0:1.19-8.fc42.x86_64     100% | 814.1 KiB/s |  65.9 KiB |  00m00s
+[ 28/148] readline-0:8.2-13.fc42.x86_64 100% |   6.2 MiB/s | 215.2 KiB |  00m00s
+[ 29/148] rpm-0:4.20.1-1.fc42.x86_64    100% |  10.1 MiB/s | 548.4 KiB |  00m00s
+[ 30/148] rpm-build-libs-0:4.20.1-1.fc4 100% |   2.1 MiB/s |  99.7 KiB |  00m00s
+[ 31/148] rpm-libs-0:4.20.1-1.fc42.x86_ 100% |   5.1 MiB/s | 312.0 KiB |  00m00s
+[ 32/148] zstd-0:1.5.7-1.fc42.x86_64    100% |  23.7 MiB/s | 485.9 KiB |  00m00s
+[ 33/148] libacl-0:2.3.2-3.fc42.x86_64  100% |   1.2 MiB/s |  23.0 KiB |  00m00s
+[ 34/148] setup-0:2.15.0-13.fc42.noarch 100% |   9.5 MiB/s | 155.8 KiB |  00m00s
+[ 35/148] gmp-1:6.3.0-4.fc42.x86_64     100% |   4.4 MiB/s | 317.7 KiB |  00m00s
+[ 36/148] libattr-0:2.5.2-5.fc42.x86_64 100% | 310.6 KiB/s |  17.1 KiB |  00m00s
+[ 37/148] coreutils-common-0:9.6-4.fc42 100% |  27.8 MiB/s |   2.1 MiB |  00m00s
+[ 38/148] libcap-0:2.73-2.fc42.x86_64   100% |   4.3 MiB/s |  84.3 KiB |  00m00s
+[ 39/148] fedora-repos-0:42-1.noarch    100% | 135.7 KiB/s |   9.2 KiB |  00m00s
+[ 40/148] openssl-libs-1:3.2.4-3.fc42.x 100% |  26.8 MiB/s |   2.3 MiB |  00m00s
+[ 41/148] glibc-common-0:2.41-7.fc42.x8 100% |  18.3 MiB/s | 393.3 KiB |  00m00s
+[ 42/148] ed-0:1.21-2.fc42.x86_64       100% |   1.9 MiB/s |  82.0 KiB |  00m00s
+[ 43/148] mpfr-0:4.2.2-1.fc42.x86_64    100% |   3.0 MiB/s | 345.3 KiB |  00m00s
+[ 44/148] ansible-srpm-macros-0:1-17.1. 100% | 580.4 KiB/s |  20.3 KiB |  00m00s
+[ 45/148] build-reproducibility-srpm-ma 100% | 834.5 KiB/s |  11.7 KiB |  00m00s
+[ 46/148] forge-srpm-macros-0:0.4.0-2.f 100% |   1.4 MiB/s |  19.9 KiB |  00m00s
+[ 47/148] dwz-0:0.15-9.fc42.x86_64      100% |   8.8 MiB/s | 135.7 KiB |  00m00s
+[ 48/148] fpc-srpm-macros-0:1.3-14.fc42 100% | 572.8 KiB/s |   8.0 KiB |  00m00s
+[ 49/148] ghc-srpm-macros-0:1.9.2-2.fc4 100% | 654.0 KiB/s |   9.2 KiB |  00m00s
+[ 50/148] gnat-srpm-macros-0:6-7.fc42.n 100% | 615.1 KiB/s |   8.6 KiB |  00m00s
+[ 51/148] go-srpm-macros-0:3.6.0-6.fc42 100% |   1.9 MiB/s |  27.7 KiB |  00m00s
+[ 52/148] kernel-srpm-macros-0:1.0-25.f 100% | 705.1 KiB/s |   9.9 KiB |  00m00s
+[ 53/148] lua-srpm-macros-0:1-15.fc42.n 100% | 636.9 KiB/s |   8.9 KiB |  00m00s
+[ 54/148] ocaml-srpm-macros-0:10-4.fc42 100% | 657.5 KiB/s |   9.2 KiB |  00m00s
+[ 55/148] openblas-srpm-macros-0:2-19.f 100% | 554.7 KiB/s |   7.8 KiB |  00m00s
+[ 56/148] package-notes-srpm-macros-0:0 100% | 661.4 KiB/s |   9.3 KiB |  00m00s
+[ 57/148] pyproject-srpm-macros-0:1.18. 100% | 989.7 KiB/s |  13.9 KiB |  00m00s
+[ 58/148] perl-srpm-macros-0:1-57.fc42. 100% | 607.6 KiB/s |   8.5 KiB |  00m00s
+[ 59/148] python-srpm-macros-0:3.13-4.f 100% |   1.6 MiB/s |  23.0 KiB |  00m00s
+[ 60/148] rust-srpm-macros-0:26.3-4.fc4 100% | 836.1 KiB/s |  11.7 KiB |  00m00s
+[ 61/148] tree-sitter-srpm-macros-0:0.1 100% | 802.2 KiB/s |  11.2 KiB |  00m00s
+[ 62/148] zig-srpm-macros-0:1-4.fc42.no 100% | 588.9 KiB/s |   8.2 KiB |  00m00s
+[ 63/148] libblkid-0:2.40.4-7.fc42.x86_ 100% |   7.5 MiB/s | 122.5 KiB |  00m00s
+[ 64/148] libcap-ng-0:0.8.5-4.fc42.x86_ 100% | 869.4 KiB/s |  32.2 KiB |  00m00s
+[ 65/148] zip-0:3.0-43.fc42.x86_64      100% |   6.6 MiB/s | 263.5 KiB |  00m00s
+[ 66/148] libfdisk-0:2.40.4-7.fc42.x86_ 100% |   6.4 MiB/s | 158.5 KiB |  00m00s
+[ 67/148] libmount-0:2.40.4-7.fc42.x86_ 100% |   9.5 MiB/s | 155.1 KiB |  00m00s
+[ 68/148] libsmartcols-0:2.40.4-7.fc42. 100% |   5.0 MiB/s |  81.2 KiB |  00m00s
+[ 69/148] libuuid-0:2.40.4-7.fc42.x86_6 100% |   1.6 MiB/s |  25.3 KiB |  00m00s
+[ 70/148] xz-libs-1:5.8.1-2.fc42.x86_64 100% |   6.9 MiB/s | 113.0 KiB |  00m00s
+[ 71/148] zlib-ng-compat-0:2.2.4-3.fc42 100% | 286.2 KiB/s |  78.4 KiB |  00m00s
+[ 72/148] util-linux-core-0:2.40.4-7.fc 100% |   1.9 MiB/s | 529.2 KiB |  00m00s
+[ 73/148] ncurses-base-0:6.5-5.20250125 100% | 324.9 KiB/s |  88.1 KiB |  00m00s
+[ 74/148] pcre2-syntax-0:10.45-1.fc42.n 100% |   5.3 MiB/s | 161.7 KiB |  00m00s
+[ 75/148] libxml2-0:2.12.10-1.fc42.x86_ 100% |  13.4 MiB/s | 683.7 KiB |  00m00s
+[ 76/148] libzstd-0:1.5.7-1.fc42.x86_64 100% |   7.9 MiB/s | 314.8 KiB |  00m00s
+[ 77/148] lz4-libs-0:1.10.0-2.fc42.x86_ 100% |   3.3 MiB/s |  78.1 KiB |  00m00s
+[ 78/148] rpm-sequoia-0:1.7.0-5.fc42.x8 100% |  24.7 MiB/s | 911.1 KiB |  00m00s
+[ 79/148] crypto-policies-0:20250214-1. 100% |   2.8 MiB/s |  98.7 KiB |  00m00s
+[ 80/148] sqlite-libs-0:3.47.2-2.fc42.x 100% |  18.9 MiB/s | 734.8 KiB |  00m00s
+[ 81/148] fedora-gpg-keys-0:42-1.noarch 100% |   4.0 MiB/s | 135.6 KiB |  00m00s
+[ 82/148] add-determinism-0:0.6.0-1.fc4 100% |  19.9 MiB/s | 918.3 KiB |  00m00s
+[ 83/148] basesystem-0:11-22.fc42.noarc 100% | 520.7 KiB/s |   7.3 KiB |  00m00s
+[ 84/148] glibc-0:2.41-7.fc42.x86_64    100% |  30.4 MiB/s |   2.2 MiB |  00m00s
+[ 85/148] libstdc++-0:15.1.1-2.fc42.x86 100% |  27.0 MiB/s | 912.8 KiB |  00m00s
+[ 86/148] libgcc-0:15.1.1-2.fc42.x86_64 100% |   1.6 MiB/s | 127.5 KiB |  00m00s
+[ 87/148] filesystem-0:3.18-42.fc42.x86 100% |  34.2 MiB/s |   1.3 MiB |  00m00s
+[ 88/148] libselinux-0:3.8-2.fc42.x86_6 100% |   5.0 MiB/s |  96.6 KiB |  00m00s
+[ 89/148] libxcrypt-0:4.4.38-7.fc42.x86 100% |   7.8 MiB/s | 127.2 KiB |  00m00s
+[ 90/148] systemd-libs-0:257.6-1.fc42.x 100% |  24.8 MiB/s | 812.4 KiB |  00m00s
+[ 91/148] audit-libs-0:4.0.5-1.fc42.x86 100% |   8.0 MiB/s | 130.7 KiB |  00m00s
+[ 92/148] glibc-gconv-extra-0:2.41-7.fc 100% |   8.3 MiB/s |   1.7 MiB |  00m00s
+[ 93/148] pam-libs-0:1.7.0-6.fc42.x86_6 100% |   3.5 MiB/s |  57.5 KiB |  00m00s
+[ 94/148] libeconf-0:0.7.6-2.fc42.x86_6 100% |   2.3 MiB/s |  35.2 KiB |  00m00s
+[ 95/148] libsemanage-0:3.8.1-2.fc42.x8 100% |   7.5 MiB/s | 123.2 KiB |  00m00s
+[ 96/148] libsepol-0:3.8-1.fc42.x86_64  100% |   3.1 MiB/s | 348.9 KiB |  00m00s
+[ 97/148] lua-libs-0:5.4.8-1.fc42.x86_6 100% |   8.1 MiB/s | 131.9 KiB |  00m00s
+[ 98/148] elfutils-libelf-0:0.193-2.fc4 100% |  11.9 MiB/s | 207.8 KiB |  00m00s
+[ 99/148] elfutils-debuginfod-client-0: 100% |   3.1 MiB/s |  46.9 KiB |  00m00s
+[100/148] elfutils-libs-0:0.193-2.fc42. 100% |   8.5 MiB/s | 270.2 KiB |  00m00s
+[101/148] json-c-0:0.18-2.fc42.x86_64   100% |   2.9 MiB/s |  44.9 KiB |  00m00s
+[102/148] elfutils-0:0.193-2.fc42.x86_6 100% |  10.7 MiB/s | 571.4 KiB |  00m00s
+[103/148] file-0:5.46-3.fc42.x86_64     100% |   3.2 MiB/s |  48.6 KiB |  00m00s
+[104/148] file-libs-0:5.46-3.fc42.x86_6 100% |  25.9 MiB/s | 849.5 KiB |  00m00s
+[105/148] debugedit-0:5.1-6.fc42.x86_64 100% |   4.8 MiB/s |  78.8 KiB |  00m00s
+[106/148] libgomp-0:15.1.1-2.fc42.x86_6 100% |  10.8 MiB/s | 365.1 KiB |  00m00s
+[107/148] jansson-0:2.14-2.fc42.x86_64  100% |   1.9 MiB/s |  45.7 KiB |  00m00s
+[108/148] pkgconf-pkg-config-0:2.3.0-2. 100% | 413.5 KiB/s |   9.9 KiB |  00m00s
+[109/148] pkgconf-m4-0:2.3.0-2.fc42.noa 100% | 837.4 KiB/s |  14.2 KiB |  00m00s
+[110/148] libpkgconf-0:2.3.0-2.fc42.x86 100% |   2.7 MiB/s |  38.4 KiB |  00m00s
+[111/148] binutils-0:2.44-3.fc42.x86_64 100% |  58.2 MiB/s |   5.8 MiB |  00m00s
+[112/148] curl-0:8.11.1-5.fc42.x86_64   100% |  11.3 MiB/s | 220.3 KiB |  00m00s
+[113/148] alternatives-0:1.33-1.fc42.x8 100% |   2.3 MiB/s |  40.5 KiB |  00m00s
+[114/148] efi-srpm-macros-0:6-3.fc42.no 100% |   1.5 MiB/s |  22.5 KiB |  00m00s
+[115/148] filesystem-srpm-macros-0:3.18 100% |   1.7 MiB/s |  25.8 KiB |  00m00s
+[116/148] ca-certificates-0:2024.2.69_v 100% |  14.4 MiB/s | 944.7 KiB |  00m00s
+[117/148] fonts-srpm-macros-1:2.0.5-22. 100% |   1.8 MiB/s |  27.2 KiB |  00m00s
+[118/148] qt5-srpm-macros-0:5.15.17-1.f 100% | 581.0 KiB/s |   8.7 KiB |  00m00s
+[119/148] qt6-srpm-macros-0:6.9.1-1.fc4 100% | 625.5 KiB/s |   9.4 KiB |  00m00s
+[120/148] elfutils-default-yama-scope-0 100% | 838.8 KiB/s |  12.6 KiB |  00m00s
+[121/148] libffi-0:3.4.6-5.fc42.x86_64  100% |   2.3 MiB/s |  39.9 KiB |  00m00s
+[122/148] p11-kit-0:0.25.5-5.fc42.x86_6 100% |   8.1 MiB/s | 491.7 KiB |  00m00s
+[123/148] libtasn1-0:4.20.0-1.fc42.x86_ 100% |   1.0 MiB/s |  75.0 KiB |  00m00s
+[124/148] fedora-release-0:42-26.noarch 100% | 974.3 KiB/s |  14.6 KiB |  00m00s
+[125/148] p11-kit-trust-0:0.25.5-5.fc42 100% |   3.2 MiB/s | 132.6 KiB |  00m00s
+[126/148] pkgconf-0:2.3.0-2.fc42.x86_64 100% | 168.1 KiB/s |  44.9 KiB |  00m00s
+[127/148] systemd-standalone-sysusers-0 100% |   9.0 MiB/s | 157.0 KiB |  00m00s
+[128/148] xxhash-libs-0:0.8.3-2.fc42.x8 100% |   2.7 MiB/s |  39.1 KiB |  00m00s
+[129/148] fedora-release-identity-basic 100% |   1.0 MiB/s |  15.4 KiB |  00m00s
+[130/148] libcurl-0:8.11.1-5.fc42.x86_6 100% |  11.3 MiB/s | 371.7 KiB |  00m00s
+[131/148] libbrotli-0:1.1.0-6.fc42.x86_ 100% |   8.3 MiB/s | 339.8 KiB |  00m00s
+[132/148] libidn2-0:2.3.8-1.fc42.x86_64 100% |   3.3 MiB/s | 174.8 KiB |  00m00s
+[133/148] libnghttp2-0:1.64.0-3.fc42.x8 100% |   1.9 MiB/s |  77.7 KiB |  00m00s
+[134/148] libpsl-0:0.21.5-5.fc42.x86_64 100% |   2.2 MiB/s |  64.0 KiB |  00m00s
+[135/148] libssh-0:0.11.1-4.fc42.x86_64 100% |   4.8 MiB/s | 233.3 KiB |  00m00s
+[136/148] openldap-0:2.6.9-3.fc42.x86_6 100% |  10.2 MiB/s | 260.2 KiB |  00m00s
+[137/148] gdb-minimal-0:16.3-1.fc42.x86 100% |  21.1 MiB/s |   4.4 MiB |  00m00s
+[138/148] libunistring-0:1.1-9.fc42.x86 100% |   6.9 MiB/s | 542.5 KiB |  00m00s
+[139/148] libssh-config-0:0.11.1-4.fc42 100% | 126.8 KiB/s |   9.0 KiB |  00m00s
+[140/148] cyrus-sasl-lib-0:2.1.28-30.fc 100% |  16.5 MiB/s | 793.5 KiB |  00m00s
+[141/148] libtool-ltdl-0:2.5.4-4.fc42.x 100% |   1.5 MiB/s |  36.2 KiB |  00m00s
+[142/148] libevent-0:2.1.12-15.fc42.x86 100% |  10.2 MiB/s | 260.2 KiB |  00m00s
+[143/148] gdbm-libs-1:1.23-9.fc42.x86_6 100% |   3.7 MiB/s |  57.0 KiB |  00m00s
+[144/148] keyutils-libs-0:1.6.3-5.fc42. 100% |   2.1 MiB/s |  31.5 KiB |  00m00s
+[145/148] libcom_err-0:1.47.2-3.fc42.x8 100% |   1.9 MiB/s |  26.9 KiB |  00m00s
+[146/148] libverto-0:0.3.2-10.fc42.x86_ 100% |   1.5 MiB/s |  20.8 KiB |  00m00s
+[147/148] krb5-libs-0:1.21.3-6.fc42.x86 100% |  21.2 MiB/s | 759.8 KiB |  00m00s
+[148/148] publicsuffix-list-dafsa-0:202 100% |   3.6 MiB/s |  59.2 KiB |  00m00s
+--------------------------------------------------------------------------------
+[148/148] Total                         100% |  21.8 MiB/s |  52.3 MiB |  00m02s
+Running transaction
+Importing OpenPGP key 0x105EF944:
+ UserID     : "Fedora (42) <copr-team@redhat.com>"
+ Fingerprint: FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF
+ From       : file:///usr/share/distribution-gpg-keys/fedora/RPM-GPG-KEY-fedora-42-primary
+The key was successfully imported.
+[  1/150] Verify package files          100% | 736.0   B/s | 148.0   B |  00m00s
+[  2/150] Prepare transaction           100% |   1.8 KiB/s | 148.0   B |  00m00s
+[  3/150] Installing libgcc-0:15.1.1-2. 100% | 131.0 MiB/s | 268.3 KiB |  00m00s
+[  4/150] Installing publicsuffix-list- 100% |  68.2 MiB/s |  69.8 KiB |  00m00s
+[  5/150] Installing libssh-config-0:0. 100% |   0.0   B/s | 816.0   B |  00m00s
+[  6/150] Installing fedora-release-ide 100% | 910.2 KiB/s | 932.0   B |  00m00s
+[  7/150] Installing fedora-gpg-keys-0: 100% |  19.0 MiB/s | 174.8 KiB |  00m00s
+[  8/150] Installing fedora-repos-0:42- 100% |   0.0   B/s |   5.7 KiB |  00m00s
+[  9/150] Installing fedora-release-com 100% |  11.9 MiB/s |  24.5 KiB |  00m00s
+[ 10/150] Installing fedora-release-0:4 100% |   3.6 KiB/s | 124.0   B |  00m00s
+>>> Running sysusers scriptlet: setup-0:2.15.0-13.fc42.noarch                   
+>>> Finished sysusers scriptlet: setup-0:2.15.0-13.fc42.noarch                  
+>>> Scriptlet output:                                                           
+>>> Creating group 'adm' with GID 4.                                            
+>>> Creating group 'audio' with GID 63.                                         
+>>> Creating group 'bin' with GID 1.                                            
+>>> Creating group 'cdrom' with GID 11.                                         
+>>> Creating group 'clock' with GID 103.                                        
+>>> Creating group 'daemon' with GID 2.                                         
+>>> Creating group 'dialout' with GID 18.                                       
+>>> Creating group 'disk' with GID 6.                                           
+>>> Creating group 'floppy' with GID 19.                                        
+>>> Creating group 'ftp' with GID 50.                                           
+>>> Creating group 'games' with GID 20.                                         
+>>> Creating group 'input' with GID 104.                                        
+>>> Creating group 'kmem' with GID 9.                                           
+>>> Creating group 'kvm' with GID 36.                                           
+>>> Creating group 'lock' with GID 54.                                          
+>>> Creating group 'lp' with GID 7.                                             
+>>> Creating group 'mail' with GID 12.                                          
+>>> Creating group 'man' with GID 15.                                           
+>>> Creating group 'mem' with GID 8.                                            
+>>> Creating group 'nobody' with GID 65534.                                     
+>>> Creating group 'render' with GID 105.                                       
+>>> Creating group 'root' with GID 0.                                           
+>>> Creating group 'sgx' with GID 106.                                          
+>>> Creating group 'sys' with GID 3.                                            
+>>> Creating group 'tape' with GID 33.                                          
+>>> Creating group 'tty' with GID 5.                                            
+>>> Creating group 'users' with GID 100.                                        
+>>> Creating group 'utmp' with GID 22.                                          
+>>> Creating group 'video' with GID 39.                                         
+>>> Creating group 'wheel' with GID 10.                                         
+>>>                                                                             
+>>> Running sysusers scriptlet: setup-0:2.15.0-13.fc42.noarch                   
+>>> Finished sysusers scriptlet: setup-0:2.15.0-13.fc42.noarch                  
+>>> Scriptlet output:                                                           
+>>> Creating user 'adm' (adm) with UID 3 and GID 4.                             
+>>> Creating user 'bin' (bin) with UID 1 and GID 1.                             
+>>> Creating user 'daemon' (daemon) with UID 2 and GID 2.                       
+>>> Creating user 'ftp' (FTP User) with UID 14 and GID 50.                      
+>>> Creating user 'games' (games) with UID 12 and GID 20.                       
+>>> Creating user 'halt' (halt) with UID 7 and GID 0.                           
+>>> Creating user 'lp' (lp) with UID 4 and GID 7.                               
+>>> Creating user 'mail' (mail) with UID 8 and GID 12.                          
+>>> Creating user 'nobody' (Kernel Overflow User) with UID 65534 and GID 65534. 
+>>> Creating user 'operator' (operator) with UID 11 and GID 0.                  
+>>> Creating user 'root' (Super User) with UID 0 and GID 0.                     
+>>> Creating user 'shutdown' (shutdown) with UID 6 and GID 0.                   
+>>> Creating user 'sync' (sync) with UID 5 and GID 0.                           
+>>>                                                                             
+[ 11/150] Installing setup-0:2.15.0-13. 100% |  39.4 MiB/s | 726.7 KiB |  00m00s
+[ 12/150] Installing filesystem-0:3.18- 100% |   1.4 MiB/s | 212.5 KiB |  00m00s
+[ 13/150] Installing basesystem-0:11-22 100% |   0.0   B/s | 124.0   B |  00m00s
+[ 14/150] Installing qt6-srpm-macros-0: 100% |   0.0   B/s | 740.0   B |  00m00s
+[ 15/150] Installing qt5-srpm-macros-0: 100% |   0.0   B/s | 776.0   B |  00m00s
+[ 16/150] Installing pkgconf-m4-0:2.3.0 100% |   0.0   B/s |  14.8 KiB |  00m00s
+[ 17/150] Installing pcre2-syntax-0:10. 100% | 135.0 MiB/s | 276.4 KiB |  00m00s
+[ 18/150] Installing ncurses-base-0:6.5 100% |  34.4 MiB/s | 352.2 KiB |  00m00s
+[ 19/150] Installing glibc-minimal-lang 100% |   0.0   B/s | 124.0   B |  00m00s
+[ 20/150] Installing ncurses-libs-0:6.5 100% | 155.1 MiB/s | 952.8 KiB |  00m00s
+[ 21/150] Installing glibc-0:2.41-7.fc4 100% | 151.0 MiB/s |   6.6 MiB |  00m00s
+[ 22/150] Installing bash-0:5.2.37-1.fc 100% | 181.5 MiB/s |   8.2 MiB |  00m00s
+[ 23/150] Installing glibc-common-0:2.4 100% |  51.0 MiB/s |   1.0 MiB |  00m00s
+[ 24/150] Installing glibc-gconv-extra- 100% | 137.9 MiB/s |   7.3 MiB |  00m00s
+[ 25/150] Installing zlib-ng-compat-0:2 100% | 135.2 MiB/s | 138.4 KiB |  00m00s
+[ 26/150] Installing bzip2-libs-0:1.0.8 100% |  83.7 MiB/s |  85.7 KiB |  00m00s
+[ 27/150] Installing xz-libs-1:5.8.1-2. 100% | 213.8 MiB/s | 218.9 KiB |  00m00s
+[ 28/150] Installing libuuid-0:2.40.4-7 100% |  37.5 MiB/s |  38.4 KiB |  00m00s
+[ 29/150] Installing libblkid-0:2.40.4- 100% | 128.7 MiB/s | 263.5 KiB |  00m00s
+[ 30/150] Installing popt-0:1.19-8.fc42 100% |  27.2 MiB/s | 139.4 KiB |  00m00s
+[ 31/150] Installing readline-0:8.2-13. 100% | 158.6 MiB/s | 487.1 KiB |  00m00s
+[ 32/150] Installing gmp-1:6.3.0-4.fc42 100% | 198.6 MiB/s | 813.5 KiB |  00m00s
+[ 33/150] Installing libzstd-0:1.5.7-1. 100% | 263.4 MiB/s | 809.1 KiB |  00m00s
+[ 34/150] Installing elfutils-libelf-0: 100% | 233.3 MiB/s |   1.2 MiB |  00m00s
+[ 35/150] Installing libstdc++-0:15.1.1 100% | 283.6 MiB/s |   2.8 MiB |  00m00s
+[ 36/150] Installing libxcrypt-0:4.4.38 100% | 140.2 MiB/s | 287.2 KiB |  00m00s
+[ 37/150] Installing libattr-0:2.5.2-5. 100% |  27.4 MiB/s |  28.1 KiB |  00m00s
+[ 38/150] Installing libacl-0:2.3.2-3.f 100% |  38.2 MiB/s |  39.2 KiB |  00m00s
+[ 39/150] Installing dwz-0:0.15-9.fc42. 100% |  20.4 MiB/s | 292.4 KiB |  00m00s
+[ 40/150] Installing mpfr-0:4.2.2-1.fc4 100% | 202.7 MiB/s | 830.4 KiB |  00m00s
+[ 41/150] Installing gawk-0:5.3.1-1.fc4 100% |  77.0 MiB/s |   1.7 MiB |  00m00s
+[ 42/150] Installing unzip-0:6.0-66.fc4 100% |  27.5 MiB/s | 393.8 KiB |  00m00s
+[ 43/150] Installing file-libs-0:5.46-3 100% | 494.1 MiB/s |  11.9 MiB |  00m00s
+[ 44/150] Installing file-0:5.46-3.fc42 100% |   3.4 MiB/s | 101.7 KiB |  00m00s
+[ 45/150] Installing crypto-policies-0: 100% |  14.5 MiB/s | 163.5 KiB |  00m00s
+[ 46/150] Installing pcre2-0:10.45-1.fc 100% | 227.6 MiB/s | 699.1 KiB |  00m00s
+[ 47/150] Installing grep-0:3.11-10.fc4 100% |  45.6 MiB/s |   1.0 MiB |  00m00s
+[ 48/150] Installing xz-1:5.8.1-2.fc42. 100% |  57.9 MiB/s |   1.3 MiB |  00m00s
+[ 49/150] Installing libcap-ng-0:0.8.5- 100% |  73.1 MiB/s |  74.8 KiB |  00m00s
+[ 50/150] Installing audit-libs-0:4.0.5 100% | 172.6 MiB/s | 353.4 KiB |  00m00s
+[ 51/150] Installing libsmartcols-0:2.4 100% | 177.3 MiB/s | 181.5 KiB |  00m00s
+[ 52/150] Installing lz4-libs-0:1.10.0- 100% | 154.7 MiB/s | 158.5 KiB |  00m00s
+[ 53/150] Installing libsepol-0:3.8-1.f 100% | 201.9 MiB/s | 827.0 KiB |  00m00s
+[ 54/150] Installing libselinux-0:3.8-2 100% |  94.9 MiB/s | 194.3 KiB |  00m00s
+[ 55/150] Installing findutils-1:4.10.0 100% |  81.5 MiB/s |   1.9 MiB |  00m00s
+[ 56/150] Installing sed-0:4.9-4.fc42.x 100% |  44.5 MiB/s | 865.5 KiB |  00m00s
+[ 57/150] Installing libmount-0:2.40.4- 100% | 174.5 MiB/s | 357.3 KiB |  00m00s
+[ 58/150] Installing libeconf-0:0.7.6-2 100% |  64.7 MiB/s |  66.2 KiB |  00m00s
+[ 59/150] Installing pam-libs-0:1.7.0-6 100% |  63.0 MiB/s | 129.1 KiB |  00m00s
+[ 60/150] Installing libcap-0:2.73-2.fc 100% |  13.8 MiB/s | 212.1 KiB |  00m00s
+[ 61/150] Installing systemd-libs-0:257 100% | 223.2 MiB/s |   2.2 MiB |  00m00s
+[ 62/150] Installing lua-libs-0:5.4.8-1 100% | 137.7 MiB/s | 282.0 KiB |  00m00s
+[ 63/150] Installing alternatives-0:1.3 100% |   4.8 MiB/s |  63.8 KiB |  00m00s
+[ 64/150] Installing libffi-0:3.4.6-5.f 100% |  81.7 MiB/s |  83.7 KiB |  00m00s
+[ 65/150] Installing libtasn1-0:4.20.0- 100% |  87.0 MiB/s | 178.1 KiB |  00m00s
+[ 66/150] Installing p11-kit-0:0.25.5-5 100% |  80.9 MiB/s |   2.2 MiB |  00m00s
+[ 67/150] Installing libunistring-0:1.1 100% | 287.8 MiB/s |   1.7 MiB |  00m00s
+[ 68/150] Installing libidn2-0:2.3.8-1. 100% |  91.6 MiB/s | 562.7 KiB |  00m00s
+[ 69/150] Installing libpsl-0:0.21.5-5. 100% |  75.7 MiB/s |  77.5 KiB |  00m00s
+[ 70/150] Installing p11-kit-trust-0:0. 100% |  12.5 MiB/s | 397.2 KiB |  00m00s
+[ 71/150] Installing util-linux-core-0: 100% |  57.1 MiB/s |   1.4 MiB |  00m00s
+[ 72/150] Installing systemd-standalone 100% |  19.4 MiB/s | 277.8 KiB |  00m00s
+[ 73/150] Installing tar-2:1.35-5.fc42. 100% | 113.9 MiB/s |   3.0 MiB |  00m00s
+[ 74/150] Installing libsemanage-0:3.8. 100% |  99.7 MiB/s | 306.2 KiB |  00m00s
+[ 75/150] Installing shadow-utils-2:4.1 100% |  84.2 MiB/s |   4.0 MiB |  00m00s
+[ 76/150] Installing zstd-0:1.5.7-1.fc4 100% |  90.0 MiB/s |   1.7 MiB |  00m00s
+[ 77/150] Installing zip-0:3.0-43.fc42. 100% |  42.9 MiB/s | 702.4 KiB |  00m00s
+[ 78/150] Installing libfdisk-0:2.40.4- 100% | 182.3 MiB/s | 373.4 KiB |  00m00s
+[ 79/150] Installing libxml2-0:2.12.10- 100% |  89.3 MiB/s |   1.7 MiB |  00m00s
+[ 80/150] Installing bzip2-0:1.0.8-20.f 100% |   7.2 MiB/s | 103.8 KiB |  00m00s
+[ 81/150] Installing sqlite-libs-0:3.47 100% | 250.7 MiB/s |   1.5 MiB |  00m00s
+[ 82/150] Installing add-determinism-0: 100% | 117.4 MiB/s |   2.5 MiB |  00m00s
+[ 83/150] Installing build-reproducibil 100% |   0.0   B/s |   1.0 KiB |  00m00s
+[ 84/150] Installing ed-0:1.21-2.fc42.x 100% |  11.2 MiB/s | 148.8 KiB |  00m00s
+[ 85/150] Installing patch-0:2.8-1.fc42 100% |  15.6 MiB/s | 224.3 KiB |  00m00s
+[ 86/150] Installing filesystem-srpm-ma 100% |  38.0 MiB/s |  38.9 KiB |  00m00s
+[ 87/150] Installing elfutils-default-y 100% | 136.2 KiB/s |   2.0 KiB |  00m00s
+[ 88/150] Installing elfutils-libs-0:0. 100% | 167.3 MiB/s | 685.2 KiB |  00m00s
+[ 89/150] Installing cpio-0:2.15-4.fc42 100% |  52.4 MiB/s |   1.1 MiB |  00m00s
+[ 90/150] Installing diffutils-0:3.12-1 100% |  65.1 MiB/s |   1.6 MiB |  00m00s
+[ 91/150] Installing json-c-0:0.18-2.fc 100% |  85.9 MiB/s |  88.0 KiB |  00m00s
+[ 92/150] Installing libgomp-0:15.1.1-2 100% | 175.9 MiB/s | 540.5 KiB |  00m00s
+[ 93/150] Installing jansson-0:2.14-2.f 100% |  92.2 MiB/s |  94.4 KiB |  00m00s
+[ 94/150] Installing libpkgconf-0:2.3.0 100% |  77.4 MiB/s |  79.2 KiB |  00m00s
+[ 95/150] Installing pkgconf-0:2.3.0-2. 100% |   6.3 MiB/s |  91.0 KiB |  00m00s
+[ 96/150] Installing pkgconf-pkg-config 100% | 136.4 KiB/s |   1.8 KiB |  00m00s
+[ 97/150] Installing xxhash-libs-0:0.8. 100% |  89.4 MiB/s |  91.6 KiB |  00m00s
+[ 98/150] Installing libbrotli-0:1.1.0- 100% | 205.9 MiB/s | 843.6 KiB |  00m00s
+[ 99/150] Installing libnghttp2-0:1.64. 100% | 167.5 MiB/s | 171.5 KiB |  00m00s
+[100/150] Installing libtool-ltdl-0:2.5 100% |  69.6 MiB/s |  71.2 KiB |  00m00s
+[101/150] Installing gdbm-libs-1:1.23-9 100% |  64.2 MiB/s | 131.6 KiB |  00m00s
+[102/150] Installing cyrus-sasl-lib-0:2 100% | 104.7 MiB/s |   2.3 MiB |  00m00s
+[103/150] Installing keyutils-libs-0:1. 100% |  58.3 MiB/s |  59.7 KiB |  00m00s
+[104/150] Installing libcom_err-0:1.47. 100% |  66.6 MiB/s |  68.2 KiB |  00m00s
+[105/150] Installing libverto-0:0.3.2-1 100% |  26.6 MiB/s |  27.2 KiB |  00m00s
+[106/150] Installing rust-srpm-macros-0 100% |   0.0   B/s |   5.6 KiB |  00m00s
+[107/150] Installing perl-srpm-macros-0 100% |   0.0   B/s |   1.1 KiB |  00m00s
+[108/150] Installing package-notes-srpm 100% |   0.0   B/s |   2.0 KiB |  00m00s
+[109/150] Installing openblas-srpm-macr 100% |   0.0   B/s | 392.0   B |  00m00s
+[110/150] Installing ocaml-srpm-macros- 100% |   0.0   B/s |   2.2 KiB |  00m00s
+[111/150] Installing kernel-srpm-macros 100% |   0.0   B/s |   2.3 KiB |  00m00s
+[112/150] Installing gnat-srpm-macros-0 100% |   0.0   B/s |   1.3 KiB |  00m00s
+[113/150] Installing ghc-srpm-macros-0: 100% |   0.0   B/s |   1.0 KiB |  00m00s
+[114/150] Installing fpc-srpm-macros-0: 100% |   0.0   B/s | 420.0   B |  00m00s
+[115/150] Installing ansible-srpm-macro 100% |  35.4 MiB/s |  36.2 KiB |  00m00s
+[116/150] Installing coreutils-common-0 100% | 242.5 MiB/s |  11.2 MiB |  00m00s
+[117/150] Installing openssl-libs-1:3.2 100% | 311.4 MiB/s |   7.8 MiB |  00m00s
+[118/150] Installing coreutils-0:9.6-4. 100% |  97.2 MiB/s |   5.4 MiB |  00m00s
+[119/150] Installing ca-certificates-0: 100% |   1.1 MiB/s |   2.4 MiB |  00m02s
+[120/150] Installing libarchive-0:3.7.7 100% | 182.1 MiB/s | 932.6 KiB |  00m00s
+[121/150] Installing krb5-libs-0:1.21.3 100% | 191.0 MiB/s |   2.3 MiB |  00m00s
+[122/150] Installing libssh-0:0.11.1-4. 100% | 184.7 MiB/s | 567.5 KiB |  00m00s
+[123/150] Installing gzip-0:1.13-3.fc42 100% |  24.3 MiB/s | 398.4 KiB |  00m00s
+[124/150] Installing rpm-sequoia-0:1.7. 100% | 268.3 MiB/s |   2.4 MiB |  00m00s
+[125/150] Installing rpm-libs-0:4.20.1- 100% | 235.5 MiB/s | 723.4 KiB |  00m00s
+[126/150] Installing rpm-build-libs-0:4 100% | 202.5 MiB/s | 207.4 KiB |  00m00s
+[127/150] Installing libevent-0:2.1.12- 100% | 126.5 MiB/s | 906.9 KiB |  00m00s
+[128/150] Installing openldap-0:2.6.9-3 100% | 160.9 MiB/s | 658.9 KiB |  00m00s
+[129/150] Installing libcurl-0:8.11.1-5 100% | 203.9 MiB/s | 835.1 KiB |  00m00s
+[130/150] Installing elfutils-debuginfo 100% |   6.0 MiB/s |  86.2 KiB |  00m00s
+[131/150] Installing elfutils-0:0.193-2 100% | 121.8 MiB/s |   2.9 MiB |  00m00s
+[132/150] Installing binutils-0:2.44-3. 100% | 225.2 MiB/s |  25.9 MiB |  00m00s
+[133/150] Installing gdb-minimal-0:16.3 100% | 232.4 MiB/s |  13.2 MiB |  00m00s
+[134/150] Installing debugedit-0:5.1-6. 100% |  13.6 MiB/s | 195.4 KiB |  00m00s
+[135/150] Installing curl-0:8.11.1-5.fc 100% |  12.3 MiB/s | 453.1 KiB |  00m00s
+[136/150] Installing rpm-0:4.20.1-1.fc4 100% |  59.5 MiB/s |   2.5 MiB |  00m00s
+[137/150] Installing lua-srpm-macros-0: 100% |   1.9 MiB/s |   1.9 KiB |  00m00s
+[138/150] Installing tree-sitter-srpm-m 100% |   7.2 MiB/s |   7.4 KiB |  00m00s
+[139/150] Installing zig-srpm-macros-0: 100% |   1.6 MiB/s |   1.7 KiB |  00m00s
+[140/150] Installing efi-srpm-macros-0: 100% |  40.2 MiB/s |  41.1 KiB |  00m00s
+[141/150] Installing forge-srpm-macros- 100% |  39.3 MiB/s |  40.3 KiB |  00m00s
+[142/150] Installing go-srpm-macros-0:3 100% |  60.5 MiB/s |  62.0 KiB |  00m00s
+[143/150] Installing python-srpm-macros 100% |  50.9 MiB/s |  52.2 KiB |  00m00s
+[144/150] Installing fonts-srpm-macros- 100% |  55.7 MiB/s |  57.0 KiB |  00m00s
+[145/150] Installing redhat-rpm-config- 100% |  46.9 MiB/s | 192.2 KiB |  00m00s
+[146/150] Installing rpm-build-0:4.20.1 100% |  10.2 MiB/s | 177.4 KiB |  00m00s
+[147/150] Installing pyproject-srpm-mac 100% |   1.2 MiB/s |   2.5 KiB |  00m00s
+[148/150] Installing util-linux-0:2.40. 100% |  57.7 MiB/s |   3.5 MiB |  00m00s
+[149/150] Installing which-0:2.23-2.fc4 100% |   3.2 MiB/s |  85.7 KiB |  00m00s
+[150/150] Installing info-0:7.2-3.fc42. 100% | 113.8 KiB/s | 358.3 KiB |  00m03s
+Complete!
+Finish: installing minimal buildroot with dnf5
+Start: creating root cache
+Finish: creating root cache
+Finish: chroot init
+INFO: Installed packages:
+INFO: add-determinism-0.6.0-1.fc42.x86_64
+alternatives-1.33-1.fc42.x86_64
+ansible-srpm-macros-1-17.1.fc42.noarch
+audit-libs-4.0.5-1.fc42.x86_64
+basesystem-11-22.fc42.noarch
+bash-5.2.37-1.fc42.x86_64
+binutils-2.44-3.fc42.x86_64
+build-reproducibility-srpm-macros-0.6.0-1.fc42.noarch
+bzip2-1.0.8-20.fc42.x86_64
+bzip2-libs-1.0.8-20.fc42.x86_64
+ca-certificates-2024.2.69_v8.0.401-6.fc42.noarch
+coreutils-9.6-4.fc42.x86_64
+coreutils-common-9.6-4.fc42.x86_64
+cpio-2.15-4.fc42.x86_64
+crypto-policies-20250214-1.gitff7551b.fc42.noarch
+curl-8.11.1-5.fc42.x86_64
+cyrus-sasl-lib-2.1.28-30.fc42.x86_64
+debugedit-5.1-6.fc42.x86_64
+diffutils-3.12-1.fc42.x86_64
+dwz-0.15-9.fc42.x86_64
+ed-1.21-2.fc42.x86_64
+efi-srpm-macros-6-3.fc42.noarch
+elfutils-0.193-2.fc42.x86_64
+elfutils-debuginfod-client-0.193-2.fc42.x86_64
+elfutils-default-yama-scope-0.193-2.fc42.noarch
+elfutils-libelf-0.193-2.fc42.x86_64
+elfutils-libs-0.193-2.fc42.x86_64
+fedora-gpg-keys-42-1.noarch
+fedora-release-42-26.noarch
+fedora-release-common-42-26.noarch
+fedora-release-identity-basic-42-26.noarch
+fedora-repos-42-1.noarch
+file-5.46-3.fc42.x86_64
+file-libs-5.46-3.fc42.x86_64
+filesystem-3.18-42.fc42.x86_64
+filesystem-srpm-macros-3.18-42.fc42.noarch
+findutils-4.10.0-5.fc42.x86_64
+fonts-srpm-macros-2.0.5-22.fc42.noarch
+forge-srpm-macros-0.4.0-2.fc42.noarch
+fpc-srpm-macros-1.3-14.fc42.noarch
+gawk-5.3.1-1.fc42.x86_64
+gdb-minimal-16.3-1.fc42.x86_64
+gdbm-libs-1.23-9.fc42.x86_64
+ghc-srpm-macros-1.9.2-2.fc42.noarch
+glibc-2.41-7.fc42.x86_64
+glibc-common-2.41-7.fc42.x86_64
+glibc-gconv-extra-2.41-7.fc42.x86_64
+glibc-minimal-langpack-2.41-7.fc42.x86_64
+gmp-6.3.0-4.fc42.x86_64
+gnat-srpm-macros-6-7.fc42.noarch
+go-srpm-macros-3.6.0-6.fc42.noarch
+gpg-pubkey-ffffffffffffffffffffffffffffffffffffffff
+grep-3.11-10.fc42.x86_64
+gzip-1.13-3.fc42.x86_64
+info-7.2-3.fc42.x86_64
+jansson-2.14-2.fc42.x86_64
+json-c-0.18-2.fc42.x86_64
+kernel-srpm-macros-1.0-25.fc42.noarch
+keyutils-libs-1.6.3-5.fc42.x86_64
+krb5-libs-1.21.3-6.fc42.x86_64
+libacl-2.3.2-3.fc42.x86_64
+libarchive-3.7.7-4.fc42.x86_64
+libattr-2.5.2-5.fc42.x86_64
+libblkid-2.40.4-7.fc42.x86_64
+libbrotli-1.1.0-6.fc42.x86_64
+libcap-2.73-2.fc42.x86_64
+libcap-ng-0.8.5-4.fc42.x86_64
+libcom_err-1.47.2-3.fc42.x86_64
+libcurl-8.11.1-5.fc42.x86_64
+libeconf-0.7.6-2.fc42.x86_64
+libevent-2.1.12-15.fc42.x86_64
+libfdisk-2.40.4-7.fc42.x86_64
+libffi-3.4.6-5.fc42.x86_64
+libgcc-15.1.1-2.fc42.x86_64
+libgomp-15.1.1-2.fc42.x86_64
+libidn2-2.3.8-1.fc42.x86_64
+libmount-2.40.4-7.fc42.x86_64
+libnghttp2-1.64.0-3.fc42.x86_64
+libpkgconf-2.3.0-2.fc42.x86_64
+libpsl-0.21.5-5.fc42.x86_64
+libselinux-3.8-2.fc42.x86_64
+libsemanage-3.8.1-2.fc42.x86_64
+libsepol-3.8-1.fc42.x86_64
+libsmartcols-2.40.4-7.fc42.x86_64
+libssh-0.11.1-4.fc42.x86_64
+libssh-config-0.11.1-4.fc42.noarch
+libstdc++-15.1.1-2.fc42.x86_64
+libtasn1-4.20.0-1.fc42.x86_64
+libtool-ltdl-2.5.4-4.fc42.x86_64
+libunistring-1.1-9.fc42.x86_64
+libuuid-2.40.4-7.fc42.x86_64
+libverto-0.3.2-10.fc42.x86_64
+libxcrypt-4.4.38-7.fc42.x86_64
+libxml2-2.12.10-1.fc42.x86_64
+libzstd-1.5.7-1.fc42.x86_64
+lua-libs-5.4.8-1.fc42.x86_64
+lua-srpm-macros-1-15.fc42.noarch
+lz4-libs-1.10.0-2.fc42.x86_64
+mpfr-4.2.2-1.fc42.x86_64
+ncurses-base-6.5-5.20250125.fc42.noarch
+ncurses-libs-6.5-5.20250125.fc42.x86_64
+ocaml-srpm-macros-10-4.fc42.noarch
+openblas-srpm-macros-2-19.fc42.noarch
+openldap-2.6.9-3.fc42.x86_64
+openssl-libs-3.2.4-3.fc42.x86_64
+p11-kit-0.25.5-5.fc42.x86_64
+p11-kit-trust-0.25.5-5.fc42.x86_64
+package-notes-srpm-macros-0.5-13.fc42.noarch
+pam-libs-1.7.0-6.fc42.x86_64
+patch-2.8-1.fc42.x86_64
+pcre2-10.45-1.fc42.x86_64
+pcre2-syntax-10.45-1.fc42.noarch
+perl-srpm-macros-1-57.fc42.noarch
+pkgconf-2.3.0-2.fc42.x86_64
+pkgconf-m4-2.3.0-2.fc42.noarch
+pkgconf-pkg-config-2.3.0-2.fc42.x86_64
+popt-1.19-8.fc42.x86_64
+publicsuffix-list-dafsa-20250616-1.fc42.noarch
+pyproject-srpm-macros-1.18.1-1.fc42.noarch
+python-srpm-macros-3.13-4.fc42.noarch
+qt5-srpm-macros-5.15.17-1.fc42.noarch
+qt6-srpm-macros-6.9.1-1.fc42.noarch
+readline-8.2-13.fc42.x86_64
+redhat-rpm-config-342-4.fc42.noarch
+rpm-4.20.1-1.fc42.x86_64
+rpm-build-4.20.1-1.fc42.x86_64
+rpm-build-libs-4.20.1-1.fc42.x86_64
+rpm-libs-4.20.1-1.fc42.x86_64
+rpm-sequoia-1.7.0-5.fc42.x86_64
+rust-srpm-macros-26.3-4.fc42.noarch
+sed-4.9-4.fc42.x86_64
+setup-2.15.0-13.fc42.noarch
+shadow-utils-4.17.4-1.fc42.x86_64
+sqlite-libs-3.47.2-2.fc42.x86_64
+systemd-libs-257.6-1.fc42.x86_64
+systemd-standalone-sysusers-257.6-1.fc42.x86_64
+tar-1.35-5.fc42.x86_64
+tree-sitter-srpm-macros-0.1.0-8.fc42.noarch
+unzip-6.0-66.fc42.x86_64
+util-linux-2.40.4-7.fc42.x86_64
+util-linux-core-2.40.4-7.fc42.x86_64
+which-2.23-2.fc42.x86_64
+xxhash-libs-0.8.3-2.fc42.x86_64
+xz-5.8.1-2.fc42.x86_64
+xz-libs-5.8.1-2.fc42.x86_64
+zig-srpm-macros-1-4.fc42.noarch
+zip-3.0-43.fc42.x86_64
+zlib-ng-compat-2.2.4-3.fc42.x86_64
+zstd-1.5.7-1.fc42.x86_64
+Start: buildsrpm
+Start: rpmbuild -bs
+Building target platforms: x86_64
+Building for target x86_64
+warning: %source_date_epoch_from_changelog is set, but %changelog has no entries to take a date from
+Wrote: /builddir/build/SRPMS/android-studio-2025.1.1.13-3.fc42.src.rpm
+
+RPM build warnings:
+    %source_date_epoch_from_changelog is set, but %changelog has no entries to take a date from
+Finish: rpmbuild -bs
+INFO: chroot_scan: 1 files copied to /var/lib/copr-rpmbuild/results/chroot_scan
+INFO: /var/lib/mock/fedora-42-x86_64-1750933101.870995/root/var/log/dnf5.log
+INFO: chroot_scan: creating tarball /var/lib/copr-rpmbuild/results/chroot_scan.tar.gz
+/bin/tar: Removing leading `/' from member names
+Finish: buildsrpm
+INFO: Done(/var/lib/copr-rpmbuild/workspace/workdir-4r3a971e/android-studio/android-studio.spec) Config(child) 1 minutes 18 seconds
+INFO: Results and/or logs in: /var/lib/copr-rpmbuild/results
+INFO: Cleaning up build root ('cleanup_on_success=True')
+Start: clean chroot
+INFO: unmounting tmpfs.
+Finish: clean chroot
+INFO: Start(/var/lib/copr-rpmbuild/results/android-studio-2025.1.1.13-3.fc42.src.rpm)  Config(fedora-42-x86_64)
+Start(bootstrap): chroot init
+INFO: mounting tmpfs at /var/lib/mock/fedora-42-x86_64-bootstrap-1750933101.870995/root.
+INFO: reusing tmpfs at /var/lib/mock/fedora-42-x86_64-bootstrap-1750933101.870995/root.
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: mounting tmpfs at /var/lib/mock/fedora-42-x86_64-1750933101.870995/root.
+INFO: calling preinit hooks
+INFO: enabled root cache
+Start: unpacking root cache
+Finish: unpacking root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+INFO: Buildroot is handled by package management downloaded with a bootstrap image:
+  rpm-4.20.1-1.fc42.x86_64
+  rpm-sequoia-1.7.0-5.fc42.x86_64
+  dnf5-5.2.13.1-1.fc42.x86_64
+  dnf5-plugins-5.2.13.1-1.fc42.x86_64
+Finish: chroot init
+Start: build phase for android-studio-2025.1.1.13-3.fc42.src.rpm
+Start: build setup for android-studio-2025.1.1.13-3.fc42.src.rpm
+Building target platforms: x86_64
+Building for target x86_64
+warning: %source_date_epoch_from_changelog is set, but %changelog has no entries to take a date from
+Wrote: /builddir/build/SRPMS/android-studio-2025.1.1.13-3.fc42.src.rpm
+
+RPM build warnings:
+    %source_date_epoch_from_changelog is set, but %changelog has no entries to take a date from
+Updating and loading repositories:
+ updates                                100% | 749.7 KiB/s |  21.7 KiB |  00m00s
+ fedora                                 100% |   1.1 MiB/s |  30.4 KiB |  00m00s
+ Copr repository                        100% |  39.7 KiB/s |   2.1 KiB |  00m00s
+ Copr repository                        100% | 571.1 KiB/s |  73.7 KiB |  00m00s
+Repositories loaded.
+Package                  Arch   Version         Repository      Size
+Installing:
+ desktop-file-utils      x86_64 0.28-1.fc42     fedora     218.4 KiB
+ javapackages-filesystem noarch 6.4.0-5.fc42    fedora       2.0 KiB
+ libappstream-glib       x86_64 0.8.3-3.fc42    fedora       1.4 MiB
+ python3-devel           x86_64 3.13.3-2.fc42   updates      1.8 MiB
+Installing dependencies:
+ emacs-filesystem        noarch 1:30.0-4.fc42   fedora       0.0   B
+ expat                   x86_64 2.7.1-1.fc42    fedora     290.2 KiB
+ gdk-pixbuf2             x86_64 2.42.12-10.fc42 fedora       2.5 MiB
+ glib2                   x86_64 2.84.2-1.fc42   updates     14.7 MiB
+ gnutls                  x86_64 3.8.9-3.fc42    fedora       3.6 MiB
+ json-glib               x86_64 1.10.6-2.fc42   fedora     590.7 KiB
+ libb2                   x86_64 0.98.1-13.fc42  fedora      46.1 KiB
+ libjpeg-turbo           x86_64 3.1.0-2.fc42    fedora     803.2 KiB
+ libpng                  x86_64 2:1.6.44-2.fc42 fedora     241.7 KiB
+ mpdecimal               x86_64 4.0.1-1.fc42    updates    217.2 KiB
+ nettle                  x86_64 3.10.1-1.fc42   fedora     790.5 KiB
+ pyproject-rpm-macros    noarch 1.18.1-1.fc42   fedora     114.5 KiB
+ python-pip-wheel        noarch 24.3.1-2.fc42   fedora       1.2 MiB
+ python-rpm-macros       noarch 3.13-4.fc42     fedora      22.1 KiB
+ python3                 x86_64 3.13.3-2.fc42   updates     28.7 KiB
+ python3-libs            x86_64 3.13.3-2.fc42   updates     39.9 MiB
+ python3-packaging       noarch 24.2-3.fc42     fedora     555.7 KiB
+ python3-rpm-generators  noarch 14-12.fc42      fedora      81.7 KiB
+ python3-rpm-macros      noarch 3.13-4.fc42     fedora       6.4 KiB
+ shared-mime-info        x86_64 2.3-7.fc42      fedora       5.2 MiB
+ tzdata                  noarch 2025b-1.fc42    fedora       1.6 MiB
+
+Transaction Summary:
+ Installing:        25 packages
+
+Total size of inbound packages is 19 MiB. Need to download 19 MiB.
+After this operation, 76 MiB extra will be used (install 76 MiB, remove 0 B).
+[ 1/25] javapackages-filesystem-0:6.4.0 100% |  63.5 KiB/s |  14.1 KiB |  00m00s
+[ 2/25] desktop-file-utils-0:0.28-1.fc4 100% | 215.2 KiB/s |  68.9 KiB |  00m00s
+[ 3/25] python3-devel-0:3.13.3-2.fc42.x 100% |   3.0 MiB/s | 404.7 KiB |  00m00s
+[ 4/25] emacs-filesystem-1:30.0-4.fc42. 100% | 100.8 KiB/s |   7.4 KiB |  00m00s
+[ 5/25] libappstream-glib-0:0.8.3-3.fc4 100% | 759.6 KiB/s | 404.9 KiB |  00m01s
+[ 6/25] json-glib-0:1.10.6-2.fc42.x86_6 100% | 841.6 KiB/s | 171.7 KiB |  00m00s
+[ 7/25] libjpeg-turbo-0:3.1.0-2.fc42.x8 100% |   1.6 MiB/s | 236.2 KiB |  00m00s
+[ 8/25] gdk-pixbuf2-0:2.42.12-10.fc42.x 100% |   1.2 MiB/s | 490.6 KiB |  00m00s
+[ 9/25] libpng-2:1.6.44-2.fc42.x86_64   100% |   1.5 MiB/s | 123.9 KiB |  00m00s
+[10/25] shared-mime-info-0:2.3-7.fc42.x 100% |   3.4 MiB/s | 393.7 KiB |  00m00s
+[11/25] expat-0:2.7.1-1.fc42.x86_64     100% |   1.4 MiB/s | 115.1 KiB |  00m00s
+[12/25] libb2-0:0.98.1-13.fc42.x86_64   100% | 334.0 KiB/s |  25.4 KiB |  00m00s
+[13/25] tzdata-0:2025b-1.fc42.noarch    100% |   4.8 MiB/s | 714.0 KiB |  00m00s
+[14/25] python-pip-wheel-0:24.3.1-2.fc4 100% |   6.0 MiB/s |   1.2 MiB |  00m00s
+[15/25] python3-libs-0:3.13.3-2.fc42.x8 100% |  14.7 MiB/s |   9.2 MiB |  00m01s
+[16/25] gnutls-0:3.8.9-3.fc42.x86_64    100% |  10.5 MiB/s |   1.2 MiB |  00m00s
+[17/25] mpdecimal-0:4.0.1-1.fc42.x86_64 100% |   5.9 MiB/s |  97.1 KiB |  00m00s
+[18/25] nettle-0:3.10.1-1.fc42.x86_64   100% |   4.0 MiB/s | 424.4 KiB |  00m00s
+[19/25] python3-0:3.13.3-2.fc42.x86_64  100% |   1.8 MiB/s |  29.7 KiB |  00m00s
+[20/25] pyproject-rpm-macros-0:1.18.1-1 100% | 640.2 KiB/s |  44.8 KiB |  00m00s
+[21/25] python-rpm-macros-0:3.13-4.fc42 100% | 228.8 KiB/s |  16.9 KiB |  00m00s
+[22/25] glib2-0:2.84.2-1.fc42.x86_64    100% |  10.3 MiB/s |   3.1 MiB |  00m00s
+[23/25] python3-rpm-generators-0:14-12. 100% | 416.9 KiB/s |  29.2 KiB |  00m00s
+[24/25] python3-rpm-macros-0:3.13-4.fc4 100% | 158.1 KiB/s |  11.7 KiB |  00m00s
+[25/25] python3-packaging-0:24.2-3.fc42 100% |   2.0 MiB/s | 154.0 KiB |  00m00s
+--------------------------------------------------------------------------------
+[25/25] Total                           100% |  12.1 MiB/s |  18.5 MiB |  00m02s
+Running transaction
+[ 1/27] Verify package files            100% | 409.0   B/s |  25.0   B |  00m00s
+[ 2/27] Prepare transaction             100% | 446.0   B/s |  25.0   B |  00m00s
+[ 3/27] Installing python-rpm-macros-0: 100% |  22.3 MiB/s |  22.8 KiB |  00m00s
+[ 4/27] Installing python3-rpm-macros-0 100% |   0.0   B/s |   6.7 KiB |  00m00s
+[ 5/27] Installing pyproject-rpm-macros 100% | 113.7 MiB/s | 116.4 KiB |  00m00s
+[ 6/27] Installing mpdecimal-0:4.0.1-1. 100% | 106.8 MiB/s | 218.8 KiB |  00m00s
+[ 7/27] Installing nettle-0:3.10.1-1.fc 100% | 193.8 MiB/s | 793.6 KiB |  00m00s
+[ 8/27] Installing gnutls-0:3.8.9-3.fc4 100% | 238.2 MiB/s |   3.6 MiB |  00m00s
+[ 9/27] Installing glib2-0:2.84.2-1.fc4 100% | 201.4 MiB/s |  14.7 MiB |  00m00s
+[10/27] Installing json-glib-0:1.10.6-2 100% |  58.8 MiB/s | 602.5 KiB |  00m00s
+[11/27] Installing shared-mime-info-0:2 100% |  64.4 MiB/s |   2.6 MiB |  00m00s
+[12/27] Installing tzdata-0:2025b-1.fc4 100% |  24.6 MiB/s |   1.9 MiB |  00m00s
+[13/27] Installing python-pip-wheel-0:2 100% | 414.7 MiB/s |   1.2 MiB |  00m00s
+[14/27] Installing libb2-0:0.98.1-13.fc 100% |  46.1 MiB/s |  47.2 KiB |  00m00s
+[15/27] Installing expat-0:2.7.1-1.fc42 100% |  13.6 MiB/s | 292.3 KiB |  00m00s
+[16/27] Installing python3-libs-0:3.13. 100% | 200.5 MiB/s |  40.3 MiB |  00m00s
+[17/27] Installing python3-0:3.13.3-2.f 100% |   2.0 MiB/s |  30.5 KiB |  00m00s
+[18/27] Installing python3-packaging-0: 100% | 110.9 MiB/s | 568.0 KiB |  00m00s
+[19/27] Installing python3-rpm-generato 100% |  81.0 MiB/s |  82.9 KiB |  00m00s
+[20/27] Installing libpng-2:1.6.44-2.fc 100% | 118.6 MiB/s | 242.9 KiB |  00m00s
+[21/27] Installing libjpeg-turbo-0:3.1. 100% | 196.5 MiB/s | 804.9 KiB |  00m00s
+[22/27] Installing gdk-pixbuf2-0:2.42.1 100% |  78.9 MiB/s |   2.5 MiB |  00m00s
+[23/27] Installing emacs-filesystem-1:3 100% |   0.0   B/s | 544.0   B |  00m00s
+[24/27] Installing desktop-file-utils-0 100% |  13.6 MiB/s | 222.2 KiB |  00m00s
+[25/27] Installing libappstream-glib-0: 100% |  61.6 MiB/s |   1.4 MiB |  00m00s
+[26/27] Installing python3-devel-0:3.13 100% |  58.8 MiB/s |   1.8 MiB |  00m00s
+[27/27] Installing javapackages-filesys 100% |  14.0 KiB/s |   5.5 KiB |  00m00s
+Complete!
+Finish: build setup for android-studio-2025.1.1.13-3.fc42.src.rpm
+Start: rpmbuild android-studio-2025.1.1.13-3.fc42.src.rpm
+Building target platforms: x86_64
+Building for target x86_64
+warning: %source_date_epoch_from_changelog is set, but %changelog has no entries to take a date from
+Executing(%mkbuilddir): /bin/sh -e /var/tmp/rpm-tmp.6BPAHS
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.szXYPz
++ umask 022
++ cd /builddir/build/BUILD/android-studio-2025.1.1.13-build
++ cd /builddir/build/BUILD/android-studio-2025.1.1.13-build
++ rm -rf android-studio
++ /usr/lib/rpm/rpmuncompress -x /builddir/build/SOURCES/android-studio-2025.1.1.13-linux.tar.gz
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd android-studio
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ '[' -z sP ']'
++ shebang_flags=-kasP
++ /usr/bin/python3 -B /usr/lib/rpm/redhat/pathfix.py -pni /usr/bin/python3 -kasP bin
+recursedown('bin')
+recursedown('bin/helpers')
+recursedown('bin/helpers/jb_declarative_formatters')
+recursedown('bin/helpers/jb_declarative_formatters/parsers')
+recursedown('bin/helpers/jb_declarative_formatters/parsers/natvis')
+recursedown('bin/lldb')
+recursedown('bin/lldb/helpers')
+recursedown('bin/lldb/helpers/mixed_mode')
+recursedown('bin/lldb/helpers/renderers')
+recursedown('bin/lldb/helpers/stepping')
+bin/helpers/jb_declarative_formatters/__init__.py: no change
+bin/helpers/jb_declarative_formatters/type_name_template.py: no change
+bin/helpers/jb_declarative_formatters/type_viz.py: no change
+bin/helpers/jb_declarative_formatters/type_viz_expression.py: no change
+bin/helpers/jb_declarative_formatters/type_viz_generated_method.py: no change
+bin/helpers/jb_declarative_formatters/type_viz_intrinsic.py: no change
+bin/helpers/jb_declarative_formatters/type_viz_item_nodes.py: no change
+bin/helpers/jb_declarative_formatters/type_viz_item_providers.py: no change
+bin/helpers/jb_declarative_formatters/type_viz_mixins.py: no change
+bin/helpers/jb_declarative_formatters/type_viz_storage.py: no change
+bin/helpers/jb_declarative_formatters/type_viz_summary.py: no change
+bin/helpers/jb_declarative_formatters/type_viz_top_level_methods.py: no change
+bin/helpers/jb_declarative_formatters/type_viz_type_traits.py: no change
+bin/helpers/jb_declarative_formatters/parsers/__init__.py: no change
+bin/helpers/jb_declarative_formatters/parsers/args_parser.py: no change
+bin/helpers/jb_declarative_formatters/parsers/context_operator_parser.py: no change
+bin/helpers/jb_declarative_formatters/parsers/cpp_parser.py: no change
+bin/helpers/jb_declarative_formatters/parsers/type_name_parser.py: no change
+bin/helpers/jb_declarative_formatters/parsers/natvis/__init__.py: no change
+bin/helpers/jb_declarative_formatters/parsers/natvis/natvis_parser.py: no change
+bin/lldb/helpers/jb_lldb_init.py: no change
+bin/lldb/helpers/jb_lldb_polyfills.py: no change
+bin/lldb/helpers/jb_lldb_python_profiler.py: no change
+bin/lldb/helpers/jb_lldb_stepping.py: no change
+bin/lldb/helpers/mixed_mode/jb_mono_utils.py: no change
+bin/lldb/helpers/renderers/__init__.py: no change
+bin/lldb/helpers/renderers/jb_lldb_builtin_formatters.py: no change
+bin/lldb/helpers/renderers/jb_lldb_cache.py: no change
+bin/lldb/helpers/renderers/jb_lldb_declarative_formatters.py: no change
+bin/lldb/helpers/renderers/jb_lldb_declarative_formatters_loaders.py: no change
+bin/lldb/helpers/renderers/jb_lldb_declarative_formatters_manager.py: no change
+bin/lldb/helpers/renderers/jb_lldb_declarative_formatters_options.py: no change
+bin/lldb/helpers/renderers/jb_lldb_evaluation_utils.py: no change
+bin/lldb/helpers/renderers/jb_lldb_format.py: no change
+bin/lldb/helpers/renderers/jb_lldb_format_specs.py: no change
+bin/lldb/helpers/renderers/jb_lldb_intrinsics_prolog_cache.py: no change
+bin/lldb/helpers/renderers/jb_lldb_item_expression.py: no change
+bin/lldb/helpers/renderers/jb_lldb_logging.py: no change
+bin/lldb/helpers/renderers/jb_lldb_logging_manager.py: no change
+bin/lldb/helpers/renderers/jb_lldb_natvis_formatters.py: no change
+bin/lldb/helpers/renderers/jb_lldb_natvis_loader.py: no change
+bin/lldb/helpers/renderers/jb_lldb_natvis_synthetic_item_type_viz_cache.py: no change
+bin/lldb/helpers/renderers/jb_lldb_string_utils.py: no change
+bin/lldb/helpers/renderers/jb_lldb_utils.py: no change
+bin/lldb/helpers/stepping/__init__.py: no change
+bin/lldb/helpers/stepping/jb_lldb_abstract_scripted_thread_plan.py: no change
+bin/lldb/helpers/stepping/jb_lldb_abstract_thread_plan_with_lazy_context.py: no change
+bin/lldb/helpers/stepping/jb_lldb_address_range.py: no change
+bin/lldb/helpers/stepping/jb_lldb_delegate_step.py: no change
+bin/lldb/helpers/stepping/jb_lldb_instructions_reader.py: no change
+bin/lldb/helpers/stepping/jb_lldb_line_spec.py: no change
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.XsQJua
++ umask 022
++ cd /builddir/build/BUILD/android-studio-2025.1.1.13-build
++ '[' /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT '!=' / ']'
++ rm -rf /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT
+++ dirname /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT
++ mkdir -p /builddir/build/BUILD/android-studio-2025.1.1.13-build
++ mkdir /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT
++ CFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer '
++ export CFLAGS
++ CXXFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer '
++ export CXXFLAGS
++ FFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules '
++ export FFLAGS
++ FCFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules '
++ export FCFLAGS
++ VALAFLAGS=-g
++ export VALAFLAGS
++ RUSTFLAGS='-Copt-level=3 -Cdebuginfo=2 -Ccodegen-units=1 -Cstrip=none -Cforce-frame-pointers=yes -Clink-arg=-specs=/usr/lib/rpm/redhat/redhat-package-notes --cap-lints=warn'
++ export RUSTFLAGS
++ LDFLAGS='-Wl,-z,relro -Wl,--as-needed  -Wl,-z,pack-relative-relocs -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes '
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ export LT_SYS_LIBRARY_PATH
++ CC=gcc
++ export CC
++ CXX=g++
++ export CXX
++ cd android-studio
++ install -d /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/android-studio
++ cp -arf ./bin ./jbr ./lib ./plugins ./build.txt ./product-info.json /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/android-studio/
++ install -d /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/pixmaps
++ install -m 0644 -p bin/studio.png /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/pixmaps/com.google.AndroidStudio.png
++ install -d /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/icons/hicolor/scalable/apps
++ install -m 0644 -p bin/studio.svg /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/icons/hicolor/scalable/apps/com.google.AndroidStudio.svg
++ install -d /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/bin
++ ln -s /usr/share/android-studio/bin/studio /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/bin/android-studio
++ install -d /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/applications
++ install -m 0644 -p /builddir/build/SOURCES/android-studio.desktop /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/applications/android-studio.desktop
++ install -d /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/metainfo
++ install -m 0644 -p /builddir/build/SOURCES/android-studio.metainfo.xml /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/metainfo/android-studio.metainfo.xml
++ /usr/lib/rpm/check-buildroot
++ /usr/lib/rpm/redhat/brp-ldconfig
++ /usr/lib/rpm/brp-compress
++ /usr/lib/rpm/brp-strip /bin/true
++ /usr/lib/rpm/brp-strip-comment-note /bin/true /usr/bin/objdump
++ /usr/lib/rpm/redhat/brp-strip-lto /bin/true
++ /usr/lib/rpm/brp-strip-static-archive /bin/true
++ /usr/lib/rpm/redhat/brp-mangle-shebangs
+mangling shebang in /usr/share/android-studio/bin/profiler.sh from /bin/sh to #!/usr/bin/sh
+*** WARNING: ./usr/share/android-studio/bin/studio_safe.sh is executable but has no shebang, removing executable bit
+mangling shebang in /usr/share/android-studio/bin/game-tools.sh from /bin/sh to #!/usr/bin/sh
+mangling shebang in /usr/share/android-studio/bin/ltedit.sh from /bin/sh to #!/usr/bin/sh
+mangling shebang in /usr/share/android-studio/bin/studio.sh from /bin/sh to #!/usr/bin/sh
+mangling shebang in /usr/share/android-studio/bin/format.sh from /bin/sh to #!/usr/bin/sh
+mangling shebang in /usr/share/android-studio/bin/inspect.sh from /bin/sh to #!/usr/bin/sh
++ /usr/lib/rpm/brp-remove-la-files
++ env
+SHELL=/bin/bash
+RPM_SOURCE_DIR=/builddir/build/SOURCES
+HISTCONTROL=ignoredups
+PKG_CONFIG_PATH=:/usr/lib64/pkgconfig:/usr/share/pkgconfig
+HOSTNAME=7baa24d2c1f54c879d5014e6178e638c
+HISTSIZE=1000
+RPM_SPECPARTS_DIR=/builddir/build/BUILD/android-studio-2025.1.1.13-build/SPECPARTS
+container_host_version_id=42
+FFLAGS=-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules 
+PWD=/builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio
+LOGNAME=mockbuild
+CXX=g++
+CXXFLAGS=-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer 
+RPM_ARCH=x86_64
+container=systemd-nspawn
+LDFLAGS=-Wl,-z,relro -Wl,--as-needed  -Wl,-z,pack-relative-relocs -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes 
+HOME=/builddir
+LANG=C.UTF-8
+RPM_LD_FLAGS=-Wl,-z,relro -Wl,--as-needed  -Wl,-z,pack-relative-relocs -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes 
+RUSTFLAGS=-Copt-level=3 -Cdebuginfo=2 -Ccodegen-units=1 -Cstrip=none -Cforce-frame-pointers=yes -Clink-arg=-specs=/usr/lib/rpm/redhat/redhat-package-notes --cap-lints=warn
+PROMPT_COMMAND=printf "\033]0;<mock-chroot>\007"
+RPM_BUILD_TIME=1750933240
+RPM_PACKAGE_RELEASE=3.fc42
+RPM_OS=linux
+LT_SYS_LIBRARY_PATH=/usr/lib64:
+FCFLAGS=-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules 
+TERM=vt100
+USER=mockbuild
+NOTIFY_SOCKET=/run/host/notify
+SHLVL=1
+RPM_BUILD_DIR=/builddir/build/BUILD/android-studio-2025.1.1.13-build
+container_host_id=fedora
+RPM_OPT_FLAGS=-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wno-complain-wrong-lang -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer
+VALAFLAGS=-g
+RPM_DOC_DIR=/usr/share/doc
+RPM_PACKAGE_VERSION=2025.1.1.13
+DEBUGINFOD_IMA_CERT_PATH=/etc/keys/ima:
+CONFIG_SITE=NONE
+PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
+CC=gcc
+CFLAGS=-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer 
+MAIL=/var/spool/mail/mockbuild
+RPM_BUILD_NCPUS=2
+container_uuid=e1dfc436-36b6-4ec7-b343-72e3cd2157b2
+RPM_PACKAGE_NAME=android-studio
+RPM_BUILD_ROOT=/builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT
+OLDPWD=/builddir/build/BUILD/android-studio-2025.1.1.13-build
+_=/usr/bin/env
++ /usr/lib/rpm/redhat/brp-python-hardlink
++ /usr/bin/add-determinism --brp -j2 /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT
+Handler jar skipped: jar handler requires $SOURCE_DATE_EPOCH to be set
+Handler gzip skipped: gzip handler requires $SOURCE_DATE_EPOCH to be set
+Handler zip skipped: zip handler requires $SOURCE_DATE_EPOCH to be set
+Scanned 712 directories and 3532 files,
+               processed 0 inodes,
+               0 modified (0 replaced + 0 rewritten),
+               0 unsupported format, 0 errors
+Reading /builddir/build/BUILD/android-studio-2025.1.1.13-build/SPECPARTS/rpm-debuginfo.specpart
+Executing(%check): /bin/sh -e /var/tmp/rpm-tmp.kkQLG6
++ umask 022
++ cd /builddir/build/BUILD/android-studio-2025.1.1.13-build
++ CFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer '
++ export CFLAGS
++ CXXFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer '
++ export CXXFLAGS
++ FFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules '
++ export FFLAGS
++ FCFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules '
++ export FCFLAGS
++ VALAFLAGS=-g
++ export VALAFLAGS
++ RUSTFLAGS='-Copt-level=3 -Cdebuginfo=2 -Ccodegen-units=1 -Cstrip=none -Cforce-frame-pointers=yes -Clink-arg=-specs=/usr/lib/rpm/redhat/redhat-package-notes --cap-lints=warn'
++ export RUSTFLAGS
++ LDFLAGS='-Wl,-z,relro -Wl,--as-needed  -Wl,-z,pack-relative-relocs -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes '
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ export LT_SYS_LIBRARY_PATH
++ CC=gcc
++ export CC
++ CXX=g++
++ export CXX
++ cd android-studio
++ appstream-util validate-relax --nonet /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/metainfo/android-studio.metainfo.xml
+/builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/metainfo/android-studio.metainfo.xml: OK
++ desktop-file-validate /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/applications/android-studio.desktop
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Processing files: android-studio-2025.1.1.13-3.fc42.x86_64
+Executing(%license): /bin/sh -e /var/tmp/rpm-tmp.fIRGyd
++ umask 022
++ cd /builddir/build/BUILD/android-studio-2025.1.1.13-build
++ cd android-studio
++ LICENSEDIR=/builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ export LC_ALL=C.UTF-8
++ LC_ALL=C.UTF-8
++ export LICENSEDIR
++ /usr/bin/mkdir -p /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/antlr4-runtime-4.5.3.jar-NOTICE /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/bouncycastle-1.48-NOTICE /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/commons-compress-NOTICE /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/commons-io-2.4.jar-NOTICE /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/dev01_license.txt /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/fest-NOTICE /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/ffmpeg-LICENSE.md /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/ffmpeg-LICENSE.openh264 /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/ffmpeg-SOURCE_CODE.TXT /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/freemarker-NOTICE /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/google-api-services-source.jar-NOTICE /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/gradle-appengine-builder-model-0.1.0.jar-NOTICE /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/gson-2.3-NOTICE /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/hdrhistogram_license.txt /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/icudt75l.dat.txt /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/instantapps-api-NOTICE /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/javacpp-NOTICE /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/javahelp_license.txt /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/javolution_license.txt /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/jgraphx-3.4.0.1-NOTICE /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/jsr305-1.3.9-NOTICE /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/juniversalchardet-1.0.3.jar-NOTICE /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/kxml2-2.3.0-NOTICE /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/launcher-third-party-libraries.html /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/layoutlib.jar.txt /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/layoutlib_jni.dll.txt /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/layoutlib_jni.dylib.txt /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/layoutlib_jni.so.txt /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/libandroid_runtime.dll.txt /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/libandroid_runtime.dylib.txt /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/libandroid_runtime.so.txt /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/mockito-all-1.9.5-NOTICE /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/r8_license.txt /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/samplesindex-v1-1.0-SNAPSHOT.jar-NOTICE /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/saxon-conditions.html /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/swt.jar-NOTICE /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/third-party-libraries.html /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/third-party-libraries.json /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/uiautomatorviewer.jar-NOTICE /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ cp -pr /builddir/build/BUILD/android-studio-2025.1.1.13-build/android-studio/license/yourkit-license-redist.txt /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT/usr/share/licenses/android-studio
++ RPM_EC=0
+++ jobs -p
++ exit 0
+warning: absolute symlink: /usr/bin/android-studio -> /usr/share/android-studio/bin/studio
+Provides: android-studio = 2025.1.1.13-3.fc42 android-studio(x86-64) = 2025.1.1.13-3.fc42 application() application(android-studio.desktop) metainfo() metainfo(android-studio.metainfo.xml)
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Processing files: android-studio-jbr-2025.1.1.13-3.fc42.x86_64
+Provides: android-studio-jbr = 2025.1.1.13-3.fc42 android-studio-jbr(x86-64) = 2025.1.1.13-3.fc42
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /builddir/build/BUILD/android-studio-2025.1.1.13-build/BUILDROOT
+Wrote: /builddir/build/RPMS/android-studio-jbr-2025.1.1.13-3.fc42.x86_64.rpm
+Wrote: /builddir/build/RPMS/android-studio-2025.1.1.13-3.fc42.x86_64.rpm
+Executing(rmbuild): /bin/sh -e /var/tmp/rpm-tmp.yhgzuC
++ umask 022
++ cd /builddir/build/BUILD/android-studio-2025.1.1.13-build
++ test -d /builddir/build/BUILD/android-studio-2025.1.1.13-build
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w /builddir/build/BUILD/android-studio-2025.1.1.13-build
++ rm -rf /builddir/build/BUILD/android-studio-2025.1.1.13-build
++ RPM_EC=0
+++ jobs -p
++ exit 0
+
+RPM build warnings:
+    %source_date_epoch_from_changelog is set, but %changelog has no entries to take a date from
+    absolute symlink: /usr/bin/android-studio -> /usr/share/android-studio/bin/studio
+Finish: rpmbuild android-studio-2025.1.1.13-3.fc42.src.rpm
+Finish: build phase for android-studio-2025.1.1.13-3.fc42.src.rpm
+INFO: chroot_scan: 1 files copied to /var/lib/copr-rpmbuild/results/chroot_scan
+INFO: /var/lib/mock/fedora-42-x86_64-1750933101.870995/root/var/log/dnf5.log
+INFO: chroot_scan: creating tarball /var/lib/copr-rpmbuild/results/chroot_scan.tar.gz
+/bin/tar: Removing leading `/' from member names
+INFO: Done(/var/lib/copr-rpmbuild/results/android-studio-2025.1.1.13-3.fc42.src.rpm) Config(child) 24 minutes 43 seconds
+INFO: Results and/or logs in: /var/lib/copr-rpmbuild/results
+INFO: Cleaning up build root ('cleanup_on_success=True')
+Start: clean chroot
+INFO: unmounting tmpfs.
+Finish: clean chroot
+Finish: run
+Running RPMResults tool
+Package info:
+{
+    "packages": [
+        {
+            "name": "android-studio",
+            "epoch": null,
+            "version": "2025.1.1.13",
+            "release": "3.fc42",
+            "arch": "src"
+        },
+        {
+            "name": "android-studio",
+            "epoch": null,
+            "version": "2025.1.1.13",
+            "release": "3.fc42",
+            "arch": "x86_64"
+        },
+        {
+            "name": "android-studio-jbr",
+            "epoch": null,
+            "version": "2025.1.1.13",
+            "release": "3.fc42",
+            "arch": "x86_64"
+        }
+    ]
+}
+RPMResults finished

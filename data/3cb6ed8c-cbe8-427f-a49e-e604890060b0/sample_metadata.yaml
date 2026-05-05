@@ -1,0 +1,105 @@
+source_project_name: python-ipyparallel
+source_project_version: 8.6.1-6
+issue: |
+    Test assertion has been violated, as the tested code didn't raise expected exception.
+log_detective_version: 3.10.0
+log_detective_analysis: |
+    The RPM package build failed because the `%check` section exited with a non-zero status, indicating that a test, specifically `ipyparallel/tests/test_asyncresult.py::TestAsyncResult::test_wait_for_send`, failed during the build process. To resolve this, investigate and fix the failing test in the `ipyparallel` package.
+log_files:
+    - builder-live.log
+    - backend.log
+    - build.log
+notes: |
+    Sample comes from packager-annotated notes submitted to logdetective.com.
+    Additional text contains more context.
+
+    Resolution: Ensure the 'TimeoutError' is actually raised by the tested code.
+
+    Snippets:
+
+    In builder-live.log:
+    ```
+    Copr build error: Build failed
+    ```
+    => Final build failure report.
+
+    In builder-live.log:
+    ```
+    ipyparallel/tests/test_asyncresult.py::TestAsyncResult::test_wait_for_send FAILED
+    ```
+    => TestAsyncResult::test_wait_for_send has failed.
+
+    In builder-live.log:
+    ```
+    SKIPPED [1] ipyparallel/tests/clienttest.py:83: Test requires distributed
+    SKIPPED [3] ipyparallel/tests/test_joblib.py:29: Requires joblib >= 0.10
+    SKIPPED [1] ipyparallel/tests/test_db.py:44: Requires mongodb
+    SKIPPED [1] ipyparallel/tests/test_db.py:143: Requires mongodb
+    SKIPPED [1] ipyparallel/tests/test_db.py:152: Requires mongodb
+    SKIPPED [1] ipyparallel/tests/test_db.py:51: Requires mongodb
+    SKIPPED [1] ipyparallel/tests/test_db.py:82: Requires mongodb
+    SKIPPED [1] ipyparallel/tests/test_db.py:120: Requires mongodb
+    SKIPPED [1] ipyparallel/tests/test_db.py:98: Requires mongodb
+    SKIPPED [1] ipyparallel/tests/test_db.py:106: Requires mongodb
+    SKIPPED [1] ipyparallel/tests/test_db.py:132: Requires mongodb
+    SKIPPED [1] ipyparallel/tests/test_db.py:159: Requires mongodb
+    SKIPPED [1] ipyparallel/tests/test_db.py:183: Requires mongodb
+    SKIPPED [1] ipyparallel/tests/test_db.py:195: Requires mongodb
+    SKIPPED [1] ipyparallel/tests/test_db.py:171: Requires mongodb
+    SKIPPED [1] ipyparallel/tests/test_db.py:64: Requires mongodb
+    SKIPPED [1] ipyparallel/tests/test_cluster.py:174: Requires mpiexec
+    SKIPPED [1] ipyparallel/tests/test_cluster.py:156: Requires mpiexec
+    SKIPPED [1] ipyparallel/tests/test_cluster.py:121: Requires mpiexec
+    SKIPPED [1] ipyparallel/tests/test_cluster.py:106: Requires mpiexec
+    SKIPPED [1] ipyparallel/tests/test_cluster.py:280: Requires mpiexec
+    SKIPPED [1] ipyparallel/tests/test_cluster.py:174: Requires slurm
+    SKIPPED [1] ipyparallel/tests/test_cluster.py:156: Requires slurm
+    SKIPPED [1] ipyparallel/tests/test_cluster.py:121: Requires slurm
+    SKIPPED [1] ipyparallel/tests/test_cluster.py:106: Requires slurm
+    SKIPPED [1] ipyparallel/tests/test_cluster.py:280: Requires slurm
+    SKIPPED [2] ipyparallel/tests/test_cluster.py:174: Needs docker compose
+    SKIPPED [2] ipyparallel/tests/test_cluster.py:156: Needs docker compose
+    SKIPPED [2] ipyparallel/tests/test_cluster.py:121: Needs docker compose
+    SKIPPED [2] ipyparallel/tests/test_cluster.py:106: Needs docker compose
+    SKIPPED [2] ipyparallel/tests/test_cluster.py:280: Needs docker compose
+    SKIPPED [2] ipyparallel/tests/clienttest.py:83: Test requires pandas
+    SKIPPED [6] ipyparallel/tests/clienttest.py:83: Test requires cloudpickle
+    ```
+    => Multiple tests skipped. This could be a sign of insufficient test coverage.
+
+    In builder-live.log:
+    ```
+    %patchN is deprecated (3 usages found), use %patch N (or %patch -P N)
+    ```
+    => Deprecation warning, could be a sign of long term maintenance issues.
+
+    In builder-live.log:
+    ```
+    >       with pytest.raises(TimeoutError):
+    E       Failed: DID NOT RAISE <class 'TimeoutError'>
+    ```
+    => Tested code did not raise TimeoutError, thus violating the test assertion and failing the test.
+
+    In builder-live.log:
+    ```
+    ipyparallel/tests/test_asyncresult.py:398: Failed
+    ```
+    => Location of the test code assertion breach.
+
+    In backend.log:
+    ```
+    [2024-01-26 05:54:20,295][ ERROR][PID:3743068] Build failed: Backend process error: No success file => build failure
+    ```
+    => Build failure reported.
+
+    In backend.log:
+    ```
+    [2024-01-26 05:54:20,306][ ERROR][PID:3743068] Backend process error: No success file => build failure
+    ```
+    => Build failure reported.
+
+    In build.log:
+    ```
+    %patchN is deprecated (3 usages found), use %patch N (or %patch -P N)
+    ```
+    => Deprecated RPM directive. This could indicate long term maintenance issues.

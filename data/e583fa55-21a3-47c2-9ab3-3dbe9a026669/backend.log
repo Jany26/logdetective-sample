@@ -1,0 +1,220 @@
+[2025-05-09 07:54:02,697][  INFO][PID:1195855] Marking build as starting
+[2025-05-09 07:54:02,873][  INFO][PID:1195855] Trying to allocate VM: ResallocHost, ticket_id=2892472, requested_tags=['copr_builder', 'arch_x86_64']
+[2025-05-09 07:54:05,902][  INFO][PID:1195855] Allocated host ResallocHost, ticket_id=2892472, hostname=54.167.222.90, name=aws_x86_64_normalreserved_prod_03790468_20250509_075002, requested_tags=['copr_builder', 'arch_x86_64']
+[2025-05-09 07:54:05,903][  INFO][PID:1195855] Allocating ssh connection to builder
+[2025-05-09 07:54:05,905][  INFO][PID:1195855] Checking that builder machine is OK
+[2025-05-09 07:54:06,248][  INFO][PID:1195855] Running remote command: copr-builder-ready fedora-42-x86_64
+[2025-05-09 07:54:06,461][  INFO][PID:1195855] Red Hat subscription not needed for fedora-42-x86_64
+Builder is ready to be used
+
+[2025-05-09 07:54:06,463][  INFO][PID:1195855] Filling build.info file with builder info
+[2025-05-09 07:54:06,466][  INFO][PID:1195855] Sending build state back to frontend: {
+    "builds": [
+        {
+            "timeout": 18000,
+            "frontend_base_url": "https://copr.fedorainfracloud.org",
+            "memory_reqs": 2048,
+            "enable_net": false,
+            "project_owner": "packit",
+            "project_name": "cri-o-cri-o-9190",
+            "project_dirname": "cri-o-cri-o-9190",
+            "submitter": "packit",
+            "ended_on": null,
+            "started_on": 1746777246.4664888,
+            "submitted_on": null,
+            "status": 3,
+            "chroot": "fedora-42-x86_64",
+            "arch": "x86_64",
+            "buildroot_pkgs": [],
+            "task_id": "9013973-fedora-42-x86_64",
+            "build_id": 9013973,
+            "package_name": "cri-o",
+            "package_version": "0:1.33.0-2.20250509075346213411.pr9190.239.geb76e5c22",
+            "git_repo": "https://copr-dist-git.fedorainfracloud.org/git/packit/cri-o-cri-o-9190/cri-o",
+            "git_hash": "92b08c6fed3c962e779852a10abf757f8ceed855",
+            "git_branch": null,
+            "source_type": null,
+            "source_json": null,
+            "pkg_name": null,
+            "pkg_main_version": null,
+            "pkg_epoch": null,
+            "pkg_release": null,
+            "srpm_url": null,
+            "uses_devel_repo": false,
+            "sandbox": "packit/cri-o-cri-o-9190--packit",
+            "results": null,
+            "appstream": false,
+            "allow_user_ssh": false,
+            "ssh_public_keys": null,
+            "storage": 0,
+            "background": false,
+            "fedora_review": false,
+            "isolation": "default",
+            "repo_priority": null,
+            "repos": [
+                {
+                    "baseurl": "https://download.copr.fedorainfracloud.org/results/packit/cri-o-cri-o-9190/fedora-42-x86_64/",
+                    "id": "copr_base",
+                    "name": "Copr repository",
+                    "priority": null
+                }
+            ],
+            "tags": [
+                "arch_x86_64"
+            ],
+            "with_opts": [],
+            "without_opts": [],
+            "destdir": "/var/lib/copr/public_html/results/packit/cri-o-cri-o-9190",
+            "results_repo_url": "https://download.copr.fedorainfracloud.org/results/packit/cri-o-cri-o-9190",
+            "result_dir": "09013973-cri-o",
+            "built_packages": "",
+            "id": 9013973,
+            "mockchain_macros": {
+                "copr_username": "packit",
+                "copr_projectname": "cri-o-cri-o-9190",
+                "vendor": "Fedora Project COPR (packit/cri-o-cri-o-9190)"
+            }
+        }
+    ]
+}
+[2025-05-09 07:54:06,493][  INFO][PID:1195855] Sending fedora-messaging bus message in build.start
+[2025-05-09 07:54:07,147][  INFO][PID:1195855] Sending fedora-messaging bus message in chroot.start
+[2025-05-09 07:54:07,171][  INFO][PID:1195855] Starting remote build: copr-rpmbuild --verbose --drop-resultdir --task-url https://copr.fedorainfracloud.org/backend/get-build-task/9013973-fedora-42-x86_64 --chroot fedora-42-x86_64 --detached
+[2025-05-09 07:54:07,544][  INFO][PID:1195855] Downloading the builder-live.log file, attempt 1
+[2025-05-09 07:54:07,546][  INFO][PID:1195855] Popen command started: ssh -F /home/copr/.ssh/config mockbuilder@54.167.222.90 copr-rpmbuild-log
+[2025-05-09 07:54:12,554][  INFO][PID:1195855] Periodic builder liveness probe: alive
+[2025-05-09 07:57:13,302][  INFO][PID:1195855] Downloading results from builder
+[2025-05-09 07:57:13,305][  INFO][PID:1195855] rsyncing of mockbuilder@54.167.222.90:/var/lib/copr-rpmbuild/results/ to /var/lib/copr/public_html/results/packit/cri-o-cri-o-9190/fedora-42-x86_64/09013973-cri-o started
+[2025-05-09 07:57:13,307][  INFO][PID:1195855] Popen command started: /usr/bin/rsync -rltDvH --chmod=D755,F644 -e 'ssh -F /home/copr/.ssh/config' mockbuilder@54.167.222.90:/var/lib/copr-rpmbuild/results/ /var/lib/copr/public_html/results/packit/cri-o-cri-o-9190/fedora-42-x86_64/09013973-cri-o/ &> /var/lib/copr/public_html/results/packit/cri-o-cri-o-9190/fedora-42-x86_64/09013973-cri-o/build-09013973.rsync.log
+[2025-05-09 07:57:14,014][  INFO][PID:1195855] rsyncing finished.
+[2025-05-09 07:57:14,016][  INFO][PID:1195855] Releasing VM back to pool
+[2025-05-09 07:57:14,028][  INFO][PID:1195855] Searching for 'success' file in resultdir
+[2025-05-09 07:57:14,033][  INFO][PID:1195855] Going to sign pkgs from source: 9013973-fedora-42-x86_64 in chroot: /var/lib/copr/public_html/results/packit/cri-o-cri-o-9190/fedora-42-x86_64
+[2025-05-09 07:57:14,035][  INFO][PID:1195855] Calling '/bin/sign -u packit#copr-team@redhat.com -p' (attempt #1)
+[2025-05-09 07:57:14,354][  INFO][PID:1195855] Calling '/bin/sign -4 -h sha256 -u packit#copr-team@redhat.com -r /var/lib/copr/public_html/results/packit/cri-o-cri-o-9190/fedora-42-x86_64/09013973-cri-o/cri-o-debuginfo-1.33.0-2.20250509075346213411.pr9190.239.geb76e5c22.fc42.x86_64.rpm' (attempt #1)
+[2025-05-09 07:57:15,671][  INFO][PID:1195855] signed rpm: /var/lib/copr/public_html/results/packit/cri-o-cri-o-9190/fedora-42-x86_64/09013973-cri-o/cri-o-debuginfo-1.33.0-2.20250509075346213411.pr9190.239.geb76e5c22.fc42.x86_64.rpm
+[2025-05-09 07:57:15,674][  INFO][PID:1195855] Calling '/bin/sign -4 -h sha256 -u packit#copr-team@redhat.com -r /var/lib/copr/public_html/results/packit/cri-o-cri-o-9190/fedora-42-x86_64/09013973-cri-o/cri-o-1.33.0-2.20250509075346213411.pr9190.239.geb76e5c22.fc42.x86_64.rpm' (attempt #1)
+[2025-05-09 07:57:16,995][  INFO][PID:1195855] signed rpm: /var/lib/copr/public_html/results/packit/cri-o-cri-o-9190/fedora-42-x86_64/09013973-cri-o/cri-o-1.33.0-2.20250509075346213411.pr9190.239.geb76e5c22.fc42.x86_64.rpm
+[2025-05-09 07:57:16,998][  INFO][PID:1195855] Calling '/bin/sign -4 -h sha256 -u packit#copr-team@redhat.com -r /var/lib/copr/public_html/results/packit/cri-o-cri-o-9190/fedora-42-x86_64/09013973-cri-o/cri-o-1.33.0-2.20250509075346213411.pr9190.239.geb76e5c22.fc42.src.rpm' (attempt #1)
+[2025-05-09 07:57:18,355][  INFO][PID:1195855] signed rpm: /var/lib/copr/public_html/results/packit/cri-o-cri-o-9190/fedora-42-x86_64/09013973-cri-o/cri-o-1.33.0-2.20250509075346213411.pr9190.239.geb76e5c22.fc42.src.rpm
+[2025-05-09 07:57:18,356][  INFO][PID:1195855] Calling '/bin/sign -4 -h sha256 -u packit#copr-team@redhat.com -r /var/lib/copr/public_html/results/packit/cri-o-cri-o-9190/fedora-42-x86_64/09013973-cri-o/cri-o-debugsource-1.33.0-2.20250509075346213411.pr9190.239.geb76e5c22.fc42.x86_64.rpm' (attempt #1)
+[2025-05-09 07:57:19,466][  INFO][PID:1195855] signed rpm: /var/lib/copr/public_html/results/packit/cri-o-cri-o-9190/fedora-42-x86_64/09013973-cri-o/cri-o-debugsource-1.33.0-2.20250509075346213411.pr9190.239.geb76e5c22.fc42.x86_64.rpm
+[2025-05-09 07:57:19,467][  INFO][PID:1195855] Sign done
+[2025-05-09 07:57:19,469][  INFO][PID:1195855] Incremental createrepo run, adding 09013973-cri-o into https://download.copr.fedorainfracloud.org/results/packit/cri-o-cri-o-9190/fedora-42-x86_64, (auto-create-repo=True)
+[2025-05-09 07:57:19,472][  INFO][PID:1195855] Running command 'copr-repo --batched /var/lib/copr/public_html/results/packit/cri-o-cri-o-9190/fedora-42-x86_64 --add 09013973-cri-o --no-appstream-metadata' as PID 1207070
+[2025-05-09 07:57:20,300][  INFO][PID:1195855] Finished after 0 seconds with exit code 0 (copr-repo --batched /var/lib/copr/public_html/results/packit/cri-o-cri-o-9190/fedora-42-x86_64 --add 09013973-cri-o --no-appstream-metadata)
+[2025-05-09 07:57:20,302][  INFO][PID:1195855] Getting build details
+[2025-05-09 07:57:20,305][  INFO][PID:1195855] Listing built binary packages in /var/lib/copr/public_html/results/packit/cri-o-cri-o-9190/fedora-42-x86_64/09013973-cri-o
+[2025-05-09 07:57:20,307][  INFO][PID:1195855] Built packages:
+['cri-o-debuginfo 1.33.0', 'cri-o-debugsource 1.33.0', 'cri-o 1.33.0']
+[2025-05-09 07:57:20,308][  INFO][PID:1195855] build details: {'built_packages': 'cri-o-debuginfo 1.33.0\ncri-o-debugsource 1.33.0\ncri-o 1.33.0'}
+[2025-05-09 07:57:20,310][  INFO][PID:1195855] Retrieving pubkey
+[2025-05-09 07:57:20,311][  INFO][PID:1195855] Calling '/bin/sign -u packit#copr-team@redhat.com -p' (attempt #1)
+[2025-05-09 07:57:20,636][  INFO][PID:1195855] Added pubkey for user packit project cri-o-cri-o-9190 into: /var/lib/copr/public_html/results/packit/cri-o-cri-o-9190/pubkey.gpg
+[2025-05-09 07:57:20,638][  INFO][PID:1195855] Finished build: id=9013973 failed=False timeout=18000 destdir=/var/lib/copr/public_html/results/packit/cri-o-cri-o-9190 chroot=fedora-42-x86_64 
+[2025-05-09 07:57:20,648][  INFO][PID:1195855] Worker succeeded build, took 194.18187856674194
+[2025-05-09 07:57:20,650][  INFO][PID:1195855] Sending build state back to frontend: {
+    "builds": [
+        {
+            "timeout": 18000,
+            "frontend_base_url": "https://copr.fedorainfracloud.org",
+            "memory_reqs": 2048,
+            "enable_net": false,
+            "project_owner": "packit",
+            "project_name": "cri-o-cri-o-9190",
+            "project_dirname": "cri-o-cri-o-9190",
+            "submitter": "packit",
+            "ended_on": 1746777440.6483674,
+            "started_on": 1746777246.4664888,
+            "submitted_on": null,
+            "status": 1,
+            "chroot": "fedora-42-x86_64",
+            "arch": "x86_64",
+            "buildroot_pkgs": [],
+            "task_id": "9013973-fedora-42-x86_64",
+            "build_id": 9013973,
+            "package_name": "cri-o",
+            "package_version": "0:1.33.0-2.20250509075346213411.pr9190.239.geb76e5c22",
+            "git_repo": "https://copr-dist-git.fedorainfracloud.org/git/packit/cri-o-cri-o-9190/cri-o",
+            "git_hash": "92b08c6fed3c962e779852a10abf757f8ceed855",
+            "git_branch": null,
+            "source_type": null,
+            "source_json": null,
+            "pkg_name": null,
+            "pkg_main_version": null,
+            "pkg_epoch": null,
+            "pkg_release": null,
+            "srpm_url": null,
+            "uses_devel_repo": false,
+            "sandbox": "packit/cri-o-cri-o-9190--packit",
+            "results": {
+                "packages": [
+                    {
+                        "name": "cri-o",
+                        "epoch": 0,
+                        "version": "1.33.0",
+                        "release": "2.20250509075346213411.pr9190.239.geb76e5c22.fc42",
+                        "arch": "src"
+                    },
+                    {
+                        "name": "cri-o-debuginfo",
+                        "epoch": 0,
+                        "version": "1.33.0",
+                        "release": "2.20250509075346213411.pr9190.239.geb76e5c22.fc42",
+                        "arch": "x86_64"
+                    },
+                    {
+                        "name": "cri-o-debugsource",
+                        "epoch": 0,
+                        "version": "1.33.0",
+                        "release": "2.20250509075346213411.pr9190.239.geb76e5c22.fc42",
+                        "arch": "x86_64"
+                    },
+                    {
+                        "name": "cri-o",
+                        "epoch": 0,
+                        "version": "1.33.0",
+                        "release": "2.20250509075346213411.pr9190.239.geb76e5c22.fc42",
+                        "arch": "x86_64"
+                    }
+                ]
+            },
+            "appstream": false,
+            "allow_user_ssh": false,
+            "ssh_public_keys": null,
+            "storage": 0,
+            "background": false,
+            "fedora_review": false,
+            "isolation": "default",
+            "repo_priority": null,
+            "repos": [
+                {
+                    "baseurl": "https://download.copr.fedorainfracloud.org/results/packit/cri-o-cri-o-9190/fedora-42-x86_64/",
+                    "id": "copr_base",
+                    "name": "Copr repository",
+                    "priority": null
+                }
+            ],
+            "tags": [
+                "arch_x86_64"
+            ],
+            "with_opts": [],
+            "without_opts": [],
+            "destdir": "/var/lib/copr/public_html/results/packit/cri-o-cri-o-9190",
+            "results_repo_url": "https://download.copr.fedorainfracloud.org/results/packit/cri-o-cri-o-9190",
+            "result_dir": "09013973-cri-o",
+            "built_packages": "cri-o-debuginfo 1.33.0\ncri-o-debugsource 1.33.0\ncri-o 1.33.0",
+            "id": 9013973,
+            "mockchain_macros": {
+                "copr_username": "packit",
+                "copr_projectname": "cri-o-cri-o-9190",
+                "vendor": "Fedora Project COPR (packit/cri-o-cri-o-9190)"
+            }
+        }
+    ]
+}
+[2025-05-09 07:57:20,702][  INFO][PID:1195855] Sending fedora-messaging bus message in build.end
+[2025-05-09 07:57:20,724][  INFO][PID:1195855] Compressing /var/lib/copr/public_html/results/packit/cri-o-cri-o-9190/fedora-42-x86_64/09013973-cri-o/builder-live.log by gzip
+[2025-05-09 07:57:20,729][  INFO][PID:1195855] Running command 'gzip /var/lib/copr/public_html/results/packit/cri-o-cri-o-9190/fedora-42-x86_64/09013973-cri-o/builder-live.log' as PID 1207148
+[2025-05-09 07:57:20,788][  INFO][PID:1195855] Finished after 0 seconds with exit code 0 (gzip /var/lib/copr/public_html/results/packit/cri-o-cri-o-9190/fedora-42-x86_64/09013973-cri-o/builder-live.log)
+[2025-05-09 07:57:20,790][  INFO][PID:1195855] Compressing /var/lib/copr/public_html/results/packit/cri-o-cri-o-9190/fedora-42-x86_64/09013973-cri-o/backend.log by gzip

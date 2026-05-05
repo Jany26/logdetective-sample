@@ -1,0 +1,62 @@
+source_project_name: glimpse
+source_project_version: 4.12.6^git20161025.4945711-4
+issue: |
+    The build failed because the function declaration differs from the actual function call later. This kind of error may appear when the default language version for C compilation is changed from -std=gnu17 to -std=gnu23. In C17 and earlier, function declarators in form of rettype identifier(); specified no information about the number or types of the parameters while in C23 such declarations mean (void) i. e. a function taking no arguments.
+log_detective_version: 3.10.0
+log_detective_analysis: |
+    The build failed because the C compiler reported "too many arguments to function" for multiple functions like `output_buffer`, `my_stat`, `forward_delimiter`, `backward_delimiter`, `attr_id_to_name`, and `aprint_file_time`. This indicates a mismatch between the function declarations (expecting zero arguments) and their calls (providing one or more arguments), which is a common issue when compiling older C code with a newer compiler or stricter C standard. The solution is to add a `BuildRequires: gcc` to the spec file, or to fix the source code to match the function declarations and calls, or to adjust the compiler flags to allow older C standards if applicable.
+log_files:
+    - build.log
+    - root.log
+    - mock_output.log
+notes: |
+    Sample comes from packager-annotated notes submitted to logdetective.com.
+    Additional text contains more context.
+
+    Resolution: Code relying on a non-zero number of parameters can be fixed by adding the correct parameters to the function declaration. In other cases the code may be simply missing a #include of the correct header and can be fixed by including the correct header and removing the declaration. Alternatively you can use -std= to select an earlier version of C standard or report the issue upstream.
+
+    Snippets:
+
+    In build.log:
+    ```
+    main.c:3362:113: error: too many arguments to function 'aprint_file_time'; expected 0, have 1
+     3362 |                                                         if (!SILENT) fprintf(stdout, "%s%s\n", CurrentFileName, aprint_file_time(CurrentFileTime));
+          |                                                                                                                 ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~
+    agrep/agrep.h:106:14: note: declared here
+      106 | extern char *aprint_file_time();
+          |              ^~~~~~~~~~~~~~~~
+    ```
+    => This compiler error makes the build fail.
+
+    In build.log:
+    ```
+    main.c:3383:62: error: too many arguments to function 'forward_delimiter'; expected 0, have 5
+     3383 |                         if (!GOUTTAIL) current_end = (CHAR *)forward_delimiter((long)current_end + GD_length, final_end, GD_pattern, GD_length, GOUTTAIL);
+          |                                                              ^~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    agrep/agrep.h:102:16: note: declared here
+      102 | unsigned char *forward_delimiter(), *backward_delimiter();
+          |                ^~~~~~~~~~~~~~~~~
+    ```
+    => This compiler error makes the build fail.
+
+    In build.log:
+    ```
+    main.c:3384:52: error: too many arguments to function 'forward_delimiter'; expected 0, have 5
+     3384 |                         else current_end = (CHAR *)forward_delimiter(current_end, final_end, GD_pattern, GD_length, GOUTTAIL);
+          |                                                    ^~~~~~~~~~~~~~~~~ ~~~~~~~~~~~
+    agrep/agrep.h:102:16: note: declared here
+      102 | unsigned char *forward_delimiter(), *backward_delimiter();
+          |                ^~~~~~~~~~~~~~~~~
+    ```
+    => This compiler error makes the build fail.
+
+    In build.log:
+    ```
+    main.c:3420:89: error: too many arguments to function 'aprint_file_time'; expected 0, have 1
+     3420 |                                 if (!SILENT) fprintf(stdout, "%s%s\n", CurrentFileName, aprint_file_time(CurrentFileTime));
+          |                                                                                         ^~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~
+    agrep/agrep.h:106:14: note: declared here
+      106 | extern char *aprint_file_time();
+          |              ^~~~~~~~~~~~~~~~
+    ```
+    => This compiler error makes the build fail.

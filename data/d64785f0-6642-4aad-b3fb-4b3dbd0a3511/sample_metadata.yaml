@@ -1,0 +1,66 @@
+source_project_name: python-beautifulsoup4
+source_project_version: 4.13.4-1
+issue: |
+    A deprecated flag is being used by koji while building the application i.e. --new-chroot.
+    Since this log appears in mock_output.log it seems like there is an issue with Koji's build system rather than the application.
+    Which is why the container fails to spawn later using /usr/bin/systemd-nspawn.
+log_detective_version: 3.10.0
+log_detective_analysis: |
+    The build failed because a required dependency, `cchardet`, was identified as an "alien requirement" and consequently ignored by the build system. To resolve this, ensure that `cchardet` is properly declared as a build requirement in the spec file, removing any conditions that might cause it to be bypassed.
+log_files:
+    - build.log
+    - root.log
+    - mock_output.log
+notes: |
+    Sample comes from packager-annotated notes submitted to logdetective.com.
+    Additional text contains more context.
+
+    Resolution: Instead of --new-chroot, the flag should that should be used is --isolation=nspawn.
+
+    Snippets:
+
+    In build.log:
+    ```
+    Child return code was: 11
+    Dynamic buildrequires detected
+    ```
+    => Indicates a segmentation fault also known as segfault i.e. SIGSEGV is denoted with 11.
+    Post which koji detected missing dependencies through buildrequires.
+
+    In root.log:
+    ```
+    Child return code was: 1
+    ```
+    => Seems like there was a termination of the TTY/terminal here, SIGHUP is denoted as 1.
+
+    In root.log:
+    ```
+    Child return code was: 4
+    ```
+    => Seems like there was an invalid instruction sent to the CPU, SIGILL is denoted as 4.
+
+    In root.log:
+    ```
+    DEBUG util.py:556:  Executing command: ['userdel', '-f', 'mockbuild', '--prefix', '/var/lib/mock/f40-build-59048254-6570588/root'] with env {'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOME': '/builddir', 'HOSTNAME': 'mock', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'LANG': 'C.UTF-8'} and shell False
+    DEBUG util.py:459:  userdel: user 'mockbuild' does not exist
+    DEBUG util.py:608:  Child return code was: 6
+    DEBUG util.py:634:  child environment: None
+    DEBUG util.py:556:  Executing command: ['groupdel', 'mock', '--prefix', '/var/lib/mock/f40-build-59048254-6570588/root'] with env {'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOME': '/builddir', 'HOSTNAME': 'mock', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'LANG': 'C.UTF-8'} and shell False
+    DEBUG util.py:459:  groupdel: group 'mock' does not exist
+    DEBUG util.py:608:  Child return code was: 6
+    DEBUG util.py:634:  child environment: None
+    DEBUG util.py:556:  Executing command: ['groupadd', 'mock', '-g', '425', '--prefix', '/var/lib/mock/f40-build-59048254-6570588/root'] with env {'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOME': '/builddir', 'HOSTNAME': 'mock', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'LANG': 'C.UTF-8'} and shell False
+    DEBUG util.py:608:  Child return code was: 0
+    DEBUG util.py:634:  child environment: None
+    DEBUG util.py:556:  Executing command: ['useradd', 'mockbuild'
+    ```
+    => User was not detected and was created later, so we can rule an account permissions/rbac issue out.
+     SIGIOT is denoted as 4 also known as SIGABRT, used when a program deliberately terminates itself due to an internal error.
+
+    In mock_output.log:
+    ```
+    ERROR: Option --new-chroot has been deprecated. Use --isolation=nspawn instead.
+    INFO: mock.py version 6.1 starting (python version = 3.13.2, NVR = mock-6.1-1.fc41), args: /usr/libexec/mock/mock -r koji/f40-build-59048254-6570588 --new-chroot --no-clean --target noarch --rebuild /var/tmp/koji/tasks/2538/131902538/local/work/tasks/2458/131902458/python-beautifulsoup4-4.13.4-1.fc40.src.rpm
+    ```
+    => The --new-chroot has been deprecated, in the next line we can see koji/f40-build-59048254-6570588 has been started with the same flag.
+    The same fails below, stating "ERROR: Exception(/var/tmp/koji/tasks/2538/131902538/local/work/tasks/2458/131902458/python-beautifulsoup4-4.13.4-1.fc40.src.rpm) Config(f40-build-59048254-6570588) 0 minutes 30 seconds"

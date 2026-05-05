@@ -1,0 +1,32 @@
+source_project_name: DisplayCAL
+source_project_version: 3.9.16-1
+issue: |
+    The file structure of pyproject.toml wasn't valid in the current environment, in particular the "project.license" field. That field needs to be a table with a "file" or a "text" key.
+    Please note that the specified project.license format was deprecated in favor of a simple text-only field in newer Python version. That means you might be trying to build a project expecting newer Python versions in an environment with older Python version.
+log_detective_version: 3.10.0
+log_detective_analysis: |
+    The build failed because `pyproject.toml` contains an invalid `project.license` configuration, which must specify either a `file` or `text` key, but not both. Correct the `project.license` section in `pyproject.toml` to conform to setuptools' expected schema.
+log_files:
+    - build.log
+    - root.log
+    - mock_output.log
+notes: |
+    Sample comes from packager-annotated notes submitted to logdetective.com.
+    Additional text contains more context.
+
+    Resolution: Adjust the pyproject.toml file and its included "project.license" field to match the specification. Alternatively, if you want to use a text-only definition of the field, use a newer Python version to build it.
+
+    Snippets:
+
+    In build.log:
+    ```
+    ValueError: invalid pyproject.toml config: `project.license`.
+    configuration error: `project.license` must be valid exactly by one definition (2 matches found):
+        - keys:
+            'file': {type: string}
+          required: ['file']
+        - keys:
+            'text': {type: string}
+          required: ['text']
+    ```
+    => This error specifies that pyproject.toml content is invalid, in particular the "project.license" field.
