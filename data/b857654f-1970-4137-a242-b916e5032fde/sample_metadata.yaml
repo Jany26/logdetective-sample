@@ -1,7 +1,7 @@
 source_project_name: python-gensim
 source_project_version: 0.10.0-38
 issue: |
-    Incompatible pointer types were used in the compiled code.
+    Incompatible pointer types caused a compilation error in `gensim_addons/models/word2vec_inner.pyx`. The cause is possibly incompatible versions of Cython and numpy.
 log_detective_version: 3.10.0
 log_detective_analysis: |
     The build failed due to a C compilation error in `gensim_addons/models/word2vec_inner.c` caused by an assignment of an incompatible pointer type. This indicates an issue with the generated C code, likely from Cython, possibly due to a mismatch in `numpy` or `Cython` versions used during code generation and compilation. The solution is to ensure compatible versions of `Cython` and `numpy` are used to generate and compile the C extension, or to patch the source to resolve the pointer type incompatibility.

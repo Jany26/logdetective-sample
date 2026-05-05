@@ -1,7 +1,7 @@
 source_project_name: python-ratinabox
 source_project_version: 1.12.3-1
 issue: |
-    It was not possible to install build dependencies on this architeture
+    It was not possible to install build dependencies on this architeture, most probably a missing dependency python3dist(scikit-learn), or a typo.
 log_detective_version: 3.10.0
 log_detective_analysis: |
     The package build failed because the `setuptools` build dependency was not satisfied. Ensure that `python3-setuptools` or the equivalent package is correctly listed as a `BuildRequires` in the spec file.

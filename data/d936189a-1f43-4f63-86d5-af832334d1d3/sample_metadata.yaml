@@ -1,5 +1,5 @@
 source_project_name: freeipa
-source_project_version: ''
+source_project_version: 4.12.0.dev202401300652+git-0
 issue: Package repository was not available.
 log_detective_version: 3.10.0
 log_detective_analysis: |
