@@ -49,7 +49,8 @@ def _str_presenter(dumper, data: str):
             line = line.replace(old, new)
         cleaned.append(line)
     data = "\n".join(cleaned)
-    if len(data) > 50:
+    if len(data) > 50 and len(data.split()) > 1:
+        data = data.rstrip() + "\n"
         return dumper.represent_scalar("tag:yaml.org,2002:str", data, style="|")
     data = data.replace("\n", " ").strip()
     return dumper.represent_scalar("tag:yaml.org,2002:str", data)

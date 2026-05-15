@@ -1,5 +1,5 @@
 source_project_name: dnf
-source_project_version: ''
+source_project_version: 4.19.0-1
 issue: |
     Both the dnf package from the Fedora base image and the dnf5 package from the dnf5-testing Copr repo provide the /etc/dnf/dnf.conf file.
     This occurs because when using the dnf5-testing Copr repository, all dnf related packages are intended to come from this repository, set up with the obsoletion macro to manage the transition from dnf to dnf5.
