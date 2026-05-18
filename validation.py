@@ -143,7 +143,7 @@ def evaluate_samples(
         directory (str): The path to the directory containing the samples.
         server_address (str): The base address of the server.
     """
-    api_endpoint = "/analyze/staged"
+    api_endpoint = "/analyze"
 
     full_api_url = f"{server_address}{api_endpoint}"
 

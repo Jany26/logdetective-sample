@@ -120,7 +120,7 @@ def get_logdetective_analysis(json_dict: dict) -> str:
     }
 
     api_response = requests.post(
-        f"{LOGDETECTIVE_URL}/analyze/staged",
+        f"{LOGDETECTIVE_URL}/analyze",
         json=payload,
         timeout=60,
     )
