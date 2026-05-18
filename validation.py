@@ -204,7 +204,7 @@ def evaluate_samples(
             requests.exceptions.HTTPError,
         ) as e:
             raise ConnectionError(
-                f"Could not obtain Log Detective response at {full_api_url}: {e}"
+                f"Could not obtain Log Detective response for sample {sample_uuid}: {e}"
             ) from e
         except ValueError as e:
             raise ValueError(f"Could not decode JSON from API response for {sample_uuid}") from e
