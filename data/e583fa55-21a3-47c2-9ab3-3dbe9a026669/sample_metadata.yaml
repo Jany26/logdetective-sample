@@ -1,6 +1,5 @@
 source_project_name: cri-o
-source_project_version: |-
-    1.33.0-2.20250509075346213411.pr9190.239.geb76e5c22
+source_project_version: 1.33.0-2.20250509075346213411.pr9190.239.geb76e5c22
 issue: |
     The build seems to be running without issues, the dependencies install fine.
 log_detective_version: 3.10.0

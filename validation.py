@@ -36,6 +36,22 @@ class SimilarityScore(BaseModel):
     )
 
 
+JUDGE_SYSTEM_PROMPT = """\
+Rate how well the 'actual_output' addresses the issue described in 'expected_output'.
+The comparison is one-directional: does the actual output identify the same root cause?
+Ask: "Could a maintainer fix the issue just as well following the actual output as the expected output?"
+
+Score on an integer scale from 1 to 10:
+- 1: Completely wrong topic or root cause.
+- 3-5: Same general area, but missing (or not fully addressing) the core issue.
+- 6: Identifies the correct root cause, but lacks enough detail to act on it. The explanation would be enough for an experienced packager, an inexperienced will probably lack information to efficiently fix the issue.
+- 7-9: Correctly identifies the root cause; more detail or different terminology is fine.
+- 10: Fully and precisely addresses everything in the expected output.
+
+Do not penalize for: different terminology, higher level of technical detail, different lengths.
+"""
+
+
 def get_similarity_score(
     expected_text: str, actual_text: str, llm_client: openai.OpenAI, llm_model: str
 ) -> int:
@@ -58,22 +74,20 @@ def get_similarity_score(
         `TypeError`:
     """
 
-    prompt = f"""
-    Analyze the semantic similarity between the 'expected_output' and the 'actual_output'.
-
-    Your task is to rate their similarity on an integer scale from 1 to 10.
-    - A score of 1 means they are completely dissimilar in meaning, topic, and intent.
-    - **A score of 7-9 means the actual output contains all the critical information of the expected output, but also includes additional, relevant explanations or details.**
-    - A score of 10 means they are semantically identical, conveying the exact same information and intent, even if phrasing differs.
-
-    ---
-    "expected_output": "{expected_text}"
-    "actual_output": "{actual_text}"
-    """
+    judge_user_prompt = "\n".join(
+        [
+            "expected_output:",
+            expected_text,
+            "",
+            "actual_output:",
+            actual_text,
+        ]
+    )
     response = llm_client.chat.completions.create(
         model=llm_model,
         messages=[
-            {"role": "user", "content": prompt},
+            {"role": "system", "content": JUDGE_SYSTEM_PROMPT},
+            {"role": "user", "content": judge_user_prompt},
         ],
         response_format={
             "type": "json_schema",
@@ -143,7 +157,7 @@ def evaluate_samples(
         directory (str): The path to the directory containing the samples.
         server_address (str): The base address of the server.
     """
-    api_endpoint = "/analyze/staged"
+    api_endpoint = "/analyze"
 
     full_api_url = f"{server_address}{api_endpoint}"
 
@@ -204,7 +218,7 @@ def evaluate_samples(
             requests.exceptions.HTTPError,
         ) as e:
             raise ConnectionError(
-                f"Could not obtain Log Detective response at {full_api_url}: {e}"
+                f"Could not obtain Log Detective response for sample {sample_uuid}: {e}"
             ) from e
         except ValueError as e:
             raise ValueError(f"Could not decode JSON from API response for {sample_uuid}") from e
