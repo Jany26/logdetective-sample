@@ -52,51 +52,97 @@ api: /analyze/staged
 
 ## Automated evaluation
 
-Evaluation of Log Detective performance can be performed automatically using
-the `validation.py` script. Dependencies for the tool are defined in the
-`requirements.txt` file and should be installed in a virtual environment.
+`validation.py` sends each sample's logs to a running Log Detective server and
+compares its analysis with the sample's `issue` using a local System One judge.
+You need:
 
-Keys for OpenAI compatible LLM inference provider and Log Detective itself,
-must be stored in files. These will be used at runtime.
-This prevents logging of secrets in history.
+- A Log Detective server reachable from this machine. The script calls its
+  `/analyze` endpoint. This repository does not install or start Log Detective;
+  use the base URL of an existing deployment.
+- A data directory containing one subdirectory per sample. Each sample
+  directory must contain `sample_metadata.yaml` and the plain-text log files
+  named by its `log_files` field. The validator searches subdirectories
+  recursively. At minimum, metadata must define a non-empty `issue` string and
+  a non-empty `log_files` list.
+- Python 3.9 or newer, `requests`, and `PyYAML`.
+- `llama-server` from llama.cpp, built with System One support (b11820 or newer)
+  and available on `PATH`.
 
-Example:
+The validator starts and stops `llama-server` for each run. It does not install
+or build llama.cpp. On Fedora, one way to build the server from source is:
 
 ```bash
-./validation.py --open-ai-api-key OPENAI_API_KEY_FILE \
---data-directory ./path/to/samples \
---log-detective-url http://localhost:8080 \
---llm-url https://generativelanguage.googleapis.com/v1beta/openai/ \
---llm-model gemini-2.5-flash \
---log-detective-api-timeout 300 \
---log-detective-api-key LD_API_KEY_FILE
+sudo dnf install git cmake gcc-c++ make libcurl-devel
+git clone https://github.com/ggml-org/llama.cpp.git ./llama.cpp
+cmake -S ./llama.cpp -B ./llama.cpp/build
+cmake --build ./llama.cpp/build --config Release -t llama-server
+export PATH="$(pwd)/llama.cpp/build/bin:$PATH"
 ```
 
-The only 3 required arguments are `--open-ai-api-key`, `--llm-url`, and `--llm-model`.
+Run those commands from the root of this repository. If you already have a
+compatible `llama-server`, skip this build and make sure its directory is on
+`PATH`. The upstream
+[llama.cpp build guide](https://github.com/ggml-org/llama.cpp/blob/master/docs/build.md)
+has instructions for other platforms and hardware backends. The server uses
+`127.0.0.1:9931`; that port must be free. The default judge model is the
+decision-wired Elephant-1 Q4_K_M GGUF from
+[Hugging Face](https://huggingface.co/waseigo/elephant-1-decision-GGUF). The
+model is downloaded on the first run, so the machine needs Hugging Face access
+and several GiB of available RAM. A GPU is optional. Set `HF_TOKEN` if your
+chosen model repository requires authentication. The validator does not use a
+Google or OpenAI API key.
 
-Script sends each of the the stored log files for evaluation by Log Detective,
-then submits both results of final analysis from Log Detective and actual issue
-in the log to LLM (judge) to determine the semantic similarity of the two.
+Create a virtual environment and install the Python dependencies:
 
-Scores are assigned on scale from `1` to `10`. Where `10` stands for absolute and
-`1` for no match at all.
+```bash
+python -m venv .venv
+. .venv/bin/activate
+pip install -r requirements.txt
+```
 
-Example:
+Run the validator from the repository root. Replace the example URL with the
+base URL of your reachable Log Detective server (not the endpoint).
+If the Log Detective server requires an API key, put the key in a file and pass
+the file path - it will be added as a Bearer token.
+Both the Log Detective request and judge request timeouts default to 60 seconds.
+Use `--log-detective-api-timeout` or `--judge-timeout` to change them if needed.
+To choose a different Hugging Face GGUF model, pass its repository and optional
+quantization with `--judge-model`.
+The only required parameter is `--log-detective-url`. `llama-server` produces
+output to stderr, and the script validation to stdout, so if necessary,
+you can filter it out.
+
+```bash
+./validation.py \
+--data-directory ./data \
+--judge-model org/repository:quant \
+--judge-timeout 120 \
+--log-detective-url http://localhost:8080 \
+--log-detective-api-timeout 120 \
+--log-detective-api-key path/to/file/with/api_token \
+2> llama-server.log
+```
+
+The repository must contain a System One compatible decision model. See the
+[llama.cpp System One endpoint documentation](https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md#post-v1systemone-typesafe-compatible-system-one-api)
+for the judge API used by the validator.
+
+The judge returns a probability that the Log Detective analysis identifies the
+same root cause and gives a maintainer enough information to act. System One's
+`noul` field is the probability of yes. A sample passes when `P(yes) >= 0.5`.
+Decisions from 0.45 through 0.55 are also marked low confidence; this does not
+change the pass threshold.
+
+Example output:
 
 ```
 [Expected Response]
 Build failed due to missing patch file `gnome-shell-notify-gnome-session.patch`.
 Fixing the issue requires making sure that all patch files specified are in the `SOURCES` directory.
 
-
 [Actual Response]
 The RPM build failed because the patch file `gnome-shell-notify-gnome-session.patch` was missing from the `SOURCES` directory during the `buildsrpm` phase. This caused the `rpmbuild -bs` command to fail.
 
-To resolve this, ensure that the `gnome-shell-notify-gnome-session.patch` file is present in the `SOURCES` directory and is correctly referenced in the RPM spec file.
-
-
-Similarity Score: 8/10 Time elapsed: 4.5s
+[Judge] Similarity: 87.2 %, Response time: 4.515s, Judge time: 30.382s
 --------------------------------------------------------------------------------
 ```
-
-Scores higher or equal to 6 are considered sufficient for passing.
